@@ -2,9 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Use tmux as default shell
-[[ $TERM != "screen" ]] && exec tmux
-
 # Start powerline-shell
 if [ -f `which powerline-daemon` ]; then
 	powerline-daemon -q
@@ -129,13 +126,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# Alias fortune to clear && fortune | cowsay
-# because that's what I end up doing anyway
-alias fortune="clear && fortune | cowsay"
-
-# Alias neofetch to clear && neofetch
-alias neofetch="clear && neofetch"
-
-#TODO list
-alias todo="vim ~/Documents/todo.txt"
