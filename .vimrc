@@ -6,3 +6,4 @@ color desert
 set background=dark
 
 set number
+inoremap jk <ESC>
