@@ -14,3 +14,4 @@ These are my dotfiles. Most of them are ~~stolen~~ borrowed
 | rifle.conf    | ranger        |
 | scope.sh      | ranger        |
 | .vimrc        | vim           |
+| .mailcap      | rtv           |
