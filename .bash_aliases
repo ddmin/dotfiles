@@ -8,3 +8,6 @@ alias neofetch="clear && neofetch"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# create temporary reminder list
+alias todo='vim /tmp/todo'
