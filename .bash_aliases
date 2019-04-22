@@ -11,3 +11,6 @@ alias l='ls -CF'
 
 # create temporary reminder list
 alias todo='vim /tmp/todo'
+
+# enable feh images in rtv
+alias rtv='rtv --enable-media'
