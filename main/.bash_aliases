@@ -16,4 +16,7 @@ alias todo='vim /tmp/todo'
 alias rtv='rtv --enable-media'
 
 # change wallpaper
-alias chwal='wal --vte -q -i ~/Pictures/Wallpapers && clear && neofetch'
+alias chwal='wal --vte -q -i ~/Pictures/Wallpapers && neofetch'
+
+# change wallpaper (default wallpapers)
+alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetch'

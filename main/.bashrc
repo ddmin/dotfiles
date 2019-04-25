@@ -10,8 +10,8 @@ if [ -f `which powerline-daemon` ]; then
 	. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 fi
 
-# Change wallpaper and colorscheme every new terminal instance
-wal --vte -q -i ~/Pictures/Wallpapers
+# set colorscheme to current wallpaper
+wal --vte -q -R
 
 RTV_EDITOR='vim'
 export RTV_EDITOR
