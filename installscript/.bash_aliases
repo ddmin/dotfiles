@@ -14,6 +14,3 @@ alias todo='vim /tmp/todo'
 
 # enable feh images in rtv
 alias rtv='rtv --enable-media'
-
-# set pywal without artifacts
-alias wal='wal --vte -i '
