@@ -10,8 +10,12 @@ if [ -f `which powerline-daemon` ]; then
 	. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
+# Use vim as default editor in rtv
 RTV_EDITOR='vim'
 export RTV_EDITOR
+
+# Allow pywal to run
+export PATH="$PATH:/home/min/.local/bin"
 
 # Change color scheme
 wal -q -l -R 
