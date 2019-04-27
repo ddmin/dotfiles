@@ -14,7 +14,7 @@ RTV_EDITOR='vim'
 export RTV_EDITOR
 
 # Change color scheme
-wal -q -i ~/Pictures
+wal -q -l -R 
 
 # Start neofetch
 neofetch
