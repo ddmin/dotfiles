@@ -18,11 +18,12 @@ call plug#end()
     filetype plugin on
     set encoding=utf-8
     set number
+    set relativenumber
     set ignorecase
     inoremap jk <ESC>
 
 " Goyo
-    map <leader>g :Goyo \| set linebreak<CR>
+    map <leader>g :Goyo<CR>
 
 " Powerline Shell
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
@@ -41,4 +42,4 @@ call plug#end()
     set smartindent
 
 " Compile groff document
-    map <leader>a :!groff -ms % -T pdf > /tmp/out.pdf<CR><CR>
+    map <leader>a :w<CR>:!groff -ms % -T pdf > /tmp/out.pdf<CR><CR>
