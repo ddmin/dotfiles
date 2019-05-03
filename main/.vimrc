@@ -1,7 +1,7 @@
-"        _                    
-" __   _(_)_ __ ___  _ __ ___ 
+"        _
+" __   _(_)_ __ ___  _ __ ___
 " \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__ 
+"  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
 
 let mapleader =" "
@@ -11,20 +11,38 @@ call plug#begin('~/.vim/plugged')
 " goyo.vim
 Plug 'https://github.com/junegunn/goyo.vim'
 
+" fzf
+Plug '~/.fzf'
+
 call plug#end()
 
 " Basics
     set nocompatible
     filetype plugin on
+    syntax on
     set encoding=utf-8
+
     set number
     set relativenumber
+
     set ignorecase
     inoremap jk <ESC>
     set wildmenu
 
+" Fix splits
+    set splitbelow splitright
+
+"Disable auto-commenting
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Goyo
     map <leader>g :Goyo<CR>
+
+" Remove trailing white space on save
+    autocmd BufWritePre * %s/\s\+$//e
+
+" fzf
+    map <C-g> :FZF<CR>
 
 " Powerline Shell
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
