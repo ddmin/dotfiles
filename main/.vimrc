@@ -21,6 +21,7 @@ call plug#end()
     set relativenumber
     set ignorecase
     inoremap jk <ESC>
+    set wildmenu
 
 " Goyo
     map <leader>g :Goyo<CR>
@@ -32,14 +33,19 @@ call plug#end()
 
 " Highlight searches and Leader L to unhighlight
     set hlsearch
-    nnoremap <leader>l :nohl<CR><C-l>
+    nnoremap <leader><leader> :nohl<CR><C-l>
 
 " Tabs
     set tabstop=4
     set shiftwidth=4
     set expandtab
     set autoindent
-    set smartindent
+
+" Move windows
+    map <leader>h <C-w>h
+    map <leader>j <C-w>j
+    map <leader>k <C-w>k
+    map <leader>l <C-w>l
 
 " Compile groff document
     map <leader>a :w<CR>:!groff -ms % -T pdf > /tmp/out.pdf<CR><CR>
