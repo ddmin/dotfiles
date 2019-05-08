@@ -25,7 +25,7 @@ call plug#end()
     set number
     set relativenumber
 
-    set ignorecase
+    set ic
     inoremap jk <ESC>
     set wildmenu
 
@@ -44,12 +44,8 @@ call plug#end()
 " fzf
     map <C-g> :FZF<CR>
 
-" Powerline Shell
-    set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-    set laststatus=2
-    set t_Co=256
-
 " Highlight searches and Leader L to unhighlight
+    set incsearch
     set hlsearch
     nnoremap <leader><leader> :nohl<CR><C-l>
 
@@ -67,3 +63,8 @@ call plug#end()
 
 " Compile groff document
     map <leader>a :w<CR>:!groff -ms % -T pdf > /tmp/out.pdf<CR><CR>
+
+" Powerline Shell
+    set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+    set laststatus=2
+    set t_Co=256
