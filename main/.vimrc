@@ -3,7 +3,6 @@
 " \ \ / / | '_ ` _ \| '__/ __|
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
-
 let mapleader =" "
 
 call plug#begin('~/.vim/plugged')
@@ -32,13 +31,16 @@ call plug#end()
 " Fix splits
     set splitbelow splitright
 
+" Remap Ctrl-W n to split vertically
+    nnoremap <C-w>n :vnew<CR>
+
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Goyo
     map <leader>g :Goyo<CR>
 
-" Remove trailing white space on save
+    " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
 
 " fzf
@@ -68,3 +70,4 @@ call plug#end()
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
     set laststatus=2
     set t_Co=256
+
