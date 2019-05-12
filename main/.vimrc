@@ -13,6 +13,9 @@ Plug 'https://github.com/junegunn/goyo.vim'
 " fzf
 Plug '~/.fzf'
 
+" vimwiki
+Plug 'https://github.com/vimwiki/vimwiki.git'
+
 call plug#end()
 
 " Basics
@@ -31,8 +34,8 @@ call plug#end()
 " Fix splits
     set splitbelow splitright
 
-" Remap Ctrl-W n to split vertically
-    nnoremap <C-w>n :vnew<CR>
+" Remap <Ctrl-W>v to open blank
+    nnoremap <C-w>v :vnew<CR>
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -71,3 +74,6 @@ call plug#end()
     set laststatus=2
     set t_Co=256
 
+" Vim Wiki
+    let g:vimwiki_list = [{'path': '~/.vimwiki/',
+                          \ 'syntax': 'markdown', 'ext': '.md'}]

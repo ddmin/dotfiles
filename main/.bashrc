@@ -5,11 +5,6 @@
 # |_.__/ \__,_|___/_| |_|_|  \___|
 #
 
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # Start powerline-shell
 if [ -f `which powerline-daemon` ]; then
 	powerline-daemon -q

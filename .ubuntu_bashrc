@@ -1,6 +1,13 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Bashrc for Ubuntu
+# Notable difference:
+# Powerline has a different install location
+
+#
+# | |__   __ _ ___| |__  _ __ ___
+# | '_ \ / _` / __| '_ \| '__/ __|
+# | |_) | (_| \__ \ | | | | | (__
+# |_.__/ \__,_|___/_| |_|_|  \___|
+#
 
 # Start powerline-shell
 if [ -f `which powerline-daemon` ]; then
@@ -18,7 +25,7 @@ export RTV_EDITOR
 export PATH="$PATH:/home/min/.local/bin"
 
 # Change color scheme
-wal -q -l -R 
+wal --vte -q -l -R
 
 # Start neofetch
 neofetch
