@@ -2,6 +2,7 @@
 
 sudo apt-get -y install git
 sudo apt-get -y install vim
+sudo apt-get -y install neofetch
 
 echo Copied bash aliases
 cp ./.bash_aliases ~/.bash_aliases
