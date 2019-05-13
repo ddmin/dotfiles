@@ -27,7 +27,9 @@ RTV_EDITOR='vim'
 RTV_BROWSER='lynx'
 export RTV_EDITOR
 export RTV_BROWSER
-export PATH="$PATH:/snap/bin"
+
+# vim man pages
+export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 # Start neofetch
 neofetch
