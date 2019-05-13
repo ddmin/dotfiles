@@ -17,11 +17,3 @@ alias chwal='wal --vte -q -i ~/Pictures/Wallpapers && neofetch'
 
 # change wallpaper to Linux Mint default wallpapers
 alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetch'
-
-# open pdf preview and open vim buffer of document
-vimw() {
-    groff -ms "$1" -T pdf > /tmp/out.pdf
-    zathura /tmp/out.pdf &
-    vim "$1"
-    clear
-}

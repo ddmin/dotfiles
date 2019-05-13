@@ -3,6 +3,7 @@
 " \ \ / / | '_ ` _ \| '__/ __|
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
+
 let mapleader =" "
 
 call plug#begin('~/.vim/plugged')
@@ -66,9 +67,6 @@ call plug#end()
     map <leader>k <C-w>k
     map <leader>l <C-w>l
 
-" Compile groff document
-    map <leader>a :w<CR>:!groff -ms % -T pdf > /tmp/out.pdf<CR><CR>
-
 " Powerline Shell
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
     set laststatus=2
@@ -77,3 +75,6 @@ call plug#end()
 " Vim Wiki
     let g:vimwiki_list = [{'path': '~/.vimwiki/',
                           \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Enable Goyo by default for writing markdown
+    autocmd BufRead,BufNewFile *.md :Goyo 80
