@@ -25,6 +25,9 @@ Plug '~/.fzf'
 " vimwiki
 Plug 'https://github.com/vimwiki/vimwiki.git'
 
+" pywal
+Plug 'https://github.com/dylanaraps/wal.vim.git'
+
 call plug#end()
 
 " Basics
@@ -39,6 +42,8 @@ call plug#end()
     set ic
     inoremap jk <ESC>
     set wildmenu
+
+    colorscheme wal
 
 " Fix splits
     set splitbelow splitright
