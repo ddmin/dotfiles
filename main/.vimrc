@@ -28,6 +28,9 @@ Plug 'https://github.com/vimwiki/vimwiki.git'
 " pywal
 Plug 'https://github.com/dylanaraps/wal.vim.git'
 
+" NERDTree
+Plug 'https://github.com/scrooloose/nerdtree.git'
+
 call plug#end()
 
 " Basics
@@ -89,5 +92,11 @@ call plug#end()
     let g:vimwiki_list = [{'path': '~/.vimwiki/',
                           \ 'syntax': 'markdown', 'ext': '.md'}]
 
-" Enable Goyo by default for writing markdown
+" Enable Goyo by default for writing certain files
     autocmd BufRead,BufNewFile *.md :Goyo 80
+    autocmd BufRead vimtutor :Goyo 80
+    autocmd BufRead,BufNewFile *.txt :Goyo 80
+
+" NERDTree
+    map <leader>n :NERDTreeToggle<CR>
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
