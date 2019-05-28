@@ -1,8 +1,8 @@
 # Move dotfiles to home directory
 
-sudo apt-get -y install git
-sudo apt-get -y install vim
-sudo apt-get -y install neofetch
+yes | sudo apt-get install git
+yes | sudo apt-get install vim
+yes | sudo apt-get install neofetch
 
 echo Copied bash aliases
 cp ./.bash_aliases ~/.bash_aliases
