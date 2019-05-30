@@ -28,16 +28,13 @@ Plug 'https://github.com/vimwiki/vimwiki.git'
 " pywal
 Plug 'https://github.com/dylanaraps/wal.vim.git'
 
-" NERDTree
-Plug 'https://github.com/scrooloose/nerdtree.git'
-
 call plug#end()
 
 " Basics
     set nocompatible
     filetype plugin on
-    syntax on
     set encoding=utf-8
+    syntax on
 
     set number
     set relativenumber
@@ -96,7 +93,3 @@ call plug#end()
     autocmd BufRead,BufNewFile *.md :Goyo 80
     autocmd BufRead vimtutor :Goyo 80
     autocmd BufRead,BufNewFile *.txt :Goyo 80
-
-" NERDTree
-    map <leader>n :NERDTreeToggle<CR>
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
