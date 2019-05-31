@@ -28,6 +28,15 @@ Plug 'https://github.com/vimwiki/vimwiki.git'
 " pywal
 Plug 'https://github.com/dylanaraps/wal.vim.git'
 
+" vim-airline
+Plug 'https://github.com/vim-airline/vim-airline.git'
+
+" vim-airline-themes
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+
+"fugitive
+Plug 'https://github.com/tpope/vim-fugitive.git'
+
 call plug#end()
 
 " Basics
@@ -54,6 +63,37 @@ call plug#end()
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Set airline theme
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme='powerlineish'
+
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.whitespace = 'Ξ'
+
+    " airline symbols
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = ''
+
 " Goyo
     map <leader>g :Goyo<CR>
 
@@ -79,11 +119,6 @@ call plug#end()
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
-
-" Powerline Shell
-    set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-    set laststatus=2
-    set t_Co=256
 
 " Vim Wiki
     let g:vimwiki_list = [{'path': '~/.vimwiki/',

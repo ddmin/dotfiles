@@ -6,11 +6,12 @@
 #
 
 # Start powerline-shell
-if [ -f `which powerline-daemon` ]; then
-	powerline-daemon -q
-	POWERLINE_BASH_CONTINUATION=1
-	POWERLINE_BASH_SELECT=1
-	. /home/ddmin/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 # enable vi mode
