@@ -1,3 +1,5 @@
+# Shell script to automatically download and configure dotfiles.
+
 # Download git, vim, and neofetch
 yes | sudo apt-get install git
 yes | sudo apt-get install vim
