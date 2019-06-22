@@ -17,25 +17,28 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " goyo.vim
-Plug 'https://github.com/junegunn/goyo.vim'
+    Plug 'junegunn/goyo.vim'
 
 " fzf
-Plug '~/.fzf'
+    Plug '~/.fzf'
 
 " vimwiki
-Plug 'https://github.com/vimwiki/vimwiki.git'
+    Plug 'vimwiki/vimwiki'
 
 " pywal
-Plug 'https://github.com/dylanaraps/wal.vim.git'
+    Plug 'dylanaraps/wal.vim'
 
 " vim-airline
-Plug 'https://github.com/vim-airline/vim-airline.git'
+ 	Plug 'vim-airline/vim-airline'
 
 " vim-airline-themes
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+    Plug 'vim-airline/vim-airline-themes'
 
 "fugitive
-Plug 'https://github.com/tpope/vim-fugitive.git'
+    Plug 'tpope/vim-fugitive'
+
+"vim-devicons
+    Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -44,6 +47,7 @@ call plug#end()
     filetype plugin on
     set encoding=utf-8
     syntax on
+    set showcmd
 
     set number
     set relativenumber
@@ -64,35 +68,14 @@ call plug#end()
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set airline theme
+    set t_Co=256
+
     let g:airline_powerline_fonts = 1
     let g:airline_theme='powerlineish'
 
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
-
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
-    let g:airline_symbols.whitespace = 'Ξ'
-
-    " airline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = ''
 
 " Goyo
     map <leader>g :Goyo<CR>
@@ -103,7 +86,7 @@ call plug#end()
 " fzf
     map <C-g> :FZF<CR>
 
-" Highlight searches and Leader L to unhighlight
+" Highlight searches and <Leader Leader> to unhighlight
     set incsearch
     set hlsearch
     nnoremap <leader><leader> :nohl<CR><C-l>
@@ -127,4 +110,7 @@ call plug#end()
 " Enable Goyo by default for writing certain files
     autocmd BufRead,BufNewFile *.md :Goyo 80
     autocmd BufRead vimtutor :Goyo 80
-    autocmd BufRead,BufNewFile *.txt :Goyo 80
+
+" Enable devicons
+    let g:webdevicons_enable = 1
+    let g:webdevicons_enable_airline_statusline = 1

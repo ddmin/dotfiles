@@ -1,22 +1,39 @@
-# Shell script to automatically download and configure dotfiles.
+# Shell script to automatically download and configure dotfiles
 
 # Download git, vim, and neofetch
-yes | sudo apt-get install git
-yes | sudo apt-get install vim
-yes | sudo apt-get install neofetch
+    yes | sudo apt-get install git
+    yes | sudo apt-get install vim
+    yes | sudo apt-get install neofetch
 
 # Move dotfiles to home directory
 echo Copied bash aliases
-cp ./.bash_aliases ~/.bash_aliases
+    cp ./.bash_aliases ~/.bash_aliases
 
 echo Copied bashrc
-cp ./.bashrc ~/.bashrc
+    cp ./.bashrc ~/.bashrc
 
 echo Copied gitconfig
-cp ./.gitconfig ~/.gitconfig
+    cp ./.gitconfig ~/.gitconfig
 
 echo Copied vimrc
-cp ./.vimrc ~/.vimrc
+    cp ./.vimrc ~/.vimrc
 
 echo Copied powerline configs
-mkdir -p ~/.config/powerline && cp ./config.json ~/.config/powerline/config.json
+    mkdir -p ~/.config/powerline && cp ./config.json ~/.config/powerline/config.json
+
+echo Copied mailcap
+    cp ./.mailcap ~/.mailcap
+
+mkdir -p ~/.config/ranger
+
+echo Moved commands.py
+    cp ./commands.py ~/.config/ranger/commands.py
+
+echo Moved rc.conf
+    cp ./rc.conf ~/.config/ranger/rc.conf
+
+echo Moved rifle.conf
+    cp ./rifle.conf ~/.config/ranger/rifle.conf
+
+echo Moved scope.sh
+    cp ./scope.sh ~/.config/ranger/scope.sh

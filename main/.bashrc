@@ -29,6 +29,10 @@ RTV_BROWSER='lynx'
 export RTV_EDITOR
 export RTV_BROWSER
 
+# Add Bash directory to path
+export PATH="$PATH:/home/ddmin/Code/Bash"
+export PATH="$PATH:/home/ddmin/Code/Python/CLI"
+
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
@@ -108,7 +112,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -144,4 +148,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Enable fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

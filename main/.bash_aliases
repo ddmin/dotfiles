@@ -1,9 +1,10 @@
 # some ls aliases
-alias ls='lsd --group-dirs first'
-alias l='ls -F'
-alias ll='ls -lF'
-alias la='ls -aF'
-alias lt='ls --tree'
+alias ls='ls -F --color=auto'
+alias l='lsd --group-dirs first -F'
+alias ll='lsd --group-dirs first -lF'
+alias la='lsd --group-dirs first -aF'
+alias lla='lsd --group-dirs first -alF'
+alias lt='lsd --tree'
 
 # Extract archived files
 extract () {
@@ -35,6 +36,9 @@ alias chwal='wal --vte -q -i ~/Pictures/Wallpapers && neofetch'
 
 # change wallpaper to Linux Mint default wallpapers
 alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetch'
+
+# try to keep colorscheme after opening file in ranger
+alias ranger='ranger && wal --vte -q -R'
 
 # open vimtutor with my vim settings
 alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && vim /tmp/vimtutor'
