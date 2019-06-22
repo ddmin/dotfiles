@@ -10,7 +10,7 @@ echo Copied commands.py
     cp ~/.config/ranger/commands.py ./commands.py
 
 echo Copied powerline configs
-    cp ~/.config/powerline/config.json ./config.json
+    cp ~/.config/powerline-shell/config.json ./config.json
 
 echo Copied gitconfig
     cp ~/.gitconfig ./.gitconfig

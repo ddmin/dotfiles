@@ -19,7 +19,7 @@ echo Copied vimrc
     cp ./.vimrc ~/.vimrc
 
 echo Copied powerline configs
-    mkdir -p ~/.config/powerline && cp ./config.json ~/.config/powerline/config.json
+    mkdir -p ~/.config/powerline-shell && cp ./config.json ~/.config/powerline-shell/config.json
 
 echo Copied mailcap
     cp ./.mailcap ~/.mailcap
