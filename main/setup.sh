@@ -37,3 +37,6 @@ echo Moved rifle.conf
 
 echo Moved scope.sh
     cp ./scope.sh ~/.config/ranger/scope.sh
+
+echo Moving Neofetch configs
+    cp ./config.conf ~/.config/neofetch/config.conf
