@@ -44,5 +44,5 @@ alias ranger='ranger && wal --vte -q -R'
 alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && vim /tmp/vimtutor'
 
 # Open games
-alias minecraft='minecraft & exit'
+alias minecraft='minecraft-launcher & exit'
 alias 0ad='0ad & exit'
