@@ -32,6 +32,7 @@ export RTV_BROWSER
 # Add Bash directory to path
 export PATH="$PATH:/home/ddmin/Code/Bash"
 export PATH="$PATH:/home/ddmin/Code/Python/CLI"
+export PATH="$PATH:/home/ddmin/Code/C"
 
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
