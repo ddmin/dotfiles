@@ -18,6 +18,9 @@ echo Copied gitconfig
 echo Copied vimrc
     cp ./.vimrc ~/.vimrc
 
+echo Copied inputrc
+    cp ./.inputrc ~/.inputrc
+
 echo Copied powerline configs
     mkdir -p ~/.config/powerline-shell && cp ./config.json ~/.config/powerline-shell/config.json
 
