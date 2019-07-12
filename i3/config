@@ -42,10 +42,10 @@ set $mod Mod4
 
 
 #This is setup for qwerty
-set $up l
-set $down k
-set $left j
-set $right semicolon
+# set $up l
+# set $down k
+# set $left j
+# set $right semicolon
 
 #This is setup for azerty
 #set $up l
@@ -53,7 +53,11 @@ set $right semicolon
 #set $left j
 #set $right m
 
-
+# Vim keys
+set $up k
+set $down j
+set $left h
+set $right l
 
 #####################################################################################################################
 #################                          Single and Dual screen                                   #################
@@ -123,29 +127,6 @@ bindsym $mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 bindsym $mod+Shift+0 move container to workspace 10; workspace 10
-
-
-
-#####################################################################################################################
-#################                          3 menu's in arcolinux                                     #################
-#####################################################################################################################
-
-# start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
-
-# gmrun
-bindsym mod1+F2 exec --no-startup-id gmrun
-
-# start xfce-appfinder
-bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
-
-# start rofi full
-bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto Sans 13"
-
-# start rofi small
-bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 13"
-
-
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -268,7 +249,7 @@ for_window [urgent=latest] focus
 default_orientation horizontal
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -290,10 +271,8 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
-
+# search using rofi
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 
 
 
@@ -396,32 +375,11 @@ font pango:Noto Mono Regular 13
 #################                          execute applications at boot time                        #################
 #####################################################################################################################
 
-# USER APPLICATIONS TO START AT BOOT
+# Change wallpaper
+exec --no-startup-id wal --vte -q -R
 
-#browser
-#exec --no-startup-id vivaldi-stable
-for_window [class="Vivaldi-stable"] focus
-
-#text-editor
-#exec --no-startup-id geany
-#exec --no-startup-id atom
-
-#file manager
-#exec --no-startup-id thunar
-exec --no-startup-id nemo
-
-#terminal
-exec --no-startup-id gnome-terminal
-
-
-#Mail clients
-#exec --no-startup-id evolution
-
-#Music
-#exec --no-startup-id spotify
-for_window [class="Spotify"] focus
-
-
+# Flash Focus
+exec_always --no-startup-id flashfocus
 
 # TRAY APPLICATIONS
 
@@ -458,10 +416,6 @@ exec --no-startup-id variety
 
 # clipit
 exec --no-startup-id clipit
-
-#Conky
-exec --no-startup-id conky -c ~/.config/i3/system-overview
-exec --no-startup-id conky -c ~/.config/i3/system-shortcuts
 
 
 #####################################################################################################################
