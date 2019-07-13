@@ -29,6 +29,7 @@ RTV_BROWSER='lynx'
 export RTV_EDITOR
 export RTV_BROWSER
 
+# Set default editor
 export EDITOR='vim'
 export VISUAL='vim'
 
