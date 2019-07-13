@@ -29,6 +29,9 @@ RTV_BROWSER='lynx'
 export RTV_EDITOR
 export RTV_BROWSER
 
+export EDITOR='vim'
+export VISUAL='vim'
+
 # Add Bash directory to path
 export PATH="$PATH:/home/ddmin/Code/Bash"
 export PATH="$PATH:/home/ddmin/Code/Python/CLI"
