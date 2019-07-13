@@ -12,7 +12,7 @@ case "$1" in
         lock
         ;;
     logout)
-        i3-msg exit
+        dm-tool switch-to-greeter
         ;;
     suspend)
         systemctl suspend
