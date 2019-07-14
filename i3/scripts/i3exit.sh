@@ -3,8 +3,8 @@
 # Version : v2.0.1
 
 lock() {
-    #i3lock -c 222222
-    i3lock -i ~/.config/i3/scripts/lockscreen/lockscreen.png -t
+    i3lock -c AFEEEE
+    # i3lock -i /usr/share/pixmaps/woods.jpg -t
 }
 
 case "$1" in

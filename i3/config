@@ -132,7 +132,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # qwerty/azerty issue for letter z
 bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # change focus between tiling / floating windows
@@ -193,7 +193,7 @@ exec --no-startup-id clipit
 bindsym $mod+Return exec --no-startup-id gnome-terminal
 
 # search using rofi
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -lines 5 -show-icons
 
 # screenshot
 bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f$$(xdg-user-dir PICTURES'
