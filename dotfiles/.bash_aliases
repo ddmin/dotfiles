@@ -42,7 +42,3 @@ alias ranger='ranger && wal --vte -q -R'
 
 # open vimtutor with my vim settings
 alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && vim /tmp/vimtutor'
-
-# Open games
-alias minecraft='minecraft-launcher & exit'
-alias 0ad='0ad & exit'
