@@ -155,4 +155,5 @@ if ! shopt -oq posix; then
 fi
 
 # Enable fzf search
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

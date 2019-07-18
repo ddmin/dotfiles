@@ -64,6 +64,9 @@ call plug#end()
 " Remap <Ctrl-W>v to open blank
     nnoremap <C-w>v :vnew<CR>
 
+" <Ctrl-W>h to open blank horizontally
+    nnoremap <C-w>h :new<CR>
+
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
