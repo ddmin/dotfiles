@@ -241,9 +241,6 @@ bar {
 # Composite manager
 exec --no-startup-id compton -f --config /etc/xdg/compton.conf
 
-# Lanuch the shortcut Conky window on first login
-exec --no-startup-id /usr/bin/regolith-ftue.sh
-
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
 
