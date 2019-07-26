@@ -61,12 +61,6 @@ call plug#end()
 " Fix splits
     set splitbelow splitright
 
-" Remap <Ctrl-W>v to open blank
-    nnoremap <C-w>v :vnew<CR>
-
-" <Ctrl-W>h to open blank horizontally
-    nnoremap <C-w>h :new<CR>
-
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -100,8 +94,14 @@ call plug#end()
     set expandtab
     set autoindent
 
+" Remap <Ctrl-W>v to open blank
+    nnoremap <C-w>v :vnew<CR>
+
+" <Ctrl-W>h to open blank horizontally
+    nnoremap <C-w>h :new<CR>
+
 " Move windows
-    map <leader>h <C-w>h
+    noremap <leader>h <C-w>h
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
