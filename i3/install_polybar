@@ -9,3 +9,11 @@ git clone https://github.com/jaagr/polybar.git
 # Install polybar
 cd polybar
 yes | ./build.sh
+
+# Generate config
+cd polybar/build
+make userconfig
+
+# Delete repository
+cd ../..
+rm -rf polybar
