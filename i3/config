@@ -244,11 +244,5 @@ exec --no-startup-id compton -f --config /etc/xdg/compton.conf
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
 
-# Draw the desktop background.  Randomly select from a series of photos starting with ESP_
-exec_always --no-startup-id feh --bg-scale --random /usr/share/backgrounds/ESP_*
-
-# Refresh wallpaper when monitor configuration changes.
-exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh.sh
-
 # Flash Focus
 exec_always --no-startup-id flashfocus
