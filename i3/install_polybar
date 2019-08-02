@@ -10,10 +10,4 @@ git clone https://github.com/jaagr/polybar.git
 cd polybar
 yes | ./build.sh
 
-# Generate config
-cd polybar/build
-make userconfig
-
-# Delete repository
-cd ../..
-rm -rf polybar
+# Run `make userconfig` in polybar/build to generate config
