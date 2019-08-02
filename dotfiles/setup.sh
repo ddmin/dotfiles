@@ -42,4 +42,6 @@ echo Moved scope.sh
     cp ./scope.sh ~/.config/ranger/scope.sh
 
 echo Moving Neofetch configs
+    # Make neofetch directory if it doesn't exist
+    mkdir -p ~/.config/neofetch
     cp ./config.conf ~/.config/neofetch/config.conf

@@ -49,6 +49,10 @@ call plug#end()
     syntax on
     set showcmd
 
+    set wrap
+    set linebreak
+    set nolist
+
     set number
     set relativenumber
 
