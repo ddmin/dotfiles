@@ -1,19 +1,26 @@
+; ======
+; Colors
+; ======
 [colors]
-background = #282a36
-foreground = #f8f8f2
-red        = #ff5555
-green      = #50fa7b
-yellow     = #f1fa8c
-blue       = #6272a4
-purple     = #bd93f9
-cyan       = #8be9fd
-orange     = #ff5555
-pink       = #ff79c6
+background = #AA2E3440
+foreground = #D8DEE9
+black      = #4C566A
+red        = #BF616A
+green      = #A3BE8C
+yellow     = #EBCB8B
+blue       = #5E81AC
+magenta    = #B48EAD
+cyan       = #8FBCBB
+white      = #D8DEE9
+orange     = #D08770
 
+; =======
+; Top Bar
+; =======
 [bar/top]
 ; Size
 width  = 100%
-height = 30
+height = 25
 
 ; Offset
 ;offset-x = 50%
@@ -33,12 +40,11 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 ; Underline
-line-size  = 2
-line-color = ${colors.foreground}
+line-size  = 4
+line-color = ${colors.white}
 
 ; Border
 border-size  = 0
-border-color = ${colors.background}
 
 ; Padding
 padding-left  = 0
@@ -49,76 +55,68 @@ module-margin-left  = 0
 module-margin-right = 0
 
 ; Font
-font-0 = SauceCodePro Nerd Font Mono, Semibold:size=10;3
-font-1 = SauceCodePro Nerd Font Mono, Semibold:style=Regular:size=12;3
+font-0 = Consolas:size=10;3
 
 ; Modlues
-modules-left   = i3
-modules-center = weather time date
+modules-left   = bspwm
+modules-center = time date
 modules-right  = audio network lock logout poweroff
 
 ; Cursor actions
 cursor-click  = pointer
 cursor-scroll = ns-resize
 
-[module/i3]
-type = internal/i3
+; Separator
+separator = " "
 
-; Pin workspaces
-pin-workspaces = true
+; ============
+; bspwm Module
+; ============
+[module/bspwm]
+type = internal/bspwm
 
 ; Mouse click
-enable-click = true
+enable-click = false
 
 ; Mouse scroll
-enable-scroll = false
+enable-scroll  = false
+reverse-scroll = false
 
-; Sort
-index-sort = false
+; Separator
+label-separator = " "
 
-; Display icons
-fuzzy-match = true
-
-; Icons
-ws-icon-0       = Main;
-ws-icon-1       = Terminal;
-ws-icon-2       = Web;
-ws-icon-3       = Program;
-ws-icon-4       = Design;
-ws-icon-5       = Media;
-ws-icon-default = 
+; Dimmed label
+label-dimmed         = %name%
+label-dimmed-padding = 1
 
 ; Focused label
-label-focused            = %icon%
-label-focused-foreground = ${colors.pink}
-label-focused-padding    = 2
+label-focused            = %name%
+label-focused-foreground = ${colors.black}
+label-focused-background = ${colors.blue}
+label-focused-padding    = 1
 
-; Unfocused labels
-label-unfocused         = %icon%
-label-unfocused-padding = 2
+; Occupied label
+label-occupied            = %name%
+label-occupied-foreground = ${colors.black}
+label-occupied-background = ${colors.cyan}
+label-occupied-underline  = ${colors.blue}
+label-occupied-padding    = 1
 
-; Visible labels
-label-visible         = %icon%
-label-visible-padding = 2
+; Empty labels
+label-empty            = %name%
+label-empty-foreground = ${colors.black}
+label-empty-background = ${colors.cyan}
+label-empty-padding    = 1
 
 ; Urgent labels
-label-urgent            = %icon%
-label-urgent-foreground = ${colors.red}
-label-urgent-padding    = 2
+label-urgent            = %name%
+label-urgent-foreground = ${colors.black}
+label-urgent-background = ${colors.red}
+label-urgent-padding    = 1
 
-[module/weather]
-type = custom/script
-
-; Script
-exec = /home/ddmin/.config/polybar/scripts/weather.sh
-
-; Update interval
-interval = 600
-
-; Label
-label         = %output%
-label-padding = 4
-
+; ===========
+; Time Module
+; ===========
 [module/time]
 type = internal/date
 
@@ -129,9 +127,14 @@ interval = 1.0
 time = %I:%M%P
 
 ; Label
-label         =   %time%
-label-padding = 4
+label            = %time%
+label-foreground = ${colors.black}
+label-background = ${colors.cyan}
+label-padding    = 1
 
+; ===========
+; Date Module
+; ===========
 [module/date]
 type = internal/date
 
@@ -142,22 +145,32 @@ interval = 1.0
 date = %A, %d %B
 
 ; Label
-label         =   %date%
-label-padding = 4
+label            = %date%
+label-foreground = ${colors.black}
+label-background = ${colors.cyan}
+label-padding    = 1
 
+; ============
+; Audio Module
+; ============
 [module/audio]
 type = internal/pulseaudio
 
 ; Volume label
-label-volume            = 
-label-volume-foreground = ${colors.cyan}
-label-volume-padding    = 2
+label-volume            = Volume: %percentage%%
+label-volume-foreground = ${colors.black}
+label-volume-background = ${colors.cyan}
+label-volume-padding    = 1
 
 ; Muted label
-label-muted            = 
-label-muted-foreground = ${colors.red}
-label-muted-padding    = 2
+label-muted            = Muted
+label-muted-foreground = ${colors.black}
+label-muted-background = ${colors.red}
+label-muted-padding    = 1
 
+; ==============
+; Network Module
+; ==============
 [module/network]
 type = internal/network
 
@@ -165,55 +178,75 @@ type = internal/network
 interface = enp2s0
 
 ; Connected label
-label-connected            = 
-label-connected-foreground = ${colors.pink}
-label-connected-padding    = 2
+label-connected            = Download: %downspeed%
+label-connected-foreground = ${colors.black}
+label-connected-background = ${colors.cyan}
+label-connected-padding    = 1
 
 ; Disconnected label
-label-disconnected            = 
-label-disconnected-foreground = ${colors.red}
-label-disconnected-padding    = 2
+label-disconnected            = Disconnected
+label-disconnected-foreground = ${colors.black}
+label-disconnected-background = ${colors.red}
+label-disconnected-padding    = 1
 
+; ===========
+; Lock Module
+; ===========
 [module/lock]
 type = custom/text
 
 ; Label
-content            = 
-content-foreground = ${colors.green}
-content-padding    = 2
+content            = Lock
+content-foreground = ${colors.black}
+content-background = ${colors.blue}
+content-padding    = 1
 
 ; Mouse click
-click-left = i3lock-fancy -f Roboto-Regular -t ""
+click-left = slock
 
+; =============
+; Logout Module
+; =============
 [module/logout]
 type = custom/text
 
 ; Label
-content            = 
-content-foreground = ${colors.yellow}
-content-padding    = 2
+content            = Logout
+content-foreground = ${colors.black}
+content-background = ${colors.blue}
+content-padding    = 1
 
 ; Mouse click
-click-left = i3-msg exit
+click-left = bspc quit
 
+; ===============
+; Poweroff Module
+; ===============
 [module/poweroff]
 type = custom/text
 
 ; Label
-content            = 
-content-foreground = ${colors.red}
-content-padding    = 2
+content            = Poweroff
+content-foreground = ${colors.black}
+content-background = ${colors.blue}
+content-padding    = 1
 
 ; Mouse click
 click-left = poweroff
 
+; =====
+; Other
+; =====
 [settings]
 screenchange-reload     = true
 ;compositing-background = xor
 ;compositing-foreground = source
 ;compositing-border     = over
-;pseudo-transparency    = false
+pseudo-transparency     = true
 
+; ==
+; WM
+; ==
 [global/wm]
-margin-top    = 10
-margin-bottom = 10
+margin-top    = 0
+margin-bottom = 0
