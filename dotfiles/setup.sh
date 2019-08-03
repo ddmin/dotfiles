@@ -6,25 +6,28 @@
     yes | sudo apt-get install neofetch
 
 # Move dotfiles to home directory
-echo Copied bash aliases
+echo Moved bash aliases
     cp ./.bash_aliases ~/.bash_aliases
 
-echo Copied bashrc
+echo Moved bashrc
     cp ./.bashrc ~/.bashrc
 
-echo Copied gitconfig
+echo Moved gitconfig
     cp ./.gitconfig ~/.gitconfig
 
-echo Copied vimrc
+echo Moved vimrc
     cp ./.vimrc ~/.vimrc
 
-echo Copied inputrc
+echo Moved inputrc
     cp ./.inputrc ~/.inputrc
 
-echo Copied powerline configs
+echo Moved Xresources
+    cp ./.Xresources ~/.Xresources
+
+echo Moved powerline configs
     mkdir -p ~/.config/powerline-shell && cp ./config.json ~/.config/powerline-shell/config.json
 
-echo Copied mailcap
+echo Moved mailcap
     cp ./.mailcap ~/.mailcap
 
 mkdir -p ~/.config/ranger

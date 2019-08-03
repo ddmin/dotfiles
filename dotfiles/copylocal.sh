@@ -29,3 +29,6 @@ echo Copied scope.sh
 
 echo Copied vimrc
     cp ~/.vimrc ./.vimrc
+
+echo Copied .Xresources
+    cp ~/.Xresources ./.Xresources
