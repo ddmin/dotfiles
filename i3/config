@@ -217,25 +217,6 @@ popup_during_fullscreen smart
 
 focus_follows_mouse no
 
-# Configure the bar
-bar {
-  font pango:Source Code Pro Medium 13
-  separator_symbol " "
-  status_command i3blocks
-  tray_output none
-
-  colors {
-      background $base03
-      statusline $base1
-      separator  $blue
-#                        BORDER  BACKGROUND TEXT
-      focused_workspace  $base02  $base02  $base2
-      active_workspace   $base02  $base02  $base01
-      inactive_workspace $base03  $base03  $base01
-      urgent_workspace   $red     $red     $base3
-  }
-}
-
 # Run other programs with i3
 
 # Composite manager
@@ -246,3 +227,6 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Flash Focus
 exec_always --no-startup-id flashfocus
+
+# Polybar
+exec_always --no-startup-id bash /home/ddmin/.config/polybar/launch.sh
