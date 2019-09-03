@@ -23,12 +23,6 @@ bind '"jk":vi-movement-mode'
 # set colorscheme to current wallpaper
 wal --vte -q -R
 
-# exporting env variables
-RTV_EDITOR='vim'
-RTV_BROWSER='lynx'
-export RTV_EDITOR
-export RTV_BROWSER
-
 # Set default editor
 export EDITOR='vim'
 export VISUAL='vim'
@@ -36,7 +30,7 @@ export VISUAL='vim'
 # Add Bash directory to path
 export PATH="$PATH:/home/ddmin/Code/Bash"
 export PATH="$PATH:/home/ddmin/Code/Python/CLI"
-export PATH="$PATH:/home/ddmin/Code/C"
+export PATH="$PATH:/home/ddmin/Code/Python/BrainFook"
 
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
