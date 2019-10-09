@@ -22,9 +22,6 @@ call plug#begin('~/.vim/plugged')
 " fzf
     Plug '~/.fzf'
 
-" vimwiki
-    Plug 'vimwiki/vimwiki'
-
 " pywal
     Plug 'dylanaraps/wal.vim'
 
@@ -109,10 +106,6 @@ call plug#end()
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
-
-" Vim Wiki
-    let g:vimwiki_list = [{'path': '~/.vimwiki/',
-                          \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Enable Goyo by default for writing certain files
     autocmd BufRead,BufNewFile *.md :Goyo 80
