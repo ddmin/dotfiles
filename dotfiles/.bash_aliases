@@ -40,7 +40,7 @@ alias ranger='ranger && wal --vte -q -R'
 # open vimtutor with my vim settings
 alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && vim /tmp/vimtutor'
 
-# set gnome-terminal tab names
+# set terminal tab names
 function title() {
     echo -e "set title: $1\033]0;$@\007"
 }
