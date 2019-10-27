@@ -18,6 +18,10 @@ echo Moved vimrc
     cp ./.vimrc ~/.vimrc
     sudo cp ./.vimrc /root/.vimrc
 
+echo Moved init.vim
+    mkdir -p ~/.config/nvim && cp ./init.vim ~/.config/nvim/init.vim
+    sudo mkdir -p /root/.config/nvim && sudo cp ./init.vim /root/.config/nvim/init.vim
+
 echo Moved inputrc
     cp ./.inputrc ~/.inputrc
     sudo cp ./.inputrc /root/.inputrc
@@ -27,7 +31,7 @@ echo Moved Xresources
 
 echo Moved powerline configs
     mkdir -p ~/.config/powerline-shell && cp ./config.json ~/.config/powerline-shell/config.json
-    sudo mkdir -p /root/.config/powerline-shell && cp ./config.json /root/.config/powerline-shell/config.json
+    sudo mkdir -p /root/.config/powerline-shell && sudo cp ./config.json /root/.config/powerline-shell/config.json
 
 echo Moved mailcap
     cp ./.mailcap ~/.mailcap

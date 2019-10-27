@@ -32,3 +32,6 @@ echo Copied vimrc
 
 echo Copied .Xresources
     cp ~/.Xresources ./.Xresources
+
+echo Copied init.vim
+    cp ~/.config/nvim/init.vim ./init.vim
