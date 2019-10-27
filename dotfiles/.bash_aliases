@@ -28,6 +28,9 @@ extract () {
    fi
 }
 
+# use nvim
+alias vim='nvim'
+
 # change wallpaper
 alias chwal='wal --vte -q -i ~/Pictures/AnimeWallpapers && neofetch'
 
