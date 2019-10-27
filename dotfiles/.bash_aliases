@@ -38,7 +38,7 @@ alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetc
 alias ranger='ranger && wal --vte -q -R'
 
 # open vimtutor with my vim settings
-alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && vim /tmp/vimtutor'
+alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && nvim /tmp/vimtutor'
 
 # set terminal tab names
 function title() {

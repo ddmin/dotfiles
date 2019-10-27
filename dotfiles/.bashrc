@@ -24,8 +24,8 @@ bind '"jk":vi-movement-mode'
 wal --vte -q -R
 
 # Set default editor
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Add Bash directory to path
 export PATH="$PATH:/home/ddmin/Code/Bash"
