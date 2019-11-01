@@ -34,6 +34,11 @@ alias vim='nvim'
 # change wallpaper
 alias chwal='wal --vte -q -i ~/Pictures/AnimeWallpapers && neofetch'
 
+# change wallpaper to specific image
+function bkg() {
+    wal --vte -q -i "$1" && neofetch
+}
+
 # change wallpaper to Linux Mint default wallpapers
 alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetch'
 
