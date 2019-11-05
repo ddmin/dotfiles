@@ -35,3 +35,6 @@ echo Copied .Xresources
 
 echo Copied init.vim
     cp ~/.config/nvim/init.vim ./init.vim
+
+echo Copied neofetch
+    cp ~/.config/neofetch/config.conf ./config.conf
