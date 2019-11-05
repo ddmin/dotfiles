@@ -37,6 +37,9 @@ call plug#begin('~/.vim/plugged')
 "vim-devicons
     Plug 'ryanoasis/vim-devicons'
 
+" dracula
+    Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 " Basics
@@ -58,6 +61,7 @@ call plug#end()
     set wildmenu
 
     colorscheme wal
+    " colorscheme dracula
 
 " Fix splits
     set splitbelow splitright
