@@ -31,14 +31,14 @@ call plug#begin('~/.vim/plugged')
 " vim-airline-themes
     Plug 'vim-airline/vim-airline-themes'
 
-"fugitive
+" fugitive
     Plug 'tpope/vim-fugitive'
 
-"vim-devicons
+" vim-devicons
     Plug 'ryanoasis/vim-devicons'
 
-" dracula
-    Plug 'dracula/vim', { 'as': 'dracula' }
+" one dark
+    Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -60,8 +60,8 @@ call plug#end()
     inoremap jk <ESC>
     set wildmenu
 
-    colorscheme wal
-    " colorscheme dracula
+    " colorscheme wal
+    colorscheme onedark
 
 " Fix splits
     set splitbelow splitright
