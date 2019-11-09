@@ -1,40 +1,42 @@
 # Script to automatically move files from home directory to this repo
 
-echo Copied bash aliases
+echo Copying bash aliases
     cp ~/.bash_aliases ./.bash_aliases
 
-echo Copied bashrc
+echo Copying bashrc
     cp ~/.bashrc ./.bashrc
 
-echo Copied commands.py
+echo Copying commands.py
     cp ~/.config/ranger/commands.py ./commands.py
 
-echo Copied powerline configs
+echo Copying powerline configs
     cp ~/.config/powerline-shell/config.json ./config.json
 
-echo Copied gitconfig
+echo Copying gitconfig
     cp ~/.gitconfig ./.gitconfig
 
-echo Copied mailcap
+echo Copying mailcap
     cp ~/.mailcap ./.mailcap
 
-echo Copied rc.conf
+echo Copying rc.conf
     cp ~/.config/ranger/rc.conf ./rc.conf
 
-echo Copied rifle.conf
+echo Copying rifle.conf
     cp ~/.config/ranger/rifle.conf ./rifle.conf
 
-echo Copied scope.sh
+echo Copying scope.sh
     cp ~/.config/ranger/scope.sh ./scope.sh
 
-echo Copied vimrc
+echo Copying vimrc
     cp ~/.vimrc ./.vimrc
 
-echo Copied .Xresources
+echo Copying .Xresources
     cp ~/.Xresources ./.Xresources
 
-echo Copied init.vim
+echo Copying init.vim
     cp ~/.config/nvim/init.vim ./init.vim
 
-echo Copied neofetch
+echo Copying neofetch
     cp ~/.config/neofetch/config.conf ./config.conf
+
+echo Finished

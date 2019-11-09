@@ -2,57 +2,57 @@
 
 
 # Move dotfiles to home directory
-echo Moved bash aliases
+echo Moving bash aliases
     cp ./.bash_aliases ~/.bash_aliases
     sudo cp ./.bash_aliases /root/.bash_aliases
 
-echo Moved bashrc
+echo Moving bashrc
     cp ./.bashrc ~/.bashrc
     sudo cp ./.bashrc /root/.bashrc
 
-echo Moved gitconfig
+echo Moving gitconfig
     cp ./.gitconfig ~/.gitconfig
     sudo cp ./.gitconfig /root/.gitconfig
 
-echo Moved vimrc
+echo Moving vimrc
     cp ./.vimrc ~/.vimrc
     sudo cp ./.vimrc /root/.vimrc
 
-echo Moved init.vim
+echo Moving init.vim
     mkdir -p ~/.config/nvim && cp ./init.vim ~/.config/nvim/init.vim
     sudo mkdir -p /root/.config/nvim && sudo cp ./init.vim /root/.config/nvim/init.vim
 
-echo Moved inputrc
+echo Moving inputrc
     cp ./.inputrc ~/.inputrc
     sudo cp ./.inputrc /root/.inputrc
 
-echo Moved Xresources
+echo Moving Xresources
     cp ./.Xresources ~/.Xresources
 
-echo Moved powerline configs
+echo Moving powerline configs
     mkdir -p ~/.config/powerline-shell && cp ./config.json ~/.config/powerline-shell/config.json
     sudo mkdir -p /root/.config/powerline-shell && sudo cp ./config.json /root/.config/powerline-shell/config.json
 
-echo Moved mailcap
+echo Moving mailcap
     cp ./.mailcap ~/.mailcap
 
-echo Created Ranger Config Directory
+echo Creating Ranger Config Directory
     mkdir -p ~/.config/ranger
     sudo mkdir -p /root/.config/ranger
 
-echo Moved commands.py
+echo Moving commands.py
     cp ./commands.py ~/.config/ranger/commands.py
     sudo cp ./commands.py /root/.config/ranger/commands.py
 
-echo Moved rc.conf
+echo Moving rc.conf
     cp ./rc.conf ~/.config/ranger/rc.conf
     sudo cp ./rc.conf /root/.config/ranger/rc.conf
 
-echo Moved rifle.conf
+echo Moving rifle.conf
     cp ./rifle.conf ~/.config/ranger/rifle.conf
     sudo cp ./rifle.conf /root/.config/ranger/rifle.conf
 
-echo Moved scope.sh
+echo Moving scope.sh
     cp ./scope.sh ~/.config/ranger/scope.sh
     sudo cp ./scope.sh /root/.config/ranger/scope.sh
 
@@ -63,3 +63,5 @@ echo Moving Neofetch configs
 
     cp ./config.conf ~/.config/neofetch/config.conf
     sudo cp ./config.conf /root/.config/neofetch/config.conf
+
+echo Finished
