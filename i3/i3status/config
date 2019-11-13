@@ -14,7 +14,8 @@ general {
 # order += "ipv6"
 # order += "wireless _first_"
 # order += "ethernet _first_"
-order += "tztime local"
+order += "tztime local_time"
+order += "tztime local_date"
 order += "battery all"
 order += "memory"
 order += "disk /"
@@ -32,19 +33,21 @@ ethernet _first_ {
 
 battery all {
         # format = "%status %percentage %remaining %emptytime"
-        format = "BAT %status %percentage"
+        format = "BAT %status%percentage"
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
-        # status_chr = ""
-        status_chr = "⚡"
+        status_chr = ""
+        # status_chr = "⚡"
         # status_bat = "bat"
         # status_bat = "☉"
-        status_bat = ""
+        # status_bat = ""
+        status_bat = "⚡"
         # status_unk = "?"
         status_unk = ""
         # status_full = ""
-        status_full = "☻"
+        # status_full = "☻"
+        status_full = ""
         low_threshold = 15
         threshold_type = time
 }
@@ -63,6 +66,10 @@ memory {
         format_degraded = "MEMORY < %available"
 }
 
-tztime local {
-        format = "%H:%M | %a %m/%d"
+tztime local_date {
+        format = "%a %m/%d"
+}
+
+tztime local_time {
+    format = "%H:%M"
 }
