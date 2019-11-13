@@ -60,8 +60,19 @@ call plug#end()
     inoremap jk <ESC>
     set wildmenu
 
-    " colorscheme wal
-    colorscheme onedark
+    colorscheme wal
+    " colorscheme onedark
+
+" Toggle Colors
+    function ToggleColors()
+        if (g:colors_name == "wal")
+            :colorscheme onedark
+        else
+            :colorscheme wal
+        endif
+    endfunction
+
+    nnoremap <C-b> :call ToggleColors()<CR>
 
 " Fix splits
     set splitbelow splitright
