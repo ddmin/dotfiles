@@ -122,6 +122,10 @@ call plug#end()
     map <leader>k <C-w>k
     map <leader>l <C-w>l
 
+" Resize Horizontal Windows
+    nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
+    nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
 " Enable Goyo by default for writing certain files
     autocmd BufRead,BufNewFile *.md :Goyo 80
     autocmd BufRead vimtutor :Goyo 80
