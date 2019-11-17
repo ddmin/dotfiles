@@ -194,6 +194,9 @@ gaps outer 7
 
 bindsym $mod+r mode "resize"
 
+# toggle i3bar
+bindsym $mod+m bar mode toggle
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
