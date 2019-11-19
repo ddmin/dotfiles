@@ -40,6 +40,9 @@ call plug#begin('~/.vim/plugged')
 " one dark
     Plug 'joshdick/onedark.vim'
 
+" dracula
+    Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 " Basics
@@ -62,16 +65,21 @@ call plug#end()
 
     colorscheme wal
     " colorscheme onedark
+    " colorscheme dracula
 
 " Toggle Colors
     function ToggleColors()
         if (g:colors_name == "wal")
             :colorscheme onedark
             hi Normal guibg=NONE ctermbg=NONE
+        elseif (g:colors_name == "onedark")
+            :colorscheme dracula
+            hi Normal guibg=NONE ctermbg=NONE
         else
             :colorscheme wal
             hi Normal guibg=NONE ctermbg=NONE
         endif
+        echo g:colors_name
     endfunction
 
     nnoremap <C-b> :call ToggleColors()<CR>
