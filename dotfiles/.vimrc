@@ -67,8 +67,10 @@ call plug#end()
     function ToggleColors()
         if (g:colors_name == "wal")
             :colorscheme onedark
+            hi Normal guibg=NONE ctermbg=NONE
         else
             :colorscheme wal
+            hi Normal guibg=NONE ctermbg=NONE
         endif
     endfunction
 
