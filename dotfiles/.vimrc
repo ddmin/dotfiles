@@ -4,7 +4,7 @@
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
 
-let mapleader =" "
+let mapleader = " "
 
 " Automatically download Plugged if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
