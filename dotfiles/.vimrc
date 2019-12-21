@@ -16,6 +16,9 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
+" vim-python
+    Plug 'vim-python/python-syntax'
+
 " goyo.vim
     Plug 'junegunn/goyo.vim'
 
@@ -49,9 +52,9 @@ call plug#end()
     set nocompatible
     filetype plugin on
     set encoding=utf-8
-    syntax on
     set showcmd
 
+    syntax on
     set wrap
     set linebreak
     set nolist
@@ -63,22 +66,22 @@ call plug#end()
     inoremap jk <ESC>
     set wildmenu
 
-    colorscheme wal
-    " colorscheme onedark
+    colorscheme onedark
+    hi Normal guibg=NONE ctermbg=NONE
+    " colorscheme wal
     " colorscheme dracula
 
 " Toggle Colors
     function ToggleColors()
         if (g:colors_name == "wal")
             :colorscheme onedark
-            hi Normal guibg=NONE ctermbg=NONE
         elseif (g:colors_name == "onedark")
             :colorscheme dracula
-            hi Normal guibg=NONE ctermbg=NONE
         else
             :colorscheme wal
-            hi Normal guibg=NONE ctermbg=NONE
         endif
+
+        hi Normal guibg=NONE ctermbg=NONE
         echo g:colors_name
     endfunction
 
@@ -143,3 +146,8 @@ call plug#end()
 " Enable devicons
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
+
+" Python Syntax
+    let g:python_highlight_all = 1
+
+
