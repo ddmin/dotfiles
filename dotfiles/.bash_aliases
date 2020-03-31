@@ -35,7 +35,7 @@ extract () {
 alias vim='nvim'
 
 # change wallpaper
-alias chwal='wal --vte -q -i ~/Pictures/AnimeWallpapers && neofetch'
+alias chwal='wal --vte -q -i ~/Pictures/Wallpapers && neofetch'
 
 # change wallpaper to specific image
 function bkg() {
