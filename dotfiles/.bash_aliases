@@ -55,3 +55,6 @@ alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && nvim /tmp/vimtutor'
 function title() {
     echo -e "set title: $1\033]0;$@\007"
 }
+
+# Mono Audio
+alias mix=' pacmd load-module module-remap-sink sink_name=mono master=bluez_sink.1A_12_36_DB_2D_25.a2dp_sink channels=1 channel_map=mono'
