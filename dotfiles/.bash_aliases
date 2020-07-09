@@ -57,4 +57,4 @@ function title() {
 }
 
 # Mono Audio
-alias mix=' pacmd load-module module-remap-sink sink_name=mono master=bluez_sink.1A_12_36_DB_2D_25.a2dp_sink channels=1 channel_map=mono'
+alias mix=' pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1f.3.analog-stereo channels=1 channel_map=mono'
