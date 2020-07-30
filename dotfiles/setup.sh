@@ -1,5 +1,7 @@
 # Shell script to automatically download and configure dotfiles
 
+sudo echo ""
+
 # Move dotfiles to home directory
 echo Moving bash aliases
     cp ./.bash_aliases ~/.bash_aliases
