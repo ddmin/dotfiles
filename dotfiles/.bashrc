@@ -28,10 +28,11 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 # Add Bash directory to path
-export PATH="$PATH:/home/ddmin/.local/bin"
 export PATH="$PATH:/home/ddmin/Code/Bash"
 export PATH="$PATH:/home/ddmin/Code/Python/CLI"
 export PATH="$PATH:/home/ddmin/Code/Python/BrainFook"
+export PATH="$PATH:/home/ddmin/Code/Python/Entei"
+export PATH="$PATH:/home/ddmin/Code/Python/Vert"
 
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
