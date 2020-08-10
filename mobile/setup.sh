@@ -1,5 +1,5 @@
 # bashrc
-cp ./.bashrc ~/.bashrc
+cp ./.zshrc ~/.zshrc
 
 # vimrc
 cp ./.vimrc ~/.vimrc

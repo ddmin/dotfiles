@@ -100,3 +100,39 @@ source $ZSH/oh-my-zsh.sh
 alias chcolor='/data/data/com.termux/files/home/.termux/colors.sh'
 alias chfont='/data/data/com.termux/files/home/.termux/fonts.sh'
 source /data/data/com.termux/files/home/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# remove the termux nonsense
+clear
+
+B='   '
+
+# Android Fetch
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+
+USER='ddmin'
+PHONE='galaxy_s7'
+OS='os     Android 8.0.0'
+HOST='host   Samsung HEROQ LTE PROJECT Rev15'
+
+CYAN='\033[0;35m'
+PURPLE='\033[0;36m'
+NC='\033[0m'
+
+echo -e "${GREEN}"
+echo -e "  ;,           ,;"
+echo -e "   ';,.-----.,;'"
+echo -e "  ,'           ',${B}  ${RED}${USER}${NC}@${BLUE}${PHONE}${GREEN}"
+echo -e " /    O     O    \\${B} ${CYAN}${OS}${GREEN}"
+echo -e "|                 |${B}${PURPLE}${HOST}${GREEN}"
+echo -e "'-----------------'"
+echo -e "${NC}"
+
+# Set default editor
+export EDITOR='vim'
+export VISUAL='vim'
+
+# aliases
+alias l='ls'
+alias la='ls -a'
