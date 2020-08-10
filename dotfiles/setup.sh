@@ -66,3 +66,5 @@ echo Moving Neofetch configs
     sudo cp ./config.conf /root/.config/neofetch/config.conf
 
 echo Finished
+
+echo ""

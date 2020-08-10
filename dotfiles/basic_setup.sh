@@ -12,3 +12,5 @@ echo Moving vimrc
     sudo cp ./basic_vimrc /root/.vimrc
 
 echo Finished
+
+echo ""
