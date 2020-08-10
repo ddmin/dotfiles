@@ -1,4 +1,8 @@
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
+
+# prompt
+PROMPT='%B%F{240}%1~%f%b %# '
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
