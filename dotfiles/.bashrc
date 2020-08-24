@@ -28,6 +28,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 # Add Bash directory to path
+export PATH="$PATH:/home/ddmin/.local/bin"
 export PATH="$PATH:/home/ddmin/Code/Bash"
 export PATH="$PATH:/home/ddmin/Code/Python/CLI"
 export PATH="$PATH:/home/ddmin/Code/Python/BrainFook"

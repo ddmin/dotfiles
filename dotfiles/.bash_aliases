@@ -61,3 +61,6 @@ alias mix=' pacmd load-module module-remap-sink sink_name=mono master=alsa_outpu
 
 # fix sound
 alias sound='sudo alsa force-reload'
+
+# add camera
+alias cam='VBoxManage controlvm "Windows 10" webcam attach .1'
