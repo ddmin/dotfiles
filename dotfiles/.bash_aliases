@@ -45,9 +45,6 @@ function bkg() {
 # change wallpaper to Linux Mint default wallpapers
 alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetch'
 
-# try to keep colorscheme after opening file in ranger
-alias ranger='ranger && wal --vte -q -R'
-
 # open vimtutor with my vim settings
 alias vimtutor='cp ~/Documents/vimtutor /tmp/vimtutor && nvim /tmp/vimtutor'
 
