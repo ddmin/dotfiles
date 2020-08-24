@@ -20,9 +20,6 @@ set -o vi
 # change jk to esc in vi mode
 bind '"jk":vi-movement-mode'
 
-# set colorscheme to current wallpaper
-wal --vte -q -R
-
 # Set default editor
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -37,9 +34,6 @@ export PATH="$PATH:/home/ddmin/Code/Python/Vert"
 
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
-
-# Start neofetch
-neofetch
 
 # bash aliases
 if [ -f ~/.bash_aliases ]; then
@@ -137,3 +131,9 @@ fi
 
 # Enable fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# set colorscheme to current wallpaper
+wal --vte -q -R
+
+# Start neofetch
+neofetch
