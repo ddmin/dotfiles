@@ -139,10 +139,6 @@ call plug#end()
     nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
     nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" Enable Goyo by default for writing certain files
-    autocmd BufRead,BufNewFile *.md :Goyo 80
-    autocmd BufRead vimtutor :Goyo 80
-
 " Enable devicons
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
