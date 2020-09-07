@@ -133,7 +133,7 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # set colorscheme to current wallpaper
-wal --vte -q -R
+# wal --vte -q -R
 
 # Start neofetch
 neofetch
