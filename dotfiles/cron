@@ -23,4 +23,4 @@
 #
 # m h  dom mon dow   command
 * * * * * cat /home/ddmin/Documents/list > /home/ddmin/Code/Web/Research/list
-* * * * * python3 /home/ddmin/Code/Python/Entei/mirai >> /tmp/mirai_output
+* * * * * python3 /home/ddmin/Code/Python/Entei/mirai > /dev/null
