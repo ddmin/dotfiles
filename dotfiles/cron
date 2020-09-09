@@ -24,4 +24,4 @@
 # m h  dom mon dow   command
 * * * * * cat /home/ddmin/Documents/list > /home/ddmin/Code/Web/Research/list
 * * * * * python3 /home/ddmin/Code/Python/Entei/mirai > /dev/null
-* 9 * * * python3 /home/ddmin/Code/Python/Entei/Files/misc/popular.py > /dev/null
+0 0 * * * python3 /home/ddmin/Code/Python/Entei/Files/misc/popular.py > /dev/null
