@@ -67,9 +67,9 @@ call plug#end()
     set wildmenu
 
     colorscheme onedark
+    " colorscheme dracula
     hi Normal guibg=NONE ctermbg=NONE
     " colorscheme wal
-    " colorscheme dracula
 
 " Toggle Colors
     function ToggleColors()
