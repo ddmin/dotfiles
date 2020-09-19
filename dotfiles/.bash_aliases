@@ -35,7 +35,7 @@ extract () {
 alias vim='nvim'
 
 # change wallpaper
-alias chwal='wal --vte -q -i ~/Pictures/Wallpapers && neofetch'
+alias chwal='wal --vte -q -i ~/Pictures/Wallpapers'
 
 # change wallpaper to specific image
 function bkg() {
@@ -43,7 +43,7 @@ function bkg() {
 }
 
 # change wallpaper to Linux Mint default wallpapers
-alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined && neofetch'
+alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
 
 # set terminal tab names
 function title() {
