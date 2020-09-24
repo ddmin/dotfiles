@@ -29,8 +29,10 @@ export PATH="$PATH:/home/ddmin/.local/bin"
 export PATH="$PATH:/home/ddmin/Code/Bash"
 export PATH="$PATH:/home/ddmin/Code/Python/CLI"
 export PATH="$PATH:/home/ddmin/Code/Python/BrainFook"
+export PATH="$PATH:/home/ddmin/Code/Python/Chemistry"
 export PATH="$PATH:/home/ddmin/Code/Python/Entei"
 export PATH="$PATH:/home/ddmin/Code/Python/Entei/Files/misc"
+export PATH="$PATH:/home/ddmin/Code/Python/TTS"
 export PATH="$PATH:/home/ddmin/Code/Python/Vert"
 
 # vim man pages
