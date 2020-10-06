@@ -60,4 +60,6 @@ alias sound='sudo alsa force-reload'
 alias cam='VBoxManage controlvm "Windows 10" webcam attach .1'
 
 # vpn
-alias vpn='sudo protonvpn'
+alias vpns='protonvpn s'
+alias vpnc='sudo protonvpn c'
+alias vpnd='sudo protonvpn d'
