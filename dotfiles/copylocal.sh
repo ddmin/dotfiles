@@ -39,4 +39,7 @@ echo Copying init.vim
 echo Copying neofetch
     cp ~/.config/neofetch/config.conf ./config.conf
 
+echo Copying python3 requirements
+    pip3 freeze > python-requirements.txt
+
 echo Finished

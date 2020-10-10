@@ -160,9 +160,9 @@ call plug#end()
 
 " vim-go
     let g:deoplete#enable_at_startup = 1
-    call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
     let g:go_highlight_structs = 1
     let g:go_highlight_methods = 1
     let g:go_highlight_functions = 1
     let g:go_highlight_operators = 1
     let g:go_highlight_build_constraints = 1
+    call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
