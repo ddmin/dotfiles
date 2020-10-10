@@ -16,8 +16,20 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
+" deoplete
+    if has('nvim')
+      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
+    endif
+
 " vim-python
     Plug 'vim-python/python-syntax'
+
+" vim-go
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " goyo.vim
     Plug 'junegunn/goyo.vim'
@@ -146,4 +158,6 @@ call plug#end()
 " Python Syntax
     let g:python_highlight_all = 1
 
-
+" vim-go
+    let g:deoplete#enable_at_startup = 1
+    call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
