@@ -165,4 +165,9 @@ call plug#end()
     let g:go_highlight_functions = 1
     let g:go_highlight_operators = 1
     let g:go_highlight_build_constraints = 1
+    let g:go_echo_command_info = 0
     call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+
+" deoplete tab completion
+    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+    inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
