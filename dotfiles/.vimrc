@@ -37,6 +37,9 @@ call plug#begin('~/.vim/plugged')
 " fzf
     Plug '~/.fzf'
 
+" CSS color
+    Plug 'ap/vim-css-color'
+
 " vim-airline
  	Plug 'vim-airline/vim-airline'
 

@@ -24,7 +24,11 @@ bind '"jk":vi-movement-mode'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-export GOPATH="/home/ddmin/Code/Go"
+# Go directories
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="/home/ddmin/Code/Go/gopath"
+export PATH="$PATH:$GOPATH/bin"
+export GOPATH="$GOPATH:/home/ddmin/Code/Go"
 
 # Add Bash directory to path
 export PATH="$PATH:/home/ddmin/.local/bin"
@@ -36,7 +40,6 @@ export PATH="$PATH:/home/ddmin/Code/Python/Entei"
 export PATH="$PATH:/home/ddmin/Code/Python/Entei/Files/misc"
 export PATH="$PATH:/home/ddmin/Code/Python/TTS"
 export PATH="$PATH:/home/ddmin/Code/Python/Vert"
-export PATH="$PATH:/usr/local/go/bin"
 
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
