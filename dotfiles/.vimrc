@@ -28,29 +28,20 @@ call plug#begin('~/.vim/plugged')
 " NERD commenter
     Plug 'preservim/nerdcommenter'
 
-" vim-python
-    Plug 'vim-python/python-syntax'
+" deoplete-python
+    Plug 'deoplete-plugins/deoplete-jedi'
 
 " vim-go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" goyo.vim
-    Plug 'junegunn/goyo.vim'
-
 " fzf
     Plug '~/.fzf'
-
-" pywal
-    Plug 'dylanaraps/wal.vim'
 
 " vim-airline
  	Plug 'vim-airline/vim-airline'
 
 " vim-airline-themes
     Plug 'vim-airline/vim-airline-themes'
-
-" fugitive
-    Plug 'tpope/vim-fugitive'
 
 " vim-devicons
     Plug 'ryanoasis/vim-devicons'
@@ -81,26 +72,10 @@ call plug#end()
     inoremap jk <ESC>
     set wildmenu
 
+" colors
     colorscheme onedark
     " colorscheme dracula
     hi Normal guibg=NONE ctermbg=NONE
-    " colorscheme wal
-
-" Toggle Colors
-    function ToggleColors()
-        if (g:colors_name == "wal")
-            :colorscheme onedark
-        elseif (g:colors_name == "onedark")
-            :colorscheme dracula
-        else
-            :colorscheme wal
-        endif
-
-        hi Normal guibg=NONE ctermbg=NONE
-        echo g:colors_name
-    endfunction
-
-    nnoremap <C-b> :call ToggleColors()<CR>
 
 " Fix splits
     set splitbelow splitright
@@ -118,10 +93,7 @@ call plug#end()
         let g:airline_symbols = {}
     endif
 
-" Goyo
-    map <leader>g :Goyo<CR>
-
-    " Remove trailing white space on save
+" Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
 
 " fzf
@@ -170,9 +142,6 @@ call plug#end()
 " Enable devicons
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
-
-" Python Syntax
-    let g:python_highlight_all = 1
 
 " vim-go
     let g:deoplete#enable_at_startup = 1
