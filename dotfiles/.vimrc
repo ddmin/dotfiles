@@ -25,6 +25,9 @@ call plug#begin('~/.vim/plugged')
       Plug 'roxma/vim-hug-neovim-rpc'
     endif
 
+" NERD commenter
+    Plug 'preservim/nerdcommenter'
+
 " vim-python
     Plug 'vim-python/python-syntax'
 
@@ -151,6 +154,19 @@ call plug#end()
     nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
     nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
+" auto close
+    inoremap ( ()<C-c>i
+    inoremap { {}<C-c>i
+    inoremap [ []<C-c>i
+    inoremap " ""<C-c>i
+
+" comment
+    nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
+    vnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
+
+    let g:NERDSpaceDelims = 1
+    let g:NERDCompactSexyComs = 1
+
 " Enable devicons
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
@@ -168,6 +184,7 @@ call plug#end()
     let g:go_echo_command_info = 0
     call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
-" deoplete tab completion
+" deoplete
+    set completeopt-=preview
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
