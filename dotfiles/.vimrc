@@ -25,6 +25,9 @@ call plug#begin('~/.vim/plugged')
       Plug 'roxma/vim-hug-neovim-rpc'
     endif
 
+" autoclose
+    Plug 'Townk/vim-autoclose'
+
 " NERD commenter
     Plug 'preservim/nerdcommenter'
 
@@ -128,12 +131,6 @@ call plug#end()
 " Resize Horizontal Windows
     nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
     nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-
-" auto close
-    inoremap ( ()<C-c>i
-    inoremap { {}<C-c>i
-    inoremap [ []<C-c>i
-    inoremap " ""<C-c>i
 
 " comment
     nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
