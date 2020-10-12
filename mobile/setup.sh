@@ -11,8 +11,8 @@ yes | pkg install ranger
 sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
 
 # Install fzf
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    yes | ~/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+yes | ~/.fzf/install
 
 # zshrc
 cp ./.zshrc ~/.zshrc
