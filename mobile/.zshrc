@@ -156,4 +156,4 @@ alias l='ls'
 alias la='ls -a'
 
 # fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
