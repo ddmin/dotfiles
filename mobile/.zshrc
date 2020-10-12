@@ -154,3 +154,10 @@ export VISUAL='vim'
 # aliases
 alias l='ls'
 alias la='ls -a'
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Remap CTRL-T to CTRL-G for fzf
+bind -x '"\C-g": fzf-file-widget'
+bind '"\C-t": transpose-chars'

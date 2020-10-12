@@ -5,6 +5,9 @@
 # |_.__/ \__,_|___/_| |_|_|  \___|
 #
 
+# Start neofetch
+neofetch
+
 # Start powerline-shell
 function _update_ps1() {
     PS1=$(powerline-shell $?)
@@ -147,6 +150,3 @@ bind '"\C-t": transpose-chars'
 
 # set colorscheme to current wallpaper
 # wal --vte -q -R
-
-# Start neofetch
-neofetch
