@@ -37,18 +37,21 @@ alias vim='nvim'
 # change wallpaper
 alias chwal='wal --vte -q -i ~/Pictures/Wallpapers'
 
+# change wallpaper to Linux Mint default wallpapers
+alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
+
 # change wallpaper to specific image
 function bkg() {
     wal --vte -q -i "$1" && neofetch
 }
 
-# change wallpaper to Linux Mint default wallpapers
-alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
-
 # set terminal tab names
 function title() {
     echo -e "set title: $1\033]0;$@\007"
 }
+
+# naviage to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Mono Audio
 alias mix=' pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1f.3.analog-stereo channels=1 channel_map=mono'
