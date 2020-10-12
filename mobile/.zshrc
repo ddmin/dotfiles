@@ -157,6 +157,3 @@ alias la='ls -a'
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Remap CTRL-T to CTRL-G for fzf
-bindkey -s '^g' '$(fzf)'
