@@ -4,9 +4,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # some ls aliases
 alias ls='ls -F --color=auto'
 alias l='logo-ls -X'
-alias ll='logo-ls -lhX'
-alias la='logo-ls -aX'
-alias lla='logo-ls -lahX'
+alias ll='logo-ls -lghX'
+alias la='logo-ls -AX'
+alias lla='logo-ls -lgAhX'
 alias lt='logo-ls -RX'
 
 # Extract archived files
