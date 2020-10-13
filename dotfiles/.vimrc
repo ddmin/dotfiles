@@ -61,10 +61,14 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Basics
-    set nocompatible
     filetype plugin on
+
+    set nocompatible
     set encoding=utf-8
     set showcmd
+
+    set lazyredraw
+    set backspace=indent,eol,start
 
     syntax on
     set wrap
