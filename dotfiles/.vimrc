@@ -78,6 +78,10 @@ call plug#end()
     inoremap jk <ESC>
     set wildmenu
 
+" spell check
+    autocmd BufRead,BufNewFile *.md setlocal spell
+    set complete+=kspell
+
 " colors
     colorscheme onedark
     " colorscheme dracula
