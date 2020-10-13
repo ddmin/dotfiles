@@ -31,6 +31,7 @@ export VISUAL='nvim'
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="/home/ddmin/Code/Go/.gopath"
 export PATH="$PATH:$GOPATH/bin"
+export GOBIN="$GOPATH/bin"
 export GOPATH="$GOPATH:/home/ddmin/Code/Go"
 
 # Add Bash directory to path
