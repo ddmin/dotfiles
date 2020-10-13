@@ -157,3 +157,15 @@ call plug#end()
     set completeopt-=preview
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+
+" italic
+nnoremap <C-i> wbi*<esc>ea*<esc>
+
+" bold
+nnoremap <C-b> wbi**<esc>ea**<esc>
+
+" superscript
+nnoremap <C-c> wbi<sup><esc>ea</sup><esc>
+
+" subscript
+nnoremap <C-c> wbi<sub><esc>ea</sub><esc>
