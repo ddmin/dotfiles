@@ -155,5 +155,8 @@ export VISUAL='vim'
 alias l='ls'
 alias la='ls -a'
 
+# naviage to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
