@@ -67,7 +67,6 @@ call plug#end()
     set encoding=utf-8
     set showcmd
 
-    set lazyredraw
     set backspace=indent,eol,start
 
     syntax on
@@ -81,10 +80,6 @@ call plug#end()
     set ic
     inoremap jk <ESC>
     set wildmenu
-
-" spell check
-    autocmd BufRead,BufNewFile *.md setlocal spell
-    set complete+=kspell
 
 " colors
     colorscheme onedark
@@ -160,25 +155,28 @@ call plug#end()
     let g:go_highlight_operators = 1
     let g:go_highlight_build_constraints = 1
     let g:go_echo_command_info = 0
+
     call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
-" deoplete
+" word suggest
     set completeopt-=preview
+    set completeopt+=noinsert
+
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 " italic
-nnoremap <C-i> wbi*<esc>ea*<esc>h
-vnoremap <silent> <C-i> :s/\%V.*\%V/\*\0\*<CR>:nohl<CR><C-l>``f*
+    nnoremap <C-i> wbi*<esc>ea*<esc>h
+    vnoremap <silent> <C-i> :s/\%V.*\%V/\*\0\*<CR>:nohl<CR><C-l>``f*
 
 " bold
-nnoremap <C-b> wbi**<esc>ea**<esc>hh
-vnoremap <silent> <C-b> :s/\%V.*\%V/\*\*\0\*\*<CR>:nohl<CR><C-l>``3f*
+    nnoremap <C-b> wbi**<esc>ea**<esc>hh
+    vnoremap <silent> <C-b> :s/\%V.*\%V/\*\*\0\*\*<CR>:nohl<CR><C-l>``3f*
 
 " superscript
-nnoremap <C-k> wbi<sup><esc>ea</sup><esc>F<h
-vnoremap <silent> <C-k> :s/\%V.*\%V/<sup>\0<\/sup><CR>:nohl<CR><C-l>``2f>
+    nnoremap <C-k> wbi<sup><esc>ea</sup><esc>F<h
+    vnoremap <silent> <C-k> :s/\%V.*\%V/<sup>\0<\/sup><CR>:nohl<CR><C-l>``2f>
 
 " subscript
-nnoremap <C-j> wbi<sub><esc>ea</sub><esc>F<h
-vnoremap <silent> <C-j> :s/\%V.*\%V/<sub>\0<\/sub><CR>:nohl<CR><C-l>``2f>
+    nnoremap <C-j> wbi<sub><esc>ea</sub><esc>F<h
+    vnoremap <silent> <C-j> :s/\%V.*\%V/<sub>\0<\/sub><CR>:nohl<CR><C-l>``2f>
