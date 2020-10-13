@@ -69,7 +69,7 @@ onboard==1.4.1
 PAM==0.4.2
 parso==0.7.1
 pexpect==4.2.1
-Pillow==7.2.0
+Pillow==5.4.1
 Pillow-SIMD==6.0.0.post0
 pprintpp==0.4.0
 praw==6.4.0
