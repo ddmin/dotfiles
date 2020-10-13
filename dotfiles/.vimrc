@@ -168,4 +168,4 @@ nnoremap <C-b> wbi**<esc>ea**<esc>
 nnoremap <C-c> wbi<sup><esc>ea</sup><esc>
 
 " subscript
-nnoremap <C-c> wbi<sub><esc>ea</sub><esc>
+nnoremap <C-s> wbi<sub><esc>ea</sub><esc>
