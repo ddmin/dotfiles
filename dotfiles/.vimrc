@@ -108,7 +108,8 @@ call plug#end()
 " Highlight searches and <Leader Leader> to unhighlight
     set incsearch
     set hlsearch
-    nnoremap <leader><leader> :nohl<CR><C-l>
+
+    nnoremap <silent> <leader><leader> :nohl<CR><C-l>
 
 " Tabs
     set tabstop=4
@@ -160,12 +161,16 @@ call plug#end()
 
 " italic
 nnoremap <C-i> wbi*<esc>ea*<esc>
+vnoremap <silent> <C-i> :s/\%V.*\%V/\*\0\*<CR>:nohl<CR><C-l>
 
 " bold
 nnoremap <C-b> wbi**<esc>ea**<esc>
+vnoremap <silent> <C-b> :s/\%V.*\%V/\*\*\0\*\*<CR>:nohl<CR><C-l>
 
 " superscript
-nnoremap <C-c> wbi<sup><esc>ea</sup><esc>
+nnoremap <C-k> wbi<sup><esc>ea</sup><esc>
+vnoremap <silent> <C-k> :s/\%V.*\%V/<sup>\0<\/sup><CR>:nohl<CR><C-l>
 
 " subscript
-nnoremap <C-s> wbi<sub><esc>ea</sub><esc>
+nnoremap <C-j> wbi<sub><esc>ea</sub><esc>
+vnoremap <silent> <C-j> :s/\%V.*\%V/<sub>\0<\/sub><CR>:nohl<CR><C-l>
