@@ -3,11 +3,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # some ls aliases
 alias ls='ls -F --color=auto'
-alias l='lsd --group-dirs first -F'
-alias ll='lsd --group-dirs first -lF'
-alias la='lsd --group-dirs first -aF'
-alias lla='lsd --group-dirs first -alF'
-alias lt='lsd --tree'
+alias l='logo-ls -X'
+alias ll='logo-ls -lhX'
+alias la='logo-ls -aX'
+alias lla='logo-ls -lahX'
+alias lt='logo-ls -RX'
 
 # Extract archived files
 extract () {
