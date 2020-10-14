@@ -19,6 +19,9 @@ call plug#begin('~/.vim/plugged')
 " YCM
     Plug 'Valloric/YouCompleteMe'
 
+" unicode.vim
+    Plug 'chrisbra/unicode.vim'
+
 " autoclose
     Plug 'Townk/vim-autoclose'
 
@@ -104,7 +107,7 @@ call plug#end()
     set softtabstop=4
     set shiftwidth=4
     set expandtab
-    set smartindent
+    set autoindent
 
 " Remap <Ctrl-W>v to open blank
     nnoremap <C-w>v :vnew<CR>
@@ -120,6 +123,10 @@ call plug#end()
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
+
+" Unicode Symbol
+    nnoremap <C-c> :UnicodeSearch!<space>
+    inoremap <C-c> <esc>:UnicodeSearch!<space>
 
 " comment
     nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>

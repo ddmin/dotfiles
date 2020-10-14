@@ -46,7 +46,7 @@ export PATH="$PATH:/home/ddmin/Code/Python/TTS"
 export PATH="$PATH:/home/ddmin/Code/Python/Vert"
 
 # vim man pages
-export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u ~/.basic_vimrc --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 # bash aliases
 if [ -f ~/.bash_aliases ]; then
