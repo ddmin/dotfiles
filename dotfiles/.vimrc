@@ -25,6 +25,9 @@ call plug#begin('~/.vim/plugged')
 " autoclose
     Plug 'Townk/vim-autoclose'
 
+" vim-surround
+    Plug 'tpope/vim-surround'
+
 " NERD commenter
     Plug 'preservim/nerdcommenter'
 
