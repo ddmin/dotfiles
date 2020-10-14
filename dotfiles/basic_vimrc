@@ -52,7 +52,3 @@ let mapleader = " "
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
-
-" Resize Horizontal Windows
-    nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
-    nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
