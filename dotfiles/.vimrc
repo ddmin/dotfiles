@@ -16,8 +16,8 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
-" deoplete
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" YCM
+    Plug 'Valloric/YouCompleteMe'
 
 " autoclose
     Plug 'Townk/vim-autoclose'
@@ -25,14 +25,11 @@ call plug#begin('~/.vim/plugged')
 " NERD commenter
     Plug 'preservim/nerdcommenter'
 
-" deoplete-python
-    Plug 'deoplete-plugins/deoplete-jedi'
+" fzf
+    Plug '~/.fzf'
 
 " vim-go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" fzf
-    Plug '~/.fzf'
 
 " CSS color
     Plug 'ap/vim-css-color'
@@ -49,10 +46,17 @@ call plug#begin('~/.vim/plugged')
 " one dark
     Plug 'joshdick/onedark.vim'
 
-" dracula
-    Plug 'dracula/vim', { 'as': 'dracula' }
-
 call plug#end()
+
+" Set airline theme
+    set t_Co=256
+
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme='powerlineish'
+
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
 
 " Basics
     filetype plugin on
@@ -60,8 +64,6 @@ call plug#end()
     set nocompatible
     set encoding=utf-8
     set showcmd
-
-    set backspace=indent,eol,start
 
     syntax on
     set wrap
@@ -77,7 +79,6 @@ call plug#end()
 
 " colors
     colorscheme onedark
-    " colorscheme dracula
     hi Normal guibg=NONE ctermbg=NONE
 
 " Fix splits
@@ -85,16 +86,6 @@ call plug#end()
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Set airline theme
-    set t_Co=256
-
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme='powerlineish'
-
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
 
 " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
@@ -110,9 +101,10 @@ call plug#end()
 
 " Tabs
     set tabstop=4
+    set softtabstop=4
     set shiftwidth=4
     set expandtab
-    set autoindent
+    set smartindent
 
 " Remap <Ctrl-W>v to open blank
     nnoremap <C-w>v :vnew<CR>
@@ -126,9 +118,8 @@ call plug#end()
     map <leader>k <C-w>k
     map <leader>l <C-w>l
 
-" Resize Horizontal Windows
-    nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
-    nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+" YCM
+    nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
 " comment
     nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
@@ -141,23 +132,9 @@ call plug#end()
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
 
-" vim-go
-    let g:deoplete#enable_at_startup = 1
-    let g:go_highlight_structs = 1
-    let g:go_highlight_methods = 1
-    let g:go_highlight_functions = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_build_constraints = 1
+" turn off go display
     let g:go_echo_command_info = 0
-
-    call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-
-" word suggest
     set completeopt-=preview
-    set completeopt+=noinsert
-
-    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-    inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 " italic
     nnoremap <C-i> wbi*<esc>ea*<esc>h
