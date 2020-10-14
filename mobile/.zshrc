@@ -160,5 +160,3 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-bindkey -s ^g ^f
