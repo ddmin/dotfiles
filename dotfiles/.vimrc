@@ -129,9 +129,9 @@ call plug#end()
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
-" Unicode Symbol
-    nnoremap <C-c> :UnicodeSearch!<space>
-    inoremap <C-c> <esc>:UnicodeSearch!<space>
+" Unicode Symbols
+    imap <C-c> <Plug>(UnicodeFuzzy)
+    nmap <C-c> i<Plug>(UnicodeFuzzy)
 
 " comment
     nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
