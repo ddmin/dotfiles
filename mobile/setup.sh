@@ -5,7 +5,6 @@ termux-setup-storage
 yes | pkg install vim
 yes | pkg install git
 yes | pkg install ranger
-yes | pkg install fzf
 yes | pkg install golang
 
 # termux-ohmyzsh install script
