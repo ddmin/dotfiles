@@ -6,6 +6,7 @@ yes | pkg install vim
 yes | pkg install git
 yes | pkg install ranger
 yes | pkg install fzf
+yes | pkg install go
 
 # termux-ohmyzsh install script
 # https://github.com/Cabbagec/termux-ohmyzsh
