@@ -86,6 +86,7 @@ call plug#end()
 " colors
     colorscheme onedark
     hi Normal guibg=NONE ctermbg=NONE
+    highlight LineNr ctermfg=lightblue
 
 " Fix splits
     set splitbelow splitright

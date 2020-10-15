@@ -66,7 +66,7 @@ alias cam='VBoxManage controlvm "Windows 10" webcam attach .1'
 alias shotcut='shotcut & exit'
 
 # webcamoid
-alias webcam='webcamoid & exit'
+alias webcamoid='webcamoid & exit'
 
 # vpn
 alias vpns='protonvpn s'
