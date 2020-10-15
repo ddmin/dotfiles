@@ -14,8 +14,8 @@ sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/instal
 # zshrc
 cp ./.zshrc ~/.zshrc
 
-# vimrc
-cp ./.vimrc ~/.vimrc
+# spacevim
+curl -sLf https://spacevim.org/install.sh | bash
 
 # gitconfig
 cp ./.gitconfig ~/.gitconfig
