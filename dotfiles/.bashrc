@@ -29,21 +29,22 @@ export VISUAL='nvim'
 
 # Go directories
 export PATH="$PATH:/usr/local/go/bin"
-export GOPATH="/home/ddmin/Code/Go/.gopath"
+
+export GOPATH="$HOME/Code/Go/.gopath"
 export PATH="$PATH:$GOPATH/bin"
 export GOBIN="$GOPATH/bin"
-export GOPATH="$GOPATH:/home/ddmin/Code/Go"
+export GOPATH="$GOPATH:$HOME/Code/Go"
 
 # Add Bash directory to path
-export PATH="$PATH:/home/ddmin/.local/bin"
-export PATH="$PATH:/home/ddmin/Code/Bash"
-export PATH="$PATH:/home/ddmin/Code/Python/CLI"
-export PATH="$PATH:/home/ddmin/Code/Python/BrainFook"
-export PATH="$PATH:/home/ddmin/Code/Python/Chemistry"
-export PATH="$PATH:/home/ddmin/Code/Python/Entei"
-export PATH="$PATH:/home/ddmin/Code/Python/Entei/Files/misc"
-export PATH="$PATH:/home/ddmin/Code/Python/TTS"
-export PATH="$PATH:/home/ddmin/Code/Python/Vert"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/Code/Bash"
+export PATH="$PATH:$HOME/Code/Python/CLI"
+export PATH="$PATH:$HOME/Code/Python/BrainFook"
+export PATH="$PATH:$HOME/Code/Python/Chemistry"
+export PATH="$PATH:$HOME/Code/Python/Entei"
+export PATH="$PATH:$HOME/Code/Python/Entei/Files/misc"
+export PATH="$PATH:$HOME/Code/Python/TTS"
+export PATH="$PATH:$HOME/Code/Python/Vert"
 
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u ~/.basic_vimrc --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
