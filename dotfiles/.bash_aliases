@@ -32,6 +32,7 @@ extract () {
 }
 
 # use nvim
+alias vi='vim -u ~/.basic_vimrc'
 alias vim='nvim'
 
 # change wallpaper
