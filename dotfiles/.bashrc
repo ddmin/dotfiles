@@ -29,7 +29,7 @@ export VISUAL='nvim'
 
 # Go directories
 export PATH="$PATH:/usr/local/go/bin"
-export GOPATH="$HOME/Code/Go/Go"
+export GOPATH="$HOME/Code/Go"
 export PATH="$PATH:$GOPATH/bin"
 export GOBIN="$GOPATH/bin"
 
