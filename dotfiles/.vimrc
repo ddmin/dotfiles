@@ -129,6 +129,9 @@ call plug#end()
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
+" Vim-Go
+    nnoremap <C-h> :GoRename<CR>
+
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
     nmap <C-c> i<Plug>(UnicodeFuzzy)
