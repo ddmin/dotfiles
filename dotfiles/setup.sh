@@ -65,6 +65,10 @@ echo Moving Neofetch configs
     cp ./config.conf ~/.config/neofetch/config.conf
     sudo cp ./config.conf /root/.config/neofetch/config.conf
 
+echo Creating vim undo directory
+    mkdir -p ~/.vim/undodir
+    sudo mkdir -p ~/.vim/undodir
+
 echo Finished
 
 echo ""
