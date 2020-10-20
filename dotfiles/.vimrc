@@ -22,6 +22,9 @@ call plug#begin('~/.vim/plugged')
 " unicode.vim
     Plug 'chrisbra/unicode.vim'
 
+" undotree
+    Plug 'mbbill/undotree'
+
 " autoclose
     Plug 'Townk/vim-autoclose'
 
@@ -83,6 +86,12 @@ call plug#end()
     inoremap jk <ESC>
     set wildmenu
 
+" undo directory
+    set noswapfile
+    set nobackup
+    set undodir=~/.vim/undodir
+    set undofile
+
 " colors
     colorscheme onedark
     hi Normal guibg=NONE ctermbg=NONE
@@ -131,12 +140,15 @@ call plug#end()
 
 " Vim-Go
     nnoremap <C-h> :GoRename<CR>
-    nnoremap <C-b> :GoRun<CR>
-    nnoremap <C-k> :GoDoc<CR>
+    nnoremap <silent> <C-b> :GoRun<CR>
+    nnoremap <silent> <C-k> :GoDoc<CR>
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
     nmap <C-c> i<Plug>(UnicodeFuzzy)
+
+" undotree
+    nnoremap <silent> <C-z> :UndotreeToggle<CR>
 
 " comment
     nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
