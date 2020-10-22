@@ -4,7 +4,18 @@
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
 
+" Folding {{{
+
 let mapleader = " "
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=syntax
+nnoremap <CR> za
+
+" }}}
+
+" Plugins {{{
 
 " Automatically download Plugged if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -57,17 +68,10 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-" Set airline theme
-    set t_Co=256
+" }}}
 
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme='powerlineish'
+" Basics {{{
 
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-
-" Basics
     filetype plugin on
 
     set nocompatible
@@ -92,14 +96,12 @@ call plug#end()
     set undodir=~/.vim/undodir
     set undofile
 
-" colors
-    colorscheme onedark
-    hi Normal guibg=NONE ctermbg=NONE
-    highlight LineNr ctermfg=lightblue
-    hi CursorLineNr ctermfg=darkmagenta
-
-" Fix splits
-    set splitbelow splitright
+" Tabs
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+    set autoindent
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -107,21 +109,17 @@ call plug#end()
 " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
 
-" fzf
-    map <C-g> :FZF<CR>
-
 " Highlight searches and <Leader Leader> to unhighlight
     set incsearch
     set hlsearch
-
     nnoremap <silent> <leader><leader> :nohl<CR><C-l>
 
-" Tabs
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-    set expandtab
-    set autoindent
+" }}}
+
+" Window Splits {{{
+
+" Fix splits
+    set splitbelow splitright
 
 " Remap <Ctrl-W>v to open blank
     nnoremap <C-w>v :vnew<CR>
@@ -134,6 +132,33 @@ call plug#end()
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
+
+" }}}
+
+" Aesthetics {{{
+
+" Set airline theme
+    set t_Co=256
+
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme='powerlineish'
+
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+" colors
+    colorscheme onedark
+    hi Normal guibg=NONE ctermbg=NONE
+    highlight LineNr ctermfg=lightblue
+    hi CursorLineNr ctermfg=darkmagenta
+
+" }}}
+
+" Plugins Settings {{{
+
+" fzf
+    map <C-g> :FZF<CR>
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
@@ -164,3 +189,7 @@ call plug#end()
 " turn off go display
     let g:go_echo_command_info = 0
     set completeopt-=preview
+
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
