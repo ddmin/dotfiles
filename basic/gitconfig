@@ -1,0 +1,5 @@
+[user]
+	email = billy@billy.com
+	name = billy
+[credential]
+	helper = cache --timeout 600
