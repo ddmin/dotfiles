@@ -52,6 +52,20 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Enable fzf search
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Remap CTRL-T to CTRL-G for fzf
+bind -x '"\C-g": fzf-file-widget'
+bind '"\C-t": transpose-chars'
+
+# set colorscheme to current wallpaper
+# wal --vte -q -R
+
+# ========================================
+# Everything from here are Ubuntu defaults
+# ========================================
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -140,13 +154,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# Enable fzf search
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Remap CTRL-T to CTRL-G for fzf
-bind -x '"\C-g": fzf-file-widget'
-bind '"\C-t": transpose-chars'
-
-# set colorscheme to current wallpaper
-# wal --vte -q -R
