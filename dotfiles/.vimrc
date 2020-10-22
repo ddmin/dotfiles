@@ -11,7 +11,7 @@ set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=syntax
-nnoremap <CR> za
+autocmd FileType vim nnoremap <CR> za
 
 " }}}
 
