@@ -130,9 +130,9 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 
 USER='ddmin'
-PHONE='galaxy_s7'
+PHONE='benjamin'
 OS='os     Android 8.0.0'
-HOST='host   Samsung HEROQ LTE PROJECT Rev15'
+HOST='host   Samsung Galaxy S7'
 
 CYAN='\033[0;35m'
 PURPLE='\033[0;36m'
