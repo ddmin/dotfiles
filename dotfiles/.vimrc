@@ -173,7 +173,7 @@ call plug#end()
 " Vim-Go
     nnoremap <C-h> :GoRename<CR>
     nnoremap <silent> <C-b> :GoRun<CR>
-    nnoremap <silent> <C-d> :GoDoc<CR>
+    nnoremap <silent> <C-s> :GoDoc<CR>
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
