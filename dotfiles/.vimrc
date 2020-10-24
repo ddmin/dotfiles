@@ -77,7 +77,6 @@ call plug#end()
     set nocompatible
     set encoding=utf-8
     set showcmd
-    set clipboard+=unnamedplus
 
     syntax on
     set wrap
