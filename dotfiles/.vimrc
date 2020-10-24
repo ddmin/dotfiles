@@ -122,16 +122,23 @@ call plug#end()
     set splitbelow splitright
 
 " Remap <Ctrl-W>v to open blank
-    nnoremap <C-w>v :vnew<CR>
+    nnoremap <silent> <C-w>v :vnew<CR>
 
 " <Ctrl-W>h to open blank horizontally
-    nnoremap <C-w>h :new<CR>
+    nnoremap <silent> <C-w>h :new<CR>
 
 " Move windows
     noremap <leader>h <C-w>h
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
+
+" resize windows
+    nmap <silent> <S-h> :vertical resize +5<CR>
+    nmap <silent> <S-l> :vertical resize -5<CR>
+
+    nmap <silent> <S-k> :resize +5<CR>
+    nmap <silent> <S-j> :resize -5<CR>
 
 " }}}
 
@@ -166,7 +173,7 @@ call plug#end()
 " Vim-Go
     nnoremap <C-h> :GoRename<CR>
     nnoremap <silent> <C-b> :GoRun<CR>
-    nnoremap <silent> <C-k> :GoDoc<CR>
+    nnoremap <silent> <C-d> :GoDoc<CR>
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
