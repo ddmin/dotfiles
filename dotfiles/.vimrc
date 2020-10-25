@@ -28,7 +28,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " YCM
-    Plug 'Valloric/YouCompleteMe'
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer', 'for': ['go', 'python'] }
 
 " unicode.vim
     Plug 'chrisbra/unicode.vim'
@@ -49,7 +49,7 @@ call plug#begin('~/.vim/plugged')
     Plug '~/.fzf'
 
 " vim-go
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 
 " CSS color
     Plug 'ap/vim-css-color'
@@ -80,7 +80,8 @@ call plug#end()
 
     syntax on
     set wrap
-    set linebreak
+    set redrawtime=10000
+    set lazyredraw
     set nolist
 
     set number
@@ -171,9 +172,9 @@ call plug#end()
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
 " Vim-Go
-    nnoremap <C-h> :GoRename<CR>
-    nnoremap <silent> <C-b> :GoRun<CR>
-    nnoremap <silent> <C-s> :GoDoc<CR>
+    autocmd FileType go nnoremap <C-h> :GoRename<CR>
+    autocmd FileType go nnoremap <silent> <C-b> :GoRun<CR>
+    autocmd FileType go nnoremap <silent> <C-s> :GoDoc<CR>
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
