@@ -41,6 +41,8 @@ let mapleader = " "
     set expandtab
     set autoindent
 
+    set splitbelow splitright
+
 " Remap <Ctrl-W>v to open blank
     nnoremap <C-w>v :vnew<CR>
 
@@ -52,3 +54,10 @@ let mapleader = " "
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
+
+" resize windows
+    nmap <silent> <S-h> :vertical resize +5<CR>
+    nmap <silent> <S-l> :vertical resize -5<CR>
+
+    nmap <silent> <S-k> :resize +5<CR>
+    nmap <silent> <S-j> :resize -5<CR>
