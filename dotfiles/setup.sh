@@ -19,6 +19,9 @@ echo Moving vimrc
     cp ./.vimrc ~/.vimrc
     sudo cp ./.vimrc /root/.vimrc
 
+echo Moving basic_vimrc
+    cp ../basic/basic_vimrc ~/.basic_vimrc
+
 echo Moving init.vim
     mkdir -p ~/.config/nvim && cp ./init.vim ~/.config/nvim/init.vim
     sudo mkdir -p /root/.config/nvim && sudo cp ./init.vim /root/.config/nvim/init.vim
