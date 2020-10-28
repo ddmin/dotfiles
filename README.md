@@ -14,3 +14,6 @@ Dotfiles for Linux
     - config.conf
 - powerline config
     - config.json
+- rofi
+    - desktop files
+    - icons
