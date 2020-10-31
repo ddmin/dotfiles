@@ -160,6 +160,12 @@ call plug#end()
 
 " }}}
 
+" Markdown {{{
+
+autocmd BufWritePost *.md silent !note2pdf %:p
+
+" }}}
+
 " Plugins Settings {{{
 
 " fzf
