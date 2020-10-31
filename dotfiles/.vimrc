@@ -162,7 +162,7 @@ call plug#end()
 
 " Markdown {{{
 
-autocmd BufWritePost *.md silent !note2pdf %:p
+    autocmd BufWritePost *.md silent !note2pdf %:p
 
 " }}}
 

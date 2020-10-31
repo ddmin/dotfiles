@@ -1,7 +1,8 @@
 #!/bin/bash
+# autocompile md to pdf
 
 filename=$1
-target="/tmp/notes"
+target="$(dirname "${filename}")/pdf"
 output="$(basename "$filename" .md).pdf"
 
 mkdir -p $target
@@ -9,3 +10,5 @@ mkdir -p $target
 pandoc \
     --latex-engine=xelatex \
     -o "$target/$output" "$filename" &
+
+echo "$target/$output" > /tmp/lasteditpdf.txt
