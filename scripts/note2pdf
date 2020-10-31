@@ -1,0 +1,11 @@
+#!/bin/bash
+
+filename=$1
+target="/tmp/notes"
+output="$(basename "$filename" .md).pdf"
+
+mkdir -p $target
+
+pandoc \
+    --latex-engine=xelatex \
+    -o "$target/$output" "$filename" &
