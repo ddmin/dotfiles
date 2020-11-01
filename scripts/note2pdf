@@ -6,8 +6,6 @@ target="$(dirname "${filename}")/pdf"
 output="$(basename "$filename" .md).pdf"
 
 mkdir -p $target
-echo $target
-echo $output
 
 pandoc \
     --latex-engine=xelatex \
