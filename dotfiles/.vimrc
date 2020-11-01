@@ -46,7 +46,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdcommenter'
 
 " fzf
-    Plug '~/.fzf'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
 " vim-go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
@@ -163,13 +164,14 @@ call plug#end()
 " Markdown {{{
 
     autocmd BufWritePost /home/*/*.md silent !note2pdf %:p
+    inoremap <expr> <C-f> fzf#vim#complete#path('rg --files ~')
 
 " }}}
 
 " Plugins Settings {{{
 
 " fzf
-    map <C-g> :FZF<CR>
+    map <C-g> :Files<CR>
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
