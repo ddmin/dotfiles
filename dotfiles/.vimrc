@@ -126,6 +126,9 @@ call plug#end()
 " Remap <Ctrl-W>v to open blank
     nnoremap <silent> <C-w>v :vnew<CR>
 
+" clone window
+    nnoremap <silent> <leader>s :vsplit<cr>
+
 " <Ctrl-W>h to open blank horizontally
     nnoremap <silent> <C-w>h :new<CR>
 
