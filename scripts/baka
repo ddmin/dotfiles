@@ -4,11 +4,14 @@
 FILE='/home/ddmin/Code/Bash/backup'
 DIRECTORY="$(dirname "${FILE}")"
 
+# directories to archive
 dirs=("Code" "Documents"  "Pictures")
 
+# loop through directories
 for d in ${dirs[@]}; do
     save_file=$(echo ${d,,})
 
+    # fancy printing
     len=$((40+${#d}))
     printf '=%.0s' `eval echo {1..$len}`
     echo ""
