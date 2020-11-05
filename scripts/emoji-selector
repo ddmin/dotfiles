@@ -1,7 +1,5 @@
 #!/bin/bash
-
-# Original Source:
-# https://gist.github.com/imAliAzhar/f3b16622cd279fb0b019f237a8a12510
+# emoji-selector: display rofi menu and paste selected emoji
 
 EMOJIS_PATH="$HOME/.config/rofi/emoji-list"
 
