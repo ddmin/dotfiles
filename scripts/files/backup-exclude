@@ -1,0 +1,11 @@
+__pycache__
+.git/branches
+.git/hooks
+.git/info
+.git/logs
+.git/objects
+.git/refs
+Rust/*/target
+Go/bin
+Go/pkg
+Go/src/golang.org

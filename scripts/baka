@@ -1,0 +1,21 @@
+#!/bin/bash
+# baka: create tar backups of specified directories
+
+FILE='/home/ddmin/Code/Bash/backup'
+DIRECTORY="$(dirname "${FILE}")"
+
+dirs=("Code" "Documents"  "Pictures")
+
+for d in ${dirs[@]}; do
+    save_file=$(echo ${d,,})
+
+    len=$((40+${#d}))
+    printf '=%.0s' `eval echo {1..$len}`
+    echo ""
+    echo "#           Creating $save_file.tar.xz           #"
+    printf '=%.0s' `eval echo {1..$len}`
+    echo ""
+
+    # create tars while excluding directories from files/backup-exclude
+    tar -X "$DIRECTORY/files/backup-exclude" -cJvf "$save_file.tar.xz" "$d"
+done
