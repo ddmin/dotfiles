@@ -9,7 +9,7 @@ alias l='logo-ls -X'
 alias la='logo-ls -AX'
 
 # exa has better colors and normal numeric ordering
-alias ll='exa --group-directories-first --color=always --icons -la'
+alias ll='exa --group-directories-first --color=always --icons -l'
 alias lt='exa --group-directories-first --color=always --icons -T'
 
 # Extract archived files
