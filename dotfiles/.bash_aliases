@@ -1,13 +1,16 @@
 # send alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# some ls aliases
+# ls aliases
 alias ls='ls -F --color=auto'
+
+# logo-ls has prettier icons
 alias l='logo-ls -X'
-alias ll='logo-ls -lghX'
 alias la='logo-ls -AX'
-alias lla='logo-ls -lgAhX'
-alias lt='logo-ls -RX'
+
+# exa has better colors and normal numeric ordering
+alias ll='exa --group-directories-first --color=always --icons -la'
+alias lt='exa --group-directories-first --color=always --icons -T'
 
 # Extract archived files
 extract () {
