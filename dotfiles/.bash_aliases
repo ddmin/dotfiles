@@ -5,12 +5,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias ls='ls -F --color=auto'
 
 # logo-ls has prettier icons
-alias l='logo-ls -X'
-alias la='logo-ls -AX'
-
-# exa has better colors and normal numeric ordering
-alias ll='exa --group-directories-first --color=always --icons -l'
-alias lt='exa --group-directories-first --color=always --icons -T'
+alias l='logo-ls -v'
+alias la='logo-ls -Av'
+alias ll='logo-ls -vl'
 
 # use nvim
 alias vi='vim -u ~/.basic_vimrc'

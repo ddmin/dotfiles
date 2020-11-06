@@ -3,7 +3,7 @@
 
 filename=$1
 target="$(dirname "${filename}")/pdf"
-output="$(basename "$filename" .md).pdf"
+output="$(basename "$filename" .note).pdf"
 
 mkdir -p $target
 
