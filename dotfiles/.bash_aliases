@@ -7,7 +7,7 @@ alias ls='ls -F --color=auto'
 # logo-ls has prettier icons
 alias l='logo-ls -v'
 alias la='logo-ls -Av'
-alias ll='logo-ls -vl'
+alias ll='logo-ls -vlg'
 
 # use nvim
 alias vi='vim -u ~/.basic_vimrc'
