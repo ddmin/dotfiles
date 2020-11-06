@@ -9,3 +9,4 @@ Rust/*/target
 Go/bin
 Go/pkg
 Go/src/golang.org
+Go/src/gopkg.in
