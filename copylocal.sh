@@ -2,6 +2,7 @@
 
 DOTDIR="./dotfiles"
 
+echo "============== DOTFILES =============="
 echo Copying bash aliases
     cp ~/.bash_aliases "$DOTDIR/.bash_aliases"
 
@@ -44,17 +45,19 @@ echo Copying neofetch
 echo Copying python3 requirements
     pip3 freeze > "$DOTDIR/python-requirements.txt"
 
-echo Finished
+echo DONE
 
 # copy scripts from ~/Code/Bash
 SCRIPTDIR="./scripts"
 
+echo "============== SCRIPTS =============="
 echo "Copying scripts from ~/Code/Bash."
 cp -a ~/Code/Bash/* "$SCRIPTDIR/."
-echo "Done."
+echo DONE
 
 # set up records of files
 RECORDDIR="./record"
+echo "============== RECORDS =============="
 echo "Creating Records."
 # change delimiter
 SAVEIFS=$IFS
@@ -76,7 +79,7 @@ for d in ${dirs[@]}; do
     echo "" >> $save_file
 done
 
-echo "Done."
+echo DONE
 
 # change back
 IFS=$SAVEIFS
