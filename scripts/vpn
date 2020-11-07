@@ -1,0 +1,19 @@
+#!/bin/bash
+# toggle protonvpn
+
+function vpnToggle {
+    VPN=$(protonvpn s)
+    STATUS="$(echo $VPN | grep Connected)"
+
+    # check if VPN is already connected
+    if [ -z "$STATUS" ]
+    then
+        echo "Connecting to VPN..."
+        sudo protonvpn c
+        exit
+    fi
+    echo "Disconnecting from VPN..."
+    sudo protonvpn d
+}
+
+vpnToggle
