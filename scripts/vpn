@@ -8,11 +8,11 @@ function vpnToggle {
     # check if VPN is already connected
     if [ -z "$STATUS" ]
     then
-        echo "Connecting to VPN..."
+        sudo echo "Connecting to VPN..."
         sudo protonvpn c
         exit
     fi
-    echo "Disconnecting from VPN..."
+    sudo echo "Disconnecting from VPN..."
     sudo protonvpn d
 }
 
