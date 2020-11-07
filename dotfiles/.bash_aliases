@@ -31,17 +31,3 @@ function title() {
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-# Mono Audio
-alias mix=' pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1f.3.analog-stereo channels=1 channel_map=mono'
-
-# fix sound
-alias sound='sudo alsa force-reload'
-
-# add camera
-alias cam='VBoxManage controlvm "Windows 10" webcam attach .1'
-
-# vpn
-alias vpns='protonvpn s'
-alias vpnc='sudo protonvpn c'
-alias vpnd='sudo protonvpn d'
