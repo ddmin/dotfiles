@@ -3,10 +3,76 @@
 # config directory for applications
 DOTDIR="$HOME"
 RANGERDIR="$HOME/.config/ranger"
-NEODIR="$HOME/.config/ranger"
+POWERDIR="$HOME/.config/powerline-shell"
+NEODIR="$HOME/.config/neofetch"
 VIMDIR="$HOME/.vim"
+NVIMDIR="$HOME/.config/nvim"
 
 BASIC="./basic"
+NORMAL="./dotfiles"
+
+# regular setup
+
+function setup {
+    echo "============== NORMAL SETUP =============="
+
+    # Move dotfiles to home directory
+    echo Moving bash aliases
+        cp "$NORMAL/.bash_aliases" "$DOTDIR/.bash_aliases"
+
+    echo Moving bashrc
+        cp "$NORMAL/.bashrc" "$DOTDIR/.bashrc"
+
+    echo Moving gitconfig
+        cp "$NORMAL/.gitconfig" "$DOTDIR/.gitconfig"
+
+    echo Moving vimrc
+        cp "$NORMAL/.vimrc" "$DOTDIR/.vimrc"
+
+    echo Moving basic_vimrc
+        cp "$BASIC/basic_vimrc" "$DOTDIR/.basic_vimrc"
+
+    echo Moving init.vim
+        mkdir -p "$NVIMDIR"
+        cp "$NORMAL/init.vim" "$NVIMDIR/init.vim"
+
+    echo Moving inputrc
+        cp "$NORMAL/.inputrc" "$DOTDIR/.inputrc"
+
+    echo Moving Xresources
+        cp "$NORMAL/.Xresources" "$DOTDIR/.Xresources"
+
+    echo Moving powerline configs
+        mkdir -p "$POWERDIR"
+        cp "$NORMAL/config.json" "$POWERDIR/config.json"
+
+    echo Moving mailcap
+        cp "$NORMAL/.mailcap" "$DOTDIR/.mailcap"
+
+    echo Creating Ranger Config Directory
+        mkdir -p "$RANGERDIR"
+
+    echo Moving commands.py
+        cp "$NORMAL/commands.py" "$RANGERDIR/commands.py"
+
+    echo Moving rc.conf
+        cp "$NORMAL/rc.conf" "$RANGERDIR/rc.conf"
+
+    echo Moving rifle.conf
+        cp "$NORMAL/rifle.conf" "$RANGERDIR/rifle.conf"
+
+    echo Moving scope.sh
+        cp "$NORMAL/scope.sh" "$RANGERDIR/scope.sh"
+
+    echo Moving Neofetch configs
+        mkdir -p "$NEODIR"
+        cp "$NORMAL/config.conf" "$NEODIR/config.conf"
+
+    echo Creating vim undo directory
+        mkdir -p "$VIMDIR/undodir"
+
+    echo DONE
+}
 
 # basic setup
 function basic {
@@ -40,7 +106,8 @@ then
     exit
 elif [ $mode == "2" ]
 then
-    echo "TWO"
+    setup
+    exit
 elif [ $mode == "3" ]
 then
     echo "THREE"
@@ -48,26 +115,8 @@ else
     echo "Invalid Option: '$mode'"
     exit
 fi
+
 exit
-
-# basic/setup
-# shell script to automatically move dotfiles
-
-# moving dotfiles to home directory
-echo Moving bash aliases
-    cp ./basic_aliases ~/.bash_aliases
-
-echo Moving bashrc
-    cp ./basic_bashrc ~/.bashrc
-
-echo Moving gitconfig
-    cp ./gitconfig ~/.gitconfig
-
-echo Moving vimrc
-    cp ./basic_vimrc ~/.vimrc
-
-echo Finished
-echo ""
 
 # mobile
 # setup storage
@@ -91,82 +140,3 @@ cp ./.vimrc ~/.vimrc
 
 # gitconfig
 cp ./.gitconfig ~/.gitconfig
-
-#dotfiles
-# Shell script to automatically download and configure dotfiles
-
-sudo echo ""
-
-# Move dotfiles to home directory
-echo Moving bash aliases
-    cp ./.bash_aliases ~/.bash_aliases
-    sudo cp ./.bash_aliases /root/.bash_aliases
-
-echo Moving bashrc
-    cp ./.bashrc ~/.bashrc
-    sudo cp ./.bashrc /root/.bashrc
-
-echo Moving gitconfig
-    cp ./.gitconfig ~/.gitconfig
-    sudo cp ./.gitconfig /root/.gitconfig
-
-echo Moving vimrc
-    cp ./.vimrc ~/.vimrc
-    sudo cp ./.vimrc /root/.vimrc
-
-echo Moving basic_vimrc
-    cp ../basic/basic_vimrc ~/.basic_vimrc
-
-echo Moving init.vim
-    mkdir -p ~/.config/nvim && cp ./init.vim ~/.config/nvim/init.vim
-    sudo mkdir -p /root/.config/nvim && sudo cp ./init.vim /root/.config/nvim/init.vim
-
-echo Moving inputrc
-    cp ./.inputrc ~/.inputrc
-    sudo cp ./.inputrc /root/.inputrc
-
-echo Moving Xresources
-    cp ./.Xresources ~/.Xresources
-
-echo Moving powerline configs
-    mkdir -p ~/.config/powerline-shell && cp ./config.json ~/.config/powerline-shell/config.json
-    sudo mkdir -p /root/.config/powerline-shell && sudo cp ./config.json /root/.config/powerline-shell/config.json
-
-echo Moving mailcap
-    cp ./.mailcap ~/.mailcap
-
-echo Creating Ranger Config Directory
-    mkdir -p ~/.config/ranger
-    sudo mkdir -p /root/.config/ranger
-
-echo Moving commands.py
-    cp ./commands.py ~/.config/ranger/commands.py
-    sudo cp ./commands.py /root/.config/ranger/commands.py
-
-echo Moving rc.conf
-    cp ./rc.conf ~/.config/ranger/rc.conf
-    sudo cp ./rc.conf /root/.config/ranger/rc.conf
-
-echo Moving rifle.conf
-    cp ./rifle.conf ~/.config/ranger/rifle.conf
-    sudo cp ./rifle.conf /root/.config/ranger/rifle.conf
-
-echo Moving scope.sh
-    cp ./scope.sh ~/.config/ranger/scope.sh
-    sudo cp ./scope.sh /root/.config/ranger/scope.sh
-
-echo Moving Neofetch configs
-    # Make neofetch directory if it doesn't exist
-    mkdir -p ~/.config/neofetch
-    sudo mkdir -p /root/.config/neofetch
-
-    cp ./config.conf ~/.config/neofetch/config.conf
-    sudo cp ./config.conf /root/.config/neofetch/config.conf
-
-echo Creating vim undo directory
-    mkdir -p ~/.vim/undodir
-    sudo mkdir -p ~/.vim/undodir
-
-echo Finished
-
-echo ""
