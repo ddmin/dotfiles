@@ -1,4 +1,4 @@
-# Script to automatically move files from home directory to this repo
+# COPYLOCAL: automatically move dotfiles from ~/ to this repository
 
 DOTDIR="./dotfiles"
 
