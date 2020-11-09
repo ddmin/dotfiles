@@ -32,24 +32,21 @@ function setup {
     echo Moving basic_vimrc
         cp "$BASIC/basic_vimrc" "$DOTDIR/.basic_vimrc"
 
-    echo Moving init.vim
-        mkdir -p "$NVIMDIR"
-        cp "$NORMAL/init.vim" "$NVIMDIR/init.vim"
+    echo Moving Xresources
+        cp "$NORMAL/.Xresources" "$DOTDIR/.Xresources"
 
     echo Moving inputrc
         cp "$NORMAL/.inputrc" "$DOTDIR/.inputrc"
 
-    echo Moving Xresources
-        cp "$NORMAL/.Xresources" "$DOTDIR/.Xresources"
-
-    echo Moving powerline configs
-        mkdir -p "$POWERDIR"
-        cp "$NORMAL/config.json" "$POWERDIR/config.json"
-
     echo Moving mailcap
         cp "$NORMAL/.mailcap" "$DOTDIR/.mailcap"
 
-    echo Creating Ranger Config Directory
+    echo "============== POWERLINE =============="
+    echo Moving config.json
+        mkdir -p "$POWERDIR"
+        cp "$NORMAL/config.json" "$POWERDIR/config.json"
+
+    echo "============== RANGER =============="
         mkdir -p "$RANGERDIR"
 
     echo Moving commands.py
@@ -64,12 +61,18 @@ function setup {
     echo Moving scope.sh
         cp "$NORMAL/scope.sh" "$RANGERDIR/scope.sh"
 
-    echo Moving Neofetch configs
+    echo "============== NEOFETCH =============="
+    echo Moving config.conf
         mkdir -p "$NEODIR"
         cp "$NORMAL/config.conf" "$NEODIR/config.conf"
 
-    echo Creating vim undo directory
+    echo "============== VIM =============="
+    echo Creating undodir
         mkdir -p "$VIMDIR/undodir"
+
+    echo Moving init.vim
+        mkdir -p "$NVIMDIR"
+        cp "$NORMAL/init.vim" "$NVIMDIR/init.vim"
 
     echo DONE
 }
