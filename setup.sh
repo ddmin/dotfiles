@@ -14,15 +14,17 @@ NORMAL="./dotfiles"
 
 # root setup
 function root {
-    echo "============== BASIC SETUP =============="
+    echo "============== ROOT SETUP =============="
+    echo "Requires root priveleges"
+    sudo echo "Verified."
     echo Moving bash aliases
-        cp "$BASIC/basic_alias" "$ROOTDIR/.bash_aliases"
+        sudo cp "$BASIC/basic_alias" "$ROOTDIR/.bash_aliases"
 
     echo Moving bashrc
-        cp "$BASIC/basic_bashrc" "$ROOTDIR/.bashrc"
+        sudo cp "$BASIC/basic_bashrc" "$ROOTDIR/.bashrc"
 
     echo Moving vimrc
-        cp "$BASIC/basic_vimrc" "$ROOTDIR/.vimrc"
+        sudo cp "$BASIC/basic_vimrc" "$ROOTDIR/.vimrc"
 
     echo DONE
 }
