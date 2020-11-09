@@ -8,6 +8,24 @@ VIMDIR="$HOME/.vim"
 
 BASIC="./basic"
 
+# basic setup
+function basic {
+    echo "============== BASIC SETUP =============="
+    echo Moving bash aliases
+        cp "$BASIC/basic_aliases" "$DOTDIR/.bash_aliases"
+
+    echo Moving bashrc
+        cp "$BASIC/basic_bashrc" "$DOTDIR/.bashrc"
+
+    echo Moving gitconfig
+        cp "$BASIC/gitconfig" "$DOTDIR/.gitconfig"
+
+    echo Moving vimrc
+        cp "$BASIC/basic_vimrc" "$DOTDIR/.vimrc"
+
+    echo DONE
+}
+
 # get user input
 printf "1. Basic Setup\n"
 printf "2. Normal Setup\n"
@@ -31,24 +49,6 @@ else
     exit
 fi
 exit
-
-# basic setup
-function basic {
-    echo "============== BASIC SETUP =============="
-    echo Moving bash aliases
-        cp "$BASIC/basic_aliases" "$DOTDIR/.bash_aliases"
-
-    echo Moving bashrc
-        cp "$BASIC/basic_bashrc" "$DOTDIR/.bashrc"
-
-    echo Moving gitconfig
-        cp "$BASIC/gitconfig" "$DOTDIR/.gitconfig"
-
-    echo Moving vimrc
-        cp "$BASIC/basic_vimrc" "$DOTDIR/.vimrc"
-
-    echo DONE
-}
 
 # basic/setup
 # shell script to automatically move dotfiles
