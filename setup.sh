@@ -11,11 +11,37 @@ NVIMDIR="$HOME/.config/nvim"
 
 BASIC="./basic"
 NORMAL="./dotfiles"
+MOBILE="./mobile"
+
+# mobile setup
+function mobile {
+    echo "============== MOBILE SETUP =============="
+
+    termux-setup-storage
+
+    echo Installing packages...
+        yes | pkg install vim
+        yes | pkg install git
+        yes | pkg install ranger
+        yes | pkg install golang
+
+    echo Installing ohmyzsh
+        sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
+
+    echo Moving zshrc
+        cp "$MOBILE/.zshrc" "$DOTDIR/.zshrc"
+
+    echo Moving vimrc
+        cp "$MOBILE/.vimrc" "$DOTDIR/.vimrc"
+
+    echo Moving gitconfig
+        cp "$MOBILE/.gitconfig" "$DOTDIR/.gitconfig"
+}
 
 # root setup
 function root {
     echo "============== ROOT SETUP =============="
-    echo "Requires root priveleges"
+    echo "Requires root privileges:"
     sudo echo "Verified."
     echo Moving bash aliases
         sudo cp "$BASIC/basic_alias" "$ROOTDIR/.bash_aliases"
@@ -130,7 +156,8 @@ then
     exit
 elif [ $mode == "3" ]
 then
-    echo "THREE"
+    mobile
+    exit
 elif [ $mode == "4" ]
 then
     root
@@ -139,28 +166,3 @@ else
     echo "Invalid Option: '$mode'"
     exit
 fi
-
-exit
-
-# mobile
-# setup storage
-termux-setup-storage
-
-# install packages
-yes | pkg install vim
-yes | pkg install git
-yes | pkg install ranger
-yes | pkg install golang
-
-# termux-ohmyzsh install script
-# https://github.com/Cabbagec/termux-ohmyzsh
-sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
-
-# zshrc
-cp ./.zshrc ~/.zshrc
-
-# .vimrc
-cp ./.vimrc ~/.vimrc
-
-# gitconfig
-cp ./.gitconfig ~/.gitconfig
