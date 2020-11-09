@@ -29,13 +29,13 @@ function mobile {
         sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
 
     echo Moving zshrc
-        cp "$MOBILE/.zshrc" "$DOTDIR/.zshrc"
+        cp "$MOBILE/zshrc" "$DOTDIR/.zshrc"
 
     echo Moving vimrc
-        cp "$MOBILE/.vimrc" "$DOTDIR/.vimrc"
+        cp "$MOBILE/vimrc" "$DOTDIR/.vimrc"
 
     echo Moving gitconfig
-        cp "$MOBILE/.gitconfig" "$DOTDIR/.gitconfig"
+        cp "$MOBILE/gitconfig" "$DOTDIR/.gitconfig"
 }
 
 # root setup
@@ -137,7 +137,6 @@ function basic {
     echo DONE
 }
 
-# get user input
 printf "1. Basic Setup\n"
 printf "2. Normal Setup\n"
 printf "3. Mobile Setup\n"
