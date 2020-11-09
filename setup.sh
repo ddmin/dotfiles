@@ -12,7 +12,7 @@ BASIC="./basic"
 function basic {
     echo "============== BASIC SETUP =============="
     echo Moving bash aliases
-        cp "$BASIC/basic_aliases" "$DOTDIR/.bash_aliases"
+        cp "$BASIC/basic_alias" "$DOTDIR/.bash_aliases"
 
     echo Moving bashrc
         cp "$BASIC/basic_bashrc" "$DOTDIR/.bashrc"
