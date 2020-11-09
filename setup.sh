@@ -1,6 +1,7 @@
 # SETUP: setup dotfiles
 
 # config directory for applications
+ROOTDIR="/root"
 DOTDIR="$HOME"
 RANGERDIR="$HOME/.config/ranger"
 POWERDIR="$HOME/.config/powerline-shell"
@@ -11,12 +12,25 @@ NVIMDIR="$HOME/.config/nvim"
 BASIC="./basic"
 NORMAL="./dotfiles"
 
-# regular setup
+# root setup
+function root {
+    echo "============== BASIC SETUP =============="
+    echo Moving bash aliases
+        cp "$BASIC/basic_alias" "$ROOTDIR/.bash_aliases"
 
+    echo Moving bashrc
+        cp "$BASIC/basic_bashrc" "$ROOTDIR/.bashrc"
+
+    echo Moving vimrc
+        cp "$BASIC/basic_vimrc" "$ROOTDIR/.vimrc"
+
+    echo DONE
+}
+
+# regular setup
 function setup {
     echo "============== NORMAL SETUP =============="
 
-    # Move dotfiles to home directory
     echo Moving bash aliases
         cp "$NORMAL/.bash_aliases" "$DOTDIR/.bash_aliases"
 
@@ -99,6 +113,7 @@ function basic {
 printf "1. Basic Setup\n"
 printf "2. Normal Setup\n"
 printf "3. Mobile Setup\n"
+printf "4. Root Setup\n"
 printf "> "
 
 read mode
@@ -114,6 +129,10 @@ then
 elif [ $mode == "3" ]
 then
     echo "THREE"
+elif [ $mode == "4" ]
+then
+    root
+    exit
 else
     echo "Invalid Option: '$mode'"
     exit
