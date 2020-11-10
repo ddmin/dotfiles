@@ -1,11 +1,14 @@
 #!/bin/bash
 # baka: create tar backups of specified directories
 
+# make sure you are in the home directory
+cd $HOME
+
 FILE='/home/ddmin/Code/Bash/baka'
 DIRECTORY="$(dirname "${FILE}")"
 
 # directories to archive
-dirs=("$HOME/Code" "$HOME/Documents"  "$HOME/Pictures" "$HOME/Music")
+dirs=("Code" "Documents"  "Pictures" "Music")
 
 # loop through directories
 for d in ${dirs[@]}; do
