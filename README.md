@@ -2,4 +2,4 @@
 
 ### Dotfiles for Linux
 
-![tree](./pics/dottree.png)
+![tree](./pics/tree.png)
