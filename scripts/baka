@@ -5,7 +5,7 @@ FILE='/home/ddmin/Code/Bash/baka'
 DIRECTORY="$(dirname "${FILE}")"
 
 # directories to archive
-dirs=("Code" "Documents"  "Pictures")
+dirs=("$HOME/Code" "$HOME/Documents"  "$HOME/Pictures")
 
 # loop through directories
 for d in ${dirs[@]}; do
