@@ -1,7 +1,7 @@
 #!/bin/bash
 # baka: create tar backups of specified directories
 
-FILE='/home/ddmin/Code/Bash/backup'
+FILE='/home/ddmin/Code/Bash/baka'
 DIRECTORY="$(dirname "${FILE}")"
 
 # directories to archive
