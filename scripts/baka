@@ -20,5 +20,5 @@ for d in ${dirs[@]}; do
     echo ""
 
     # create tars while excluding directories from files/backup-exclude
-    tar -X "$DIRECTORY/files/backup-exclude" -cJvf "$save_file.tar.xz" "$d"
+    tar -X "$DIRECTORY/files/backup-exclude" -czvf "$save_file.tar.gz" "$d"
 done
