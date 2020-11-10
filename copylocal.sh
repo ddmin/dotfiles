@@ -44,6 +44,7 @@ echo Copying neofetch
 
 echo Copying python3 requirements
     pip3 freeze > "$DOTDIR/python-requirements.txt"
+    sed -i s/=.*// "$DOTDIR/python-requirements.txt"
 
 echo DONE
 
