@@ -1,3 +1,8 @@
+#   __ _| (_) __ _ ___
+#  / _` | | |/ _` / __|
+# | (_| | | | (_| \__ \
+#  \__,_|_|_|\__,_|___/
+
 # send alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
