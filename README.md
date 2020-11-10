@@ -1,4 +1,5 @@
 # Dotfiles
 
-Dotfiles for Linux
+### Dotfiles for Linux
+
 ![tree](./pics/dottree.png)
