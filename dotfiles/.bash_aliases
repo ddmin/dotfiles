@@ -19,6 +19,9 @@ alias chwal='wal --vte -q -i ~/Pictures/Wallpapers'
 # change wallpaper to Linux Mint default wallpapers
 alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
 
+# naviage to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
 # change wallpaper to specific image
 function bkg() {
     wal --vte -q -i "$1" && neofetch
@@ -28,6 +31,3 @@ function bkg() {
 function title() {
     echo -e "set title: $1\033]0;$@\007"
 }
-
-# naviage to directories with ranger
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
