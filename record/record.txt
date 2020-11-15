@@ -2,8 +2,8 @@
 arch.iso
 debian-10.5.0.iso
 fedora-31.iso
-kubuntu-20.10-desktop-amd64.iso
-manjaro-kde-20.1.2-201019-linux58.iso
+kubuntu-20.10.iso
+manjaro-kde.iso
 manjaro_xfce.iso
 mint-19.2-cinnamon.iso
 mint-19.3.iso
@@ -13,7 +13,7 @@ pop-os.iso
 regolith-19.04.iso
 TempleOS.ISO
 ubuntu-20.04.iso
-ubuntu-20.10-desktop-amd64.iso
+ubuntu-20.10.iso
 windows10.iso
 zorin-15.iso
 
