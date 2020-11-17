@@ -11,7 +11,7 @@ mint-20-cinnamon.iso
 mint-20-xfce.iso
 pop-os.iso
 regolith-19.04.iso
-TempleOS.ISO
+templeOS.ISO
 ubuntu-20.04.iso
 ubuntu-20.10.iso
 windows10.iso
