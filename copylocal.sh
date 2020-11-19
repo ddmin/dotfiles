@@ -65,7 +65,7 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
 # create records of these directories
-dirs=("Downloads/ISO" "Downloads/ROM" "VirtualBox VMs" "Videos")
+dirs=("Downloads/ISO" "Downloads/ROM" "Templates" "VirtualBox VMs" "Videos")
 save_file="$RECORDDIR/record.txt"
 
 # clear record file
