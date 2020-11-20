@@ -73,7 +73,7 @@ save_file="$RECORDDIR/record.txt"
 
 # loop through directories
 for d in ${dirs[@]}; do
-    echo $d
+    echo "Recording $d"
 
     echo $HOME/$d >> $save_file
     ls $HOME/$d >> $save_file
