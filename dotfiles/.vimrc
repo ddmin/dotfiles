@@ -174,14 +174,15 @@ call plug#end()
 
 " fzf
     map <C-g> :Files<CR>
+    map <C-f> :Rg<CR>
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
 " Vim-Go
-    autocmd FileType go nnoremap <C-h> :GoRename<CR>
+    autocmd FileType go nnoremap <Leader>r :GoRename<CR>
     autocmd FileType go nnoremap <silent> <C-b> :GoRun<CR>
-    autocmd FileType go nnoremap <silent> <C-s> :GoDoc<CR>
+    autocmd FileType go nnoremap <silent> <Leader>d :GoDoc<CR>
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
