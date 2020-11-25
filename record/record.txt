@@ -21,9 +21,6 @@ zorin-15.iso
 Pokemon Emerald.gba
 Pokemon Leaf Green.gba
 
-/home/ddmin/Templates
-[ENG] Akira.srt
-
 /home/ddmin/VirtualBox VMs
 Kubuntu
 Mint
