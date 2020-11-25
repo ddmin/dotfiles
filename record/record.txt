@@ -23,7 +23,6 @@ Pokemon Leaf Green.gba
 
 /home/ddmin/Templates
 [ENG] Akira.srt
-[ENG] The Garden of Words.srt
 
 /home/ddmin/VirtualBox VMs
 Kubuntu
@@ -45,7 +44,6 @@ Nobita's Secret Gadget Museum (2013).mp4
 Research
 Spirited Away (2002).mkv
 Stand By Me (2014).mkv
-The Garden of Words (2013).mkv
 Tonari No Totoro (1988).mp4
 Ultimate Anime Openings + Endings Compilation [8 Hour mix].mkv
 
