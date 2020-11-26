@@ -42,10 +42,6 @@ echo Copying init.vim
 echo Copying neofetch
     cp ~/.config/neofetch/config.conf "$DOTDIR/config.conf"
 
-echo Copying python3 requirements
-    pip3 freeze > "$DOTDIR/python-requirements.txt"
-    sed -i s/=.*// "$DOTDIR/python-requirements.txt"
-
 echo DONE
 
 # copy scripts from ~/Code/Bash
@@ -79,6 +75,10 @@ for d in ${dirs[@]}; do
     ls $HOME/$d >> $save_file
     echo "" >> $save_file
 done
+
+echo Copying python3 requirements
+    pip3 freeze > "$RECORDDIR/python-requirements.txt"
+    sed -i s/=.*// "$RECORDDIR/python-requirements.txt"
 
 echo DONE
 
