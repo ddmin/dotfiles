@@ -3,6 +3,7 @@
 /home/ddmin/Downloads/ROM
 
 /home/ddmin/VirtualBox VMs
+Mint
 Windows 10
 
 /home/ddmin/Videos
@@ -19,4 +20,5 @@ Nobita's Secret Gadget Museum (2013).mp4
 Research
 Spirited Away (2002).mkv
 Stand By Me (2014).mkv
+Tonari No Totoro (1988).mp4
 

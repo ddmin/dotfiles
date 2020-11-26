@@ -8,7 +8,7 @@ output="$(basename "$filename" .note).pdf"
 mkdir -p $target
 
 pandoc \
-    --latex-engine=xelatex \
+    --pdf-engine=xelatex \
     -o "$target/$output" "$filename" &
 
 echo "$target/$output" > /tmp/lasteditpdf.txt
