@@ -1,6 +1,11 @@
 /home/ddmin/Downloads/ISO
+arch.iso
+elementary-5.1.iso
+ubuntu-20.04.iso
 
 /home/ddmin/Downloads/ROM
+Pokemon Black Version.nds
+Pokemon Emerald Version.gba
 
 /home/ddmin/VirtualBox VMs
 Mint
@@ -15,7 +20,6 @@ Iron Man (2008).mp4
 Kimi no Na Wa (2016).mp4
 Koe no Katachi (2016).mkv
 Nobita and the New Steel Troops (2011).mp4
-Nobita and the New Steel Troops (2011).mp4.part
 Nobita's Secret Gadget Museum (2013).mp4
 Research
 Spirited Away (2002).mkv

@@ -1,6 +1,7 @@
 apt-clone
 apturl
 attrs
+bcrypt
 beautifulsoup4
 blinker
 Brlapi
@@ -22,6 +23,7 @@ grpcio
 httplib2
 idna
 ifaddr
+Jinja2
 keyring
 launchpadlib
 lazr.restfulclient
@@ -42,6 +44,9 @@ pexpect
 Pillow
 powerline-shell
 protobuf
+proton-client
+protonvpn-cli
+protonvpn-nm-lib
 psutil
 pycairo
 pycrypto
@@ -54,13 +59,16 @@ PyJWT
 pymacaroons
 PyNaCl
 pynvim
+pyOpenSSL
 pyparsing
 pyparted
 pyRFC3339
 python-apt
 python-debian
+python-gnupg
 python-xapp
 python-xlib
+pythondialog
 pytz
 pywal
 pyxattr
