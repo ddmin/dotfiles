@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Balena Etcher
-Exec=PATH_TO_BALENA_ETCHER
+Exec=/home/ddmin/.local/bin/balenaEtcher
 Icon=etcher
 StartupWMClass=crx_bikioccmkafdpakkkcpdbppfkghcmihk
