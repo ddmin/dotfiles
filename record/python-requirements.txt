@@ -1,3 +1,4 @@
+appdirs
 apt-clone
 apturl
 attrs
@@ -15,9 +16,11 @@ cryptography
 cupshelpers
 dbus-python
 defer
+distlib
 distro
 docopt
 entrypoints
+filelock
 greenlet
 grpcio
 httplib2
@@ -91,6 +94,7 @@ ueberzug
 ufw
 Unidecode
 urllib3
+virtualenv
 wadllib
 webencodings
 xkit
