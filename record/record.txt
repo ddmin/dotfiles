@@ -1,5 +1,6 @@
 /home/ddmin/Downloads/ISO
 arch.iso
+debian-10.6.iso
 elementary-5.1.iso
 ubuntu-20.04.iso
 
@@ -9,6 +10,7 @@ Pokemon Emerald Version.gba
 
 /home/ddmin/VirtualBox VMs
 Mint
+Ubuntu
 Windows 10
 
 /home/ddmin/Videos
