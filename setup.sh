@@ -83,6 +83,9 @@ function setup {
     echo Moving mailcap
         cp "$NORMAL/.mailcap" "$DOTDIR/.mailcap"
 
+    echo Moving feh keys
+        cp "$NORMAL/keys" "$DOTDIR/.config/feh/keys"
+
     echo "============== POWERLINE =============="
     echo Moving config.json
         mkdir -p "$POWERDIR"
