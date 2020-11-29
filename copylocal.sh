@@ -42,6 +42,9 @@ echo Copying init.vim
 echo Copying neofetch
     cp ~/.config/neofetch/config.conf "$DOTDIR/config.conf"
 
+echo Copying feh keys
+    cp ~/.config/feh/keys "$DOTDIR/keys"
+
 echo DONE
 
 # copy scripts from ~/Code/Bash

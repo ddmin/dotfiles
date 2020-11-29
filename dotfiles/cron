@@ -22,6 +22,6 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
-* * * * * cat /home/ddmin/Documents/list > /home/ddmin/Code/Web/Research/list
+* * * * * cat /home/ddmin/Documents/list.txt > /home/ddmin/Code/Web/Research/list.txt
 # 0 13 * * * python3 /home/ddmin/Code/Python/Entei/mirai > /dev/null && python3 /home/ddmin/Code/Python/Entei/Files/misc/popular > /dev/null
 # 0 21 * * * python3 /home/ddmin/Code/Python/Entei/mirai > /dev/null && python3 /home/ddmin/Code/Python/Entei/Files/misc/popular > /dev/null
