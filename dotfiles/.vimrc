@@ -26,6 +26,9 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
+" NERD Tree
+    Plug 'preservim/nerdtree'
+
 " YCM
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer', 'for': ['go', 'python'] }
 
@@ -171,6 +174,9 @@ call plug#end()
 " }}}
 
 " Plugins Settings {{{
+
+" NERD Tree
+    map <Leader>n :NERDTreeToggle<CR>
 
 " fzf
     map <C-g> :Files<CR>
