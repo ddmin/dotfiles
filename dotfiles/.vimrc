@@ -169,7 +169,6 @@ call plug#end()
 " Markdown {{{
 
     autocmd BufWritePost /home/*/*.note silent !note2pdf %:p
-    inoremap <expr> <C-f> fzf#vim#complete#path('rg --files ~')
 
 " }}}
 
