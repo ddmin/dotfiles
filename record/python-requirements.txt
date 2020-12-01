@@ -1,6 +1,7 @@
 appdirs
 apt-clone
 apturl
+asgiref
 attrs
 bcrypt
 beautifulsoup4
@@ -18,6 +19,8 @@ dbus-python
 defer
 distlib
 distro
+Django
+djangorestframework
 docopt
 entrypoints
 filelock
@@ -86,6 +89,7 @@ setproctitle
 simplejson
 six
 soupsieve
+sqlparse
 systemd-python
 tinycss2
 ubuntu-advantage-tools
