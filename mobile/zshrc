@@ -130,8 +130,8 @@ BLUE='\033[0;34m'
 
 USER='ddmin'
 PHONE='benjamin'
-OS='os     Android 8.0.0'
-HOST='host   Samsung Galaxy S7'
+OS='os     Android 10.0.0'
+HOST='host   Samsung Note 20 Ultra'
 
 CYAN='\033[0;35m'
 PURPLE='\033[0;36m'
