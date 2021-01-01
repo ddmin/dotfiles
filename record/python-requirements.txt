@@ -43,6 +43,7 @@ msgpack
 nemo-emblems
 netifaces
 nose
+numpy
 oauthlib
 onboard
 packaging
