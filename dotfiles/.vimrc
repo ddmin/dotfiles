@@ -51,6 +51,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+" vim-javascript
+    Plug 'pangloss/vim-javascript'
+
 " vim-go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 
@@ -161,7 +164,8 @@ call plug#end()
 " colors
     colorscheme onedark
     hi Normal guibg=NONE ctermbg=NONE
-    highlight LineNr ctermfg=lightblue
+    hi Comment ctermfg=magenta
+    hi LineNr ctermfg=lightblue
     hi CursorLineNr ctermfg=darkmagenta
 
 " }}}
