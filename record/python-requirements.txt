@@ -36,6 +36,7 @@ launchpadlib
 lazr.restfulclient
 lazr.uri
 louis
+lxml
 macaroonbakery
 Mako
 MarkupSafe
@@ -48,6 +49,7 @@ oauthlib
 onboard
 packaging
 PAM
+panda3d
 pexpect
 Pillow
 powerline-shell
@@ -71,6 +73,7 @@ pynvim
 pyOpenSSL
 pyparsing
 pyparted
+pyperclip
 pyRFC3339
 python-apt
 python-debian
@@ -88,6 +91,7 @@ reportlab
 requests
 requests-unixsocket
 rich
+screeninfo
 SecretStorage
 setproctitle
 simplejson
@@ -103,6 +107,7 @@ ueberzug
 ufw
 Unidecode
 urllib3
+ursina
 virtualenv
 wadllib
 webencodings
