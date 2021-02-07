@@ -3,6 +3,7 @@ arch.iso
 debian-10.6.iso
 elementary-5.1.iso
 ubuntu-20.04.iso
+windows10.iso
 
 /home/ddmin/Downloads/ROM
 Pokemon Black Version.nds

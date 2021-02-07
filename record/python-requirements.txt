@@ -27,6 +27,7 @@ entrypoints
 filelock
 greenlet
 grpcio
+gTTS
 httplib2
 idna
 ifaddr
@@ -50,6 +51,7 @@ onboard
 packaging
 PAM
 panda3d
+pdftotext
 pexpect
 Pillow
 powerline-shell
@@ -81,6 +83,7 @@ python-gnupg
 python-xapp
 python-xlib
 pythondialog
+pyttsx3
 pytz
 pywal
 pyxattr
