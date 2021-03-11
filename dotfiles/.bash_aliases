@@ -19,10 +19,10 @@ alias vi='vim -u ~/.basic_vimrc'
 alias vim='nvim'
 
 # change wallpaper
-alias chwal='wal --vte -q -i ~/Pictures/Wallpapers'
+alias chwal='wal --vte -q -s -t -i ~/Pictures/Wallpapers'
 
 # change wallpaper to Linux Mint default wallpapers
-alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
+alias norm='wal --vte -q -s -t -i /usr/share/backgrounds/linuxmint-combined'
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
