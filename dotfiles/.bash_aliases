@@ -18,11 +18,37 @@ alias ll='logo-ls -vlg'
 alias vi='vim -u ~/.basic_vimrc'
 alias vim='nvim'
 
+# generate random file from directory
+randfile () {
+    FILE=$(ls "$1" | sort -R | tail -1)
+    echo $FILE
+}
+
 # change wallpaper
-alias chwal='wal --vte -q -s -t -i ~/Pictures/Wallpapers'
+function chwal {
+    IMG_DIR="$HOME/Pictures/Wallpapers"
+    WAL=$(randfile "$IMG_DIR")
+    feh --bg-fill "$IMG_DIR/$WAL" 2> /dev/null
+}
 
 # change wallpaper to Linux Mint default wallpapers
-alias norm='wal --vte -q -s -t -i /usr/share/backgrounds/linuxmint-combined'
+function norm {
+    IMG_DIR="/usr/share/backgrounds/linuxmint-combined"
+    WAL=$(randfile "$IMG_DIR")
+    feh --bg-fill "$IMG_DIR/$WAL"
+}
+
+# slideshow - first argument determines time in-between
+slideshow () {
+    while true; do
+        norm;
+        sleep 10;
+    done
+}
+
+# change wallpaper and colorscheme
+# alias chwal='wal --vte -q -i ~/Pictures/Wallpapers'
+# alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
