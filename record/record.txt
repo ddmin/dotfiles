@@ -2,6 +2,7 @@
 arch.iso
 debian-10.6.iso
 elementary-5.1.iso
+mint-20.1-xfce.iso
 ubuntu-20.04.iso
 windows10.iso
 
