@@ -7,6 +7,6 @@ line=`cat $EMOJIS_PATH | rofi -dmenu -markup-rows -p "emoji" -columns 3`
 [[ -z $line ]] && exit
 a="${line#*>}"
 b="${a%:*}"
-echo -n $b | xsel -ipb
+echo -n $b | xsel -t 30000 -ipb
 
 xdotool key ctrl+shift+v
