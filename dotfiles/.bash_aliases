@@ -41,12 +41,34 @@ function norm {
     feh --bg-fill "$IMG_DIR/$WAL"
 }
 
-# slideshow - first argument determines time in-between
+# change wallpaper to specific image
+function bkg() {
+    feh --bg-fill "$1"
+}
+
+
+# slideshow
 slideshow () {
     while true; do
         norm;
         sleep 10;
     done
+}
+
+# hail mary
+mary () {
+    sudo echo "=== Hail Mary ==="
+    sudo mkdir -p /Mary
+
+    dirs=("Code" "Documents" "Music" "Pictures" "Public" "Videos")
+
+    # loop through directories
+    for d in ${dirs[@]}; do
+        echo "Moving $HOME/$d"
+        sudo mv "$HOME/$d" /Mary
+    done
+
+    echo Done
 }
 
 # change wallpaper and colorscheme
@@ -55,11 +77,6 @@ slideshow () {
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-# change wallpaper to specific image
-function bkg() {
-    wal --vte -q -i "$1" && neofetch
-}
 
 # set terminal tab names
 function title() {

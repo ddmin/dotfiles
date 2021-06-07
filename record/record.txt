@@ -12,7 +12,6 @@ Pokemon Emerald Version.gba
 
 /home/ddmin/VirtualBox VMs
 Mint
-Ubuntu
 Windows 10
 
 /home/ddmin/Videos
