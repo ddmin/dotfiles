@@ -1,0 +1,7 @@
+#!/bin/bash
+# vimtutor: with .vimrc
+
+FILE="$HOME/Code/Bash"
+
+cp "$FILE/files/vimtutor" /tmp/vimtutor
+vim /tmp/vimtutor
