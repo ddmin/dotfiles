@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
 " YCM
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer', 'for': ['go', 'python'] }
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer', 'for': ['go', 'python', 'rust'] }
 
 " unicode.vim
     Plug 'chrisbra/unicode.vim'

@@ -20,6 +20,7 @@ dbus-python
 defer
 distlib
 distro
+distro-info
 Django
 djangorestframework
 docopt
@@ -58,6 +59,7 @@ powerline-shell
 protobuf
 proton-client
 protonvpn-cli
+protonvpn-gui
 protonvpn-nm-lib
 psutil
 pycairo
