@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
 " YCM
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer', 'for': ['go', 'python', 'rust'] }
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --go-completer', 'for': ['go', 'python', 'rust'] }
 
 " unicode.vim
     Plug 'chrisbra/unicode.vim'
@@ -170,6 +170,7 @@ call plug#end()
     hi Comment ctermfg=magenta
     hi LineNr ctermfg=lightblue
     hi CursorLineNr ctermfg=darkmagenta
+    hi Folded ctermbg=magenta
 
 " }}}
 

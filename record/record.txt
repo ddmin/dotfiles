@@ -1,13 +1,11 @@
 /home/ddmin/Downloads/ISO
 arch.iso
-debian-10.9.0.iso
-elementary-5.1.iso
-manjaro-kde-21.0.6.iso
-manjaro-xfce-21.0.6.iso
-mint-20.1-xfce.iso
+linuxmint-20.1.iso
+manjaro-i3.iso
+nixOS-21.05.iso
 ubuntu-20.04.iso
-windows10.iso
-xubuntu-20.04.2.0.iso
+windows 10.iso
+windows 11.iso
 zorin-OS-15.3.iso
 
 /home/ddmin/Downloads/ROM
