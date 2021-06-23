@@ -65,6 +65,9 @@ function setup {
     echo Moving bashrc
         cp "$NORMAL/.bashrc" "$DOTDIR/.bashrc"
 
+    echo Moving profile
+        cp "$NORMAL/.profile" "$DOTDIR/.profile"
+
     echo Moving gitconfig
         cp "$NORMAL/.gitconfig" "$DOTDIR/.gitconfig"
 
@@ -130,6 +133,9 @@ function basic {
 
     echo Moving bashrc
         cp "$BASIC/basic_bashrc" "$DOTDIR/.bashrc"
+
+    echo Moving profile
+        cp "$BASIC/basic_profile" "$DOTDIR/.profile"
 
     echo Moving gitconfig
         cp "$BASIC/gitconfig" "$DOTDIR/.gitconfig"
