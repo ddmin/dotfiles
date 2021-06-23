@@ -9,6 +9,9 @@ echo Copying bash aliases
 echo Copying bashrc
     cp ~/.bashrc "$DOTDIR/.bashrc"
 
+echo Copying profile
+    cp ~/.profile "$DOTDIR/.profile"
+
 echo Copying commands.py
     cp ~/.config/ranger/commands.py "$DOTDIR/commands.py"
 

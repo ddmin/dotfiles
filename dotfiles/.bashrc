@@ -25,29 +25,17 @@ bind '"jk":vi-movement-mode'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-# Go directories
-export PATH="$PATH:/usr/local/go/bin"
-export GOPATH="$HOME/Code/Go"
-export PATH="$PATH:$GOPATH/bin"
-export GOBIN="$GOPATH/bin"
-
-# Add Bash directory to path
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/Code/Bash"
-export PATH="$PATH:$HOME/Code/Python/CLI"
-export PATH="$PATH:$HOME/Code/Python/BrainFook"
-export PATH="$PATH:$HOME/Code/Python/Chemistry"
-export PATH="$PATH:$HOME/Code/Python/Entei"
-export PATH="$PATH:$HOME/Code/Python/Entei/Files/misc"
-export PATH="$PATH:$HOME/Code/Python/TTS"
-export PATH="$PATH:$HOME/Code/Python/Vert"
-
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u ~/.basic_vimrc --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 # bash aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# profile
+if [ -f ~/.profile ]; then
+    . ~/.profile
 fi
 
 # Enable fzf search

@@ -56,6 +56,7 @@ pdftotext
 pexpect
 Pillow
 powerline-shell
+progress
 protobuf
 proton-client
 protonvpn-cli
