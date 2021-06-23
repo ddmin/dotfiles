@@ -16,20 +16,22 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 
 # Go directories
-export PATH="$PATH:/usr/local/go/bin"
-export GOPATH="$HOME/Code/Go"
-export PATH="$PATH:$GOPATH/bin"
-export GOBIN="$GOPATH/bin"
+PATH="$PATH:/usr/local/go/bin"
+GOPATH="$HOME/Code/Go"
+PATH="$PATH:$GOPATH/bin"
+GOBIN="$GOPATH/bin"
 
 # Code
-export PATH="$PATH:$HOME/Code/Bash"
-export PATH="$PATH:$HOME/Code/Python/CLI"
-export PATH="$PATH:$HOME/Code/Python/BrainFook"
-export PATH="$PATH:$HOME/Code/Python/Chemistry"
-export PATH="$PATH:$HOME/Code/Python/Entei"
-export PATH="$PATH:$HOME/Code/Python/Entei/Files/misc"
-export PATH="$PATH:$HOME/Code/Python/TTS"
-export PATH="$PATH:$HOME/Code/Python/Vert"
+PATH="$PATH:$HOME/Code/Bash"
+PATH="$PATH:$HOME/Code/Python/CLI"
+PATH="$PATH:$HOME/Code/Python/BrainFook"
+PATH="$PATH:$HOME/Code/Python/Chemistry"
+PATH="$PATH:$HOME/Code/Python/Entei"
+PATH="$PATH:$HOME/Code/Python/Entei/Files/misc"
+PATH="$PATH:$HOME/Code/Python/TTS"
+PATH="$PATH:$HOME/Code/Python/Vert"
+
+export PATH
