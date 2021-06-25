@@ -19,7 +19,7 @@ neofetch
 # Start powerline-shell
 
 function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go -error $? -jobs $(jobs -p | wc -l))"
+    PS1="$($GOPATH/bin/powerline-go -cwd-max-depth 1 -error $? -jobs $(jobs -p | wc -l))"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
