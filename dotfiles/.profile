@@ -18,11 +18,11 @@ fi
 # Rust
 PATH="$HOME/.cargo/bin:$PATH"
 
-# Go directories
-PATH="$PATH:/usr/local/go/bin"
-GOPATH="$HOME/Code/Go"
-PATH="$PATH:$GOPATH/bin"
-GOBIN="$GOPATH/bin"
+# Go
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/Code/Go"
+export PATH="$PATH:$GOPATH/bin"
+export GOBIN="$GOPATH/bin"
 
 # Code
 PATH="$PATH:$HOME/Code/Bash"
