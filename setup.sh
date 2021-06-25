@@ -4,7 +4,6 @@
 ROOTDIR="/root"
 DOTDIR="$HOME"
 RANGERDIR="$HOME/.config/ranger"
-POWERDIR="$HOME/.config/powerline-shell"
 NEODIR="$HOME/.config/neofetch"
 VIMDIR="$HOME/.vim"
 NVIMDIR="$HOME/.config/nvim"
@@ -88,11 +87,6 @@ function setup {
 
     echo Moving feh keys
         cp "$NORMAL/keys" "$DOTDIR/.config/feh/keys"
-
-    echo "============== POWERLINE =============="
-    echo Moving config.json
-        mkdir -p "$POWERDIR"
-        cp "$NORMAL/config.json" "$POWERDIR/config.json"
 
     echo "============== RANGER =============="
         mkdir -p "$RANGERDIR"
