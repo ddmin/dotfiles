@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Webcamoid
-Exec=webcamoid
-Icon=webcam
-StartupWMClass=crx_bikioccmkafdpakkkcpdbppfkghcmihk
