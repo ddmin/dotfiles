@@ -26,6 +26,12 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
+" vim-javascript
+    Plug 'pangloss/vim-javascript'
+
+" vim-go
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
+
 " NERD Tree
     Plug 'preservim/nerdtree'
 
@@ -41,6 +47,9 @@ call plug#begin('~/.vim/plugged')
 " autoclose
     Plug 'Townk/vim-autoclose'
 
+" vim-lion
+    Plug 'tommcdo/vim-lion'
+
 " vim-surround
     Plug 'tpope/vim-surround'
 
@@ -51,12 +60,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
-" vim-javascript
-    Plug 'pangloss/vim-javascript'
-
-" vim-go
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
-
 " CSS color
     Plug 'ap/vim-css-color'
 
@@ -66,11 +69,11 @@ call plug#begin('~/.vim/plugged')
 " vim-airline-themes
     Plug 'vim-airline/vim-airline-themes'
 
-" vim-devicons
-    Plug 'ryanoasis/vim-devicons'
-
 " one dark
     Plug 'joshdick/onedark.vim'
+
+" vim-devicons
+    Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -128,14 +131,14 @@ call plug#end()
 " Fix splits
     set splitbelow splitright
 
-" Remap <Ctrl-W>v to open blank
-    nnoremap <silent> <C-w>v :vnew<CR>
+" Vertical Split
+    nnoremap <silent> <leader>wv :vnew<CR>
 
-" clone window
+" Clone Window
     nnoremap <silent> <leader>s :vsplit<cr>
 
-" <Ctrl-W>h to open blank horizontally
-    nnoremap <silent> <C-w>h :new<CR>
+" Horizontal Split
+    nnoremap <silent> <leader>wh :new<CR>
 
 " Move windows
     noremap <leader>h <C-w>h
@@ -144,8 +147,10 @@ call plug#end()
     map <leader>l <C-w>l
 
 " resize windows
-    nmap <silent> <S-h> :vertical resize +5<CR>
-    nmap <silent> <S-l> :vertical resize -5<CR>
+    nmap <silent> <S-h> :vertical resize -5<CR>
+    nmap <silent> <S-l> :vertical resize +5<CR>
+    nmap <silent> <S-j> :resize +5<CR>
+    nmap <silent> <S-k> :resize -5<CR>
 
 " toggle off numbers
     nmap <silent> <C-n> :set nonumber<CR>:set norelativenumber<CR>
@@ -196,6 +201,9 @@ call plug#end()
     autocmd FileType go nnoremap <Leader>r :GoRename<CR>
     autocmd FileType go nnoremap <silent> <C-b> :GoRun<CR>
     autocmd FileType go nnoremap <silent> <Leader>d :GoDoc<CR>
+
+" vim-lion
+    let g:lion_squeeze_spaces = 1
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
