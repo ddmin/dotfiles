@@ -24,6 +24,7 @@ function mobile {
         yes | pkg install ranger
         yes | pkg install golang
         yes | pkg install busybox termux-services
+        yes | pkg install openssh
 
     echo Installing ohmyzsh
         sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
