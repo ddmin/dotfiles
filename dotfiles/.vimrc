@@ -149,8 +149,6 @@ call plug#end()
 " resize windows
     nmap <silent> <S-h> :vertical resize -5<CR>
     nmap <silent> <S-l> :vertical resize +5<CR>
-    nmap <silent> <S-j> :resize +5<CR>
-    nmap <silent> <S-k> :resize -5<CR>
 
 " toggle off numbers
     nmap <silent> <C-n> :set nonumber<CR>:set norelativenumber<CR>
