@@ -14,7 +14,9 @@ if [ -f ~/.profile ]; then
 fi
 
 # Start neofetch
-neofetch
+if [[ $- =~ "i" ]]; then
+    neofetch
+fi
 
 # Start powerline-shell
 

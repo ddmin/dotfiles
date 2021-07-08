@@ -26,11 +26,12 @@ export GOBIN="$GOPATH/bin"
 
 # Code
 PATH="$PATH:$HOME/Code/Bash"
-PATH="$PATH:$HOME/Code/Python/CLI"
 PATH="$PATH:$HOME/Code/Python/BrainFook"
+PATH="$PATH:$HOME/Code/Python/CLI"
 PATH="$PATH:$HOME/Code/Python/Chemistry"
 PATH="$PATH:$HOME/Code/Python/Entei"
 PATH="$PATH:$HOME/Code/Python/Entei/Files/misc"
+PATH="$PATH:$HOME/Code/Python/Mitsu"
 PATH="$PATH:$HOME/Code/Python/TTS"
 PATH="$PATH:$HOME/Code/Python/Vert"
 
