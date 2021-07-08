@@ -16,7 +16,6 @@ Pokemon Emerald Version.gba
 
 /home/ddmin/VirtualBox VMs
 Gentoo
-Mint
 Windows 10
 
 /home/ddmin/Videos
