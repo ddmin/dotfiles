@@ -5,7 +5,7 @@
 # |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
 
 # prompt
-export PS1=" \[\e[00;34m\]λ $(dirname $PWD)/$(basename $PWD) \[\e[0m\]"
+export PS1=" \[\e[00;34m\]λ $(basename $(dirname $PWD))/$(basename $PWD) \[\e[0m\]"
 
 # Set default editor
 export EDITOR='vim'
