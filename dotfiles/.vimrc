@@ -209,7 +209,7 @@ call plug#end()
       \ 'hl+':     ['fg', 'Statement'],
       \ 'info':    ['fg', 'PreProc'],
       \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'prompt':  ['bg', 'Conditional'],
       \ 'pointer': ['fg', 'Exception'],
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
