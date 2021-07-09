@@ -5,7 +5,7 @@
 # |_.__/ \__,_|___/_|\___| /___|___/_| |_|_|  \___|
 
 # prompt
-PROMPT='%(?.%F{green}花.%F{red}?%?)%f %B%F{165}%2~%f%b %# '
+PROMPT='%(?.%F{green}花.%F{red}?%?)%f %B%F{177}%2~%f%b %# '
 
 # ls
 alias l='ls'
