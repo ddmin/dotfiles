@@ -4,6 +4,8 @@
 # | |_) | (_| \__ \ | (__  | |_) | (_| \__ \ | | |
 # |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
 
+# prompt
+PROMPT='%(?.%F{green}花.%F{red}?%?)%f %B%F{165}%2~%f%b %# '
 
 # Set default editor
 export EDITOR='vim'
