@@ -18,9 +18,6 @@ alias ll='logo-ls -vlg'
 alias vi='vim -u ~/.basic_vimrc'
 alias vim='nvim'
 
-# copy github authentication
-alias git='pass github | xsel --clipboard -t 30000 && git'
-
 # generate random file from directory
 randfile () {
     FILE=$(ls "$1" | sort -R | tail -1)
