@@ -5,7 +5,7 @@
 # |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
 
 # prompt
-PROMPT='%(?.%F{green}花.%F{red}?%?)%f %B%F{165}%2~%f%b %# '
+export PS1=" \[\e[00;34m\]λ \W \[\e[0m\]"
 
 # Set default editor
 export EDITOR='vim'
