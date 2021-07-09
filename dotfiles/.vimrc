@@ -56,6 +56,9 @@ call plug#begin('~/.vim/plugged')
 " vim-rooter
     Plug 'airblade/vim-rooter'
 
+" vim-fugitive
+    Plug 'tpope/vim-fugitive'
+
 " NERD commenter
     Plug 'preservim/nerdcommenter'
 
