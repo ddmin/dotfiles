@@ -66,6 +66,9 @@ function setup {
     echo Moving bashrc
         cp "$NORMAL/.bashrc" "$DOTDIR/.bashrc"
 
+    echo Moving zshrc
+        cp "$BASIC/basic_zshrc" "$DOTDIR/.zshrc"
+
     echo Moving profile
         cp "$NORMAL/.profile" "$DOTDIR/.profile"
 
@@ -129,6 +132,9 @@ function basic {
 
     echo Moving bashrc
         cp "$BASIC/basic_bashrc" "$DOTDIR/.bashrc"
+
+    echo Moving zshrc
+        cp "$BASIC/basic_zshrc" "$DOTDIR/.zshrc"
 
     echo Moving profile
         cp "$BASIC/basic_profile" "$DOTDIR/.profile"
