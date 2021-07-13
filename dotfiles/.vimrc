@@ -36,7 +36,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
 " YCM
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --go-completer', 'for': ['go', 'python', 'rust'] }
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --rust-completer --ts-completer', 'for': ['go', 'python', 'rust', 'html', 'javascript'] }
 
 " unicode.vim
     Plug 'chrisbra/unicode.vim'
@@ -116,13 +116,19 @@ call plug#end()
     set expandtab
     set autoindent
 
+" toggle numbers
+    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
+
+" toggle spell
+    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
+
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
 
-" Highlight searches and <Leader Leader> to unhighlight
+" Highlight searches and <Leader><Leader> to unhighlight
     set incsearch
     set hlsearch
     nnoremap <silent> <leader><leader> :nohl<CR><C-l>
@@ -137,9 +143,6 @@ call plug#end()
 " Vertical Split
     nnoremap <silent> <leader>wv :vnew<CR>
 
-" Clone Window
-    nnoremap <silent> <leader>s :vsplit<cr>
-
 " Horizontal Split
     nnoremap <silent> <leader>wh :new<CR>
 
@@ -150,11 +153,10 @@ call plug#end()
     map <leader>l <C-w>l
 
 " resize windows
-    nmap <silent> <S-h> :vertical resize -5<CR>
-    nmap <silent> <S-l> :vertical resize +5<CR>
-
-" toggle off numbers
-    nmap <silent> <C-n> :set nonumber<CR>:set norelativenumber<CR>
+    nmap <silent> <S-left> :vertical resize -5<CR>
+    nmap <silent> <S-right> :vertical resize +5<CR>
+    nmap <silent> <S-up> :resize -5<CR>
+    nmap <silent> <S-down> :resize +5<CR>
 
 " }}}
 
@@ -188,13 +190,6 @@ call plug#end()
 
 " Plugins Settings {{{
 
-" NERD Tree
-    map <Leader>n :NERDTreeToggle<CR>
-
-" fzf
-    map <C-g> :Files<CR>
-    map <C-f> :Rg<CR>
-
     let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
     let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
@@ -215,6 +210,13 @@ call plug#end()
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
 
+" NERD Tree
+    map <Leader>. :NERDTreeToggle<CR>
+
+" fzf
+    map <C-g> :Files<CR>
+    map <C-f> :Rg<CR>
+
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
@@ -231,11 +233,11 @@ call plug#end()
     nmap <C-c> i<Plug>(UnicodeFuzzy)
 
 " undotree
-    nnoremap <silent> <C-z> :UndotreeToggle<CR>
+    nnoremap <silent> <leader>z :UndotreeToggle<CR>
 
 " comment
-    nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
-    vnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
+    nnoremap <silent> <leader>a :call NERDComment(0,"toggle")<CR>
+    vnoremap <silent> <leader>a :call NERDComment(0,"toggle")<CR>
 
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 1
