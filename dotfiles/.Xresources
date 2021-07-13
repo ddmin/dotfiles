@@ -14,3 +14,6 @@ rofi.color-urgent: argb:031d1f21, #f3f4f5, argb:bc303541, argb:031d1f21, #9575cd
 rofi.color-active: argb:031d1f21, #f3f4f5, argb:031d1f21, argb:031d1f21, #9575cd
 rofi.font: SauceCodePro Nerd Font Mono 18
 rofi.drun-icon-theme: Papirus
+
+rofi.matching: fuzzy
+rofi.levenshtein-sort: true

@@ -3,7 +3,7 @@
 
 EMOJIS_PATH="$HOME/.config/rofi/emoji-list"
 
-line=`cat $EMOJIS_PATH | rofi -dmenu -markup-rows -p "emoji" -columns 3 -sorting-method "fzf"`
+line=`cat $EMOJIS_PATH | rofi -dmenu -markup-rows -p "emoji" -columns 3`
 [[ -z $line ]] && exit
 a="${line#*>}"
 b="${a%:*}"
