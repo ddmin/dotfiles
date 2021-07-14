@@ -1,0 +1,35 @@
+{
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.pythonPath": "/bin/python3",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "python.defaultInterpreterPath": "/bin/python3",
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.lineNumbers": "relative",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontSize": 20,
+    "editor.fontFamily": "\"JetBrains Mono\"",
+    "editor.fontLigatures": true,
+    "code-runner.defaultLanguage": "python",
+    "code-runner.runInTerminal": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "git.enableSmartCommit": true,
+    "git.autofetch": true
+}
