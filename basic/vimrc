@@ -43,11 +43,17 @@ let mapleader = " "
 
     set splitbelow splitright
 
-" Remap <Ctrl-W>v to open blank
-    nnoremap <C-w>v :vnew<CR>
+" toggle numbers
+    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
 
-" <Ctrl-W>h to open blank horizontally
-    nnoremap <C-w>h :new<CR>
+" toggle spell
+    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
+
+" open blank
+    nnoremap <leader>wv :vnew<CR>
+
+" open blank horizontally
+    nnoremap <leader>wh :new<CR>
 
 " Move windows
     noremap <leader>h <C-w>h
@@ -56,8 +62,7 @@ let mapleader = " "
     map <leader>l <C-w>l
 
 " resize windows
-    nmap <silent> <S-h> :vertical resize +5<CR>
-    nmap <silent> <S-l> :vertical resize -5<CR>
-
-    nmap <silent> <S-k> :resize +5<CR>
-    nmap <silent> <S-j> :resize -5<CR>
+    nmap <silent> <S-left> :vertical resize -5<CR>
+    nmap <silent> <S-right> :vertical resize +5<CR>
+    nmap <silent> <S-up> :resize -5<CR>
+    nmap <silent> <S-down> :resize +5<CR>

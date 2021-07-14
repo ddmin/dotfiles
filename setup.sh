@@ -45,13 +45,13 @@ function root {
     echo "Requires root privileges:"
     sudo echo "Verified."
     echo Moving bash aliases
-        sudo cp "$BASIC/basic_alias" "$ROOTDIR/.bash_aliases"
+        sudo cp "$BASIC/alias" "$ROOTDIR/.bash_aliases"
 
     echo Moving bashrc
-        sudo cp "$BASIC/basic_bashrc" "$ROOTDIR/.bashrc"
+        sudo cp "$BASIC/bashrc" "$ROOTDIR/.bashrc"
 
     echo Moving vimrc
-        sudo cp "$BASIC/basic_vimrc" "$ROOTDIR/.vimrc"
+        sudo cp "$BASIC/vimrc" "$ROOTDIR/.vimrc"
 
     echo DONE
 }
@@ -67,7 +67,7 @@ function setup {
         cp "$NORMAL/.bashrc" "$DOTDIR/.bashrc"
 
     echo Moving zshrc
-        cp "$BASIC/basic_zshrc" "$DOTDIR/.zshrc"
+        cp "$BASIC/zshrc" "$DOTDIR/.zshrc"
 
     echo Moving profile
         cp "$NORMAL/.profile" "$DOTDIR/.profile"
@@ -77,9 +77,6 @@ function setup {
 
     echo Moving vimrc
         cp "$NORMAL/.vimrc" "$DOTDIR/.vimrc"
-
-    echo Moving basic_vimrc
-        cp "$BASIC/basic_vimrc" "$DOTDIR/.basic_vimrc"
 
     echo Moving Xresources
         cp "$NORMAL/.Xresources" "$DOTDIR/.Xresources"
@@ -128,22 +125,22 @@ function setup {
 function basic {
     echo "============== BASIC SETUP =============="
     echo Moving bash aliases
-        cp "$BASIC/basic_alias" "$DOTDIR/.bash_aliases"
+        cp "$BASIC/alias" "$DOTDIR/.bash_aliases"
 
     echo Moving bashrc
-        cp "$BASIC/basic_bashrc" "$DOTDIR/.bashrc"
+        cp "$BASIC/bashrc" "$DOTDIR/.bashrc"
 
     echo Moving zshrc
-        cp "$BASIC/basic_zshrc" "$DOTDIR/.zshrc"
+        cp "$BASIC/zshrc" "$DOTDIR/.zshrc"
 
     echo Moving profile
-        cp "$BASIC/basic_profile" "$DOTDIR/.profile"
+        cp "$BASIC/profile" "$DOTDIR/.profile"
 
     echo Moving gitconfig
         cp "$BASIC/gitconfig" "$DOTDIR/.gitconfig"
 
     echo Moving vimrc
-        cp "$BASIC/basic_vimrc" "$DOTDIR/.vimrc"
+        cp "$BASIC/vimrc" "$DOTDIR/.vimrc"
 
     echo DONE
 }
