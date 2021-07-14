@@ -21,6 +21,7 @@ function mobile {
     echo Installing packages...
         yes | pkg install vim
         yes | pkg install git
+        yes | pkg install exa
         yes | pkg install ranger
         yes | pkg install golang
         yes | pkg install busybox termux-services
