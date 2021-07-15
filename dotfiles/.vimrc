@@ -236,8 +236,8 @@ call plug#end()
     nnoremap <silent> <leader>z :UndotreeToggle<CR>
 
 " comment
-    nnoremap <silent> <leader>a :call NERDComment(0,"toggle")<CR>
-    vnoremap <silent> <leader>a :call NERDComment(0,"toggle")<CR>
+    nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
+    vnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
 
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 1
