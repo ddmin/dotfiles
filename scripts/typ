@@ -108,7 +108,7 @@ then
 else
     echo -e "It took you ${COLOR}$DUR seconds${NOCOL} ($RATIO WPS), but you did not type all ${COLOR}$NUM words${NOCOL} correctly."
     echo
-    echo -e "${COLOR}Here is your mistake:${NOCOL}"
+    echo -e "${COLOR}Here are your mistake(s):${NOCOL}"
     wdiff "$ACT" "$COMP" | colordiff
 fi
 
