@@ -4,19 +4,11 @@
 # | |_) | (_| \__ \ | (__  | |_) | (_| \__ \ | | |
 # |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
 
-# prompt
-export PS1=" \[\e[00;34m\]λ \W \[\e[0m\]"
-
 # Set default editor
 export EDITOR='vim'
 export VISUAL='vim'
 
-# bash aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# profile
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
+# alia-ls-es
+alias l='ls'
+alias ll='ls -l'
+alias la='ls -a'

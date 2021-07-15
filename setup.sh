@@ -45,8 +45,6 @@ function root {
     echo "============== ROOT SETUP =============="
     echo "Requires root privileges:"
     sudo echo "Verified."
-    echo Moving bash aliases
-        sudo cp "$BASIC/alias" "$ROOTDIR/.bash_aliases"
 
     echo Moving bashrc
         sudo cp "$BASIC/bashrc" "$ROOTDIR/.bashrc"
@@ -125,9 +123,6 @@ function setup {
 # basic setup
 function basic {
     echo "============== BASIC SETUP =============="
-    echo Moving bash aliases
-        cp "$BASIC/alias" "$DOTDIR/.bash_aliases"
-
     echo Moving bashrc
         cp "$BASIC/bashrc" "$DOTDIR/.bashrc"
 
