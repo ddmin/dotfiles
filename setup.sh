@@ -26,18 +26,57 @@ function mobile {
         yes | pkg install golang
         yes | pkg install busybox termux-services
         yes | pkg install openssh
+        yes | pkg install zsh
+
+    echo Installing vim-plug
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo Installing ohmyzsh
-        sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
+        git clone https://github.com/Cabbagec/termux-ohmyzsh.git "$HOME/termux-ohmyzsh" --depth 1
 
+    mv "$HOME/.termux" "$HOME/.termux.bak.$(date +%Y.%m.%d-%H:%M:%S)"
+    cp -R "$HOME/termux-ohmyzsh/.termux" "$HOME/.termux"
+
+    git clone git://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh" --depth 1
+    mv "$HOME/.zshrc" "$HOME/.zshrc.bak.$(date +%Y.%m.%d-%H:%M:%S)"
+    cp "$HOME/.oh-my-zsh/templates/zshrc.zsh-template" "$HOME/.zshrc"
+    sed -i '/^ZSH_THEME/d' "$HOME/.zshrc"
+    sed -i '1iZSH_THEME="robbyrussel"' "$HOME/.zshrc"
+
+    # syntax highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh-syntax-highlighting" --depth 1
+    echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
+
+    # autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/zsh-autosuggestions
+    echo "source $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh" >> "$HOME/.zshrc"
+
+    sed -i '/^plugins/d' "$HOME/.zshrc"
+    sed -i '1iplugins=(git vi-mode)"' "$HOME/.zshrc"
+
+    # change shell
+    chsh -s zsh
+
+    # moving dotfiles
     echo Moving zshrc
-        cp "$MOBILE/zshrc" "$DOTDIR/.zshrc"
+        cat "$DOTDIR/.zshrc" "$MOBILE/zshrc" > "$DOTDIR/.zshrc"
 
     echo Moving vimrc
         cp "$MOBILE/vimrc" "$DOTDIR/.vimrc"
 
     echo Moving gitconfig
         cp "$MOBILE/gitconfig" "$DOTDIR/.gitconfig"
+
+    echo "Choose your color scheme"
+    $HOME/.termux/colors.sh
+
+    echo "Choose your font"
+    $HOME/.termux/fonts.sh
+
+    echo "Please restart Termux app..."
+
+    exit
 }
 
 # root setup

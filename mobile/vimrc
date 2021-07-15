@@ -3,6 +3,13 @@
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
 
+call plug#begin('~/.vim/plugged')
+    Plug 'itchyny/lightline.vim'
+    Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
+colorscheme nord
+
 let mapleader = " "
 
 " Basics
@@ -40,14 +47,28 @@ let mapleader = " "
     set expandtab
     set autoindent
 
-" Remap <Ctrl-W>v to open blank
-    nnoremap <C-w>v :vnew<CR>
+    set splitbelow splitright
 
-" <Ctrl-W>h to open blank horizontally
-    nnoremap <C-w>h :new<CR>
+" toggle numbers
+    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
+
+" toggle spell
+    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
+
+" open blank
+    nnoremap <leader>wv :vnew<CR>
+
+" open blank horizontally
+    nnoremap <leader>wh :new<CR>
 
 " Move windows
     noremap <leader>h <C-w>h
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
+
+" resize windows
+    nmap <silent> <S-left> :vertical resize -5<CR>
+    nmap <silent> <S-right> :vertical resize +5<CR>
+    nmap <silent> <S-up> :resize -5<CR>
+    nmap <silent> <S-down> :resize +5<CR>
