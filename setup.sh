@@ -52,7 +52,7 @@ function mobile {
     echo "source $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh" >> "$HOME/.zshrc"
 
     sed -i '/^plugins/d' "$HOME/.zshrc"
-    sed -i '1iplugins=(git vi-mode)"' "$HOME/.zshrc"
+    sed -i '1iplugins=(git vi-mode)' "$HOME/.zshrc"
 
     # set nord colorscheme
     cp "$MOBILE/nord.colors" "$DOTDIR/.termux/colors/nord.colors"
