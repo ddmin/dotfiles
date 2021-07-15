@@ -29,8 +29,7 @@ function mobile {
         yes | pkg install zsh
 
     echo Installing vim-plug
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo Installing ohmyzsh
         git clone https://github.com/Cabbagec/termux-ohmyzsh.git "$HOME/termux-ohmyzsh" --depth 1
@@ -49,11 +48,14 @@ function mobile {
     echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
 
     # autosuggestions
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.zsh-autosuggestions
     echo "source $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh" >> "$HOME/.zshrc"
 
     sed -i '/^plugins/d' "$HOME/.zshrc"
     sed -i '1iplugins=(git vi-mode)"' "$HOME/.zshrc"
+
+    # set nord colorscheme
+    cp "$MOBILE/nord.colors" "$DOTDIR/.termux/colors/nord.colors"
 
     # moving dotfiles
     echo Moving zshrc
