@@ -15,7 +15,7 @@ alias la='logo-ls -Av'
 alias ll='logo-ls -vlg'
 
 # use nvim
-alias vi='vim -u ~/.basic_vimrc'
+alias vi='/usr/bin/vim -u NONE'
 alias vim='nvim'
 
 # generate random file from directory
