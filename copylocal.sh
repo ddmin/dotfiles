@@ -15,9 +15,6 @@ echo Copying profile
 echo Copying commands.py
     cp ~/.config/ranger/commands.py "$DOTDIR/commands.py"
 
-echo Copying powerline configs
-    cp ~/.config/powerline-shell/config.json "$DOTDIR/config.json"
-
 echo Copying gitconfig
     cp ~/.gitconfig "$DOTDIR/.gitconfig"
 
