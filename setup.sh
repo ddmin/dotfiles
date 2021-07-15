@@ -55,18 +55,19 @@ function mobile {
     sed -i '/^plugins/d' "$HOME/.zshrc"
     sed -i '1iplugins=(git vi-mode)"' "$HOME/.zshrc"
 
-    # change shell
-    chsh -s zsh
-
     # moving dotfiles
     echo Moving zshrc
-        cat "$DOTDIR/.zshrc" "$MOBILE/zshrc" > "$DOTDIR/.zshrc"
+        cat "$HOME/.zshrc" "$MOBILE/zshrc" > "$DOTDIR/zshrc"
+        mv "$DOTDIR/zshrc" "$DOTDIR/.zshrc"
 
     echo Moving vimrc
         cp "$MOBILE/vimrc" "$DOTDIR/.vimrc"
 
     echo Moving gitconfig
         cp "$MOBILE/gitconfig" "$DOTDIR/.gitconfig"
+
+    # change shell
+    chsh -s zsh
 
     echo "Choose your color scheme"
     $HOME/.termux/colors.sh
