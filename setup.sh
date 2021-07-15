@@ -41,7 +41,7 @@ function mobile {
     mv "$HOME/.zshrc" "$HOME/.zshrc.bak.$(date +%Y.%m.%d-%H:%M:%S)"
     cp "$HOME/.oh-my-zsh/templates/zshrc.zsh-template" "$HOME/.zshrc"
     sed -i '/^ZSH_THEME/d' "$HOME/.zshrc"
-    sed -i '1iZSH_THEME="robbyrussel"' "$HOME/.zshrc"
+    sed -i '1iZSH_THEME=robbyrussell' "$HOME/.zshrc"
 
     # syntax highlighting
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh-syntax-highlighting" --depth 1
