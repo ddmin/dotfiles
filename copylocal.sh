@@ -12,23 +12,11 @@ echo Copying bashrc
 echo Copying profile
     cp ~/.profile "$DOTDIR/.profile"
 
-echo Copying commands.py
-    cp ~/.config/ranger/commands.py "$DOTDIR/commands.py"
-
 echo Copying gitconfig
     cp ~/.gitconfig "$DOTDIR/.gitconfig"
 
 echo Copying mailcap
     cp ~/.mailcap "$DOTDIR/.mailcap"
-
-echo Copying rc.conf
-    cp ~/.config/ranger/rc.conf "$DOTDIR/rc.conf"
-
-echo Copying rifle.conf
-    cp ~/.config/ranger/rifle.conf "$DOTDIR/rifle.conf"
-
-echo Copying scope.sh
-    cp ~/.config/ranger/scope.sh "$DOTDIR/scope.sh"
 
 echo Copying vimrc
     cp ~/.vimrc "$DOTDIR/.vimrc"
@@ -64,7 +52,7 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
 # create records of these directories
-dirs=("Downloads/ISO" "Downloads/ROM" "VirtualBox VMs" "Videos")
+dirs=("Downloads/ISO" "VirtualBox VMs")
 save_file="$RECORDDIR/record.txt"
 
 # clear record file

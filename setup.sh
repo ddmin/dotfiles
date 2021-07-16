@@ -3,7 +3,6 @@
 # config directory for applications
 ROOTDIR="/root"
 DOTDIR="$HOME"
-RANGERDIR="$HOME/.config/ranger"
 NEODIR="$HOME/.config/neofetch"
 VIMDIR="$HOME/.vim"
 NVIMDIR="$HOME/.config/nvim"
@@ -130,21 +129,6 @@ function setup {
 
     echo Moving feh keys
         cp "$NORMAL/keys" "$DOTDIR/.config/feh/keys"
-
-    echo "============== RANGER =============="
-        mkdir -p "$RANGERDIR"
-
-    echo Moving commands.py
-        cp "$NORMAL/commands.py" "$RANGERDIR/commands.py"
-
-    echo Moving rc.conf
-        cp "$NORMAL/rc.conf" "$RANGERDIR/rc.conf"
-
-    echo Moving rifle.conf
-        cp "$NORMAL/rifle.conf" "$RANGERDIR/rifle.conf"
-
-    echo Moving scope.sh
-        cp "$NORMAL/scope.sh" "$RANGERDIR/scope.sh"
 
     echo "============== NEOFETCH =============="
     echo Moving config.conf
