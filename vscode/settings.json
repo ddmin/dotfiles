@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Dracula Soft",
+    "workbench.colorTheme": "Nord",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
@@ -31,5 +31,6 @@
     "code-runner.runInTerminal": true,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "git.enableSmartCommit": true,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "liveshare.presence": false
 }
