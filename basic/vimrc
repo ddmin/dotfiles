@@ -22,10 +22,19 @@ let mapleader = " "
 
     set ic
     inoremap jk <ESC>
+    vnoremap jk <ESC>
     set wildmenu
 
 " Fix splits
     set splitbelow splitright
+
+" Folding
+    let mapleader = " "
+    set foldenable
+    set foldlevelstart=10
+    set foldnestmax=10
+    set foldmethod=syntax
+    autocmd FileType vim nnoremap <CR> za
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

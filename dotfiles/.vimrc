@@ -101,6 +101,7 @@ call plug#end()
 
     set ic
     inoremap jk <ESC>
+    vnoremap jk <ESC>
     set wildmenu
 
 " undo directory
