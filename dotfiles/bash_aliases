@@ -18,6 +18,10 @@ alias ll='logo-ls -vlgD'
 alias vi='/usr/bin/vim -u NONE'
 alias vim='nvim'
 
+# rust replacements
+alias cat='bat'
+alias grep='rg'
+
 # generate random file from directory
 randfile () {
     FILE=$(ls "$1" | sort -R | tail -1)
