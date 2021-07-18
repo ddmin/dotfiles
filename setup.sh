@@ -1,3 +1,4 @@
+#!/bin/bash
 # SETUP: setup dotfiles
 
 # config directory for applications

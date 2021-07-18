@@ -1,3 +1,4 @@
+#!/bin/bash
 # COPYLOCAL: automatically move dotfiles from ~/ to this repository
 
 DOTDIR="./dotfiles"
