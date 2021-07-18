@@ -179,6 +179,7 @@ call plug#end()
     hi LineNr ctermfg=lightblue
     hi CursorLineNr ctermfg=darkmagenta
     hi Folded ctermbg=magenta
+    hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 
 " }}}
 
