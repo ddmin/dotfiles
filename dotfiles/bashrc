@@ -43,7 +43,7 @@ export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u ~/.basic_vimrc --not-a-te
 
 # Enable fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='fdfind --type f --type d --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Remap CTRL-T to CTRL-G for fzf
