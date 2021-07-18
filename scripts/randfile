@@ -1,0 +1,11 @@
+#!/bin/bash
+# randfile: select a random file in a directory
+
+if [ $# -eq 0 ]; then
+    DIR=$(pwd)
+else
+    DIR="$1"
+fi
+
+FILE=$(ls "$DIR" | sort -R | tail -1)
+echo $FILE
