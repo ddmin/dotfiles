@@ -1,0 +1,71 @@
+#          _
+#  _______| |__  _ __ ___
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__
+# /___|___/_| |_|_|  \___|
+
+# colors
+autoload -U colors && colors
+
+# zsh aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# profile
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
+# Start neofetch
+if [[ $- =~ "i" ]]; then
+    neofetch
+fi
+
+# Start powerline-shell
+function powerline_precmd() {
+    PS1="$($GOPATH/bin/powerline-go -cwd-max-depth 1 -error $? -jobs ${${(%):%j}:-0})"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    install_powerline_precmd
+fi
+
+# Tab completion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+# vi-mode
+bindkey -v
+export KEYTIMEOUT=20
+
+# remap vi
+bindkey -M viins 'jk' vi-cmd-mode
+
+# vi-keys in completion menu
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Enable fzf search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Remap CTRL-T to CTRL-G for fzf
+bindkey '^G' fzf-file-widget
+bindkey '^T' transpose-chars

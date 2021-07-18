@@ -13,21 +13,6 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
-# Start neofetch
-if [[ $- =~ "i" ]]; then
-    neofetch
-fi
-
-# Start powerline-shell
-
-function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go -cwd-max-depth 1 -error $? -jobs $(jobs -p | wc -l))"
-}
-
-if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-
 # enable vi mode
 set -o vi
 
@@ -42,7 +27,6 @@ export VISUAL='nvim'
 export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u ~/.basic_vimrc --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 # Enable fzf search
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 

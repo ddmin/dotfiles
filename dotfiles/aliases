@@ -10,9 +10,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias ls='ls -F --color=auto'
 
 # logo-ls has prettier icons
-alias l='logo-ls -vD'
-alias la='logo-ls -AvD'
-alias ll='logo-ls -vlgD'
+alias l='logo-ls -v'
+alias la='logo-ls -Av'
+alias ll='logo-ls -vlg'
 
 # use nvim
 alias vi='/usr/bin/vim -u NONE'
@@ -46,35 +46,6 @@ function norm {
 function bkg() {
     feh --bg-fill "$1"
 }
-
-
-# slideshow
-slideshow () {
-    while true; do
-        norm;
-        sleep 10;
-    done
-}
-
-# hail mary
-mary () {
-    sudo echo "=== Hail Mary ==="
-    sudo mkdir -p /Mary
-
-    dirs=("Code" "Documents" "Music" "Pictures" "Public" "Videos")
-
-    # loop through directories
-    for d in ${dirs[@]}; do
-        echo "Moving $HOME/$d"
-        sudo mv "$HOME/$d" /Mary
-    done
-
-    echo Done
-}
-
-# change wallpaper and colorscheme
-# alias chwal='wal --vte -q -i ~/Pictures/Wallpapers'
-# alias norm='wal --vte -q -i /usr/share/backgrounds/linuxmint-combined'
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

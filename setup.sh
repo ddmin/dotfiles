@@ -3,7 +3,6 @@
 # config directory for applications
 ROOTDIR="/root"
 DOTDIR="$HOME"
-NEODIR="$HOME/.config/neofetch"
 VIMDIR="$HOME/.vim"
 NVIMDIR="$HOME/.config/nvim"
 
@@ -100,14 +99,11 @@ function root {
 function setup {
     echo "============== NORMAL SETUP =============="
 
-    echo Moving bash aliases
-        cp "$NORMAL/bash_aliases" "$DOTDIR/.bash_aliases"
-
-    echo Moving bashrc
-        cp "$NORMAL/bashrc" "$DOTDIR/.bashrc"
+    echo Moving zsh aliases
+        cp "$NORMAL/aliases" "$DOTDIR/.aliases"
 
     echo Moving zshrc
-        cp "$BASIC/zshrc" "$DOTDIR/.zshrc"
+        cp "$NORMAL/zshrc" "$DOTDIR/.zshrc"
 
     echo Moving profile
         cp "$NORMAL/profile" "$DOTDIR/.profile"
@@ -120,20 +116,6 @@ function setup {
 
     echo Moving Xresources
         cp "$NORMAL/Xresources" "$DOTDIR/.Xresources"
-
-    echo Moving inputrc
-        cp "$NORMAL/inputrc" "$DOTDIR/.inputrc"
-
-    echo Moving mailcap
-        cp "$NORMAL/mailcap" "$DOTDIR/.mailcap"
-
-    echo Moving feh keys
-        cp "$NORMAL/keys" "$DOTDIR/.config/feh/keys"
-
-    echo "============== NEOFETCH =============="
-    echo Moving config.conf
-        mkdir -p "$NEODIR"
-        cp "$NORMAL/config.conf" "$NEODIR/config.conf"
 
     echo "============== VIM =============="
     echo Creating undodir
