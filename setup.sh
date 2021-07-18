@@ -101,31 +101,31 @@ function setup {
     echo "============== NORMAL SETUP =============="
 
     echo Moving bash aliases
-        cp "$NORMAL/.bash_aliases" "$DOTDIR/.bash_aliases"
+        cp "$NORMAL/bash_aliases" "$DOTDIR/.bash_aliases"
 
     echo Moving bashrc
-        cp "$NORMAL/.bashrc" "$DOTDIR/.bashrc"
+        cp "$NORMAL/bashrc" "$DOTDIR/.bashrc"
 
     echo Moving zshrc
         cp "$BASIC/zshrc" "$DOTDIR/.zshrc"
 
     echo Moving profile
-        cp "$NORMAL/.profile" "$DOTDIR/.profile"
+        cp "$NORMAL/profile" "$DOTDIR/.profile"
 
     echo Moving gitconfig
-        cp "$NORMAL/.gitconfig" "$DOTDIR/.gitconfig"
+        cp "$NORMAL/gitconfig" "$DOTDIR/.gitconfig"
 
     echo Moving vimrc
-        cp "$NORMAL/.vimrc" "$DOTDIR/.vimrc"
+        cp "$NORMAL/vimrc" "$DOTDIR/.vimrc"
 
     echo Moving Xresources
-        cp "$NORMAL/.Xresources" "$DOTDIR/.Xresources"
+        cp "$NORMAL/Xresources" "$DOTDIR/.Xresources"
 
     echo Moving inputrc
-        cp "$NORMAL/.inputrc" "$DOTDIR/.inputrc"
+        cp "$NORMAL/inputrc" "$DOTDIR/.inputrc"
 
     echo Moving mailcap
-        cp "$NORMAL/.mailcap" "$DOTDIR/.mailcap"
+        cp "$NORMAL/mailcap" "$DOTDIR/.mailcap"
 
     echo Moving feh keys
         cp "$NORMAL/keys" "$DOTDIR/.config/feh/keys"

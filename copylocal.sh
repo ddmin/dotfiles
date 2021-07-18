@@ -4,25 +4,25 @@ DOTDIR="./dotfiles"
 
 echo "============== DOTFILES =============="
 echo Copying bash aliases
-    cp ~/.bash_aliases "$DOTDIR/.bash_aliases"
+    cp ~/.bash_aliases "$DOTDIR/bash_aliases"
 
 echo Copying bashrc
-    cp ~/.bashrc "$DOTDIR/.bashrc"
+    cp ~/.bashrc "$DOTDIR/bashrc"
 
 echo Copying profile
-    cp ~/.profile "$DOTDIR/.profile"
+    cp ~/.profile "$DOTDIR/profile"
 
 echo Copying gitconfig
-    cp ~/.gitconfig "$DOTDIR/.gitconfig"
+    cp ~/.gitconfig "$DOTDIR/gitconfig"
 
 echo Copying mailcap
-    cp ~/.mailcap "$DOTDIR/.mailcap"
+    cp ~/.mailcap "$DOTDIR/mailcap"
 
 echo Copying vimrc
-    cp ~/.vimrc "$DOTDIR/.vimrc"
+    cp ~/.vimrc "$DOTDIR/vimrc"
 
 echo Copying .Xresources
-    cp ~/.Xresources "$DOTDIR/.Xresources"
+    cp ~/.Xresources "$DOTDIR/Xresources"
 
 echo Copying init.vim
     cp ~/.config/nvim/init.vim "$DOTDIR/init.vim"
