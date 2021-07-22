@@ -29,6 +29,11 @@ call plug#begin('~/.vim/plugged')
 " vim-javascript
     Plug 'pangloss/vim-javascript'
 
+" vim-prettier
+    Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'] }
+
 " vim-go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 
@@ -38,14 +43,14 @@ call plug#begin('~/.vim/plugged')
 " YCM
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --rust-completer --ts-completer', 'for': ['go', 'python', 'rust', 'html', 'javascript'] }
 
+" auto-pairs
+    Plug 'jiangmiao/auto-pairs'
+
 " unicode.vim
     Plug 'chrisbra/unicode.vim'
 
 " undotree
     Plug 'mbbill/undotree'
-
-" autoclose
-    Plug 'Townk/vim-autoclose'
 
 " vim-lion
     Plug 'tommcdo/vim-lion'
@@ -56,8 +61,8 @@ call plug#begin('~/.vim/plugged')
 " vim-rooter
     Plug 'airblade/vim-rooter'
 
-" NERD commenter
-    Plug 'preservim/nerdcommenter'
+" vim-commentary
+    Plug 'tpope/vim-commentary'
 
 " fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -221,6 +226,10 @@ call plug#end()
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
+" prettier
+    let g:prettier#autoformat = 1
+    let g:prettier#autoformat_require_pragma = 0
+
 " Vim-Go
     autocmd FileType go nnoremap <Leader>r :GoRename<CR>
     autocmd FileType go nnoremap <silent> <C-b> :GoRun<CR>
@@ -234,14 +243,12 @@ call plug#end()
     nmap <C-c> i<Plug>(UnicodeFuzzy)
 
 " undotree
+    nnoremap <silent> <C-z> :UndotreeToggle<CR>
     nnoremap <silent> <leader>z :UndotreeToggle<CR>
 
-" comment
-    nnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
-    vnoremap <silent> <C-a> :call NERDComment(0,"toggle")<CR>
-
-    let g:NERDSpaceDelims = 1
-    let g:NERDCompactSexyComs = 1
+" commentary
+    nnoremap <silent> <C-a> :Commentary<CR>
+    vnoremap <silent> <C-a> :Commentary<CR>
 
 " Enable devicons
     let g:webdevicons_enable = 1
