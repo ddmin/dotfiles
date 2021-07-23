@@ -7,10 +7,16 @@
 # send alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# ls aliases
+# defaults
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias mkdir='mkdir -pv'
+
+# ls
 alias ls='ls -F --color=auto'
 
-# logo-ls has prettier icons
+# logo-ls
 alias l='logo-ls -v'
 alias la='logo-ls -Av'
 alias ll='logo-ls -vlg'
