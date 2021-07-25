@@ -8,7 +8,7 @@
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # defaults
-alias cp='cp -iv'
+alias cp='cp -riv'
 alias mv='mv -iv'
 alias rm='rm -vI'
 alias mkdir='mkdir -pv'
