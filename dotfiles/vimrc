@@ -68,6 +68,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+" peekaboo
+    Plug 'junegunn/vim-peekaboo'
+
+" goyo
+    Plug 'junegunn/goyo.vim'
+
 " CSS color
     Plug 'ap/vim-css-color'
 
@@ -138,6 +144,9 @@ call plug#end()
     set hlsearch
     nnoremap <silent> <leader><leader> :nohl<CR><C-l>
 
+" Wipe Registers
+    command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+
 " }}}
 
 " Window Splits {{{
@@ -178,20 +187,29 @@ call plug#end()
     endif
 
 " colors
+    function! s:patch_colors()
+        hi Normal guibg=NONE ctermbg=NONE
+        hi Comment ctermfg=magenta
+        hi LineNr ctermfg=lightblue
+        hi CursorLineNr ctermfg=darkmagenta
+        hi Folded ctermbg=magenta
+        hi Search cterm=NONE ctermfg=black ctermbg=lightblue
+    endfunction
+
+    autocmd! ColorScheme onedark call s:patch_colors()
     colorscheme onedark
-    hi Normal guibg=NONE ctermbg=NONE
-    hi Comment ctermfg=magenta
-    hi LineNr ctermfg=lightblue
-    hi CursorLineNr ctermfg=darkmagenta
-    hi Folded ctermbg=magenta
-    hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 
 " }}}
 
 " Markdown {{{
+" goyo
+    autocmd BufWritePost *.note silent !note2pdf %:p
 
-    autocmd BufWritePost /home/*/*.note silent !note2pdf %:p
+    autocmd BufRead,BufNewFile *.note set filetype=markdown
+    autocmd BufRead,BufNewFile *.note set syntax=markdown
+    autocmd BufRead,BufNewFile *.note set syntax=markdown
 
+    autocmd BufRead,BufNewFile *.note silent :Goyo
 " }}}
 
 " Plugins Settings {{{
@@ -237,6 +255,30 @@ call plug#end()
 
 " vim-lion
     let g:lion_squeeze_spaces = 1
+
+" goyo
+    function! s:goyo_enter()
+      let b:quitting = 0
+      let b:quitting_bang = 0
+      autocmd QuitPre <buffer> let b:quitting = 1
+      cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+    endfunction
+
+    function! s:goyo_leave()
+      " Quit Vim if this is the only remaining buffer
+      if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        if b:quitting_bang
+          qa!
+        else
+          qa
+        endif
+      endif
+    endfunction
+
+    autocmd! User GoyoEnter call <SID>goyo_enter()
+    autocmd! User GoyoLeave call <SID>goyo_leave()
+
+    nnoremap <silent> <Leader>g :Goyo<CR>
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
