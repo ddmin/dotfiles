@@ -34,6 +34,9 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'] }
 
+" emmet
+    Plug 'mattn/emmet-vim'
+
 " vim-go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
 
@@ -51,9 +54,6 @@ call plug#begin('~/.vim/plugged')
 
 " undotree
     Plug 'mbbill/undotree'
-
-" vim-lion
-    Plug 'tommcdo/vim-lion'
 
 " vim-surround
     Plug 'tpope/vim-surround'
@@ -202,13 +202,18 @@ call plug#end()
 " }}}
 
 " Markdown {{{
-" goyo
+
+    " autocompile into pdf
     autocmd BufWritePost *.note silent !note2pdf %:p
 
+    " syntax highlighting
     autocmd BufRead,BufNewFile *.note set filetype=markdown
     autocmd BufRead,BufNewFile *.note set syntax=markdown
-    autocmd BufRead,BufNewFile *.note set syntax=markdown
 
+    " enable spell
+    autocmd BufRead,BufNewFile *.note set spell spelllang=en_us
+
+    " enable goyo
     autocmd BufRead,BufNewFile *.note silent :Goyo
 " }}}
 
@@ -248,13 +253,14 @@ call plug#end()
     let g:prettier#autoformat = 1
     let g:prettier#autoformat_require_pragma = 0
 
+" emmet
+    let g:user_emmet_mode='n'
+    let g:user_emmet_leader_key=','
+
 " Vim-Go
     autocmd FileType go nnoremap <Leader>r :GoRename<CR>
     autocmd FileType go nnoremap <silent> <C-b> :GoRun<CR>
     autocmd FileType go nnoremap <silent> <Leader>d :GoDoc<CR>
-
-" vim-lion
-    let g:lion_squeeze_spaces = 1
 
 " goyo
     function! s:goyo_enter()
