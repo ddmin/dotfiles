@@ -68,11 +68,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
-" peekaboo
-    Plug 'junegunn/vim-peekaboo'
-
 " goyo
     Plug 'junegunn/goyo.vim'
+
+" limelight
+    Plug 'junegunn/limelight.vim'
 
 " CSS color
     Plug 'ap/vim-css-color'
@@ -215,6 +215,9 @@ call plug#end()
 
     " enable goyo
     autocmd BufRead,BufNewFile *.note silent :Goyo
+
+    " enable limelight
+    autocmd BufRead,BufNewFile *.note silent :Limelight
 " }}}
 
 " Plugins Settings {{{
@@ -285,6 +288,11 @@ call plug#end()
     autocmd! User GoyoLeave call <SID>goyo_leave()
 
     nnoremap <silent> <Leader>g :Goyo<CR>
+
+" limelight
+    let g:limelight_conceal_ctermfg = 'darkgray'
+    let g:limelight_paragraph_span = 1
+    let g:limelight_priority = -1
 
 " Unicode Symbols
     imap <C-c> <Plug>(UnicodeFuzzy)
