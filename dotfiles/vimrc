@@ -127,12 +127,6 @@ call plug#end()
     set expandtab
     set autoindent
 
-" toggle numbers
-    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
-
-" toggle spell
-    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
-
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -146,31 +140,6 @@ call plug#end()
 
 " Wipe Registers
     command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
-
-" }}}
-
-" Window Splits {{{
-
-" Fix splits
-    set splitbelow splitright
-
-" Vertical Split
-    nnoremap <silent> <leader>wv :vnew<CR>
-
-" Horizontal Split
-    nnoremap <silent> <leader>wh :new<CR>
-
-" Move windows
-    noremap <leader>h <C-w>h
-    map <leader>j <C-w>j
-    map <leader>k <C-w>k
-    map <leader>l <C-w>l
-
-" resize windows
-    nmap <silent> <S-left> :vertical resize -5<CR>
-    nmap <silent> <S-right> :vertical resize +5<CR>
-    nmap <silent> <S-up> :resize -5<CR>
-    nmap <silent> <S-down> :resize +5<CR>
 
 " }}}
 
@@ -198,6 +167,56 @@ call plug#end()
 
     autocmd! ColorScheme onedark call s:patch_colors()
     colorscheme onedark
+
+" }}}
+
+" Bindings {{{
+
+" toggle numbers
+    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
+
+" toggle spell
+    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
+
+" yank to end of line
+    nnoremap Y y$
+
+" undo breakpoints
+    inoremap , ,<c-g>u
+    inoremap . .<c-g>u
+    inoremap ! !<c-g>u
+    inoremap ? ?<c-g>u
+
+" moving text
+    nnoremap <C-j> :m .+1<CR>==
+    nnoremap <C-k> :m .-2<CR>==
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" }}}
+
+" Splits {{{
+
+" Fix splits
+    set splitbelow splitright
+
+" Vertical Split
+    nnoremap <silent> <leader>wv :vnew<CR>
+
+" Horizontal Split
+    nnoremap <silent> <leader>wh :new<CR>
+
+" Move windows
+    noremap <leader>h <C-w>h
+    map <leader>j <C-w>j
+    map <leader>k <C-w>k
+    map <leader>l <C-w>l
+
+" resize windows
+    nmap <silent> <S-left> :vertical resize -5<CR>
+    nmap <silent> <S-right> :vertical resize +5<CR>
+    nmap <silent> <S-up> :resize -5<CR>
+    nmap <silent> <S-down> :resize +5<CR>
 
 " }}}
 
