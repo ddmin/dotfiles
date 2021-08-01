@@ -26,6 +26,9 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
+" vim-autoformat
+    Plug 'Chiel92/vim-autoformat'
+
 " vim-javascript
     Plug 'pangloss/vim-javascript'
 
@@ -239,7 +242,14 @@ call plug#end()
     autocmd BufRead,BufNewFile *.note silent :Limelight
 " }}}
 
-" Plugins Settings {{{
+" Settings {{{
+
+" NERD Tree
+    map <Leader>. :NERDTreeToggle<CR>
+
+" fzf
+    map <C-g> :Files<CR>
+    map <C-f> :Rg<CR>
 
     let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
@@ -261,12 +271,9 @@ call plug#end()
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
 
-" NERD Tree
-    map <Leader>. :NERDTreeToggle<CR>
-
-" fzf
-    map <C-g> :Files<CR>
-    map <C-f> :Rg<CR>
+" autoformat
+    autocmd BufWritePost * :Autoformat
+    let g:autoformat_autoindent = 0
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
