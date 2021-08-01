@@ -32,11 +32,6 @@ call plug#begin('~/.vim/plugged')
 " vim-javascript
     Plug 'pangloss/vim-javascript'
 
-" vim-prettier
-    Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install',
-      \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'] }
-
 " emmet
     Plug 'mattn/emmet-vim'
 
@@ -81,7 +76,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ap/vim-css-color'
 
 " vim-airline
- 	Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline'
 
 " vim-airline-themes
     Plug 'vim-airline/vim-airline-themes'
@@ -277,10 +272,6 @@ call plug#end()
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
-
-" prettier
-    let g:prettier#autoformat = 1
-    let g:prettier#autoformat_require_pragma = 0
 
 " emmet
     let g:user_emmet_mode='n'
