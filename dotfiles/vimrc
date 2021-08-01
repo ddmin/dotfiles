@@ -269,6 +269,7 @@ call plug#end()
 " autoformat
     autocmd BufWritePost * :Autoformat
     let g:autoformat_autoindent = 0
+    let g:autoformat_retab = 0
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
