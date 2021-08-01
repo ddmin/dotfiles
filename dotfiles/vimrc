@@ -5,7 +5,6 @@
 
 " Folding {{{
 
-let mapleader = " "
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
@@ -93,6 +92,7 @@ call plug#end()
 
 " Basics {{{
 
+    let mapleader = " "
     filetype plugin on
 
     set nocompatible
