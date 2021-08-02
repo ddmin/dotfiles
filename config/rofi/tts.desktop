@@ -5,4 +5,4 @@ Terminal=false
 Type=Application
 Name=TTS
 Exec=/home/ddmin/Code/Python/TTS/tts
-Icon=logo
+Icon=tts

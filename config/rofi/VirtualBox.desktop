@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=VirtualBox Dark
-Comment=Virtual Box
-Icon=vbox
-Terminal=false
-Exec=VirtualBox -style Fusion %U
