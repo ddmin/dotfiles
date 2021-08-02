@@ -28,7 +28,6 @@ let mapleader = " "
     set splitbelow splitright
 
 " Folding
-    let mapleader = " "
     set foldenable
     set foldlevelstart=10
     set foldnestmax=10

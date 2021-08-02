@@ -12,3 +12,12 @@ export VISUAL='vim'
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
+
+# safer defaults
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias mkdir='mkdir -pv'
+
+# naviage to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

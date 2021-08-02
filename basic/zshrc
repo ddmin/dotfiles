@@ -11,3 +11,12 @@ PROMPT='%(?.%F{green}λ.%F{red}?%?)%f %B%F{177}%2~%f%b %# '
 alias l='exa'
 alias la='exa -a'
 alias ll='exa -l'
+
+# safer defaults
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias mkdir='mkdir -pv'
+
+# naviage to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
