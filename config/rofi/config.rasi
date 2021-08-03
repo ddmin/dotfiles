@@ -1,5 +1,5 @@
 configuration {
-    modi: "drun";
+    modi: "drun,window,ssh";
     show: "drun";
     columns: 3;
     eh: 1;
