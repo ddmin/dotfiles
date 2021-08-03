@@ -13,7 +13,6 @@ configuration {
     hide-scrollbar: true;
     sidebar-mode: false;
     auto-select: false;
-    fuzzy: false;
     terminal: "kitty";
     theme: "~/.config/rofi/theme.rasi";
 }
