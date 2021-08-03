@@ -44,7 +44,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
 " YCM
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --rust-completer --ts-completer', 'for': ['go', 'python', 'rust', 'html', 'javascript'] }
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all', 'for': ['go', 'python', 'rust', 'html', 'javascript'] }
 
 " auto-pairs
     Plug 'jiangmiao/auto-pairs'
