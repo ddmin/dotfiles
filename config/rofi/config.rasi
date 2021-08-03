@@ -2,7 +2,6 @@ configuration {
     modi: "drun";
     show: "drun";
     columns: 3;
-    lines: 10;
     eh: 1;
     fullscreen: false;
     font: "Noto Sans Bold 18";
