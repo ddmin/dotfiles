@@ -19,9 +19,6 @@ echo Copying gitconfig
 echo Copying vimrc
     cp ~/.vimrc "$DOTDIR/vimrc"
 
-echo Copying .Xresources
-    cp ~/.Xresources "$DOTDIR/Xresources"
-
 echo Copying init.vim
     cp ~/.config/nvim/init.vim "$DOTDIR/init.vim"
 
