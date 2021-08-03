@@ -25,11 +25,14 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
-" vim-autoformat
-    Plug 'Chiel92/vim-autoformat'
+" neoformat
+    Plug 'sbdchd/neoformat'
 
 " vim-javascript
     Plug 'pangloss/vim-javascript'
+
+" js-x-pretty
+    Plug 'maxmellon/vim-jsx-pretty'
 
 " emmet
     Plug 'mattn/emmet-vim'
@@ -266,10 +269,11 @@ call plug#end()
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
 
-" autoformat
-    autocmd BufWritePre * :Autoformat
-    let g:autoformat_autoindent = 0
-    let g:autoformat_retab = 0
+" neoformat
+    augroup fmt
+      autocmd!
+      autocmd BufWritePre * undojoin | Neoformat
+    augroup END
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
