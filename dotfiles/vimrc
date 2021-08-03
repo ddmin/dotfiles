@@ -279,7 +279,7 @@ call plug#end()
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
 
 " emmet
-    let g:user_emmet_mode='n'
+    let g:user_emmet_mode='nv'
     let g:user_emmet_leader_key=','
 
 " Vim-Go
