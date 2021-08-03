@@ -115,9 +115,6 @@ function setup {
     echo Moving vimrc
         cp "$NORMAL/vimrc" "$DOTDIR/.vimrc"
 
-    echo Moving Xresources
-        cp "$NORMAL/Xresources" "$DOTDIR/.Xresources"
-
     echo "============== VIM =============="
     echo Creating undodir
         mkdir -p "$VIMDIR/undodir"
