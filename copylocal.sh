@@ -22,6 +22,9 @@ echo Copying vimrc
 echo Copying init.vim
     cp ~/.config/nvim/init.vim "$DOTDIR/init.vim"
 
+echo Copying Xresources
+    cp ~/.Xresources "$DOTDIR/Xresources"
+
 echo DONE
 
 # copy scripts from ~/Code/Bash

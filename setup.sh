@@ -100,11 +100,11 @@ function root {
 function setup {
     echo "============== NORMAL SETUP =============="
 
-    echo Moving zsh aliases
-        cp "$NORMAL/aliases" "$DOTDIR/.aliases"
-
     echo Moving zshrc
         cp "$NORMAL/zshrc" "$DOTDIR/.zshrc"
+
+    echo Moving zsh aliases
+        cp "$NORMAL/aliases" "$DOTDIR/.aliases"
 
     echo Moving profile
         cp "$NORMAL/profile" "$DOTDIR/.profile"
@@ -112,10 +112,13 @@ function setup {
     echo Moving gitconfig
         cp "$NORMAL/gitconfig" "$DOTDIR/.gitconfig"
 
+    echo Moving Xresources
+        cp "$NORMAL/Xresources" "$DOTDIR/.Xresources"
+
+    echo "============== VIM =============="
     echo Moving vimrc
         cp "$NORMAL/vimrc" "$DOTDIR/.vimrc"
 
-    echo "============== VIM =============="
     echo Creating undodir
         mkdir -p "$VIMDIR/undodir"
 
