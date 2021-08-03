@@ -8,9 +8,9 @@
   cyan:       #46D9FF;
   emphasis:   #2257A0;
   text:       #ffffff;
-  text-alt:   #c2c7cf;
+  text-alt:   #9ba6b0;
   fg:         #bbc2cf;
-  bg:         #282c34ee;
+  bg:         #282c34dd;
 
   background-color: transparent;
   highlight: bold #8be9fd;
