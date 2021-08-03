@@ -1,0 +1,120 @@
+* {
+  black:      #1B2229;
+  red:        #ff6c6b;
+  green:      #98be65;
+  yellow:     #ECBE7B;
+  blue:       #51afef;
+  mangenta:   #c678dd;
+  cyan:       #46D9FF;
+  emphasis:   #2257A0;
+  text:       #ffffff;
+  text-alt:   #c2c7cf;
+  fg:         #bbc2cf;
+  bg:         #282c34ee;
+
+  background-color: transparent;
+  highlight: bold #8be9fd;
+}
+
+window {
+  transparency: "real";
+  background-color: @bg;
+  text-color: @text;
+  width: 75%;
+  height: 60%;
+  border: 6px;
+  border-color: @blue;
+  border-radius: 15px;
+}
+
+mainbox {
+  padding: 2% 1%;
+  children: [inputbar, listview, mode-switcher];
+}
+
+inputbar {
+  margin: 0px 0px 10px 0px;
+  padding: 0.5%;
+  expand: false;
+  border: 0% 0% 0% 0%;
+  border-radius: 5px;
+  background-color: #4e545c;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  enabled: true;
+  text-color: @blue;
+  border: 0 1px 0 0;
+  padding: 0% 0% 0% 1%;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @text-alt;
+}
+
+entry {
+  margin: 0px 10px;
+  horizontal-align: 0;
+  text-color: @text;
+  placeholder: "Search";
+  placeholder-color: @text-alt;
+  blink: true;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  layout: vertical;
+  scrollbar: false;
+}
+
+element {
+  padding: 5px;
+  text-color: @text-alt;
+  border-radius: 5px;
+  orientation: horizontal;
+}
+
+element selected {
+  /* background-color: @emphasis; */
+  background-color: #4e545c;
+  text-color: @text;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @purple;
+}
+
+/* Increase icons size */
+element-icon {
+  size: 2ch;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
+  border: 1px;
+  border-color: @cyan;
+}
+
+button {
+  text-color: @text;
+  border-radius: 5px;
+}
+
+button selected {
+  background-color: #4e545c;
+}
+
+mode-switcher {
+  /* text-color: @text; */
+  /* background-color: #4e545c; */
+}
