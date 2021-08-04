@@ -13,5 +13,6 @@ configuration {
     sidebar-mode: false;
     auto-select: false;
     terminal: "kitty";
+    ssh-command: "kitty -- kitty +kitten ssh {host}";
     theme: "~/.config/rofi/theme.rasi";
 }
