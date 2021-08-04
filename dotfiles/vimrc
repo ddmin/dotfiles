@@ -287,7 +287,7 @@ call plug#end()
     \  },
     \}
 
-    inoremap ,, <ESC>:norm,,<CR>a
+    inoremap ,, <ESC>:norm,,<CR>i
 
 " Vim-Go
     autocmd FileType go nnoremap <Leader>r :GoRename<CR>
