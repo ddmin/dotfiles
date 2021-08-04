@@ -281,6 +281,11 @@ call plug#end()
 " emmet
     let g:user_emmet_mode='nv'
     let g:user_emmet_leader_key=','
+    let g:user_emmet_settings = {
+    \  'html' : {
+    \    'block_all_childless' : 1,
+    \  },
+    \}
 
 " Vim-Go
     autocmd FileType go nnoremap <Leader>r :GoRename<CR>
