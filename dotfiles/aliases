@@ -12,6 +12,7 @@ alias cp='cp -riv'
 alias mv='mv -iv'
 alias rm='rm -vI'
 alias mkdir='mkdir -pv'
+alias rsync='rsync -uvrP'
 
 # ls
 alias ls='ls -F --color=auto'
