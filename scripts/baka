@@ -6,6 +6,12 @@ cd $HOME
 
 FILE='/home/ddmin/Code/Bash/baka'
 DIRECTORY="$(dirname "${FILE}")"
+SAVEDIR="/media/ddmin/Roronoa/Enma"
+
+if [[ ! -d "$SAVEDIR" ]]; then
+    echo "'$SAVEDIR' does not exist."
+    exit
+fi
 
 # directories to archive
 dirs=("Code" "Documents" "Pictures" "Music")
@@ -23,5 +29,5 @@ for d in ${dirs[@]}; do
     echo ""
 
     # create tars while excluding directories from files/backup-exclude
-    tar -X "$DIRECTORY/files/backup-exclude" -czvf "$save_file.tar.gz" "$d"
+    tar -X "$DIRECTORY/files/backup-exclude" -czvf "$SAVEDIR/$save_file.tar.gz" "$d"
 done
