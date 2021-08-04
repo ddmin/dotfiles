@@ -32,6 +32,9 @@ alias grep='rg'
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
+# ssh in kitty
+alias ssh='kitty +kitten ssh'
+
 # change wallpaper
 function chwal {
     IMG_DIR="$HOME/Pictures/Wallpapers"
