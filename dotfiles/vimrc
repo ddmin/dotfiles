@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 " vim-javascript
     Plug 'pangloss/vim-javascript'
 
-" js-x-pretty
+" jsx-pretty
     Plug 'maxmellon/vim-jsx-pretty'
 
 " emmet
@@ -272,7 +272,7 @@ call plug#end()
 " neoformat
     augroup fmt
       autocmd!
-      autocmd BufWritePre * undojoin | Neoformat
+      autocmd BufWritePre * Neoformat
     augroup END
 
 " YCM
