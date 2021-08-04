@@ -1,6 +1,5 @@
 configuration {
     modi: "drun,window,ssh";
-    show: "drun";
     columns: 3;
     eh: 1;
     fullscreen: false;

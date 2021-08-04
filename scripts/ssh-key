@@ -1,0 +1,25 @@
+#!/bin/bash
+# ssh-key: add ssh key to remote machine
+
+if [ $# -eq 0 ]; then
+    echo "Please supply a remote machine."
+    echo "Usage: ssh-key [REMOTE]"
+    exit
+fi
+
+if [ ! -f "$HOME/.ssh/id_rsa.pub" ]; then
+    echo "SSH key not found."
+    echo ""
+    ssh-keygen -t rsa
+fi
+
+echo "Creating '.ssh' directory at '$1'."
+
+ssh "$1" mkdir -p .ssh
+
+echo ""
+echo "Sending public key to '$1'."
+cat "$HOME/.ssh/id_rsa.pub" | ssh "$1" 'cat >> .ssh/authorized_keys'
+
+echo ""
+echo "SSH key has been added to '$1'."
