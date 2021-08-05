@@ -127,6 +127,7 @@ call plug#end()
     set shiftwidth=4
     set expandtab
     set autoindent
+    set smartindent
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
