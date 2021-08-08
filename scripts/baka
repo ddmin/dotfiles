@@ -9,7 +9,7 @@ DIRECTORY="$(dirname "${FILE}")"
 SAVEDIR="/media/ddmin/Roronoa/Enma"
 
 if [[ ! -d "$SAVEDIR" ]]; then
-    echo "'$SAVEDIR' does not exist."
+    echo "'$SAVEDIR' is not plugged in."
     exit
 fi
 
