@@ -2,6 +2,8 @@
 # COPYLOCAL: automatically move dotfiles from ~/ to this repository
 
 DOTDIR="./dotfiles"
+SCRIPTDIR="./scripts"
+CONFIGDIR="./config"
 
 echo "============== DOTFILES =============="
 echo Copying zsh aliases
@@ -28,9 +30,22 @@ echo Copying Xresources
 echo DONE
 
 # copy scripts from ~/Code/Bash
-SCRIPTDIR="./scripts"
 
 echo "============== SCRIPTS =============="
 echo "Copying scripts from ~/Code/Bash."
 cp -a ~/Code/Bash/* "$SCRIPTDIR/."
+echo DONE
+
+# copy configs
+echo "============== CONFIG =============="
+echo "Copying configs from ~/.config"
+
+# program directories
+dirs=("feh" "kitty" "neofetch" "ranger" "rofi")
+
+# loop through directories
+for d in ${dirs[@]}; do
+    echo "Copying $d"
+    cp -r "$HOME/.config/$d/"/* "$CONFIGDIR/$d/."
+done
 echo DONE
