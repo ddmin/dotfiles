@@ -3,6 +3,7 @@
 
 # make sure you are in the home directory
 cd $HOME
+SECONDS=0
 
 FILE='/home/ddmin/Code/Bash/baka'
 DIRECTORY="$(dirname "${FILE}")"
@@ -31,3 +32,11 @@ for d in ${dirs[@]}; do
     # create tars while excluding directories from files/backup-exclude
     tar -X "$DIRECTORY/files/backup-exclude" -czvf "$SAVEDIR/$save_file.tar.gz" "$d"
 done
+
+msg="Finished in $((($SECONDS)/60))m $((($SECONDS)%60))s"
+len=$((14+${#d}))
+printf '=%.0s' `eval echo {1..$len}`
+echo ""
+echo $msg
+printf '=%.0s' `eval echo {1..$len}`
+echo ""
