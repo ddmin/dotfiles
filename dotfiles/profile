@@ -5,12 +5,12 @@
 # | .__/|_|  \___/|_| |_|_|\___|
 # |_|
 
-# Set default editor
-export EDITOR='nvim'
-export VISUAL='nvim'
-
-# vim man pages
-export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u ~/.basic_vimrc --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+# source bashrc
+if [ -n "$BASH_VERSION" ]; then
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -21,6 +21,13 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Set default editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# vim man pages
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u NONE --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 # Rust
 PATH="$HOME/.cargo/bin:$PATH"
