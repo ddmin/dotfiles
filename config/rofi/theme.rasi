@@ -9,6 +9,7 @@
   emphasis:   #2257A0;
   text:       #ffffff;
   text-alt:   #9ba6b0;
+  placehold:  #bbc2cf;
   fg:         #bbc2cf;
   bg:         #282c34dd;
 
@@ -94,7 +95,7 @@ element active, element selected active {
 
 /* Increase icons size */
 element-icon {
-  size: 2ch;
+  size: 2.5ch;
 }
 
 message {
@@ -118,3 +119,7 @@ mode-switcher {
   /* text-color: @text; */
   /* background-color: #4e545c; */
 }
+
+/*
+ * vim: ft=css
+ */
