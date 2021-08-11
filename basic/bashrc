@@ -4,14 +4,29 @@
 # | |_) | (_| \__ \ | (__  | |_) | (_| \__ \ | | |
 # |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# history
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # Set default editor
 export EDITOR='vim'
 export VISUAL='vim'
 
 # alia-ls-es
-alias l='ls'
-alias ll='ls -l'
-alias la='ls -a'
+alias l='ls -lF --color=auto --group-directories-first'
+alias ll='ls -lF --color=auto --group-directories-first'
+alias la='ls -lAF --color=auto --group-directories-first'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # safer defaults
 alias cp='cp -riv'
@@ -21,9 +36,3 @@ alias mkdir='mkdir -pv'
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-# vi mode
-set -o vi
-bind '"jk":vi-movement-mode'
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'

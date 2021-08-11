@@ -14,9 +14,6 @@ alias rm='rm -vI'
 alias mkdir='mkdir -pv'
 alias rsync='rsync -uvrP'
 
-# ls
-alias ls='ls -F --color=auto'
-
 # logo-ls
 alias l='logo-ls -v'
 alias la='logo-ls -Av'

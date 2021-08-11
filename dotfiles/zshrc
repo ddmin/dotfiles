@@ -4,10 +4,14 @@
 #  / /\__ \ | | | | | (__
 # /___|___/_| |_|_|  \___|
 
-# colors
-autoload -U colors && colors
+# Check if running interactively
+if [[ $- =~ "i" ]]; then
+    neofetch;
+else
+    return;
+fi
 
-# zsh aliases
+# aliases
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
@@ -17,10 +21,8 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
-# Start neofetch
-if [[ $- =~ "i" ]]; then
-    neofetch
-fi
+# colors
+autoload -U colors && colors
 
 # Start powerline-shell
 function powerline_precmd() {
