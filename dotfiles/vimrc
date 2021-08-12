@@ -25,20 +25,20 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
+" nvim-treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " neoformat
     Plug 'sbdchd/neoformat'
-
-" vim-javascript
-    Plug 'pangloss/vim-javascript'
-
-" jsx-pretty
-    Plug 'maxmellon/vim-jsx-pretty'
 
 " emmet
     Plug 'mattn/emmet-vim'
 
-" vim-go
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go'}
+" vim-javascript
+    Plug 'pangloss/vim-javascript'
+
+" CSS color
+    Plug 'ap/vim-css-color'
 
 " NERD Tree
     Plug 'preservim/nerdtree'
@@ -74,17 +74,14 @@ call plug#begin('~/.vim/plugged')
 " limelight
     Plug 'junegunn/limelight.vim'
 
-" CSS color
-    Plug 'ap/vim-css-color'
+" one dark
+    Plug 'joshdick/onedark.vim'
 
 " vim-airline
     Plug 'vim-airline/vim-airline'
 
 " vim-airline-themes
     Plug 'vim-airline/vim-airline-themes'
-
-" one dark
-    Plug 'joshdick/onedark.vim'
 
 " vim-devicons
     Plug 'ryanoasis/vim-devicons'
@@ -343,6 +340,39 @@ call plug#end()
 " turn off go display
     let g:go_echo_command_info = 0
     set completeopt-=preview
+
+" }}}
+
+" Lua {{{
+
+lua <<EOF
+
+    require'nvim-treesitter.configs'.setup {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+    }
+
+    require'nvim-treesitter.configs'.setup {
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "gnn",
+          node_incremental = "grn",
+          scope_incremental = "grc",
+          node_decremental = "grm",
+        },
+      },
+    }
+
+    require'nvim-treesitter.configs'.setup {
+      indent = {
+        enable = true
+      }
+    }
+
+EOF
 
 " }}}
 
