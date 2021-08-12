@@ -31,6 +31,12 @@ call plug#begin('~/.vim/plugged')
 " neoformat
     Plug 'sbdchd/neoformat'
 
+" YCM
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
+
+" NERD Tree
+    Plug 'preservim/nerdtree'
+
 " emmet
     Plug 'mattn/emmet-vim'
 
@@ -40,26 +46,8 @@ call plug#begin('~/.vim/plugged')
 " CSS color
     Plug 'ap/vim-css-color'
 
-" NERD Tree
-    Plug 'preservim/nerdtree'
-
-" YCM
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
-
-" auto-pairs
-    Plug 'jiangmiao/auto-pairs'
-
-" unicode.vim
-    Plug 'chrisbra/unicode.vim'
-
-" undotree
-    Plug 'mbbill/undotree'
-
 " vim-surround
     Plug 'tpope/vim-surround'
-
-" vim-rooter
-    Plug 'airblade/vim-rooter'
 
 " vim-commentary
     Plug 'tpope/vim-commentary'
@@ -73,6 +61,18 @@ call plug#begin('~/.vim/plugged')
 
 " limelight
     Plug 'junegunn/limelight.vim'
+
+" auto-pairs
+    Plug 'jiangmiao/auto-pairs'
+
+" unicode.vim
+    Plug 'chrisbra/unicode.vim'
+
+" undotree
+    Plug 'mbbill/undotree'
+
+" rooter
+    Plug 'airblade/vim-rooter'
 
 " one dark
     Plug 'joshdick/onedark.vim'
@@ -287,11 +287,6 @@ call plug#end()
 
     inoremap ,, <ESC>:norm,,<CR>i
 
-" Vim-Go
-    autocmd FileType go nnoremap <Leader>r :GoRename<CR>
-    autocmd FileType go nnoremap <silent> <C-b> :GoRun<CR>
-    autocmd FileType go nnoremap <silent> <Leader>d :GoDoc<CR>
-
 " goyo
     function! s:goyo_enter()
       let b:quitting = 0
@@ -351,18 +346,6 @@ lua <<EOF
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
-      },
-    }
-
-    require'nvim-treesitter.configs'.setup {
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "gnn",
-          node_incremental = "grn",
-          scope_incremental = "grc",
-          node_decremental = "grm",
-        },
       },
     }
 
