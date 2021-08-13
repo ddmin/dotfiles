@@ -40,9 +40,6 @@ call plug#begin('~/.vim/plugged')
 " emmet
     Plug 'mattn/emmet-vim'
 
-" vim-javascript
-    Plug 'pangloss/vim-javascript'
-
 " CSS color
     Plug 'ap/vim-css-color'
 
