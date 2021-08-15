@@ -37,5 +37,10 @@ alias mv='mv -iv'
 alias rm='rm -vI'
 alias mkdir='mkdir -pv'
 
+# vi mode
+bindkey -v
+export KEYTIMEOUT=20
+bindkey -M viins 'jk' vi-cmd-mode
+
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
