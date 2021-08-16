@@ -49,11 +49,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-# vi-mode
+# vi mode
 bindkey -v
 export KEYTIMEOUT=20
-
-# remap vi
 bindkey -M viins 'jk' vi-cmd-mode
 
 # vi-keys in completion menu
