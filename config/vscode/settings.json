@@ -1,36 +1,73 @@
 {
-    "workbench.colorTheme": "Nord",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+"vim.insertModeKeyBindings": [
+    
+    {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+    }
+],
+ "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
     },
-    "python.pythonPath": "/bin/python3",
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
     },
-    "python.defaultInterpreterPath": "/bin/python3",
-    "vim.visualModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        }
-    ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        }
-    ],
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.lineNumbers": "relative",
-    "workbench.iconTheme": "vscode-icons",
-    "editor.fontSize": 20,
-    "editor.fontFamily": "\"JetBrains Mono\"",
-    "editor.fontLigatures": true,
-    "code-runner.defaultLanguage": "python",
-    "code-runner.runInTerminal": true,
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    "liveshare.presence": false
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
+  "vim.statusBarColors.insert": ["#BF616A", "#000"],
+  "vim.statusBarColors.visual": ["#B48EAD", "#000"],
+  "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
+  "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
+  "vim.statusBarColors.replace": "#D08770",
+  "vim.statusBarColors.commandlineinprogress": "#007ACC",
+  "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  "vim.statusBarColors.easymotionmode": "#007ACC",
+  "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  "vim.statusBarColors.surroundinputmode": "#007ACC",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#8FBCBB",
+    "statusBar.noFolderBackground": "#8FBCBB",
+    "statusBar.debuggingBackground": "#8FBCBB",
+    "statusBar.foreground": "#000",
+    "statusBar.debuggingForeground": "#000"
+  },
+"editor.fontSize": 18,
+"editor.formatOnSave": true,
+"editor.fontFamily": "monospace",
+"workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+},
+"editor.fontLigatures": true,
+"notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+},
+"git.enableSmartCommit": true,
+"git.autofetch": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"terminal.integrated.fontFamily": "monospace",
+"workbench.iconTheme": "vscode-icons-mac",
+"liveServer.settings.donotShowInfoMsg": true,
+"explorer.confirmDragAndDrop": false,
+"editor.lineNumbers": "relative"
 }
