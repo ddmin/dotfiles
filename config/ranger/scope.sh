@@ -36,7 +36,9 @@ FILE_EXTENSION_LOWER="$(printf "%s" "${FILE_EXTENSION}" | tr '[:upper:]' '[:lowe
 # Settings
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
 HIGHLIGHT_TABWIDTH=8
-HIGHLIGHT_STYLE='rdark'
+
+# Color scheme
+HIGHLIGHT_STYLE='dracula'
 PYGMENTIZE_STYLE='autumn'
 
 

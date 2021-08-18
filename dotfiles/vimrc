@@ -26,7 +26,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " nvim-treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    if has('nvim')
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    endif
 
 " neoformat
     Plug 'sbdchd/neoformat'
@@ -332,27 +334,6 @@ call plug#end()
 " turn off go display
     let g:go_echo_command_info = 0
     set completeopt-=preview
-
-" }}}
-
-" Lua {{{
-
-lua <<EOF
-
-    require'nvim-treesitter.configs'.setup {
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-    }
-
-    require'nvim-treesitter.configs'.setup {
-      indent = {
-        enable = true
-      }
-    }
-
-EOF
 
 " }}}
 
