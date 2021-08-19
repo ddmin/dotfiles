@@ -92,13 +92,14 @@ call plug#end()
 " Basics {{{
 
     let mapleader = " "
-    filetype plugin on
 
     set nocompatible
     set encoding=utf-8
     set showcmd
 
     syntax on
+    filetype plugin on
+    filetype indent on
     set wrap
     set redrawtime=10000
     set lazyredraw
