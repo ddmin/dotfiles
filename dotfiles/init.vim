@@ -5,13 +5,16 @@ source ~/.vimrc
 lua <<EOF
 
     require'nvim-treesitter.configs'.setup {
+
+      ensure_installed = {
+        'bash', 'go', 'html', 'javascript', 'python', 'rust'
+      },
+
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-    }
 
-    require'nvim-treesitter.configs'.setup {
       indent = {
         enable = true
       }
