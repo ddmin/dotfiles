@@ -17,7 +17,7 @@ alias rsync='rsync -uvrP'
 # logo-ls
 alias l='logo-ls -v'
 alias la='logo-ls -Av'
-alias ll='logo-ls -vlg'
+alias ll='logo-ls -vlgh'
 
 # use nvim
 alias vi='/usr/bin/vim -u NONE'
