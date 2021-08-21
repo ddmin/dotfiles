@@ -2,13 +2,15 @@
 # baka: create tar backups of specified directories
 
 # make sure you are in the home directory
-cd $HOME
 SECONDS=0
 
-FILE='/home/ddmin/Code/Bash/baka'
-DIRECTORY="$(dirname "${FILE}")"
-SAVEDIR="/media/ddmin/Roronoa/Enma"
+# exclude file
+EXCLUDE="$HOME/Code/Bash/files/baka-exclude"
 
+# save location
+SAVEDIR="/media/ddmin/Roronoa/Enma/"
+
+# check if save location exists
 if [[ ! -d "$SAVEDIR" ]]; then
     echo "'$SAVEDIR' is not plugged in."
     exit
@@ -19,24 +21,23 @@ dirs=("Code" "Documents" "Pictures" "Music")
 
 # loop through directories
 for d in ${dirs[@]}; do
-    save_file=$(echo ${d,,})
 
     # fancy printing
-    len=$((40+${#d}))
+    len=$((34+${#d}))
     printf '=%.0s' `eval echo {1..$len}`
     echo ""
-    echo "#           Creating $save_file.tar.xz           #"
+    echo "#           Archiving $d           #"
     printf '=%.0s' `eval echo {1..$len}`
     echo ""
 
-    # create tars while excluding directories from files/backup-exclude
-    tar -X "$DIRECTORY/files/backup-exclude" -czvf "$SAVEDIR/$save_file.tar.gz" "$d"
+    # create backup
+    rsync -aurvP --exclude-from="$EXCLUDE" "$HOME/$d" "$SAVEDIR"
 done
 
 msg="Finished in $((($SECONDS)/60))m $((($SECONDS)%60))s"
-len=$((14+${#d}))
+len=$((36+${#d}))
 printf '=%.0s' `eval echo {1..$len}`
 echo ""
-echo $msg
+echo "#           $msg           #"
 printf '=%.0s' `eval echo {1..$len}`
 echo ""
