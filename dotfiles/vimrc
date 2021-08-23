@@ -30,9 +30,6 @@ call plug#begin('~/.vim/plugged')
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     endif
 
-" neoformat
-    Plug 'sbdchd/neoformat'
-
 " YCM
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
 
@@ -266,12 +263,6 @@ call plug#end()
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
-
-" neoformat
-    augroup fmt
-      autocmd!
-      autocmd BufWritePre * Neoformat
-    augroup END
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
