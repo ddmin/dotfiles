@@ -1,5 +1,4 @@
 #!/bin/bash
-# open last edited document with zathura
-# works in conjunction with note2pdf
+# openrecent: open last edited document with zathura
 
 zathura $(cat /tmp/lasteditpdf.txt)
