@@ -89,6 +89,12 @@ call plug#end()
 " Basics {{{
 
     let mapleader = " "
+    inoremap jk <ESC>
+
+    set number
+    set relativenumber
+    set ignorecase
+    set smartcase
 
     set nocompatible
     set encoding=utf-8
@@ -97,16 +103,12 @@ call plug#end()
     syntax on
     filetype plugin on
     filetype indent on
+
     set wrap
     set redrawtime=10000
     set lazyredraw
     set nolist
 
-    set number
-    set relativenumber
-
-    set ic
-    inoremap jk <ESC>
     set wildmenu
 
 " undo directory
