@@ -4,12 +4,16 @@
 #  / /\__ \ | | | | | (__
 # /___|___/_| |_|_|  \___|
 
-# Check if running interactively
+# check if running interactively
 if [[ $- =~ "i" ]]; then
     neofetch;
 else
     return;
 fi
+
+# history
+HISTSIZE=10000
+SAVEHIST=10000
 
 # aliases
 if [ -f ~/.aliases ]; then
@@ -24,7 +28,7 @@ fi
 # colors
 autoload -U colors && colors
 
-# Start powerline-shell
+# start powerline-shell
 function powerline_precmd() {
     PS1="$($GOPATH/bin/powerline-go -cwd-max-depth 1 -error $? -jobs ${${(%):%j}:-0})"
 }
@@ -42,7 +46,7 @@ if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     install_powerline_precmd
 fi
 
-# Tab completion
+# tab completion
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -61,16 +65,16 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# Enable fzf search
+# enable fzf search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Remap CTRL-T to CTRL-G for fzf
+# remap CTRL-T to CTRL-G for fzf
 bindkey '^G' fzf-file-widget
 bindkey '^T' transpose-chars
 
-# Node
+# node
 export NVM_DIR="$HOME/.nvm"
 
 declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
