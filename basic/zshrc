@@ -4,8 +4,9 @@
 # | |_) | (_| \__ \ | (__   / /\__ \ | | | | | (__
 # |_.__/ \__,_|___/_|\___| /___|___/_| |_|_|  \___|
 
-# lambda prompt
-PROMPT='%(?.%F{green}λ.%F{red}?%?)%f %B%F{177}%2~%f%b %# '
+# prompt
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # If not running interactively, don't do anything
 case $- in
@@ -42,5 +43,5 @@ bindkey -v
 export KEYTIMEOUT=20
 bindkey -M viins 'jk' vi-cmd-mode
 
-# naviage to directories with ranger
+# navigate to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
