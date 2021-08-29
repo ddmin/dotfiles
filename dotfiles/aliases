@@ -30,23 +30,23 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 # ssh in kitty
 alias ssh='kitty +kitten ssh'
 
+# change wallpaper (Cinnamon)
+function bkg() {
+    gsettings set org.cinnamon.desktop.background picture-uri "file:///$1"
+}
+
 # change wallpaper
 function chwal {
     IMG_DIR="$HOME/Pictures/Wallpapers"
     WAL=$(randfile "$IMG_DIR")
-    feh --bg-fill "$IMG_DIR/$WAL" 2> /dev/null
+    bkg "$IMG_DIR/$WAL"
 }
 
 # change wallpaper to Linux Mint default wallpapers
 function norm {
     IMG_DIR="/usr/share/backgrounds/linuxmint-combined"
     WAL=$(randfile "$IMG_DIR")
-    feh --bg-fill "$IMG_DIR/$WAL"
-}
-
-# change wallpaper to specific image
-function bkg() {
-    feh --bg-fill "$1"
+    bkg "$IMG_DIR/$WAL"
 }
 
 # set terminal tab names
