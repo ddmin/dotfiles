@@ -1,41 +1,41 @@
 #!/bin/bash
 # sys: catch-all for miscellaneous functions
 
-# Get number of lines
-while getopts o: option
-do
-    case "${option}"
-        in
-        o) OPTION=${OPTARG};;
-    esac
-done
+dialog --title "sys" --menu "Choose an option:" 15 80 4 \
+    cam "attach VirtualBox camera" \
+    vpn "toggle VPN" \
+    sound "reload audio" \
+    mono "enable mono audio" \
+    2> /tmp/sys.option
 
-function help {
-    echo "Usage: sys -o [OPTION]";
-    echo "OPTIONS:"
-    echo "          cam: attach VirtualBox webcam"
-    echo "          mix: mono-audio"
-    echo "        sound: reload sound"
-}
+clear
+CHOICE=$(cat /tmp/sys.option)
 
-if [ -z $OPTION ]
-then
-    help
-    exit
-fi
+case $CHOICE in
 
-case $OPTION in
 cam)
+    echo "cam: attaching camera to Windows 10"
     VBoxManage controlvm "Windows 10" webcam attach .1
 ;;
-mix)
-    pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1f.3.analog-stereo channels=1 channel_map=mono
-;;
+
 sound)
+    echo "sound: reloading sound"
     sudo alsa force-reload
 ;;
-*)
-    echo "$OPTION is not a valid option"
-    help
+
+mono)
+    echo "mono: enabling mono audio"
+    pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1f.3.analog-stereo channels=1 channel_map=mono
+;;
+
+vpn)
+    ip a | grep wg0 > /dev/null \
+        && sudo echo "vpn: disabling wg0" \
+        && sudo wg-quick down wg0 \
+        && exit
+
+     sudo echo "vpn: enabling wg0" \
+        && sudo wg-quick up wg0 \
+        && exit
 ;;
 esac
