@@ -42,9 +42,9 @@ function chwal {
     bkg "$IMG_DIR/$WAL"
 }
 
-# change wallpaper to Linux Mint default wallpapers
+# change wallpaper (/usr/share/backgrounds/wallpapers)
 function norm {
-    IMG_DIR="/usr/share/backgrounds/linuxmint-combined"
+    IMG_DIR="/usr/share/backgrounds/wallpapers"
     WAL=$(randfile "$IMG_DIR")
     bkg "$IMG_DIR/$WAL"
 }

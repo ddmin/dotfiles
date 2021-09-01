@@ -16,7 +16,10 @@ esac
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# Set default editor
+# set terminal
+export TERM='xterm-256color'
+
+# set default editor
 export EDITOR='vim'
 export VISUAL='vim'
 
