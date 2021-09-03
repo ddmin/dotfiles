@@ -65,16 +65,8 @@
   (key-chord-mode 1)
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state))
 
-(use-package all-the-icons)
-
 (use-package emojify
   :hook (after-init . global-emojify-mode))
-
-(use-package ov
-  :ensure t)
-
-(use-package fontawesome
-  :ensure t)
 
 (use-package vterm
     :ensure t)
