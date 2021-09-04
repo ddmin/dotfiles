@@ -1,6 +1,7 @@
 (setq user-emacs-directory "/home/anon/.emacs.d") 
 
 ;; ui
+(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
@@ -43,10 +44,7 @@
   :ensure t)
 
 (load-theme 'dracula t)
-(global-hl-line-mode t) ;; This highlights the current line in the buffer
-
-(use-package fzf
-  :ensure t)
+(global-hl-line-mode t)
 
 (use-package undo-tree
   :ensure t
@@ -62,8 +60,7 @@
 (use-package key-chord
   :ensure t
   :config
-  (key-chord-mode 1)
-  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state))
+  (key-chord-mode 1))
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
@@ -73,6 +70,9 @@
 
 (setq shell-file-name "/bin/bash"
       vterm-max-scrollback 5000)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -90,6 +90,3 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Iosevka" :foundry "ADBO" :slant normal :weight semi-bold :height 143 :width normal)))))
 
-(key-chord-define-global " s" 'vterm)
-(key-chord-define-global " d" 'dired)
-(global-set-key (kbd "C-g") 'fzf)
