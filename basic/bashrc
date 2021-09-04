@@ -24,9 +24,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 # alia-ls-es
-alias l='ls -lF --color=auto --group-directories-first'
-alias ll='ls -lF --color=auto --group-directories-first'
-alias la='ls -lAF --color=auto --group-directories-first'
+alias l='ls -lhF --color=auto --group-directories-first'
+alias ll='ls -lhF --color=auto --group-directories-first'
+alias la='ls -lhAF --color=auto --group-directories-first'
 
 # grep
 alias grep='grep --color=auto'
