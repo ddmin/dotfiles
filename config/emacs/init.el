@@ -1,4 +1,4 @@
-(setq user-emacs-directory "/home/anon/.emacs.d") 
+(setq user-emacs-directory "/home/anon/.emacs.d")
 
 ;; ui
 (menu-bar-mode -1)
@@ -64,12 +64,6 @@
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
-
-(use-package vterm
-    :ensure t)
-
-(setq shell-file-name "/bin/bash"
-      vterm-max-scrollback 5000)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
