@@ -74,3 +74,5 @@
 (powerline-evil-vim-theme)
 (powerline-evil-vim-color-theme)
 
+;; keybinds
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
