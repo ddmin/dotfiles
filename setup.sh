@@ -112,9 +112,6 @@ function setup {
     echo Moving gitconfig
         cp "$NORMAL/gitconfig" "$DOTDIR/.gitconfig"
 
-    echo Moving Xresources
-        cp "$NORMAL/Xresources" "$DOTDIR/.Xresources"
-
     echo "============== VIM =============="
     echo Moving vimrc
         cp "$NORMAL/vimrc" "$DOTDIR/.vimrc"
