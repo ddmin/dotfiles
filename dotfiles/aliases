@@ -27,9 +27,6 @@ alias grep='rg'
 # navigate to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-# ssh in kitty
-alias ssh='kitty +kitten ssh'
-
 # change wallpaper (Cinnamon)
 function bkg() {
     gsettings set org.cinnamon.desktop.background picture-uri "file:///$1"
