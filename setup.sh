@@ -53,9 +53,6 @@ function mobile {
     sed -i '/^plugins/d' "$HOME/.zshrc"
     sed -i '1iplugins=(git vi-mode)' "$HOME/.zshrc"
 
-    # set nord colorscheme
-    cp "$MOBILE/nord.colors" "$DOTDIR/.termux/colors/nord.colors"
-
     # moving dotfiles
     echo Moving zshrc
         cat "$HOME/.zshrc" "$MOBILE/zshrc" > "$DOTDIR/zshrc"
