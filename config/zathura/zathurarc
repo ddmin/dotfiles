@@ -6,6 +6,8 @@ set page-padding 1
 
 map <C-u> scroll full-up
 map <C-d> scroll full-down
+map <C-e> scroll down
+map <C-y> scroll up
 map = zoom in
 map - zoom out
 map r reload
