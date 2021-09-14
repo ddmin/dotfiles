@@ -7,6 +7,7 @@
 bindkey -M viins 'jk' vi-cmd-mode
 
 # remove the termux nonsense
+sshd
 clear
 
 B='   '
