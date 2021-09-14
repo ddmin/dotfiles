@@ -30,11 +30,11 @@ mono)
 
 vpn)
     ip a | grep wg0 > /dev/null \
-        && sudo echo "vpn: disabling wg0" \
+        && echo "vpn: disabling wg0" \
         && sudo wg-quick down wg0 \
         && exit
 
-     sudo echo "vpn: enabling wg0" \
+     echo "vpn: enabling wg0" \
         && sudo wg-quick up wg0 \
         && exit
 ;;
