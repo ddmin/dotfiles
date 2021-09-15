@@ -3,16 +3,6 @@
 "  \ V /| | | | | | | | | (__
 "   \_/ |_|_| |_| |_|_|  \___|
 
-" Folding {{{
-
-set foldenable
-set foldlevelstart=10
-set foldnestmax=10
-set foldmethod=syntax
-nnoremap <CR> za
-
-" }}}
-
 " Plugins {{{
 
 " Automatically download Plugged if not installed
@@ -90,6 +80,7 @@ call plug#end()
 
     let mapleader = " "
     inoremap jk <ESC>
+    nnoremap <CR> za
 
     set number
     set relativenumber
