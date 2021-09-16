@@ -1,17 +1,27 @@
 #!/bin/bash
 # sys: catch-all for miscellaneous functions
 
-dialog --title "sys" --menu "Choose an option:" 15 80 4 \
-    cam "attach VirtualBox camera" \
-    vpn "toggle VPN" \
-    sound "reload audio" \
-    mono "enable mono audio" \
-    2> /tmp/sys.option
+CHOICE=$(dialog --stdout --colors --clear --title "\Z5sys" --menu "\Z5Choose an option:" 0 0 4 \
+    blu "\Z6toggle Bluetooth" \
+    cam "\Z6attach VirtualBox camera" \
+    vpn "\Z6toggle VPN" \
+    sound "\Z6reload audio" \
+    2> /tmp/sys.option)
 
 clear
-CHOICE=$(cat /tmp/sys.option)
 
 case $CHOICE in
+
+blu)
+    DEVICE="20:09:26:09:2D:D3"
+    CONNECT=$(bluetoothctl info $DEVICE | sed -n -e 's/Connected://p')
+
+    if [ $CONNECT == "no" ]; then
+        bluetoothctl connect $DEVICE
+    else
+        bluetoothctl disconnect $DEVICE
+    fi
+;;
 
 cam)
     echo "cam: attaching camera to Windows 10"
@@ -21,11 +31,6 @@ cam)
 sound)
     echo "sound: reloading sound"
     sudo alsa force-reload
-;;
-
-mono)
-    echo "mono: enabling mono audio"
-    pacmd load-module module-remap-sink sink_name=mono master=alsa_output.pci-0000_00_1f.3.analog-stereo channels=1 channel_map=mono
 ;;
 
 vpn)
