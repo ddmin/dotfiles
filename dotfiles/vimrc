@@ -161,6 +161,9 @@ call plug#end()
 
 " Bindings {{{
 
+" increment number
+    nnoremap <C-p> <C-a>
+
 " toggle numbers
     nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
 
