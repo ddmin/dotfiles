@@ -262,6 +262,7 @@ call plug#end()
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
+    let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " emmet
     let g:user_emmet_mode='nv'
@@ -318,10 +319,6 @@ call plug#end()
 " Enable devicons
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
-
-" turn off go display
-    let g:go_echo_command_info = 0
-    set completeopt-=preview
 
 " }}}
 
