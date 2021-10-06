@@ -25,6 +25,9 @@ fi
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+# Set browser
+export BROWSER='firefox'
+
 # vim man pages
 export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u NONE --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
