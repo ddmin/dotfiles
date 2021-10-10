@@ -8,13 +8,8 @@ SECONDS=0
 EXCLUDE="$HOME/Code/Bash/files/baka-exclude"
 
 # save location
-SAVEDIR="/media/ddmin/Roronoa/Enma/"
-
-# check if save location exists
-if [[ ! -d "$SAVEDIR" ]]; then
-    echo "'$SAVEDIR' is not plugged in."
-    exit
-fi
+# SAVEDIR="/media/ddmin/Roronoa/Enma/"
+SAVEDIR="root@nexus:/root/Vault/Charlie"
 
 # directories to archive
 dirs=("Code" "Documents" "Pictures" "Music")
