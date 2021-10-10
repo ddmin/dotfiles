@@ -27,7 +27,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
 " emmet
-    Plug 'mattn/emmet-vim'
+    Plug 'mattn/emmet-vim', { 'for': 'html,css,javascript,typescript' }
 
 " CSS color
     Plug 'ap/vim-css-color'
@@ -43,10 +43,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
 
 " goyo
-    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
 " limelight
-    Plug 'junegunn/limelight.vim'
+    Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 
 " auto-pairs
     Plug 'jiangmiao/auto-pairs'
