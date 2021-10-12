@@ -262,7 +262,14 @@ call plug#end()
 
 " YCM
     nnoremap <silent> gd :YcmCompleter GoTo<CR>
+    nnoremap <silent> gh :YcmCompleter GetDoc<CR>
+    nnoremap gr :YcmCompleter RefactorRename<space>
     let g:ycm_autoclose_preview_window_after_insertion = 1
+
+    augroup Format
+        autocmd FileType c,cpp,go,rust
+            \ autocmd! Format BufWritePost <buffer> :YcmCompleter Format
+    augroup END
 
 " emmet
     let g:user_emmet_mode='nv'
