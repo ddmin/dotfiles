@@ -57,6 +57,9 @@ call plug#begin('~/.vim/plugged')
 " undotree
     Plug 'mbbill/undotree'
 
+" rooter
+    Plug 'airblade/vim-rooter'
+
 " one dark
     Plug 'joshdick/onedark.vim'
 
