@@ -319,6 +319,9 @@ call plug#end()
     nnoremap <silent> <C-z> :UndotreeToggle<CR>
     nnoremap <silent> <leader>z :UndotreeToggle<CR>
 
+" auto-pairs
+    let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
+
 " commentary
     nnoremap <silent> <C-a> :Commentary<CR>
     vnoremap <silent> <C-a> :Commentary<CR>
