@@ -9,8 +9,8 @@ EXCLUDE="$HOME/Code/Bash/files/baka-exclude"
 
 # save location
 # SAVEDIR="/media/ddmin/Roronoa/Enma/"
-# SAVEDIR="root@10.0.0.1:/root/Vault/Charlie"
-SAVEDIR="root@nexus:/root/Vault/Charlie"
+# SAVEDIR="root@nexus:/root/Vault/Charlie"
+SAVEDIR="root@10.0.0.1:/root/Vault/Charlie"
 
 # directories to archive
 dirs=("Code" "Documents" "Pictures" "Music")
