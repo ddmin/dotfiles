@@ -116,6 +116,11 @@ call plug#end()
     set autoindent
     set smartindent
 
+" Terminal
+    map <Leader>t :term<CR>
+    tnoremap <C-w> <C-\><C-n><C-w>
+    au TermClose * call feedkeys("i")
+
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -199,10 +204,20 @@ call plug#end()
     nnoremap <silent> <leader>wh :new<CR>
 
 " Move windows
-    noremap <leader>h <C-w>h
-    map <leader>j <C-w>j
-    map <leader>k <C-w>k
-    map <leader>l <C-w>l
+    nnoremap <A-h> <C-w>h
+    nnoremap <A-j> <C-w>j
+    nnoremap <A-k> <C-w>k
+    nnoremap <A-l> <C-w>l
+
+    inoremap <A-h> <C-\><C-N><C-w>h
+    inoremap <A-j> <C-\><C-N><C-w>j
+    inoremap <A-k> <C-\><C-N><C-w>k
+    inoremap <A-l> <C-\><C-N><C-w>l
+
+    tnoremap <A-h> <C-\><C-N><C-w>h
+    tnoremap <A-j> <C-\><C-N><C-w>j
+    tnoremap <A-k> <C-\><C-N><C-w>k
+    tnoremap <A-l> <C-\><C-N><C-w>l
 
 " resize windows
     nmap <silent> <S-left> :vertical resize -5<CR>
