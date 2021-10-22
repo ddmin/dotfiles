@@ -119,7 +119,8 @@ call plug#end()
 " Terminal
     map <Leader>t :term<CR>
     tnoremap <C-w> <C-\><C-n><C-w>
-    au TermClose * call feedkeys("i")
+    au TermClose * :q
+    au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
