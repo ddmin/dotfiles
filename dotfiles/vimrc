@@ -254,7 +254,7 @@ call plug#end()
 
 " fzf
     map <C-g> :Files<CR>
-    map <C-f> :Rg<CR>
+    map <C-f> :Lines<CR>
 
     let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
