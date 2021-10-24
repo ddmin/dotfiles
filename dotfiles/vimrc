@@ -114,7 +114,6 @@ call plug#end()
     set shiftwidth=4
     set expandtab
     set autoindent
-    set smartindent
 
 " Terminal
     map <Leader>t :term<CR>
@@ -281,6 +280,7 @@ call plug#end()
     nnoremap <silent> gh :YcmCompleter GetDoc<CR>
     nnoremap gr :YcmCompleter RefactorRename<space>
     let g:ycm_autoclose_preview_window_after_insertion = 1
+    let g:ycm_semantic_triggers = {'c': ['re!.'],'cpp': ['re!.'],'go': ['re!.'],'html': ['re!.'],'javascript': ['re!.'],'python': ['re!.'],'rust': ['re!.']}
 
     augroup Format
         autocmd FileType c,cpp,go,rust

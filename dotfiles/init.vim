@@ -7,7 +7,7 @@ lua <<EOF
     require'nvim-treesitter.configs'.setup {
 
       ensure_installed = {
-        'bash', 'go', 'html', 'javascript', 'python', 'rust'
+        'bash', 'c', 'cpp', 'go', 'html', 'javascript', 'python', 'rust'
       },
 
       highlight = {
