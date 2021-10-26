@@ -12,6 +12,11 @@ case $- in
       *) return;;
 esac
 
+# profile
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
 # history
 HISTSIZE=1000
 HISTFILESIZE=2000
