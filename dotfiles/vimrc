@@ -117,7 +117,7 @@ call plug#end()
 
 " Terminal
     map <Leader>t :term<CR>
-    tnoremap <C-w> <C-\><C-n><C-w>
+    tnoremap <C-w> <C-\><C-n>
     au TermClose * silent! :q!
     au BufEnter * silent! if &buftype == 'terminal' | :startinsert | endif
 
