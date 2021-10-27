@@ -38,7 +38,7 @@ echo "============== CONFIG =============="
 echo "Copying configs from ~/.config"
 
 # program directories
-dirs=("feh" "kitty" "neofetch" "ranger" "rofi" "zathura")
+dirs=("feh" "kitty" "lazygit" "neofetch" "ranger" "rofi" "zathura")
 
 # loop through directories
 for d in ${dirs[@]}; do
