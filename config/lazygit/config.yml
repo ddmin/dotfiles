@@ -1,6 +1,6 @@
 gui:
   theme:
     selectedLineBgColor:
-      - reverse
+      - '#0499ff'
     selectedRangeBgColor:
       - reverse
