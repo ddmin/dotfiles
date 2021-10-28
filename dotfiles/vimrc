@@ -23,9 +23,6 @@ call plug#begin('~/.vim/plugged')
 " YCM
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
 
-" NERD Tree
-    Plug 'preservim/nerdtree'
-
 " emmet
     Plug 'mattn/emmet-vim', { 'for': 'html,css,javascript,typescript' }
 
@@ -203,6 +200,13 @@ call plug#end()
 " Horizontal Split
     nnoremap <silent> <leader>wh :new<CR>
 
+" File Explorer
+    nnoremap <silent> <Leader>. :Lexplore<CR>:exec 'vertical resize '.string(&columns * 0.25)<CR>
+    au FileType netrw nmap <buffer> <silent> <Leader>. :q<CR>
+
+    let g:netrw_banner=0
+    let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+
 " Move windows
     nnoremap <A-h> <C-w>h
     nnoremap <A-j> <C-w>j
@@ -247,9 +251,6 @@ call plug#end()
 " }}}
 
 " Settings {{{
-
-" NERD Tree
-    map <Leader>. :NERDTreeToggle<CR>
 
 " fzf
     map <C-g> :Files<CR>

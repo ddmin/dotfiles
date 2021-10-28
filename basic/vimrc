@@ -73,9 +73,3 @@ let mapleader = " "
     nmap <silent> <S-right> :vertical resize +5<CR>
     nmap <silent> <S-up> :resize -5<CR>
     nmap <silent> <S-down> :resize +5<CR>
-
-" resize windows
-    nmap <silent> <S-left> :vertical resize -5<CR>
-    nmap <silent> <S-right> :vertical resize +5<CR>
-    nmap <silent> <S-up> :resize -5<CR>
-    nmap <silent> <S-down> :resize +5<CR>
