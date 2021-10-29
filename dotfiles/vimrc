@@ -40,7 +40,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
 
 " goyo
-    Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+    Plug 'junegunn/goyo.vim'
 
 " limelight
     Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
