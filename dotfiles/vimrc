@@ -115,8 +115,11 @@ call plug#end()
 " Terminal
     map <Leader>t :term<CR>
     tnoremap <C-w> <C-\><C-n>
-    au TermClose * silent! :q!
     au BufEnter * silent! if &buftype == 'terminal' | :startinsert | endif
+
+    if has('nvim')
+        au TermClose * silent! :q!
+    endif
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
