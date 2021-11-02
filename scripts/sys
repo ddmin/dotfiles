@@ -17,29 +17,31 @@ blu)
     CONNECT=$(bluetoothctl info $DEVICE | sed -n -e 's/Connected://p')
 
     if [ $CONNECT == "no" ]; then
+        printf "📶 "
         bluetoothctl connect $DEVICE
     else
+        printf "📶 "
         bluetoothctl disconnect $DEVICE
     fi
 ;;
 
 cam)
-    echo "cam: attaching camera to Windows 10"
+    echo "📷 cam: attaching camera to Windows 10"
     VBoxManage controlvm "Windows 10" webcam attach .1
 ;;
 
 sound)
-    echo "sound: reloading sound"
+    echo "🔊 sound: reloading sound"
     sudo alsa force-reload
 ;;
 
 vpn)
     ip a | grep wg0 > /dev/null \
-        && echo "vpn: disabling wg0" \
+        && echo "📴 vpn: disabling wg0" \
         && sudo wg-quick down wg0 \
         && exit
 
-     echo "vpn: enabling wg0" \
+     echo "📲 vpn: enabling wg0" \
         && sudo wg-quick up wg0 \
         && exit
 ;;
