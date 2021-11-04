@@ -48,9 +48,6 @@ call plug#begin('~/.vim/plugged')
 " auto-pairs
     Plug 'jiangmiao/auto-pairs'
 
-" unicode.vim
-    Plug 'chrisbra/unicode.vim'
-
 " undotree
     Plug 'mbbill/undotree'
 
@@ -330,10 +327,6 @@ call plug#end()
     let g:limelight_conceal_ctermfg = 'darkgray'
     let g:limelight_paragraph_span = 1
     let g:limelight_priority = -1
-
-" Unicode Symbols
-    imap <C-c> <Plug>(UnicodeFuzzy)
-    nmap <C-c> i<Plug>(UnicodeFuzzy)
 
 " undotree
     nnoremap <silent> <C-z> :UndotreeToggle<CR>
