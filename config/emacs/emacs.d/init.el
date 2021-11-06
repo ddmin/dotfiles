@@ -56,7 +56,7 @@
   (evil-mode 1)
   (evil-set-undo-system 'undo-tree))
 
-(use-package dracula-theme
+(use-package gruber-darker-theme
   :ensure t)
 
 (use-package powerline-evil
@@ -68,7 +68,7 @@
   (beacon-mode 1))
 
 ;; theme
-(load-theme 'dracula t)
+(load-theme 'gruber-darker t)
 (global-hl-line-mode t)
 
 (powerline-evil-vim-theme)

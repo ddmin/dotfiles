@@ -1,0 +1,22 @@
+#+TITLE: Aragakimacs
+#+LANGUAGE: en
+
+Personal emacs configuration.
+
+* Emacs in Daemon Mode
+
+ #+BEGIN_SRC
+systemctl enable --user emacs
+systemctl start --user emacs
+ #+END_SRC
+
+*** Launch Emacs Client
+ #+BEGIN_SRC
+ emacsclient -c -a "emacs"
+ #+END_SRC
+
+*** Reload init.el
+ #+BEGIN_SRC
+ M-x load-file
+ ~/.emacs.d/init.el
+ #+END_SRC
