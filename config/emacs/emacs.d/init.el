@@ -21,6 +21,7 @@
 
 (setq make-backup-file nil)
 (setq auto-save-default nil)
+(setq ring-bell-function 'ignore)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
