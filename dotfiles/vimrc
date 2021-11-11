@@ -35,6 +35,9 @@ call plug#begin('~/.vim/plugged')
 " vim-commentary
     Plug 'tpope/vim-commentary'
 
+" vim-repeat
+    Plug 'tpope/vim-repeat'
+
 " fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -339,7 +342,7 @@ call plug#end()
     nnoremap <silent> <C-a> :Commentary<CR>
     vnoremap <silent> <C-a> :Commentary<CR>
 
-" Enable devicons
+" devicons
     let g:webdevicons_enable = 1
     let g:webdevicons_enable_airline_statusline = 1
 
