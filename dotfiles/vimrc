@@ -132,9 +132,6 @@ call plug#end()
     set hlsearch
     nnoremap <silent> <leader><leader> :nohl<CR><C-l>
 
-" Wipe Registers
-    command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
-
 " }}}
 
 " Aesthetics {{{
