@@ -125,7 +125,7 @@ call plug#end()
     endif
 
 "Disable auto-commenting
-    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=o
 
 " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
