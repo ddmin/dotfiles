@@ -92,3 +92,6 @@ done
 
 # syntax highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# tab title
+source ~/.zsh/zsh-tab-title/zsh-tab-title.plugin.zsh

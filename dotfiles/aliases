@@ -45,8 +45,3 @@ function norm {
     WAL=$(randfile "$IMG_DIR")
     bkg "$IMG_DIR/$WAL"
 }
-
-# set terminal tab names
-function title() {
-    echo -e "set title: $1\033]0;$@\007"
-}
