@@ -17,10 +17,12 @@
 
 (setq inhibit-startup-message t)
 (setq x-select-enable-clipboard t)
+(setq scroll-conservatively 100)
 (setq evil-want-C-u-scroll t)
 
 (setq make-backup-file nil)
 (setq auto-save-default nil)
+
 (setq ring-bell-function 'ignore)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
