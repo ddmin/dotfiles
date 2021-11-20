@@ -1,81 +1,52 @@
-;; initialize packages
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;                      _       _ _         _                     ;;;
+;;;                     (_)_ __ (_) |_   ___| |                    ;;;
+;;;                     | | '_ \| | __| / _ \ |                    ;;;
+;;;                     | | | | | | |_ |  __/ |                    ;;;
+;;;                     |_|_| |_|_|\__(_)___|_|                    ;;;
+;;;                                                                ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; garbage collection
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6)
+
+(defvar startup/file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+(defun startup/revert-file-name-handler-alist ()
+  (setq file-name-handler-alist startup/file-name-handler-alist))
+
+(defun startup/reset-gc ()
+  (setq gc-cons-threshold 16777216
+	gc-cons-percentage 0.1))
+
+(add-hook 'emacs-startup-hook 'startup/revert-file-name-handler-alist)
+(add-hook 'emacs-startup-hook 'startup/reset-gc)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; initialize packages
 (require 'package)
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
 
+;;; set package sources
+(setq package-archives
+            '(("ELPA"  . "http://tromey.com/elpa/")
+			 ("gnu"   . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "https://melpa.org/packages/")
+			 ("org"   . "https://orgmode.org/elpa/")))
 (package-initialize)
 
+;;; use packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; defaults
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq inhibit-startup-message t)
-(setq x-select-enable-clipboard t)
-(setq scroll-conservatively 100)
-(setq evil-want-C-u-scroll t)
+;;; read from config.org
+(when (file-readable-p "~/.emacs.d/config.org")
+  (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
 
-(setq make-backup-file nil)
-(setq auto-save-default nil)
-
-(setq ring-bell-function 'ignore)
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; shell
-(defvar default-shell "/bin/bash")
-(defadvice ansi-term (before force-bash)
-  (interactive (list default-shell)))
-(ad-activate 'ansi-term)
-
-;; line numbers
-(global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
-
-;; install packages
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode))
-
-(use-package undo-tree
-  :ensure t
-  :config
-  (global-undo-tree-mode))
-
-(use-package key-chord
-  :ensure t
-  :config
-  (key-chord-mode 1))
-
-(use-package evil
-  :ensure t
-  :config
-  (evil-mode 1)
-  (evil-set-undo-system 'undo-tree))
-
-(use-package gruber-darker-theme
-  :ensure t)
-
-(use-package powerline-evil
-  :ensure t)
-
-(use-package beacon
-  :ensure t
-  :init
-  (beacon-mode 1))
-
-;; theme
-(load-theme 'gruber-darker t)
-(global-hl-line-mode t)
-
-(powerline-evil-vim-theme)
-(powerline-evil-vim-color-theme)
-
-;; keybinds
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
