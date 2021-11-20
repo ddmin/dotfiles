@@ -1,4 +1,4 @@
-#+STARTUP: overview
+#+STARTUP: show2levels
 #+TITLE: Emacs Configuration
 #+CREATOR: ddmin
 #+LANGUAGE: en
@@ -8,7 +8,9 @@
 [[./img/logo-small.png]]
 
 * General Settings
+
 ** Disable menu bar, scroll bar, tool bar
+
 #+BEGIN_SRC emacs-lisp
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
@@ -16,22 +18,26 @@
 #+END_SRC
 
 ** Remove startup screen
+
 #+BEGIN_SRC emacs-lisp
   (setq inhibit-startup-message t)
 #+END_SRC
 
 ** Enable clipboard
+
 #+BEGIN_SRC emacs-lisp
   (setq x-select-enable-clipboard t)
 #+END_SRC
 
 ** Scrolling
+
 #+BEGIN_SRC emacs-lisp
   (setq scroll-conservatively 100)
   (setq evil-want-C-u-scroll t)
 #+END_SRC
 
 ** Set UTF-8 encoding
+
 #+BEGIN_SRC emacs-lisp
   (setq locale-coding-system 'utf-8)
   (set-terminal-coding-system 'utf-8)
@@ -41,40 +47,47 @@
 #+END_SRC
 
 ** Disable backups
+
 #+BEGIN_SRC emacs-lisp
   (setq make-backup-file nil)
   (setq auto-save-default nil)
 #+END_SRC
 
 ** Show parentheses
+
 Highlight matching parentheses.
 #+BEGIN_SRC emacs-lisp
   (show-paren-mode 1)
 #+END_SRC
 
 ** Turn off bell
+
 #+BEGIN_SRC emacs-lisp
   (setq ring-bell-function 'ignore)
 #+END_SRC
 
 ** Prompt with y-n-or-p
+
 #+BEGIN_SRC emacs-lisp
   (defalias 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
 ** Relative Line Numbers
+
 #+BEGIN_SRC emacs-lisp
 (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
 #+END_SRC
 
 ** Highlight line
+
 Enable =hl-line= in the GUI version of emacs.
 #+BEGIN_SRC emacs-lisp
   (when window-system (add-hook 'prog-mode-hook 'hl-line-mode))
 #+END_SRC
 
 ** Shell
+
 #+BEGIN_SRC emacs-lisp
   (defvar default-shell "/bin/bash")
   (defadvice ansi-term (before force-bash)
@@ -82,9 +95,11 @@ Enable =hl-line= in the GUI version of emacs.
   (ad-activate 'ansi-term)
 #+END_SRC
 
+
 * Packages
 
 ** Electric Pairs
+
 #+BEGIN_SRC emacs-lisp
   (setq electric-pair-pairs '(
                              (?\{ . ?\})
@@ -96,6 +111,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** Which-Key
+
 #+BEGIN_SRC emacs-lisp
   (use-package which-key
     :ensure t
@@ -104,6 +120,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** Key Chord
+
 #+BEGIN_SRC emacs-lisp
   (use-package key-chord
     :ensure t
@@ -112,6 +129,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** UndoTree
+
 #+BEGIN_SRC emacs-lisp
   (use-package undo-tree
     :ensure t
@@ -120,6 +138,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** E-Vi-L Mode
+
 #+BEGIN_SRC emacs-lisp
   (use-package evil
     :ensure t
@@ -129,6 +148,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** Beacon
+
 #+BEGIN_SRC emacs-lisp
   (use-package beacon
     :ensure t
@@ -137,6 +157,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** Pretty Symbols
+
 #+BEGIN_SRC emacs-lisp
 (when window-system
       (use-package pretty-mode
@@ -146,6 +167,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** Dashboard
+
 #+BEGIN_SRC emacs-lisp
 (use-package dashboard
   :ensure t
@@ -157,24 +179,31 @@ Enable =hl-line= in the GUI version of emacs.
     (setq dashboard-banner-logo-title "Welcome to emacs!"))
 #+END_SRC
 
+
 * Org-mode
+
 ** Enable inline images
+
 #+BEGIN_SRC emacs-lisp
   (setq org-startup-with-inline-images t)
 #+END_SRC
 
+
 * Theme
 
 ** Gruber Darker
+
 #+BEGIN_SRC emacs-lisp
   (use-package gruber-darker-theme
     :ensure t)
   (load-theme 'gruber-darker t)
 #+END_SRC
 
+
 * Keybindings
 
 ** E-Vi-l normal mode
+
 #+BEGIN_SRC emacs-lisp
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 #+END_SRC
