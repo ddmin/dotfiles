@@ -1,7 +1,7 @@
-#+STARTUP: show2levels
 #+TITLE: Emacs Configuration
 #+CREATOR: ddmin
 #+LANGUAGE: en
+#+STARTUP: show2levels
 #+OPTIONS: num:nil
 #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
 
@@ -201,6 +201,7 @@ Enable =hl-line= in the GUI version of emacs.
 * IDO
 
 ** enable ido mode
+
 #+BEGIN_SRC emacs-lisp
   (setq ido-enable-flex-matching nil)
   (setq ido-create-new-buffer 'always)
@@ -209,6 +210,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** ido-vertical
+
 #+BEGIN_SRC emacs-lisp
   (use-package ido-vertical-mode
     :ensure t
@@ -217,6 +219,7 @@ Enable =hl-line= in the GUI version of emacs.
 #+END_SRC
 
 ** smex
+
 #+BEGIN_SRC emacs-lisp
   (use-package smex
     :ensure t
@@ -239,7 +242,7 @@ Enable =hl-line= in the GUI version of emacs.
 
 * Keybindings
 
-** E-Vi-l normal mode
+** E-Vi-L normal mode
 
 #+BEGIN_SRC emacs-lisp
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
