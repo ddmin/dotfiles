@@ -182,10 +182,47 @@ Enable =hl-line= in the GUI version of emacs.
 
 * Org-mode
 
+** Org Bullets
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+#+END_SRC
+
 ** Enable inline images
 
 #+BEGIN_SRC emacs-lisp
   (setq org-startup-with-inline-images t)
+#+END_SRC
+
+
+* IDO
+
+** enable ido mode
+#+BEGIN_SRC emacs-lisp
+  (setq ido-enable-flex-matching nil)
+  (setq ido-create-new-buffer 'always)
+  (setq ido-everywhere t)
+  (ido-mode 1)
+#+END_SRC
+
+** ido-vertical
+#+BEGIN_SRC emacs-lisp
+  (use-package ido-vertical-mode
+    :ensure t
+    :init
+    (ido-vertical-mode 1))
+#+END_SRC
+
+** smex
+#+BEGIN_SRC emacs-lisp
+  (use-package smex
+    :ensure t
+    :init (smex-initialize)
+    :bind
+    ("M-x" . smex))
 #+END_SRC
 
 

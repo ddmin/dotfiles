@@ -199,10 +199,10 @@ call plug#end()
     set splitbelow splitright
 
 " Vertical Split
-    nnoremap <silent> <leader>wv :vnew<CR>
+    nnoremap <silent> <leader>f :vnew<CR>
 
 " Horizontal Split
-    nnoremap <silent> <leader>wh :new<CR>
+    nnoremap <silent> <leader>h :new<CR>
 
 " Move windows
     nnoremap <A-h> <C-w>h
