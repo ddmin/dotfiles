@@ -11,121 +11,121 @@
 
 ** Disable menu bar, scroll bar, tool bar
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-#+END_SRC
+#+end_src
 
 ** Remove startup screen
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq inhibit-startup-message t)
-#+END_SRC
+#+end_src
 
 ** Enable clipboard
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq x-select-enable-clipboard t)
-#+END_SRC
+#+end_src
 
 ** Scrolling
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq scroll-conservatively 100)
   (setq evil-want-C-u-scroll t)
-#+END_SRC
+#+end_src
 
 ** Set UTF-8 encoding
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq locale-coding-system 'utf-8)
   (set-terminal-coding-system 'utf-8)
   (set-keyboard-coding-system 'utf-8)
   (set-selection-coding-system 'utf-8)
   (prefer-coding-system 'utf-8)
-#+END_SRC
+#+end_src
 
 ** Disable backups
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq make-backup-file nil)
   (setq auto-save-default nil)
-#+END_SRC
+#+end_src
 
 ** Show parentheses
 
 Highlight matching parentheses.
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (show-paren-mode 1)
-#+END_SRC
+#+end_src
 
 ** Turn off bell
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq ring-bell-function 'ignore)
-#+END_SRC
+#+end_src
 
 ** Prompt with y-n-or-p
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (defalias 'yes-or-no-p 'y-or-n-p)
-#+END_SRC
+#+end_src
 
 ** Show Lines and Columns in modeline
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (line-number-mode 1)
   (column-number-mode 1)
-#+END_SRC
+#+end_src
 
 ** Relative Line Numbers
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
 (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
-#+END_SRC
+#+end_src
 
 ** Kill current buffer
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (defun kill-current-buffer ()
     (interactive)
     (kill-buffer (current-buffer)))
   (global-set-key (kbd "C-x k") 'kill-current-buffer)
-#+END_SRC
+#+end_src
 
 ** Kill all buffers
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (defun kill-all-buffers ()
     (interactive)
     (mapc 'kill-buffer (buffer-list)))
   (global-set-key (kbd "C-x S-k") 'kill-all-buffers)
-#+END_SRC
+#+end_src
 
 ** Highlight line
 
 Enable =hl-line= in the GUI version of emacs.
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (when window-system (add-hook 'prog-mode-hook 'hl-line-mode))
-#+END_SRC
+#+end_src
 
 ** Shell
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (defvar default-shell "/bin/bash")
   (defadvice ansi-term (before force-bash)
     (interactive (list default-shell)))
   (ad-activate 'ansi-term)
-#+END_SRC
+#+end_src
 
 
 * Packages
 
 ** Electric Pairs
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq electric-pair-pairs '(
                              (?\{ . ?\})
                              (?\( . ?\))
@@ -133,77 +133,67 @@ Enable =hl-line= in the GUI version of emacs.
                              (?\" . ?\")
                              ))
   (electric-pair-mode t)
-#+END_SRC
+#+end_src
 
 ** Which-Key
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package which-key
     :ensure t
     :init
     (which-key-mode))
-#+END_SRC
+#+end_src
 
 ** Key Chord
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package key-chord
     :ensure t
     :config
     (key-chord-mode 1))
-#+END_SRC
+#+end_src
 
 ** UndoTree
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package undo-tree
     :ensure t
     :config
     (global-undo-tree-mode))
-#+END_SRC
+#+end_src
 
 ** E-Vi-L Mode
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package evil
     :ensure t
     :config
     (evil-mode 1)
     (evil-set-undo-system 'undo-tree))
-#+END_SRC
+#+end_src
 
 ** Beacon
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package beacon
     :ensure t
     :init
     (beacon-mode 1))
-#+END_SRC
-
-** Rainbow Delimiters
-
-Color code parentheses
-#+BEGIN_SRC emacs-lisp
-  (use-package rainbow-delimiters
-    :ensure t
-    :init
-    (rainbow-delimiters-mode 1))
-#+END_SRC
+#+end_src
 
 ** Pretty Symbols
 
-#+BEGIN_SRC emacs-lisp
-(when window-system
-      (use-package pretty-mode
-      :ensure t
-      :config
-      (global-pretty-mode t)))
-#+END_SRC
+#+begin_src emacs-lisp
+  (use-package pretty-mode
+    :ensure t
+    :config
+    (global-pretty-mode t))
+  (require 'pretty-mode)
+#+end_src
 
 ** Dashboard
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
 (use-package dashboard
   :ensure t
   :config
@@ -212,88 +202,89 @@ Color code parentheses
     (setq dashboard-items '((recents  . 5)
                             (projects . 5)))
     (setq dashboard-banner-logo-title "Welcome to emacs!"))
-#+END_SRC
+#+end_src
 
 ** Company
 
-#+BEGIN_SRC emacs-lisp
+Auto-completion
+#+begin_src emacs-lisp
 (use-package company
   :ensure t
   :init
   (add-hook 'after-init-hook 'global-company-mode))
-#+END_SRC
+#+end_src
 
 
 * Org-mode
 
 ** Basic Configuration
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq org-src-window-setup 'current-window)
-#+END_SRC
+#+end_src
 
 ** Org Bullets
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package org-bullets
     :ensure t
     :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
-#+END_SRC
+#+end_src
 
 ** Enable inline images
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq org-startup-with-inline-images t)
-#+END_SRC
+#+end_src
 
 
 * IDO
 
 ** enable ido mode
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq ido-enable-flex-matching nil)
   (setq ido-create-new-buffer 'always)
   (setq ido-everywhere t)
   (ido-mode 1)
-#+END_SRC
+#+end_src
 
 ** ido-vertical
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package ido-vertical-mode
     :ensure t
     :init
     (ido-vertical-mode 1))
-#+END_SRC
+#+end_src
 
 ** smex
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package smex
     :ensure t
     :init (smex-initialize)
     :bind
     ("M-x" . smex))
-#+END_SRC
+#+end_src
 
 
 * Theme
 
 ** Gruber Darker
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package gruber-darker-theme
     :ensure t)
   (load-theme 'gruber-darker t)
-#+END_SRC
+#+end_src
 
 
 * Keybindings
 
 ** E-Vi-L normal mode
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-#+END_SRC
+#+end_src
