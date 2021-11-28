@@ -4,6 +4,7 @@ source ~/.vimrc
 
 lua <<EOF
 
+    -- Treesitter --
     require'nvim-treesitter.configs'.setup {
 
       ensure_installed = {
@@ -19,5 +20,8 @@ lua <<EOF
         enable = true
       }
     }
+
+    -- Autopairs --
+    require('nvim-autopairs').setup{}
 
 EOF

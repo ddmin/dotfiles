@@ -15,9 +15,12 @@ endif
 " Plugins using Plugged
 call plug#begin('~/.vim/plugged')
 
-" nvim-treesitter
     if has('nvim')
+        " nvim-treesitter
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+        " autopairs
+        Plug 'windwp/nvim-autopairs'
     endif
 
 " YCM
@@ -50,9 +53,6 @@ call plug#begin('~/.vim/plugged')
 
 " limelight
     Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
-
-" auto-pairs
-    Plug 'jiangmiao/auto-pairs'
 
 " undotree
     Plug 'mbbill/undotree'
@@ -338,9 +338,6 @@ call plug#end()
 " undotree
     nnoremap <silent> <C-z> :UndotreeToggle<CR>
     nnoremap <silent> <leader>z :UndotreeToggle<CR>
-
-" auto-pairs
-    let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 
 " commentary
     nnoremap <silent> <C-a> :Commentary<CR>
