@@ -72,11 +72,36 @@ Highlight matching parentheses.
   (defalias 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
+** Show Lines and Columns in modeline
+
+#+BEGIN_SRC emacs-lisp
+  (line-number-mode 1)
+  (column-number-mode 1)
+#+END_SRC
+
 ** Relative Line Numbers
 
 #+BEGIN_SRC emacs-lisp
 (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
+#+END_SRC
+
+** Kill current buffer
+
+#+BEGIN_SRC emacs-lisp
+  (defun kill-current-buffer ()
+    (interactive)
+    (kill-buffer (current-buffer)))
+  (global-set-key (kbd "C-x k") 'kill-current-buffer)
+#+END_SRC
+
+** Kill all buffers
+
+#+BEGIN_SRC emacs-lisp
+  (defun kill-all-buffers ()
+    (interactive)
+    (mapc 'kill-buffer (buffer-list)))
+  (global-set-key (kbd "C-x S-k") 'kill-all-buffers)
 #+END_SRC
 
 ** Highlight line
@@ -156,6 +181,16 @@ Enable =hl-line= in the GUI version of emacs.
     (beacon-mode 1))
 #+END_SRC
 
+** Rainbow Delimiters
+
+Color code parentheses
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-delimiters
+    :ensure t
+    :init
+    (rainbow-delimiters-mode 1))
+#+END_SRC
+
 ** Pretty Symbols
 
 #+BEGIN_SRC emacs-lisp
@@ -179,8 +214,23 @@ Enable =hl-line= in the GUI version of emacs.
     (setq dashboard-banner-logo-title "Welcome to emacs!"))
 #+END_SRC
 
+** Company
+
+#+BEGIN_SRC emacs-lisp
+(use-package company
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))
+#+END_SRC
+
 
 * Org-mode
+
+** Basic Configuration
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-src-window-setup 'current-window)
+#+END_SRC
 
 ** Org Bullets
 
