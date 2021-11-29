@@ -126,7 +126,7 @@ call plug#end()
     autocmd BufWritePre * %s/\s\+$//e
 
 " Terminal
-    map <Leader>t :term<CR>
+    map <Leader>t :term<CR>:setlocal nonumber norelativenumber<CR>
     tnoremap <C-w> <C-\><C-n>
     au BufEnter * silent! if &buftype == 'terminal' | :startinsert | endif
 
