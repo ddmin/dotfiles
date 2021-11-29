@@ -104,6 +104,13 @@ Highlight matching parentheses.
   (global-set-key (kbd "C-x S-k") 'kill-all-buffers)
 #+end_src
 
+** ibuffer
+
+Use ibuffer instead of switch-to-buffer.
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x b") 'ibuffer)
+#+end_src
+
 ** Highlight line
 
 Enable =hl-line= in the GUI version of emacs.
@@ -153,8 +160,16 @@ Enable =hl-line= in the GUI version of emacs.
     (key-chord-mode 1))
 #+end_src
 
+** Swiper
+
+Easy searching in current buffer.
+(use-package swiper
+  :ensure t
+  :bind ("C-f" . 'swiper))
+
 ** UndoTree
 
+Required for undo in e-vi-l mode.
 #+begin_src emacs-lisp
   (use-package undo-tree
     :ensure t
@@ -164,6 +179,7 @@ Enable =hl-line= in the GUI version of emacs.
 
 ** E-Vi-L Mode
 
+The superior keybindings.
 #+begin_src emacs-lisp
   (use-package evil
     :ensure t
