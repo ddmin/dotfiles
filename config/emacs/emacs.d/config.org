@@ -101,7 +101,7 @@ Highlight matching parentheses.
   (defun kill-all-buffers ()
     (interactive)
     (mapc 'kill-buffer (buffer-list)))
-  (global-set-key (kbd "C-x S-k") 'kill-all-buffers)
+  (global-set-key (kbd "C-x C-k") 'kill-all-buffers)
 #+end_src
 
 ** ibuffer
