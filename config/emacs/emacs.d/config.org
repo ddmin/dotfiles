@@ -1,5 +1,5 @@
 #+TITLE: Emacs Configuration
-#+CREATOR: ddmin
+#+AUTHOR: ddmin
 #+LANGUAGE: en
 #+STARTUP: show2levels
 #+OPTIONS: num:nil
@@ -82,12 +82,36 @@ Highlight matching parentheses.
 ** Relative Line Numbers
 
 #+begin_src emacs-lisp
-(global-display-line-numbers-mode)
-  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode)
+    (setq display-line-numbers-type 'relative)
+#+end_src
+
+** Prettify Symbols
+
+Prettify words as symbols.
+#+begin_src emacs-lisp
+  (global-prettify-symbols-mode)
+  (defun org-prettify-symbols ()
+  (interactive)
+  (setq prettify-symbols-alist
+    (mapcan (lambda (x) (list x (cons (upcase (car x)) (cdr x))))
+            '(("#+begin_src"  . ?)
+              ("#+end_src"    . ?)
+              ("#+title:"     . ?)
+              ("#+author:"    . ?)
+              ("#+language:"  . ?)
+              ("#+startup:"   . ?⏻)
+              ("#+options:"   . ?)
+              ("#+attr_html:" . ?)
+              ("#+call:"      . ?))))
+  (prettify-symbols-mode 1))
+  (add-hook 'org-mode-hook 'org-prettify-symbols)
+#+END_SRC
 #+end_src
 
 ** Kill current buffer
 
+Change behavior of =C-x k= to always kill current buffer.
 #+begin_src emacs-lisp
   (defun kill-current-buffer ()
     (interactive)
@@ -97,6 +121,7 @@ Highlight matching parentheses.
 
 ** Kill all buffers
 
+Map =C-x C-k= to =kill-all-buffers=.
 #+begin_src emacs-lisp
   (defun kill-all-buffers ()
     (interactive)
@@ -190,6 +215,11 @@ The superior keybindings.
     (evil-set-undo-system 'undo-tree))
 #+end_src
 
+Use =jk= instead of =ESC= to switch to normal mode.
+#+begin_src emacs-lisp
+  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+#+end_src
+
 ** Beacon
 
 #+begin_src emacs-lisp
@@ -207,19 +237,23 @@ The superior keybindings.
     :config
     (global-pretty-mode t))
   (require 'pretty-mode)
+  (pretty-activate-groups
+    '(:sub-and-superscripts :greek :arithmetic-nary :equality
+      :ordering :ordering-double :ordering-triple :arrows
+      :arrows-twoheaded :punctuation :logic :sets))
 #+end_src
 
 ** Dashboard
 
 #+begin_src emacs-lisp
-(use-package dashboard
-  :ensure t
-  :config
-    (dashboard-setup-startup-hook)
-    (setq dashboard-startup-banner "~/.emacs.d/img/logo-small.png")
-    (setq dashboard-items '((recents  . 5)
-                            (projects . 5)))
-    (setq dashboard-banner-logo-title "Welcome to emacs!"))
+  (use-package dashboard
+    :ensure t
+    :config
+      (dashboard-setup-startup-hook)
+      (setq dashboard-startup-banner "~/.emacs.d/img/logo-small.png")
+      (setq dashboard-items '((recents  . 5)
+                              (projects . 5)))
+      (setq dashboard-banner-logo-title "Welcome to emacs!"))
 #+end_src
 
 ** Company
@@ -234,8 +268,8 @@ Auto-completion
     :init
     (add-hook 'after-init-hook 'global-company-mode))
   (with-eval-after-load 'company
-    (define-key company-active-map (kbd "C-k") #'company-select-next)
-    (define-key company-active-map (kbd "C-j") #'company-select-previous))
+    (define-key company-active-map (kbd "C-j") #'company-select-next)
+    (define-key company-active-map (kbd "C-k") #'company-select-previous))
 #+end_src
 
 
@@ -311,5 +345,4 @@ Auto-completion
 ** E-Vi-L normal mode
 
 #+begin_src emacs-lisp
-  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 #+end_src
