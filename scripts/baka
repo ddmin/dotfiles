@@ -27,7 +27,7 @@ for d in ${dirs[@]}; do
     echo ""
 
     # create backup
-    rsync -aurvzP --exclude-from="$EXCLUDE" "$HOME/$d" "$SAVEDIR" --delete-after
+    rsync -aurvzP --exclude-from="$EXCLUDE" "$HOME/$d" "$SAVEDIR" --delete-after --delete-excluded
 done
 
 msg="Finished in $((($SECONDS)/60))m $((($SECONDS)%60))s"
