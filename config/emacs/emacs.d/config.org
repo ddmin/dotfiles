@@ -163,9 +163,11 @@ Enable =hl-line= in the GUI version of emacs.
 ** Swiper
 
 Easy searching in current buffer.
-(use-package swiper
-  :ensure t
-  :bind ("C-f" . 'swiper))
+#+begin_src emacs-lisp
+  (use-package swiper
+    :ensure t)
+  (global-set-key (kbd "C-f") 'swiper)
+#+end_src
 
 ** UndoTree
 
@@ -224,10 +226,16 @@ The superior keybindings.
 
 Auto-completion
 #+begin_src emacs-lisp
-(use-package company
-  :ensure t
-  :init
-  (add-hook 'after-init-hook 'global-company-mode))
+  (use-package company
+    :ensure t
+    :config
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 2)
+    :init
+    (add-hook 'after-init-hook 'global-company-mode))
+  (with-eval-after-load 'company
+    (define-key company-active-map (kbd "C-k") #'company-select-next)
+    (define-key company-active-map (kbd "C-j") #'company-select-previous))
 #+end_src
 
 
@@ -237,6 +245,7 @@ Auto-completion
 
 #+begin_src emacs-lisp
   (setq org-src-window-setup 'current-window)
+  (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
 ** Org Bullets
