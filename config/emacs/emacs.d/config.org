@@ -272,6 +272,15 @@ Auto-completion
     (define-key company-active-map (kbd "C-k") #'company-select-previous))
 #+end_src
 
+** Flycheck
+
+Syntax checking
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :init (global-flycheck-mode))
+#+end_src
+
 
 * Org-mode
 
@@ -340,9 +349,40 @@ Auto-completion
 #+end_src
 
 
-* Keybindings
+* Programming
 
-** E-Vi-L normal mode
+** Python
+
+=pip install jedi flake8 autopep8 virtualenv=
+#+begin_src emacs-lisp
+  (add-hook 'python-mode-hook 'flycheck-mode)
+
+  (with-eval-after-load 'company
+      (add-hook 'python-mode-hook 'company-mode))
+
+  (use-package company-jedi
+    :ensure t
+    :config
+      (require 'company)
+      (add-to-list 'company-backends 'company-jedi))
+
+  (defun python-mode-company-init ()
+    (setq-local company-backends '((company-jedi
+                                    company-etags
+                                    company-dabbrev-code))))
+
+  (use-package company-jedi
+    :ensure t
+    :config
+      (require 'company)
+      (add-hook 'python-mode-hook 'python-mode-company-init))
+#+end_src
+
+** Rust
 
 #+begin_src emacs-lisp
+  (use-package rustic
+    :ensure t
+    :config
+      (setq rustic-format-on-save t))
 #+end_src
