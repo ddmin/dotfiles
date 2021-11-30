@@ -165,8 +165,8 @@ Enable =hl-line= in the GUI version of emacs.
 Easy searching in current buffer.
 #+begin_src emacs-lisp
   (use-package swiper
-    :ensure t)
-  (global-set-key (kbd "C-f") 'swiper)
+    :ensure t
+    :bind ("C-c f" . 'swiper))
 #+end_src
 
 ** UndoTree
