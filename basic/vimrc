@@ -4,51 +4,64 @@
 " | |_) | (_| \__ \ | (__   \ V /| | | | | | |
 " |_.__/ \__,_|___/_|\___|   \_/ |_|_| |_| |_|
 
-let mapleader = " "
-
 " Basics
+    let mapleader = " "
+    inoremap jk <ESC>
+
+    set number
+    set relativenumber
+    set ignorecase
+    set smartcase
+
     set nocompatible
-    filetype plugin on
     set encoding=utf-8
     set showcmd
 
     syntax on
+    filetype plugin on
+    filetype indent on
+
     set wrap
-    set linebreak
+    set redrawtime=10000
+    set lazyredraw
     set nolist
 
-    set number
-    set relativenumber
-
-    set ic
-    inoremap jk <ESC>
     set wildmenu
+    set wildmode=longest:full,full
 
-" Fix splits
-    set splitbelow splitright
-
-" Folding
-    set foldenable
-    set foldlevelstart=10
-    set foldnestmax=10
-    set foldmethod=syntax
-    autocmd FileType vim nnoremap <CR> za
-
-"Disable auto-commenting
-    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Highlight searches and <Leader Leader> to unhighlight
-    set incsearch
-    set hlsearch
-    nnoremap <leader><leader> :nohl<CR><C-l>
+" Undo Directory
+    set hidden
+    set noswapfile
+    set nobackup
+    set undodir=~/.vim/undodir
+    set undofile
 
 " Tabs
     set tabstop=4
+    set softtabstop=4
     set shiftwidth=4
     set expandtab
     set autoindent
 
-    set splitbelow splitright
+" Highlight searches and <Leader><Leader> to unhighlight
+    set incsearch
+    set hlsearch
+    nnoremap <silent> <leader><leader> :nohl<CR><C-l>
+
+"Disable auto-commenting
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=o
+
+" Remove trailing white space on save
+    autocmd BufWritePre * %s/\s\+$//e
+
+" Terminal
+    map <Leader>t :term<CR>:setlocal nonumber norelativenumber<CR>
+
+" open folds
+    nnoremap <CR> za
+
+" increment number
+    nnoremap <C-p> <C-a>
 
 " toggle numbers
     nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
@@ -56,17 +69,49 @@ let mapleader = " "
 " toggle spell
     nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
 
-" open blank
-    nnoremap <leader>wv :vnew<CR>
+" yank to end of line
+    nnoremap Y y$
 
-" open blank horizontally
-    nnoremap <leader>wh :new<CR>
+" Reselect visual after idents
+    vnoremap < <gv
+    vnoremap > >gv
+
+" undo breakpoints
+    inoremap , ,<c-g>u
+    inoremap . .<c-g>u
+    inoremap ! !<c-g>u
+    inoremap ? ?<c-g>u
+
+" moving text
+    nnoremap <C-j> :m .+1<CR>==
+    nnoremap <C-k> :m .-2<CR>==
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Fix splits
+    set splitbelow splitright
+
+" Vertical Split
+    nnoremap <silent> <leader>f :vnew<CR>
+
+" Horizontal Split
+    nnoremap <silent> <leader>h :new<CR>
 
 " Move windows
     nnoremap <A-h> <C-w>h
     nnoremap <A-j> <C-w>j
     nnoremap <A-k> <C-w>k
     nnoremap <A-l> <C-w>l
+
+    inoremap <A-h> <C-\><C-N><C-w>h
+    inoremap <A-j> <C-\><C-N><C-w>j
+    inoremap <A-k> <C-\><C-N><C-w>k
+    inoremap <A-l> <C-\><C-N><C-w>l
+
+    tnoremap <A-h> <C-\><C-N><C-w>h
+    tnoremap <A-j> <C-\><C-N><C-w>j
+    tnoremap <A-k> <C-\><C-N><C-w>k
+    tnoremap <A-l> <C-\><C-N><C-w>l
 
 " resize windows
     nmap <silent> <S-left> :vertical resize -5<CR>
