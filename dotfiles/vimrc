@@ -84,7 +84,6 @@ call plug#end()
     set ignorecase
     set smartcase
 
-    set nocompatible
     set encoding=utf-8
     set showcmd
 
@@ -93,9 +92,9 @@ call plug#end()
     filetype indent on
 
     set wrap
+    set updatetime=300
     set redrawtime=10000
     set lazyredraw
-    set nolist
 
     set wildmenu
     set wildmode=longest:full,full
@@ -108,11 +107,14 @@ call plug#end()
     set undofile
 
 " Tabs
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
+    set list
     set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
     set autoindent
+    set showbreak=↪\
+    set listchars=trail:∙,nbsp:•
 
 " Highlight searches and <Leader><Leader> to unhighlight
     set incsearch
