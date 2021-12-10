@@ -34,7 +34,7 @@ cp -a ~/Code/Bash/* "$SCRIPTDIR/."
 echo DONE
 
 # copy configs
-echo "============== CONFIG =============="
+echo "============== CONFIGS =============="
 echo "Copying configs from ~/.config"
 
 # program directories
