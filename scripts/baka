@@ -1,7 +1,6 @@
 #!/bin/bash
 # baka: create tar backups of specified directories
 
-# make sure you are in the home directory
 SECONDS=0
 
 # exclude file
