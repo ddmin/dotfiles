@@ -141,6 +141,9 @@ function basic {
     echo Moving vimrc
         cp "$BASIC/vimrc" "$DOTDIR/.vimrc"
 
+    echo Moving Xresources
+        cp "$BASIC/Xresources" "$DOTDIR/.Xresources"
+
     echo DONE
 }
 
