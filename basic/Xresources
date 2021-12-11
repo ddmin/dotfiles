@@ -31,3 +31,4 @@
 URxvt.font: xft:monaco:size=10
 URxvt.scrollBar: false
 URxvt.cursorColor: white
+URxvt.letterSpace: -1
