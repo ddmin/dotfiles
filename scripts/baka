@@ -12,7 +12,7 @@ EXCLUDE="$HOME/Code/Bash/files/baka-exclude"
 SAVEDIR="root@10.0.0.1:/root/Vault/Charlie"
 
 # directories to archive
-dirs=("Code" "Documents" "Pictures" "Music")
+dirs=("Code" "Documents" "Pictures" "Music" "Videos")
 
 # loop through directories
 for d in ${dirs[@]}; do
