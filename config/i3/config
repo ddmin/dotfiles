@@ -11,8 +11,8 @@
 exec --no-startup-id alttab -fg "#d58681" -bg "#4a4a4a" -frame "#eb564d" -t 128x150 -i 127x64
 # alternating layouts
 exec --no-startup-id /usr/local/bin/alternating_layouts.py
-# nitrogen
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+# wallpaper (set wallpaper with feh --bg-scale /path/to/wallpaper)
+exec --no-startup-id ~/.fehbg
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
