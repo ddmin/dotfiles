@@ -18,10 +18,10 @@ blu)
 
     if [ $CONNECT == "no" ]; then
         printf "📶 "
-        bluetoothctl connect $DEVICE
+        bluetoothctl --timeout 2 connect $DEVICE
     else
         printf "📶 "
-        bluetoothctl disconnect $DEVICE
+        bluetoothctl --timeout 2 disconnect $DEVICE
     fi
 ;;
 
