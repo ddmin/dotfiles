@@ -24,8 +24,9 @@ echo ""
 echo "${GREEN}Testing connection to ${ORANGE}'$DEVICE'${RESET}"
 
 if !(rsync --timeout=1 --dry-run "$EXCLUDE" "$SAVEDIR" 2> /dev/null); then
-    echo "${RED}Failed to Connect${RESET}" && exit
+    echo "${RED}Failed to Connect.${RESET}" && exit
 fi
+echo "${GREEN}Connection Successful.${RESET}"
 
 # directories to archive
 dirs=("Code" "Documents" "Pictures" "Music" "Videos")
