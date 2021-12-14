@@ -28,7 +28,7 @@
 *color7: #a8a19f
 *color15: #f1efee
 
-URxvt.font: xft:monaco:size=10
+URxvt.font: xft:iosevka:size=10
 URxvt.scrollBar: false
 URxvt.cursorColor: white
 URxvt.letterSpace: -1
