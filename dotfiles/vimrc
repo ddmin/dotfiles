@@ -210,7 +210,7 @@ call plug#end()
 " Horizontal Split
     nnoremap <silent> <leader>h :new<CR>
 
-" Move windows
+" Navigate Splits
     nnoremap <A-h> <C-w>h
     nnoremap <A-j> <C-w>j
     nnoremap <A-k> <C-w>k
@@ -226,7 +226,7 @@ call plug#end()
     tnoremap <A-k> <C-\><C-N><C-w>k
     tnoremap <A-l> <C-\><C-N><C-w>l
 
-" resize windows
+" Resize Splits
     nmap <silent> <S-left> :vertical resize -5<CR>
     nmap <silent> <S-right> :vertical resize +5<CR>
     nmap <silent> <S-up> :resize -5<CR>
@@ -234,7 +234,7 @@ call plug#end()
 
 " }}}
 
-" Note {{{
+" Notes {{{
 
     " autocompile into pdf
     autocmd BufWritePost *.note silent !note2pdf %:p
@@ -251,6 +251,7 @@ call plug#end()
 
     " enable limelight
     autocmd BufRead,BufNewFile *.note silent :Limelight
+
 " }}}
 
 " Settings {{{
