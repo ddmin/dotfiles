@@ -1,9 +1,4 @@
-.git/branches
-.git/hooks
-.git/info
-.git/logs
-.git/objects
-.git/refs
+.git/
 Go/bin
 Go/pkg
 Go/src/golang.org
