@@ -58,13 +58,6 @@ bindkey -v
 export KEYTIMEOUT=20
 bindkey -M viins 'jk' vi-cmd-mode
 
-# vi-keys in completion menu
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
 # enable fzf search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
