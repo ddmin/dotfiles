@@ -21,7 +21,4 @@ lua <<EOF
       }
     }
 
-    -- Autopairs --
-    require('nvim-autopairs').setup{}
-
 EOF

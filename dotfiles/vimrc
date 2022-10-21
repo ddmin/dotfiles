@@ -18,22 +18,13 @@ call plug#begin('~/.vim/plugged')
     if has('nvim')
         " nvim-treesitter
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-        " autopairs
-        Plug 'windwp/nvim-autopairs'
     endif
 
-" YCM
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
+" CoC
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " NERDtree
     Plug 'preservim/nerdtree'
-
-" emmet
-    Plug 'mattn/emmet-vim', { 'for': 'html,css,javascript,typescript' }
-
-" CSS color
-    Plug 'ap/vim-css-color'
 
 " vim-surround
     Plug 'tpope/vim-surround'
@@ -103,6 +94,7 @@ call plug#end()
     set hidden
     set noswapfile
     set nobackup
+    set nowritebackup
     set undodir=~/.vim/undodir
     set undofile
 
@@ -256,6 +248,31 @@ call plug#end()
 
 " Settings {{{
 
+" CoC
+    call coc#add_extension(
+                \ 'coc-rust-analyzer',
+                \ 'coc-prettier',
+                \ 'coc-emmet',
+                \ 'coc-highlight',
+                \ 'coc-pairs',
+                \ 'coc-clangd',
+                \ )
+
+    inoremap <silent><expr> <TAB>
+          \ coc#pum#visible() ? coc#pum#next(1) :
+          \ CheckBackspace() ? "\<Tab>" :
+          \ coc#refresh()
+
+    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+    function! CheckBackspace() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
 " fzf
     map <C-g> :Files<CR>
     map <C-f> :BLines<CR>
@@ -285,30 +302,6 @@ call plug#end()
 " NERDTree
     nnoremap <silent> <expr> <Leader>. g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
     autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-" YCM
-    nnoremap gr :YcmCompleter RefactorRename <C-r><C-w>
-    nnoremap <silent> gd :YcmCompleter GoTo<CR>
-    nnoremap <silent> gh :YcmCompleter GetDoc<CR>
-
-    let g:ycm_autoclose_preview_window_after_insertion = 1
-    let g:ycm_semantic_triggers = {'c': ['re![^{}\(\)]'],'cpp': ['re![^{}\(\)]'],'rust': ['re![^{}\(\)]'],'go': ['re![^{}\(\)]'],'html': ['re!.'],'javascript': ['re![^{}\(\)]'],'python': ['re![^:\(\)]']}
-
-    augroup Format
-        autocmd FileType c,cpp,go,rust
-            \ autocmd! Format BufWritePost <buffer> :YcmCompleter Format
-    augroup END
-
-" emmet
-    let g:user_emmet_mode='nv'
-    let g:user_emmet_leader_key=','
-    let g:user_emmet_settings = {
-    \  'html' : {
-    \    'block_all_childless' : 1,
-    \  },
-    \}
-
-    inoremap ,, <ESC>:norm,,<CR>i
 
 " goyo
     function! s:goyo_enter()
