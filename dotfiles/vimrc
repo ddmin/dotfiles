@@ -142,13 +142,13 @@ call plug#end()
     endif
 
 " colors
+    set termguicolors
     function! s:patch_colors()
         hi Normal guibg=NONE ctermbg=NONE
-        hi Comment ctermfg=magenta
-        hi LineNr ctermfg=lightblue
-        hi CursorLineNr ctermfg=darkmagenta
-        hi Folded ctermbg=magenta
-        hi Search cterm=NONE ctermfg=black ctermbg=lightblue
+        hi Comment ctermfg=magenta guifg=#D6ACFF
+        hi LineNr ctermfg=lightblue guifg=#5FD7FF
+        hi Folded ctermbg=magenta guibg=#D6ACFF
+        hi Search cterm=NONE ctermfg=black ctermbg=lightblue guibg=#D6ACFF
     endfunction
 
     autocmd! ColorScheme onedark call s:patch_colors()
