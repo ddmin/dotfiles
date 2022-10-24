@@ -145,10 +145,10 @@ call plug#end()
     set termguicolors
     function! s:patch_colors()
         hi Normal guibg=NONE ctermbg=NONE
-        hi Comment ctermfg=magenta guifg=#D6ACFF
+        hi Comment ctermfg=yellow guifg=#FFB86C
         hi LineNr ctermfg=lightblue guifg=#5FD7FF
         hi Folded ctermbg=magenta guibg=#D6ACFF
-        hi Search cterm=NONE ctermfg=black ctermbg=lightblue guibg=#D6ACFF
+        hi Search cterm=NONE ctermfg=black ctermbg=green guibg=#50FA7B
     endfunction
 
     autocmd! ColorScheme onedark call s:patch_colors()
@@ -253,9 +253,9 @@ call plug#end()
                 \ 'coc-rust-analyzer',
                 \ 'coc-prettier',
                 \ 'coc-emmet',
-                \ 'coc-highlight',
                 \ 'coc-pairs',
                 \ 'coc-clangd',
+                \ 'coc-highlight',
                 \ )
 
     inoremap <silent><expr> <C-j>
