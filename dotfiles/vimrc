@@ -42,9 +42,6 @@ call plug#begin('~/.vim/plugged')
 " goyo
     Plug 'junegunn/goyo.vim'
 
-" limelight
-    Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
-
 " undotree
     Plug 'mbbill/undotree'
 
@@ -241,9 +238,6 @@ call plug#end()
     " enable goyo
     autocmd BufRead,BufNewFile *.note silent :Goyo
 
-    " enable limelight
-    autocmd BufRead,BufNewFile *.note silent :Limelight
-
 " }}}
 
 " Settings {{{
@@ -251,6 +245,7 @@ call plug#end()
 " CoC
     call coc#add_extension(
                 \ 'coc-rust-analyzer',
+                \ 'coc-pyls',
                 \ 'coc-prettier',
                 \ 'coc-emmet',
                 \ 'coc-pairs',
@@ -272,6 +267,18 @@ call plug#end()
       let col = col('.') - 1
       return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
+
+    function! ShowDocumentation()
+      if CocAction('hasProvider', 'hover')
+        call CocActionAsync('doHover')
+      else
+        call feedkeys('K', 'in')
+      endif
+    endfunction
+
+    nnoremap <silent> K :call ShowDocumentation()<CR>
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap gr <Plug>(coc-rename)
 
 " fzf
     map <C-g> :Files<CR>
@@ -326,11 +333,6 @@ call plug#end()
     autocmd! User GoyoLeave call <SID>goyo_leave()
 
     nnoremap <silent> <Leader>g :Goyo<CR>
-
-" limelight
-    let g:limelight_conceal_ctermfg = 'darkgray'
-    let g:limelight_paragraph_span = 1
-    let g:limelight_priority = -1
 
 " undotree
     nnoremap <silent> <C-z> :UndotreeToggle<CR>
