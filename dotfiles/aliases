@@ -5,11 +5,10 @@
 #  \__,_|_|_|\__,_|___/
 
 # safer defaults
-alias cp='cp -riv'
+alias cp='rsync -aurvhP --progress'
 alias mv='mv -iv'
 alias rm='rm -vI'
 alias mkdir='mkdir -pv'
-alias rsync='rsync -uvrP'
 
 # logo-ls
 alias l='logo-ls -v'
