@@ -86,6 +86,9 @@ function root {
 
     echo Moving bashrc
         sudo cp "$BASIC/bashrc" "$ROOTDIR/.bashrc"
+        
+    echo Moving profile
+        sudo cp "$BASIC/profile" "$ROOTDIR/.profile"
 
     echo Moving vimrc
         sudo cp "$BASIC/vimrc" "$ROOTDIR/.vimrc"
