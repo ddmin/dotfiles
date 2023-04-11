@@ -86,9 +86,12 @@ function root {
 
     echo Moving bashrc
         sudo cp "$BASIC/bashrc" "$ROOTDIR/.bashrc"
-        
+
     echo Moving profile
         sudo cp "$BASIC/profile" "$ROOTDIR/.profile"
+
+    # switch color for root prompt to red
+        sudo sed -i 's/32/31/' "$ROOTDIR/.bashrc"
 
     echo Moving vimrc
         sudo cp "$BASIC/vimrc" "$ROOTDIR/.vimrc"
