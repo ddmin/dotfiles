@@ -1,5 +1,7 @@
 #!/bin/bash
 # Run Manga OCR to read from directory
 
-OCR_DIR="$HOME/Documents/ocr"
+OCR_DIR="$HOME/tmp/ocr"
+
+mkdir -p $OCR_DIR
 manga_ocr $OCR_DIR

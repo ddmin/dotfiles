@@ -1,5 +1,5 @@
 #!/bin/bash
 # Take a screenshot of an area and save to directory
 
-OCR_DIR=$HOME/Documents/ocr
+OCR_DIR=$HOME/tmp/ocr
 gnome-screenshot -a -f $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"`
