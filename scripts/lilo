@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# lilo: stitch two images side-by-side and display
+
+OUTPUT=/tmp/`date +"%Y-%m-%d-%T-stitch.png"`
+
+if [ $# -lt 2 ]; then
+    >&2 echo "lilo: provide 2 images to stitch together"
+    >&2 echo "Usage: lilo LEFT RIGHT"
+    exit 1
+fi
+
+convert $1 $2 +append $OUTPUT
+feh $OUTPUT
