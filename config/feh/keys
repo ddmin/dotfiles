@@ -15,12 +15,12 @@ menu_up     k Up
 menu_select space Return
 
 # Same for image navigation ...
-next_img l d Right
-prev_img h a Left
+next_img d Right
+prev_img a Left
 
 # and image movement
-scroll_up    j C-Up
-scroll_down  k C-Down
+scroll_up    k C-Up
+scroll_down  j C-Down
 scroll_left  h C-Left
 scroll_right l C-Right
 
