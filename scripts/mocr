@@ -1,7 +1,0 @@
-#!/bin/bash
-# Run Manga OCR to read from directory
-
-OCR_DIR=/tmp/ocr
-
-mkdir -p $OCR_DIR
-manga_ocr $OCR_DIR
