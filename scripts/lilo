@@ -10,5 +10,6 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
+echo $OUTPUT
 convert $1 $2 +append $OUTPUT
 feh $OUTPUT
