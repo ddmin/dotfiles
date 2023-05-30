@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Translate a directory using manga_translator
+
+FILEPATH="$(pwd)/$1"
+MODULE_PATH=$HOME/.local/code/manga-image-translator
+
+cd $MODULE_PATH
+time python3 -m manga_translator -v --mode batch --save-text --translator=sugoi -l ENG -i $FILEPATH
+cd -
+
+notify-send -u critical -t 0 "🏁 Finished Process"
