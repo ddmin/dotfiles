@@ -6,7 +6,7 @@ MODULE_PATH=$HOME/.local/code/manga-image-translator
 cd $MODULE_PATH
 
 time python3 -m manga_translator \
-    -v --mode batch --save-text \
+    -v --mode batch --save-text -f jpg \
     --translator=sugoi -l ENG --manga2eng \
     -o "$FILEPATH/mtl" -i $FILEPATH
 
