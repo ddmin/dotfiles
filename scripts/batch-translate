@@ -1,14 +1,15 @@
 #!/bin/bash
 
 FILEPATH="$(pwd)/$1"
-MODULE_PATH=$HOME/.local/code/manga-image-translator
+MODULE_PATH=$HOME/.local/manga-image-translator
 
 cd $MODULE_PATH
 
 time python3 -m manga_translator \
     -v --mode batch --save-text -f jpg \
     --translator=sugoi -l ENG --manga2eng \
-    -o "$FILEPATH/mtl" -i $FILEPATH
+    -o "$FILEPATH/mtl" -i $FILEPATH \
+    --font-path "/usr/share/fonts/TTF/CCWildWordsRoman.ttf"
 
 cd -
 
