@@ -7,10 +7,11 @@ cd $MODULE_PATH
 
 time python3 -m manga_translator \
     -v --mode batch --save-text -f jpg \
-    --translator=sugoi -l ENG --manga2eng \
+    --translator=sugoi -l ENG \
     -o "$FILEPATH/mtl" -i $FILEPATH \
+    --manga2eng --save-quality 30 \
     --font-path "/usr/share/fonts/TTF/CCWildWordsRoman.ttf"
 
 cd -
 
-notify-send -u critical -t 0 "🏁 Finished Process"
+notify-send -u critical -t 0 "🏁 Finished MTL"
