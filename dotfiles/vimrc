@@ -170,7 +170,7 @@ call plug#end()
 " yank to end of line
     nnoremap Y y$
 
-" Reselect visual after idents
+" Reselect visual after indents
     vnoremap < <gv
     vnoremap > >gv
 
