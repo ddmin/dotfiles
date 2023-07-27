@@ -2,14 +2,22 @@
 
 # lilo: stitch two images side-by-side and display
 
-OUTPUT=/tmp/`date +"%Y-%m-%d-%T-stitch.png"`
-
 if [ $# -lt 2 ]; then
     >&2 echo "lilo: provide 2 images to stitch together"
-    >&2 echo "Usage: lilo LEFT RIGHT"
+    >&2 echo "Usage: $(basename $0) RIGHT LEFT"
     exit 1
 fi
 
+right=$(basename $1)
+left=$(basename $2)
+
+ext="${right##*.}"
+
+rbase=${right%.$ext}
+lbase=${left%.$ext}
+
+
+OUTPUT="${rbase}-${lbase}.${ext}"
+
 echo $OUTPUT
-convert $1 $2 +append $OUTPUT
-feh $OUTPUT
+convert $left $right +append $OUTPUT
