@@ -4,17 +4,12 @@
 
 if [ $# -lt 1 ]; then
     echo "ERROR: Please provide a directory."
-    echo "USAGE: batch-translate [DIRECTORY] [JPEG-QUALITY]"
+    echo "USAGE: batch-translate [DIRECTORY]"
     exit
 fi
 
-SAVE_QUALITY=100
-
-if [ $# -gt 1 ]; then
-    SAVE_QUALITY=$2
-fi
-
-FILEPATH="$(pwd)/$1"
+DIR=$(basename $1)
+FILEPATH="$(pwd)/$DIR"
 MODULE_PATH=$HOME/.local/manga-image-translator
 
 cd $MODULE_PATH
@@ -22,10 +17,9 @@ cd $MODULE_PATH
 time python3 -m manga_translator \
     -v --mode batch --save-text -f jpg \
     --translator=sugoi -l ENG \
-    -o "$FILEPATH/mtl" -i $FILEPATH \
-    --manga2eng --save-quality $SAVE_QUALITY \
+    -o "$FILEPATH/mtl" -i $FILEPATH --manga2eng \
     --font-path "/usr/share/fonts/TTF/CCWildWordsRoman.ttf"
 
 cd -
 
-notify-send -u critical -t 0 "🏁 Finished MTL"
+notify-send "🏁 Finished MTL"
