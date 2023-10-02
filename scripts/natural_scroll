@@ -1,0 +1,5 @@
+#!/bin/bash
+# Natural scrolling for trackpads
+
+synclient VertScrollDelta=-58
+synclient HorizScrollDelta=-58
