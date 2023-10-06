@@ -1,0 +1,13 @@
+#!/bin/bash
+# eria: screenshot left and right panels
+
+datefmt=$(date +%Y-%m-%d_%T)
+
+# Right Panel
+import -window root -crop 752x1080+208+0 -quality 100 "$datefmt-right.png"
+
+echo "Right Panel Captured to $datefmt-right.png"
+
+# Left Panel
+import -window root -crop 752x1080+960+0 -quality 100 "$datefmt-left.png"
+echo "Left Panel Captured to $datefmt-left.png"
