@@ -90,5 +90,5 @@
 ;; python formatting
 (add-hook 'python-mode-hook #'format-all-mode)
 
-;; block folding
-(global-set-key (kbd "<return>") #'+fold/toggle)
+;; disable comments on new lines
+(setq +evil-want-o/O-to-continue-comments nil)
