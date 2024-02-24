@@ -50,3 +50,4 @@
 ;; (unpin! t)
 
 (package! disable-mouse)
+(package! helm-rg)
