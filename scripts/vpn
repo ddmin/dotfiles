@@ -3,8 +3,12 @@
 # vpn: openvpn connection script
 # vpngate: https://www.vpngate.net/en/
 
+# auth:
+#   username
+#   password
+
 sudo echo ""
-killall openvpn 2> /dev/null
+sudo killall openvpn 2> /dev/null
 
 VPNS="$HOME/.local/drive/ovpn"
 
