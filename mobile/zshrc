@@ -40,9 +40,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 # aliases
-alias l='exa'
-alias ll='exa -l'
-alias la='exa -a'
+alias l='ls'
+alias ll='ls -l'
+alias la='ls -a'
 
 # naviage to directories with ranger
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
