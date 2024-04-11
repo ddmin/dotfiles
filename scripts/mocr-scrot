@@ -2,7 +2,10 @@
 # Take a screenshot of an area and save to directory
 
 OCR_DIR=/tmp/ocr
-gnome-screenshot -a -f $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"`
+mkdir -p $OCR_DIR
+
+# gnome
+# gnome-screenshot -a -f $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"`
 
 # xfce
-# xfce4-screenshooter -r -s $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"`
+xfce4-screenshooter -r -s $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"`
