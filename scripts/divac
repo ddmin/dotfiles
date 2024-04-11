@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# divac: divide and conquer - divide directory into $NUM amount of folders with $SIZE number of files each
+
+set -e
+
+if [ $# -lt 1 ]; then
+    echo "Please provide number of folders."
+    echo "USAGE: $(basename $0) [FOLDER-COUNT] [INPUT-DIRECTORY]"
+    exit
+fi
+
+dir=$2
+if [ $# -lt 2 ]; then
+    dir="."
+fi
+
+amt=$(find ${dir} -name "*.jpg" | wc -l)
+fpf=$(($amt / $1))
+mod=$(($amt % $1))
+
+# Create Directories
+for i in $(seq -f "%02g" 1 $1)
+do
+    mkdir -p ${dir}/$i
+
+    extra=0
+    if [ $mod -gt 0 ]; then
+        extra=1
+        mod=$(($mod - 1))
+    fi
+
+    mv -t ${dir}/$i $(ls ${dir}/*.jpg | head -$(($fpf + $extra)))
+done
