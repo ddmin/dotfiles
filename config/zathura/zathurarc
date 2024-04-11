@@ -13,3 +13,4 @@ map - zoom out
 map r reload
 map R rotate
 map i recolor
+map f toggle_fullscreen
