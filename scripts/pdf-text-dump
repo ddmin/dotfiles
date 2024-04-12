@@ -12,7 +12,7 @@ def main():
 
     text = ''.join([pdf[page] for page in range(len(pdf))])
 
-    print(text)
+    print(text, end='')
 
 
 if __name__ == '__main__':
