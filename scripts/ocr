@@ -2,6 +2,8 @@
 
 # ocr: tesseract wrapper
 
+set -e
+
 language="$1"
 if [ -z $1 ]; then
     language="eng"
@@ -13,10 +15,10 @@ mkdir -p $OCR_DIR
 filename=`date +"tesseract-%Y-%m-%d_%T"`
 
 # gnome
-# gnome-screenshot -a -f $OCR_DIR/$filename.png
+# gnome-screenshot -a -f $OCR_DIR/$filename.png || exit 1
 
 # xfce
-xfce4-screenshooter -r -s "$OCR_DIR"/"$filename.png"
+xfce4-screenshooter -r -s "$OCR_DIR"/"$filename.png" || exit 1
 
 tesseract -l $language "$OCR_DIR"/"$filename.png" "$OCR_DIR"/"$filename"
 cat "$OCR_DIR"/"$filename.txt" | xsel -bi
