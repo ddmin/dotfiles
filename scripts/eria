@@ -1,13 +1,64 @@
 #!/bin/bash
 # eria: screenshot left and right panels
 
-datefmt=$(date +%Y-%m-%d_%T)
+RED='\033[1;31m'
+YELLOW='\033[1;33m'
+GREEN='\033[1;32m'
+NC='\033[0m'
 
-# Right Panel
-import -window root -crop 752x1080+208+0 -quality 100 "$datefmt-right.png"
+trap clean_exit INT
+function clean_exit() {
+    echo ""
+    exit
+}
 
-echo "Right Panel Captured to $datefmt-right.png"
+screen_width=`xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+)x[0-9]+.*$/\1/'`
 
-# Left Panel
-import -window root -crop 752x1080+960+0 -quality 100 "$datefmt-left.png"
-echo "Left Panel Captured to $datefmt-left.png"
+echo -ne "${RED}Select screenshot region.${NC}"
+slop=$(slop -f "%x %y %w %h") || exit 1
+read -r X Y WIDTH HEIGHT <<< $slop
+
+# make pages evenly sized
+if ! [ $((WIDTH%2)) -eq 0 ]; then
+    if [ $((X+WIDTH)) -ge $((screen_width)) ]; then
+        (( WIDTH-=1 ))
+    else
+        (( WIDTH+=1 ))
+    fi
+fi
+
+HALF_WIDTH=$((WIDTH/2))
+RIGHT_X=$((X+$HALF_WIDTH))
+
+printf "\n\n"
+echo -e "${GREEN}Screenshot Size: '${HALF_WIDTH}x${HEIGHT}'${NC}"
+echo -e "${GREEN}Right Panel    : '${RIGHT_X},${Y}'${NC}"
+echo -e "${GREEN}Left  Panel    : '${X},${Y}'${NC}"
+echo ""
+
+COUNTER=0
+while true;
+do
+    echo -ne "${YELLOW}Press enter to continue...${NC}"
+    read input
+    printf "${RED}Preparing to screenshot...${NC}\n\n"
+
+    sleep 2
+
+    (( COUNTER+=1 ))
+    printf -v PAD "%03d" $COUNTER
+
+    # right panel (1st in RL reading order)
+    import -window root -crop "${HALF_WIDTH}x${HEIGHT}+${RIGHT_X}+${Y}" -quality 100 "$PAD.png"
+    echo -e "${GREEN}Right Panel saved to: '$PWD/$PAD.png'${NC}"
+
+    (( COUNTER+=1 ))
+    printf -v PAD "%03d" $COUNTER
+
+    # left panel  (2nd in RL reading order)
+    import -window root -crop "${HALF_WIDTH}x${HEIGHT}+${X}+${Y}" -quality 100 "$PAD.png"
+    echo -e "${GREEN}Left  Panel saved to: '$PWD/$PAD.png'${NC}"
+    echo ""
+
+    notify-send -t 2000 "eria" "📸 Screenshots Taken"
+done
