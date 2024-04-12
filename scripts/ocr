@@ -4,10 +4,11 @@
 
 set -e
 
-language="$1"
-if [ -z $1 ]; then
-    language="eng"
-fi
+language=`tesseract --list-langs | \
+    tail -n +2 | \
+    tr '\n' '\0' | \
+    xargs -0 -n 1 basename | \
+    rofi -dmenu -p "language" 2> /dev/null`
 
 OCR_DIR="/tmp/tesseract-ocr"
 mkdir -p $OCR_DIR
