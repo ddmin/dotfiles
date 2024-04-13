@@ -1,0 +1,107 @@
+#!/usr/bin/python3
+
+# interleave: interleave lines from files
+
+import click
+import sys
+
+
+@click.command()
+@click.option('-n', '--number', 'number', is_flag=True, help='Display line numbers.')
+@click.option('-v', '--verbose', 'verbose', is_flag=True, help='Display filenames from which lines were taken from.')
+@click.option('-z', '--remove-newline', 'rm_newline', is_flag=True, help='Remove duplicate empty lines.')
+@click.argument('file1', type=click.File('r'), nargs=1)
+@click.argument('file2', type=click.File('r'), nargs=1)
+@click.argument('files', type=click.File('r'), nargs=-1)
+def main(file1, file2, files, verbose, rm_newline, number):
+    '''Interleave lines from FILE1, FILE2, [FILES]...'''
+
+    # file names
+    NAMES = [file1.name, file2.name]
+
+    file1 = file1.read().split('\n')[:-1]
+    file2 = file2.read().split('\n')[:-1]
+
+    FILES = [file1, file2]
+    LENS = [len(file1), len(file2)]
+
+    if files:
+        names = list(map(lambda f: f.name, list(files)))
+        files = list(map(lambda f: f.read().split('\n')[:-1], list(files)))
+        lens = list(map(lambda f: len(f), files))
+
+        NAMES.extend(names)
+        FILES.extend(files)
+        LENS.extend(lens)
+
+    # get longest file name (verbose)
+    longest_name = max(map(lambda name: len(name), NAMES))
+
+    # (NUM OF LINES, [FILES TO READ FROM])
+    ROUNDS = []
+
+    # perform calculations based on line length
+    while LENS != [0 for _ in range(len(LENS))]:
+        minimum = min(filter(lambda n: n > 0, LENS))
+        indexes = []
+
+        for n in range(len(LENS)):
+            if LENS[n] > 0:
+                LENS[n] = LENS[n] - minimum
+                indexes.append(n)
+
+                assert LENS[n] > -1
+
+        ROUNDS.append((minimum, indexes))
+
+    # -v, --verbose
+    VERBOSE = []
+    # -n, --number
+    NUMBER = []
+    OUTPUT = []
+
+    line_count = 0
+    for n, index in ROUNDS:
+        for _ in range(n):
+            TEMP_NUMBER = []
+            TEMP_VERBOSE = []
+            TEMP_OUTPUT = []
+            for nx in index:
+                if verbose:
+                    NAME = f'[{NAMES[nx]}] '.ljust(longest_name + 3)
+                    TEMP_VERBOSE.append(click.style(NAME, fg='bright_red'))
+                else:
+                    TEMP_VERBOSE.append('')
+
+                TEMP_OUTPUT.append(FILES[nx][line_count] + '\n')
+
+                if number:
+                    fmt_number = f'{line_count+1}. '.rjust(2 + 4)
+                    TEMP_NUMBER.append(click.style(fmt_number, fg='bright_yellow'))
+                else:
+                    TEMP_NUMBER.append('')
+
+            # -z, --remove-newline
+            if rm_newline:
+                if list(filter(lambda x: x != '\n', TEMP_OUTPUT)):
+                    OUTPUT.extend(TEMP_OUTPUT)
+                    VERBOSE.extend(TEMP_VERBOSE)
+                    NUMBER.extend(TEMP_NUMBER)
+                else:
+                    OUTPUT.append('\n')
+                    VERBOSE.append('')
+                    NUMBER.append(TEMP_NUMBER[0])
+            else:
+                OUTPUT.extend(TEMP_OUTPUT)
+                VERBOSE.extend(TEMP_VERBOSE)
+                NUMBER.extend(TEMP_NUMBER)
+
+            line_count += 1
+
+    for n, v, o in zip(NUMBER, VERBOSE, OUTPUT):
+        click.echo(n, nl=False)
+        click.echo(v, nl=False)
+        click.echo(o, nl=False)
+
+if __name__ == '__main__':
+    main()
