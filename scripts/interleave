@@ -3,7 +3,6 @@
 # interleave: interleave lines from files
 
 import click
-import sys
 
 
 @click.command()
@@ -11,19 +10,17 @@ import sys
 @click.option('-v', '--verbose', 'verbose', is_flag=True, help='Display filenames from which lines were taken from.')
 @click.option('-z', '--remove-newline', 'rm_newline', is_flag=True, help='Remove duplicate empty lines.')
 @click.argument('file1', type=click.File('r'), nargs=1)
-@click.argument('file2', type=click.File('r'), nargs=1)
 @click.argument('files', type=click.File('r'), nargs=-1)
-def main(file1, file2, files, verbose, rm_newline, number):
-    '''Interleave lines from FILE1, FILE2, [FILES]...'''
+def main(file1, files, verbose, rm_newline, number):
+    '''Interleave lines from FILE1, [FILES]...'''
 
     # file names
-    NAMES = [file1.name, file2.name]
+    NAMES = [file1.name]
 
     file1 = file1.read().split('\n')[:-1]
-    file2 = file2.read().split('\n')[:-1]
 
-    FILES = [file1, file2]
-    LENS = [len(file1), len(file2)]
+    FILES = [file1]
+    LENS = [len(file1)]
 
     if files:
         names = list(map(lambda f: f.name, list(files)))
@@ -36,6 +33,9 @@ def main(file1, file2, files, verbose, rm_newline, number):
 
     # get longest file name (verbose)
     longest_name = max(map(lambda name: len(name), NAMES))
+
+    # get longest file length (number)
+    longest_file = len(str(max(map(lambda f: len(f), FILES))))
 
     # (NUM OF LINES, [FILES TO READ FROM])
     ROUNDS = []
@@ -76,7 +76,7 @@ def main(file1, file2, files, verbose, rm_newline, number):
                 TEMP_OUTPUT.append(FILES[nx][line_count] + '\n')
 
                 if number:
-                    fmt_number = f'{line_count+1}. '.rjust(2 + 4)
+                    fmt_number = f'{line_count+1}. '.rjust(2 + longest_file)
                     TEMP_NUMBER.append(click.style(fmt_number, fg='bright_yellow'))
                 else:
                     TEMP_NUMBER.append('')
