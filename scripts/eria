@@ -15,7 +15,7 @@ function clean_exit() {
 screen_width=`xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+)x[0-9]+.*$/\1/'`
 
 echo -ne "${RED}Select screenshot region.${NC}"
-slop=$(slop -f "%x %y %w %h") || exit 1
+slop=$(slop -r crosshair -f "%x %y %w %h") || exit 1
 read -r X Y WIDTH HEIGHT <<< $slop
 
 # make pages evenly sized
