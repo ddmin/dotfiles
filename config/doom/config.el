@@ -41,7 +41,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/.org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -76,14 +76,12 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; helm
-(require 'helm-easymenu)
-
 ;; remove highlighting (like :set noh)
 (map! :leader
       :desc "Clear search highlighting"
       "SPC"
-      #'evil-ex-nohighlight)
+      #'evil-ex-nohighlight
+      (:prefix ("f")))
 
 (global-disable-mouse-mode)
 
@@ -91,7 +89,45 @@
 (setq +global-word-wrap-mode +1)
 
 ;; python formatting
-(add-hook 'python-mode-hook #'format-all-mode)
+                                        ; (add-hook 'python-mode-hook #'format-all-mode)
 
 ;; disable comments on new lines
 (setq +evil-want-o/O-to-continue-comments nil)
+
+;; org-todo
+(after! org
+  (setq org-todo-keywords               ; This overwrites the default Doom org-todo-keywords
+        '((sequence
+           "TODO(t)"               ; TODO
+           "WAIT(w)"               ; Waiting
+           "TEST(c)"               ; Test
+           "IRL(i)"                ; IRL
+           "READ(r)"               ; Reading
+           "PRIORITY(p)"           ; Priority
+           "|"                     ; The pipe necessary to separate "active" states and "inactive" states
+           "DONE(d)"               ; Task has been completed
+           "CANCELLED(c)" ))))     ; Task has been cancelled
+
+(setq hl-todo-keyword-faces
+      '(("TODO"      . "#b4d273")
+        ("WAIT"      . "#e87d3e")
+        ("TEST"      . "#9e86c8")
+        ("IRL"      . "#66d9ef")
+        ("READ"      . "#e5b567")
+        ("PRIORITY"  . "#f92672")))
+
+;; go to todo list
+(map! :leader
+      :desc "Go to todo list"
+      "o a f"
+      (lambda() (interactive)(find-file "~/School/todo.org")))
+
+;; open pdfs in zathura
+;; https://www.txmao.vip/2024/02/4b0c64e6-d3df-4046-9efc-7412dcde8d9a/
+(after! org
+  (add-to-list 'org-file-apps
+               '("\\.pdf\\'" . (lambda (file link)
+                                 (call-process "zathura" nil 0 nil "--mode" "fullscreen" file)))))
+
+(setq bibtex-completion-pdf-open-function (lambda (file)
+                                            (call-process "zathura" nil 0 nil "--mode" "fullscreen" file)))
