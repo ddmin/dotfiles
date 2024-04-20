@@ -83,13 +83,8 @@
       #'evil-ex-nohighlight
       (:prefix ("f")))
 
-(global-disable-mouse-mode)
-
 ;; word wrapping
 (setq +global-word-wrap-mode +1)
-
-;; python formatting
-                                        ; (add-hook 'python-mode-hook #'format-all-mode)
 
 ;; disable comments on new lines
 (setq +evil-want-o/O-to-continue-comments nil)
@@ -100,7 +95,7 @@
         '((sequence
            "TODO(t)"               ; TODO
            "WAIT(w)"               ; Waiting
-           "TEST(c)"               ; Test
+           "EXAM(c)"               ; Test
            "IRL(i)"                ; IRL
            "READ(r)"               ; Reading
            "PRIORITY(p)"           ; Priority
@@ -111,7 +106,7 @@
 (setq hl-todo-keyword-faces
       '(("TODO"      . "#b4d273")
         ("WAIT"      . "#e87d3e")
-        ("TEST"      . "#9e86c8")
+        ("EXAM"      . "#9e86c8")
         ("IRL"      . "#66d9ef")
         ("READ"      . "#e5b567")
         ("PRIORITY"  . "#f92672")))
@@ -127,7 +122,21 @@
 (after! org
   (add-to-list 'org-file-apps
                '("\\.pdf\\'" . (lambda (file link)
-                                 (call-process "zathura" nil 0 nil "--mode" "fullscreen" file)))))
+                                 (call-process "zathura" nil 0 nil "--config-dir" "$HOME/.config/zathura" "--mode" "fullscreen" file)))))
 
 (setq bibtex-completion-pdf-open-function (lambda (file)
-                                            (call-process "zathura" nil 0 nil "--mode" "fullscreen" file)))
+                                            (call-process "zathura" nil 0 nil "--config-dir" "$HOME/.config/zathura" "--mode" "fullscreen" file)))
+
+;; dired
+(map! :leader
+      (:prefix ("d" . "dired")
+       :desc "Open dired" "d" #'dired
+       :desc "Dired jump to current" "j" #'dired-jump)
+      (:after dired
+              (:map dired-mode-map
+               :desc "Peep-dired image previews" "d p" #'peep-dired
+               :desc "Dired view file"           "d v" #'dired-view-file)))
+
+(evil-define-key 'normal dired-mode-map
+  (kbd "h") 'dired-up-directory
+  (kbd "l") 'dired-find-file ) ; use dired-find-file instead of dired-open.
