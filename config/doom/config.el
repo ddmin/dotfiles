@@ -143,3 +143,6 @@
 
 ;; org-roam
 (setq org-roam-directory (file-truename "~/.org/org-roam"))
+
+;; flyspell
+(setq ispell-dictionary "en")

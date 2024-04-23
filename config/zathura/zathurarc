@@ -2,7 +2,7 @@ set sandbox none
 set selection-clipboard clipboard
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-set page-padding 1
+set page-padding 10
 
 map <C-u> scroll full-up
 map <C-d> scroll full-down
@@ -13,4 +13,3 @@ map - zoom out
 map r reload
 map R rotate
 map i recolor
-map f toggle_fullscreen
