@@ -140,3 +140,6 @@
 (evil-define-key 'normal dired-mode-map
   (kbd "h") 'dired-up-directory
   (kbd "l") 'dired-find-file ) ; use dired-find-file instead of dired-open.
+
+;; org-roam
+(setq org-roam-directory (file-truename "~/.org/org-roam"))
