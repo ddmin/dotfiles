@@ -1,0 +1,10 @@
+#+title: LibreWolf
+
+* Extensions
+** [[https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][uBlock Origin]]
+** [[https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Decentraleyes]]
+** [[https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/][Video DownloadHelper]]
+** [[https://addons.mozilla.org/en-US/firefox/addon/ctrl-number-to-switch-tabs/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Ctrl+Number to switch tabs]]
+** [[https://addons.mozilla.org/en-US/firefox/addon/videospeed/][Video Speed Controller]]
+** [[https://addons.mozilla.org/en-US/firefox/addon/istilldontcareaboutcookies/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][I still don't care about cookies]]
+** [[https://addons.mozilla.org/en-US/firefox/addon/vim-vixen/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Vim Vixen]]
