@@ -10,6 +10,22 @@ map <C-e> scroll down
 map <C-y> scroll up
 map = zoom in
 map - zoom out
-map r reload
-map R rotate
+map R reload
+map r rotate
 map i recolor
+
+map f toggle_fullscreen
+map <Space> follow
+
+map [fullscreen] <C-u> scroll full-up
+map [fullscreen] <C-d> scroll full-down
+map [fullscreen] <C-e> scroll down
+map [fullscreen] <C-y> scroll up
+map [fullscreen] = zoom in
+map [fullscreen] - zoom out
+map [fullscreen] R reload
+map [fullscreen] r rotate
+map [fullscreen] i recolor
+
+map [fullscreen] f toggle_fullscreen
+map [fullscreen] <Space> follow
