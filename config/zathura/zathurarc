@@ -2,6 +2,7 @@ set sandbox none
 set selection-clipboard clipboard
 set statusbar-h-padding 0
 set statusbar-v-padding 0
+set page-right-to-left 1
 set page-padding 10
 
 map <C-u> scroll full-up
@@ -21,6 +22,7 @@ map [fullscreen] <C-u> scroll full-up
 map [fullscreen] <C-d> scroll full-down
 map [fullscreen] <C-e> scroll down
 map [fullscreen] <C-y> scroll up
+map [fullscreen] d toggle_page_mode
 map [fullscreen] = zoom in
 map [fullscreen] - zoom out
 map [fullscreen] R reload
