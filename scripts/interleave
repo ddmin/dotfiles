@@ -24,7 +24,7 @@ def main(file1, files, verbose, rm_newline, number):
 
     if files:
         names = list(map(lambda f: f.name, list(files)))
-        files = list(map(lambda f: f.read().split('\n')[:-1], list(files)))
+        files = list(map(lambda f: f.read().split('\n'), list(files)))
         lens = list(map(lambda f: len(f), files))
 
         NAMES.extend(names)
