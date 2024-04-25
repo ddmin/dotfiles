@@ -2,6 +2,7 @@
 
 * Extensions
 - [[https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][uBlock Origin]]
+  - [[https://github.com/gorhill/uBlock/wiki/Blocking-mode:-medium-mode][Enable Medium Mode]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Decentraleyes]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/][Video DownloadHelper]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/ctrl-number-to-switch-tabs/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Ctrl+Number to switch tabs]]
