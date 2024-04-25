@@ -20,8 +20,6 @@
     "gg": { "type": "scroll.top" },
     "G": { "type": "scroll.bottom" },
     "$": { "type": "scroll.end" },
-    "K": { "type": "tabs.prev" },
-    "J": { "type": "tabs.next" },
     "gT": { "type": "tabs.prev" },
     "gt": { "type": "tabs.next" },
     "g0": { "type": "tabs.first" },
@@ -65,7 +63,7 @@
     "n": { "type": "find.next" },
     "N": { "type": "find.prev" },
     ".": { "type": "repeat" },
-    "<S-Esc>": { "type": "addon.toggle.enabled" }
+    "JK": { "type": "addon.toggle.enabled" }
   },
   "search": {
     "default": "brave",
