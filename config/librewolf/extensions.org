@@ -9,4 +9,4 @@
 - [[https://addons.mozilla.org/en-US/firefox/addon/videospeed/][Video Speed Controller]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/istilldontcareaboutcookies/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][I still don't care about cookies]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/][Tampermonkey]]
-- [[https://addons.mozilla.org/en-US/firefox/addon/vimmatic/][Vimmatic]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/vimium-c/][Vimium C]]
