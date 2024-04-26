@@ -84,7 +84,7 @@
       (:prefix ("f")))
 
 ;; word wrapping
-(setq +global-word-wrap-mode +1)
+(+global-word-wrap-mode +1)
 
 ;; disable comments on new lines
 (setq +evil-want-o/O-to-continue-comments nil)
