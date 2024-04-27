@@ -1,0 +1,8 @@
+#+title: Brave
+
+* Extensions
+- [[https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm][uBlock Origin]]
+  - [[https://github.com/gorhill/uBlock/wiki/Blocking-mode:-medium-mode][Enable Medium Mode]]
+- [[https://chromewebstore.google.com/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk][Video DownloadHelper]]
+- [[https://chromewebstore.google.com/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk][Video Speed Controller]]
+- [[https://chromewebstore.google.com/detail/vimium-c-all-by-keyboard/hfjbmagddngcpeloejdejnfgbamkjaeg][Vimium C]]
