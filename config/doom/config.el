@@ -131,7 +131,8 @@
 (map! :leader
       (:prefix ("d" . "dired")
        :desc "Open dired" "j" #'dired
-       :desc "Open dired in current directory" "d" #'dired-jump)
+       :desc "Open dired in current directory" "d" #'dired-jump
+       )
       (:after dired
               (:map dired-mode-map
                :desc "Peep-dired image previews" "d p" #'peep-dired
@@ -146,3 +147,16 @@
 
 ;; flyspell
 (setq ispell-dictionary "en")
+
+;; change default window behavior
+(map! :leader
+      (:prefix ("w")
+       :desc "Evil Vertical Split Window and Follow" "v" #'+evil/window-vsplit-and-follow
+       :desc "Evil Vertical Split Window" "V" #'evil-window-vsplit
+       :desc "Evil Split Window and Follow" "s" #'+evil/window-split-and-follow
+       :desc "Evil Split Window" "S" #'evil-window-split
+       )
+      )
+
+;; turn on headers from doom-docs
+(add-hook! 'org-mode-hook 'doom-docs-mode)
