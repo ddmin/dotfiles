@@ -98,7 +98,6 @@
            "EXAM(c)"               ; Test
            "IRL(i)"                ; IRL
            "READ(r)"               ; Reading
-           "PRIORITY(p)"           ; Priority
            "|"                     ; The pipe necessary to separate "active" states and "inactive" states
            "DONE(d)"               ; Task has been completed
            "CANCELLED(c)" ))))     ; Task has been cancelled
@@ -108,8 +107,7 @@
         ("WAIT"      . "#e87d3e")
         ("EXAM"      . "#9e86c8")
         ("IRL"      . "#66d9ef")
-        ("READ"      . "#e5b567")
-        ("PRIORITY"  . "#f92672")))
+        ("READ"      . "#e5b567")))
 
 ;; go to todo list
 (map! :leader
@@ -160,3 +158,13 @@
 
 ;; turn on headers from doom-docs
 (add-hook! 'org-mode-hook 'doom-docs-mode)
+
+;; org-fancy-priorities
+(after! org
+  (setq
+   org-fancy-priorities-list '("[HIGH]" "[MID]" "[LOW]")
+   org-priority-faces
+   '((?A :foreground "red" :weight bold)
+     (?B :foreground "orange" :weight bold)
+     (?C :foreground "grey" :weight bold))
+   ))
