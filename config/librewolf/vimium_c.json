@@ -1,13 +1,18 @@
 {
 	"name": "Vimium C",
-	"@time": "4/27/2024, 6:03:13 PM",
-	"time": 1714255393630,
+	"@time": "4/28/2024, 5:22:07 PM",
+	"time": 1714339327113,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
 		"firefox": 124
 	},
-	"exclusionRules": [],
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":file:///"
+		}
+	],
 	"grabBackFocus": true,
 	"keyLayout": 2,
 	"keyMappings": [
@@ -32,19 +37,16 @@
 		"unmap 8",
 		"unmap 9",
 		"",
-		"map O Vomnibar.activate",
-		"map o Vomnibar.activateInNewTab",
-		"",
 		"map << goPrevious",
 		"map >> goNext",
+		"",
+		"map O Vomnibar.activate",
+		"map o Vomnibar.activateInNewTab",
 		"",
 		"map x removeTab",
 		"map X restoreTab",
 		"",
-		"map F LinkHints.activate",
-		"",
 		"map <c-f> enterFindMode",
-		"",
 		"map <c-e> scrollDown",
 		"map <c-y> scrollUp",
 		"map <c-d> scrollPageDown",
@@ -54,6 +56,8 @@
 		"map zo zoomOut",
 		"map zz zoomReset",
 		"",
+		"map F LinkHints.activate",
+		"map I enterInsertMode",
 		"map V enterVisualMode",
 		""
 	],

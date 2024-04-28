@@ -1,0 +1,10 @@
+#+title: Emacs
+
+** Start Emacs Daemon
+#+begin_src bash
+/usr/bin/emacs --daemon
+#+end_src
+** Open Emacs Client
+#+begin_src bash
+emacsclient -c -a emacs
+#+end_src
