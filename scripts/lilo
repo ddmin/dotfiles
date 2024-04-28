@@ -2,6 +2,9 @@
 
 # lilo: stitch two images side-by-side and display
 
+echo $@
+exit
+
 help() {
     echo "$(basename $0): provide 2 images to stitch together"
     echo "Usage: $(basename $0) [RIGHT] [LEFT]"
