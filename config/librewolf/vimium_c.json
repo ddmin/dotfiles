@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "4/28/2024, 5:22:07 PM",
-	"time": 1714339327113,
+	"@time": "4/28/2024, 8:27:07 PM",
+	"time": 1714350427840,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -20,8 +20,9 @@
 		"unmap [[",
 		"unmap ]]",
 		"",
-		"unmap f",
 		"unmap d",
+		"unmap f",
+		"unmap t",
 		"unmap u",
 		"unmap r",
 		"unmap v",
