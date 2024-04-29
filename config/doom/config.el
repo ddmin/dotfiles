@@ -140,9 +140,14 @@
                                   (tags . " %i %-12:c")
                                   (search . " %i %-12:c"))))
 
-;; org-agenda enable line numbers
-(add-hook 'org-agenda-mode-hook 'doom/toggle-line-numbers)
-(add-to-list '+word-wrap-disabled-modes 'org-agenda-mode)
+;; org-agenda set 3 day agenda
+(setq org-agenda-span 3
+      org-agenda-start-day "+0d"
+      org-agenda-skip-timestamp-if-done t
+      org-agenda-skip-deadline-if-done t
+      org-agenda-skip-scheduled-if-done t
+      org-agenda-skip-scheduled-if-deadline-is-shown t
+      org-agenda-skip-timestamp-if-deadline-is-shown t)
 
 ;; go to todo list
 (map! :leader
