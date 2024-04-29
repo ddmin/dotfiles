@@ -109,17 +109,6 @@
         ("IRL"      . "#66d9ef")
         ("READ"      . "#e5b567")))
 
-
-;; org-fancy-priorities
-(after! org
-  (setq
-   org-fancy-priorities-list '("[HIGH]" "[MID]" "[LOW]")
-   org-priority-faces
-   '((?A :foreground "red" :weight bold)
-     (?B :foreground "orange" :weight bold)
-     (?C :foreground "green" :weight bold))
-   ))
-
 ;; better org-agenda view
 (setq org-agenda-custom-commands
       '(("v" "A better agenda view"
@@ -133,11 +122,39 @@
           (alltodo "")
           ))))
 
+;; org-fancy-priorities
+(after! org
+  (setq
+   org-fancy-priorities-list '("[HIGH]" "[MID]" "[LOW]")
+   org-priority-faces
+   '((?A :foreground "red" :weight bold)
+     (?B :foreground "orange" :weight bold)
+     (?C :foreground "green" :weight bold))
+   ))
+
+;; org-agenda prefix
+(setq org-agenda-prefix-format '(
+                                 ((agenda . " %i %-12:c%?-12t")
+                                  (timeline . "  %s")
+                                  (todo . " %i %-12:c")
+                                  (tags . " %i %-12:c")
+                                  (search . " %i %-12:c"))))
+
+;; org-agenda enable line numbers
+(add-hook 'org-agenda-mode-hook 'doom/toggle-line-numbers)
+(add-to-list '+word-wrap-disabled-modes 'org-agenda-mode)
+
 ;; go to todo list
 (map! :leader
       :desc "Go to todo list"
       "o a f"
       (lambda() (interactive)(find-file "~/.org/todo.org")))
+
+;; go to pipeline
+(map! :leader
+      :desc "Go to pipeline"
+      "o a c"
+      (lambda() (interactive)(find-file "~/.local/drive/code/pipeline.org")))
 
 ;; open pdfs in zathura
 ;; https://www.txmao.vip/2024/02/4b0c64e6-d3df-4046-9efc-7412dcde8d9a/
