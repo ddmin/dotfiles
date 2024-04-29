@@ -109,11 +109,35 @@
         ("IRL"      . "#66d9ef")
         ("READ"      . "#e5b567")))
 
+
+;; org-fancy-priorities
+(after! org
+  (setq
+   org-fancy-priorities-list '("[HIGH]" "[MID]" "[LOW]")
+   org-priority-faces
+   '((?A :foreground "red" :weight bold)
+     (?B :foreground "orange" :weight bold)
+     (?C :foreground "green" :weight bold))
+   ))
+
+;; better org-agenda view
+(setq org-agenda-custom-commands
+      '(("v" "A better agenda view"
+         ((agenda "")
+          (tags "PRIORITY=\"A\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "❤ High Priority:")))
+          (tags "PRIORITY=\"C\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "💚 Low Priority:")))
+          (alltodo "")
+          ))))
+
 ;; go to todo list
 (map! :leader
       :desc "Go to todo list"
       "o a f"
-      (lambda() (interactive)(find-file "~/School/todo.org")))
+      (lambda() (interactive)(find-file "~/.org/todo.org")))
 
 ;; open pdfs in zathura
 ;; https://www.txmao.vip/2024/02/4b0c64e6-d3df-4046-9efc-7412dcde8d9a/
@@ -167,13 +191,3 @@
 (setq org-hide-emphasis-markers t)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
-
-;; org-fancy-priorities
-(after! org
-  (setq
-   org-fancy-priorities-list '("[HIGH]" "[MID]" "[LOW]")
-   org-priority-faces
-   '((?A :foreground "red" :weight bold)
-     (?B :foreground "orange" :weight bold)
-     (?C :foreground "grey" :weight bold))
-   ))
