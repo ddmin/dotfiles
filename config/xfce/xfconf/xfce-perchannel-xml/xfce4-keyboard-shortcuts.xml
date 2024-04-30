@@ -76,8 +76,8 @@
       <property name="&lt;Super&gt;t" type="string" value="ocr"/>
       <property name="&lt;Super&gt;w" type="string" value="exo-open --launch FileManager"/>
       <property name="&lt;Super&gt;e" type="string" value="emoji-selector"/>
-      <property name="&lt;Super&gt;space" type="string" value="emacsclient -c -a emacs"/>
       <property name="&lt;Super&gt;q" type="string" value="rofi -show drun -show-icons -no-disable-history -sort -sorting-method fzf"/>
+      <property name="&lt;Super&gt;space" type="string" value="emacs"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
