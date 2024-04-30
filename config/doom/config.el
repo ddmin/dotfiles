@@ -85,6 +85,8 @@
 
 ;; word wrapping
 (+global-word-wrap-mode +1)
+;; disable word wrapping in org-agenda
+(add-to-list '+word-wrap-disabled-modes 'org-agenda-mode)
 
 ;; disable comments on new lines
 (setq +evil-want-o/O-to-continue-comments nil)
@@ -109,6 +111,26 @@
         ("IRL"      . "#66d9ef")
         ("READ"      . "#e5b567")))
 
+(after! org
+  ;; org-agenda set 1 day agenda
+  (setq org-agenda-start-day "+0d")
+  (setq org-agenda-span 1)
+  (setq org-agenda-start-on-weekday nil)
+
+  (setq org-agenda-skip-timestamp-if-done t
+        org-agenda-skip-deadline-if-done t
+        org-agenda-skip-scheduled-if-done t
+        org-agenda-skip-scheduled-if-deadline-is-shown t
+        org-agenda-skip-timestamp-if-deadline-is-shown t)
+
+  ;; org-agenda prefix
+  (setq org-agenda-prefix-format '(
+                                   (agenda . " %s %?-2i %t ")
+                                   (todo . " %s %i %-12:c")
+                                   (tags . " %i %-12:c")
+                                   (search . " %i %-12:c"))))
+
+
 ;; better org-agenda view
 (setq org-agenda-custom-commands
       '(("v" "A better agenda view"
@@ -122,6 +144,7 @@
           (alltodo "")
           ))))
 
+
 ;; org-fancy-priorities
 (after! org
   (setq
@@ -131,23 +154,6 @@
      (?B :foreground "orange" :weight bold)
      (?C :foreground "green" :weight bold))
    ))
-
-;; org-agenda prefix
-(setq org-agenda-prefix-format '(
-                                 ((agenda . " %i %-12:c%?-12t")
-                                  (timeline . "  %s")
-                                  (todo . " %i %-12:c")
-                                  (tags . " %i %-12:c")
-                                  (search . " %i %-12:c"))))
-
-;; org-agenda set 3 day agenda
-(setq org-agenda-span 3
-      org-agenda-start-day "+0d"
-      org-agenda-skip-timestamp-if-done t
-      org-agenda-skip-deadline-if-done t
-      org-agenda-skip-scheduled-if-done t
-      org-agenda-skip-scheduled-if-deadline-is-shown t
-      org-agenda-skip-timestamp-if-deadline-is-shown t)
 
 ;; go to todo list
 (map! :leader
@@ -176,15 +182,7 @@
       (:prefix ("d" . "dired")
        :desc "Open dired" "j" #'dired
        :desc "Open dired in current directory" "d" #'dired-jump
-       )
-      (:after dired
-              (:map dired-mode-map
-               :desc "Peep-dired image previews" "d p" #'peep-dired
-               :desc "Dired view file"           "d v" #'dired-view-file)))
-
-(evil-define-key 'normal dired-mode-map
-  (kbd "h") 'dired-up-directory
-  (kbd "l") 'dired-find-file ) ; use dired-find-file instead of dired-open.
+       ))
 
 ;; org-roam
 (setq org-roam-directory (file-truename "~/.org/org-roam"))
@@ -210,6 +208,7 @@
   '(org-level-2 :inherit outline-2 :height 1.35)
   '(org-level-1 :inherit outline-1 :height 1.5)
   '(org-document-title :height 2.0 :underline t))
+
 (setq org-hide-emphasis-markers t)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
