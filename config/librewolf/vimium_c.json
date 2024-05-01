@@ -1,7 +1,5 @@
 {
 	"name": "Vimium C",
-	"@time": "4/30/2024, 11:24:53 AM",
-	"time": 1714490693428,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -49,6 +47,7 @@
 		"map b Vomnibar.activateBookmarksInNewTab",
 		"",
 		"map x removeTab",
+		"map ZZ removeTab",
 		"map X restoreTab",
 		"",
 		"map <c-f> enterFindMode",
