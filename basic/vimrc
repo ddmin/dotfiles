@@ -96,3 +96,6 @@
 
 " Horizontal Split
     nnoremap <silent> <leader>h :new<CR>
+
+" Ctrl + Backspace to Delete Word
+    imap <C-H> <C-W>

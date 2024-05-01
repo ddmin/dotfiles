@@ -1,0 +1,5 @@
+# ctrl-backspace
+"\C-h": backward-kill-word
+
+# ctrl-delete
+"\e[3;5~": kill-word

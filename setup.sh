@@ -88,12 +88,14 @@ function root {
     echo Moving profile
         sudo cp "$BASIC/profile" "$ROOTDIR/.profile"
 
+    echo Moving vimrc
+        sudo cp "$BASIC/inputrc" "$ROOTDIR/.inputrc"
+
     # switch color for root prompt to red
         sudo sed -i 's/32/31/' "$ROOTDIR/.bashrc"
 
     echo Moving vimrc
         sudo cp "$BASIC/vimrc" "$ROOTDIR/.vimrc"
-
     echo DONE
 }
 
@@ -109,6 +111,9 @@ function setup {
 
     echo Moving profile
         cp "$NORMAL/profile" "$DOTDIR/.profile"
+
+    echo Moving profile
+        cp "$NORMAL/inputrc" "$DOTDIR/.inputrc"
 
     echo Moving gitconfig
         cp "$NORMAL/gitconfig" "$DOTDIR/.gitconfig"
@@ -138,6 +143,9 @@ function basic {
 
     echo Moving profile
         cp "$BASIC/profile" "$DOTDIR/.profile"
+
+    echo Moving profile
+        cp "$BASIC/inputrc" "$DOTDIR/.inputrc"
 
     echo Moving gitconfig
         cp "$BASIC/gitconfig" "$DOTDIR/.gitconfig"

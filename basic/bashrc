@@ -53,6 +53,7 @@ bind -m vi-insert 'Control-l: clear-screen'
 
 # fzf
 # bind -x '"\C-f": fzf-file-widget'
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# navigate to directories with ranger
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# ranger
+# alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
