@@ -1,13 +1,17 @@
 #+title: LibreWolf
 
 * Extensions
+** Security
 - [[https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][uBlock Origin]]
   - [[https://github.com/gorhill/uBlock/wiki/Blocking-mode:-medium-mode][Enable Medium Mode]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Decentraleyes]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/libredirect/][LibRedirect]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/istilldontcareaboutcookies/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][I still don't care about cookies]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][KeePassXC-Browser]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/xbs/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][xBrowserSync]]
+** Function
 - [[https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/][Video DownloadHelper]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/ctrl-number-to-switch-tabs/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Ctrl+Number to switch tabs]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/videospeed/][Video Speed Controller]]
-- [[https://addons.mozilla.org/en-US/firefox/addon/istilldontcareaboutcookies/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][I still don't care about cookies]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/][Tampermonkey]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/vimium-c/][Vimium C]]
