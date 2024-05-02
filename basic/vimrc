@@ -29,6 +29,9 @@
     set wildmenu
     set wildmode=longest:full,full
 
+" Enable word movement between separators
+    set iskeyword-=_-
+
 " Undo Directory
     set hidden
     set noswapfile
@@ -54,35 +57,32 @@
 " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
 
-" Terminal
-    map <Leader>t :term<CR>:setlocal nonumber norelativenumber<CR>
-
-" open folds
+" Open folds
     nnoremap <CR> za
 
-" increment number
+" Increment number
     nnoremap <C-p> <C-a>
 
-" toggle numbers
+" Toggle numbers
     nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
 
-" toggle spell
+" Toggle spell
     nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
 
-" yank to end of line
+" Yank to end of line
     nnoremap Y y$
 
-" Reselect visual after idents
+" Reselect visual after indents
     vnoremap < <gv
     vnoremap > >gv
 
-" undo breakpoints
+" Undo breakpoints
     inoremap , ,<c-g>u
     inoremap . .<c-g>u
     inoremap ! !<c-g>u
     inoremap ? ?<c-g>u
 
-" moving text
+" Moving text
     nnoremap <C-j> :m .+1<CR>==
     nnoremap <C-k> :m .-2<CR>==
     vnoremap <C-j> :m '>+1<CR>gv=gv
@@ -92,10 +92,13 @@
     set splitbelow splitright
 
 " Vertical Split
-    nnoremap <silent> <leader>f :vnew<CR>
+    nnoremap <silent> <leader>v :vnew<CR>
 
 " Horizontal Split
-    nnoremap <silent> <leader>h :new<CR>
+    nnoremap <silent> <leader>s :new<CR>
+
+" Terminal
+    map <Leader>t :term<CR>
 
 " Ctrl + Backspace to Delete Word
     imap <C-H> <C-W>
