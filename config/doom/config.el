@@ -212,15 +212,3 @@
 (setq org-hide-emphasis-markers t)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
-
-;; move lines with ctrl
-(global-set-key (kbd "C-k") #'org-shiftmetaup)
-(global-set-key (kbd "C-j") #'org-shiftmetadown)
-(global-set-key (kbd "C-h") #'org-shiftmetaleft)
-(global-set-key (kbd "C-l") #'org-shiftmetaright)
-
-;; change split with alt
-(global-set-key (kbd "M-k") #'evil-window-up)
-(global-set-key (kbd "M-j") #'evil-window-down)
-(global-set-key (kbd "M-l") #'evil-window-right)
-(global-set-key (kbd "M-h") #'evil-window-left)
