@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/1/2024, 6:19:52 PM",
-	"time": 1714601992775,
+	"@time": "5/2/2024, 6:30:55 PM",
+	"time": 1714689055744,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -14,7 +14,7 @@
 		}
 	],
 	"grabBackFocus": true,
-	"keyLayout": 2,
+	"keyLayout": 18,
 	"keyMappings": [
 		"#!no-check",
 		"unmap [[",
@@ -68,10 +68,10 @@
 		"map V enterVisualMode",
 		""
 	],
-	"keyupTime": 150,
+	"keyupTime": 90,
 	"nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
-	"scrollStepSize": 150,
+	"scrollStepSize": 50,
 	"searchEngines": [
 		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
@@ -83,5 +83,6 @@
 		""
 	],
 	"searchUrl": "https://search.brave.com/search?q=$s Brave",
-	"vimSync": true
+	"vimSync": true,
+	"ignoreCapsLock": 2
 }
