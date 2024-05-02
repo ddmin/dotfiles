@@ -23,6 +23,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # vim man pages
-export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u NONE --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 export PATH
