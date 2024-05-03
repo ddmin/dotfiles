@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/2/2024, 6:30:55 PM",
-	"time": 1714689055744,
+	"@time": "5/2/2024, 9:22:31 PM",
+	"time": 1714699351939,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -68,10 +68,10 @@
 		"map V enterVisualMode",
 		""
 	],
-	"keyupTime": 90,
+	"keyupTime": 100,
 	"nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
-	"scrollStepSize": 50,
+	"scrollStepSize": 120,
 	"searchEngines": [
 		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
