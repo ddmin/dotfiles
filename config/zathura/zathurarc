@@ -9,25 +9,33 @@ map <C-u> scroll full-up
 map <C-d> scroll full-down
 map <C-e> scroll down
 map <C-y> scroll up
+map H scroll full-up
+map L scroll full-down
 map = zoom in
 map - zoom out
+map K zoom in
+map J zoom out
 map R reload
 map r rotate
 map i recolor
 
 map f toggle_fullscreen
-map <Space> follow
+map F follow
 
 map [fullscreen] <C-u> scroll full-up
 map [fullscreen] <C-d> scroll full-down
 map [fullscreen] <C-e> scroll down
 map [fullscreen] <C-y> scroll up
+map [fullscreen] H scroll full-up
+map [fullscreen] L scroll full-down
 map [fullscreen] d toggle_page_mode
 map [fullscreen] = zoom in
 map [fullscreen] - zoom out
+map [fullscreen] K zoom in
+map [fullscreen] J zoom out
 map [fullscreen] R reload
 map [fullscreen] r rotate
 map [fullscreen] i recolor
 
 map [fullscreen] f toggle_fullscreen
-map [fullscreen] <Space> follow
+map [fullscreen] F follow
