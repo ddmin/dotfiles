@@ -23,10 +23,6 @@ fi
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# Set default editor
-export EDITOR='vim'
-export VISUAL='vim'
-
 # alia-ls-es
 alias l='ls -lhF --color=auto --group-directories-first'
 alias ll='ls -lhF --color=auto --group-directories-first'
