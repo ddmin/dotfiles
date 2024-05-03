@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "5/2/2024, 9:22:31 PM",
-	"time": 1714699351939,
+	"@time": "5/3/2024, 7:34:41 PM",
+	"time": 1714779281901,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 124
+		"firefox": 125
 	},
 	"exclusionRules": [
 		{
@@ -73,6 +73,7 @@
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
 	"scrollStepSize": 120,
 	"searchEngines": [
+		"b|br|brave|Brave: https://search.brave.com/search?q=$s Brave",
 		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
 		"  blank=https://www.google.com/ Google",
@@ -82,7 +83,7 @@
 		"js\\:|Js: javascript:\\ $S; JavaScript",
 		""
 	],
-	"searchUrl": "https://search.brave.com/search?q=$s Brave",
+	"searchUrl": "https://search.inetol.net/search?q=$s SearX",
 	"vimSync": true,
 	"ignoreCapsLock": 2
 }
