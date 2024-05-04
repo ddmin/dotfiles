@@ -87,9 +87,6 @@ call plug#end()
     set wildmenu
     set wildmode=longest:full,full
 
-" Enable word movement between separators
-    set iskeyword-=_-
-
 " Ctrl + Backspace to Delete Word
     imap <C-H> <C-W>
 
