@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/4/2024, 10:09:45 PM",
-	"time": 1714874985898,
+	"@time": "5/5/2024, 12:48:45 PM",
+	"time": 1714927725300,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -58,6 +58,9 @@
 		"map <c-y> scrollUp",
 		"map <c-d> scrollPageDown",
 		"map <c-u> scrollPageUp",
+		"",
+		"map <c-s-h> moveTabLeft",
+		"map <c-s-l> moveTabRight",
 		"",
 		"map zi zoomIn",
 		"map zo zoomOut",
