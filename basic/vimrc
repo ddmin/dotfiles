@@ -13,6 +13,7 @@
 " Basics
     let mapleader = " "
     inoremap jk <ESC>
+    cnoremap jk <C-C>
 
     set number
     set relativenumber

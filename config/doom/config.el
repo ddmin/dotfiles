@@ -212,3 +212,4 @@
 (setq org-hide-emphasis-markers t)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
+
