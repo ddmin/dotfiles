@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/5/2024, 12:48:45 PM",
-	"time": 1714927725300,
+	"@time": "5/5/2024, 1:12:51 PM",
+	"time": 1714929171600,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -49,8 +49,8 @@
 		"map B Vomnibar.activateBookmarks",
 		"map b Vomnibar.activateBookmarksInNewTab",
 		"",
-		"map x removeTab",
 		"map ZZ removeTab",
+		"map x removeTab",
 		"map X restoreTab",
 		"",
 		"map <c-f> enterFindMode",
@@ -66,9 +66,12 @@
 		"map zo zoomOut",
 		"map zz zoomReset",
 		"",
+		"map yd duplicateTab",
+		"map yt copyCurrentTitle",
+		"",
 		"map F LinkHints.activate",
 		"map I enterInsertMode",
-		"map V enterVisualMode",
+		"map V LinkHints.activateSelect",
 		""
 	],
 	"keyupTime": 100,
