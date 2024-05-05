@@ -23,5 +23,15 @@ filename=`date +"tesseract-%Y-%m-%d_%T"`
 # xfce
 xfce4-screenshooter -r -s "$OCR_DIR"/"$filename.png" || exit 1
 
+notify-send -u critical -t 0 -i "$HOME/.icons/tesseract.png" "tesseract-ocr" "tesseract is running..."
 tesseract -l $language "$OCR_DIR"/"$filename.png" "$OCR_DIR"/"$filename"
-cat "$OCR_DIR"/"$filename.txt" | xsel -bi
+
+sleep 1
+while [ -z "$OCR_DIR/$filename" ]; do
+    sleep 1
+done
+
+# kill notification
+pkill xfce4-notifyd
+
+cat "$OCR_DIR"/"$filename.txt" | sed -er 's///' | xsel -bi
