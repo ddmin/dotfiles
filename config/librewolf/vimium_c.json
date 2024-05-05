@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/3/2024, 7:34:41 PM",
-	"time": 1714779281901,
+	"@time": "5/4/2024, 10:09:45 PM",
+	"time": 1714874985898,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -74,16 +74,14 @@
 	"scrollStepSize": 120,
 	"searchEngines": [
 		"b|br|brave|Brave: https://search.brave.com/search?q=$s Brave",
-		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
-		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
-		"  blank=https://www.google.com/ Google",
 		"d|dd|ddg|duckduckgo: https://duckduckgo.com/?q=%s DuckDuckGo",
 		"y|yt|youtube: https://www.youtube.com/results?search_query=%s \\",
 		"  blank=https://www.youtube.com/ YouTube",
+		"s|sx|searx|Searx|SearX: https://search.inetol.net/search?q=$s SearX",
 		"js\\:|Js: javascript:\\ $S; JavaScript",
 		""
 	],
-	"searchUrl": "https://search.inetol.net/search?q=$s SearX",
+	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
 	"vimSync": true,
 	"ignoreCapsLock": 2
 }
