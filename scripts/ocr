@@ -34,4 +34,4 @@ done
 # kill notification
 pkill xfce4-notifyd
 
-cat "$OCR_DIR"/"$filename.txt" | sed -er 's///' | xsel -bi
+cat "$OCR_DIR"/"$filename.txt" | sed -r 's///' | xsel -bi
