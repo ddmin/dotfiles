@@ -53,6 +53,9 @@
     set undodir=~/.vim/undodir
     set undofile
 
+" Move viminfo
+    set viminfo+=n~/.vim/viminfo
+
 " Tabs
     set tabstop=4
     set softtabstop=4
