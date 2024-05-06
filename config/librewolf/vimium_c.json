@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/5/2024, 1:12:51 PM",
-	"time": 1714929171600,
+	"@time": "5/7/2024, 2:33:26 PM",
+	"time": 1715106806607,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -11,6 +11,10 @@
 		{
 			"passKeys": "",
 			"pattern": ":file:///"
+		},
+		{
+			"passKeys": "1 2 3 4 5 6 7 8 9 ",
+			"pattern": ":"
 		}
 	],
 	"grabBackFocus": true,
@@ -29,17 +33,6 @@
 		"unmap r",
 		"unmap v",
 		"",
-		"unmap 0",
-		"unmap 1",
-		"unmap 2",
-		"unmap 3",
-		"unmap 4",
-		"unmap 5",
-		"unmap 6",
-		"unmap 7",
-		"unmap 8",
-		"unmap 9",
-		"",
 		"map << goPrevious",
 		"map >> goNext",
 		"",
@@ -48,6 +41,7 @@
 		"",
 		"map B Vomnibar.activateBookmarks",
 		"map b Vomnibar.activateBookmarksInNewTab",
+		"map <c-b> addBookmark folder=\"Bookmarks\\u0020Toolbar\"",
 		"",
 		"map ZZ removeTab",
 		"map x removeTab",
@@ -68,6 +62,7 @@
 		"",
 		"map yd duplicateTab",
 		"map yt copyCurrentTitle",
+		"map yl LinkHints.activateWithQueue",
 		"",
 		"map F LinkHints.activate",
 		"map I enterInsertMode",

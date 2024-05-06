@@ -89,6 +89,9 @@
 " Yank to end of line
     nnoremap Y y$
 
+" S is redundant with C
+    nnoremap S :%s//g<Left><Left>
+
 " Indentation
     nnoremap <M-h> <<
     nnoremap <M-l> >>
