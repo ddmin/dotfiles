@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ocr: tesseract wrapper
 
 set -e
@@ -17,11 +16,16 @@ mkdir -p $OCR_DIR
 
 filename=`date +"tesseract-%Y-%m-%d_%T"`
 
+scrot --select \
+    --ignorekeyboard \
+    --line color=green \
+    $OCR_DIR/$filename.png || exit 1
+
 # gnome
 # gnome-screenshot -a -f $OCR_DIR/$filename.png || exit 1
 
 # xfce
-xfce4-screenshooter -r -s "$OCR_DIR"/"$filename.png" || exit 1
+# xfce4-screenshooter -r -s "$OCR_DIR"/"$filename.png" || exit 1
 
 notify-send -u critical -t 0 -i "$HOME/.icons/tesseract.png" "tesseract-ocr" "tesseract is running..."
 tesseract -l $language "$OCR_DIR"/"$filename.png" "$OCR_DIR"/"$filename"

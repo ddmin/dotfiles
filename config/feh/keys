@@ -15,8 +15,8 @@ menu_up     k Up
 menu_select space Return
 
 # Same for image navigation ...
-next_img d Right
-prev_img a Left
+prev_img H Left
+next_img space L Right
 
 # and image movement
 scroll_up    k C-Up
@@ -24,20 +24,22 @@ scroll_down  j C-Down
 scroll_left  h C-Left
 scroll_right l C-Right
 
+scroll_up_page C-u C-b
+scroll_down_page C-d C-f
+
 # remove now conflicts with toggle_filenames, so change that
-fullscreen  f
+toggle_fullscreen  f
 toggle_filenames n
 
 # zooming
-zoom_in  Up w
-zoom_out Down s
-zoom_default
-zoom_fit
+zoom_in  K Up
+zoom_out J Down
+zoom_default s
+zoom_fit a
 
-# I only hit these accidentally
+# Remove Unused Keybinds
+toggle_fixed_geometry
 save_image
 save_filelist
-
-# File deletion
 remove
 delete

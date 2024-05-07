@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 # interleave: interleave lines from files
 
 import click

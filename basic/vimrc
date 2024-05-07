@@ -14,6 +14,8 @@
     let mapleader = " "
     inoremap jk <ESC>
     cnoremap jk <C-C>
+    cnoremap <C-k> <Up>
+    cnoremap <C-j> <Down>
 
     set number
     set relativenumber
@@ -22,6 +24,7 @@
 
     set nocompatible
     set encoding=utf-8
+    set nrformats=
     set showcmd
 
     syntax on
@@ -35,6 +38,10 @@
 
     set wildmenu
     set wildmode=longest:full,full
+    set history=200
+
+" Prevent escape / alt overlap
+    set ttimeoutlen=50
 
 " Fix splits
     set splitbelow splitright
@@ -77,20 +84,8 @@
 " Open folds
     nnoremap <CR> za
 
-" Increment number
-    nnoremap <C-p> <C-a>
-
-" Toggle numbers
-    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
-
-" Toggle spell
-    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
-
 " Yank to end of line
     nnoremap Y y$
-
-" S is redundant with C
-    nnoremap S :%s//g<Left><Left>
 
 " Indentation
     nnoremap <M-h> <<
@@ -118,8 +113,17 @@
     vnoremap <M-j> :m '>+1<CR>gv=gv
     vnoremap <M-k> :m '<-2<CR>gv=gv
 
+" Toggle line numbers
+    nmap <silent> <leader>tl :set invnumber<CR>:set invrelativenumber<CR>
+
+" Toggle spell
+    nnoremap <silent> <leader>ts :set invspell spelllang=en_us<CR>
+
 " Terminal
-    map <Leader>t :term<CR>
+    map <silent> <leader>ot :terminal<CR>
+
+" Netrw
+    map <silent> <leader>dd :Explore<CR>
 
 " Ctrl + Backspace to Delete Word
     imap <C-H> <C-W>

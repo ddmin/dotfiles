@@ -1,7 +1,15 @@
 #!/bin/bash
-# whoer: print ip information from ipinfo.io
+# whoer: print ip information from URL
 
-curl -s ipinfo.io/json | grep -i '"ip"\|"city"\|"region"\|"country"\|"org"' |\
-    column -s '"' -t |\
-    awk -F : '{print "\033[1;31m"$1" \033[0m \033[1;36m"$2"\033[0m"}' |\
-    sed 's/[,]//g'
+RED="\033[1;31m"
+BLUE="\033[1;34m"
+NC="\033[0m"
+
+URL="https://am.i.mullvad.net/json"
+curl "${URL}" -s |\
+    sed 's/:/\t/g' |\
+    sed 's/,/\n/g' |\
+    sed 's/[\{\}\"]//g' |\
+    grep '^ip\|country\|city\|organization' |\
+    awk -F'\t' -v red="$RED" -v blue="$BLUE" -v nc="$NC" '{print red $1 nc "\t\t" blue $2 nc}' |\
+    column -t -s $'\t'

@@ -1,41 +1,42 @@
 set sandbox none
 set selection-clipboard clipboard
+set font "monospace normal 12"
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-set page-right-to-left 1
-set page-padding 10
+set statusbar-basename 1
+set scroll-page-aware 1
 
-map <C-u> scroll full-up
-map <C-d> scroll full-down
+map <BackSpace> scroll full-up
+map = zoom in
+
 map <C-e> scroll down
 map <C-y> scroll up
-map H scroll full-up
-map L scroll full-down
-map = zoom in
-map - zoom out
-map K zoom in
-map J zoom out
-map R reload
-map r rotate
-map i recolor
-
-map f toggle_fullscreen
 map F follow
+map H scroll full-up
+map J zoom out
+map K zoom in
+map L scroll full-down
+map R reload
+map f toggle_fullscreen
+map g goto top
+map i recolor
+map p set page-right-to-left
+map r rotate
 
-map [fullscreen] <C-u> scroll full-up
-map [fullscreen] <C-d> scroll full-down
+map [fullscreen] <BackSpace> scroll full-up
+map [fullscreen] = zoom in
+
 map [fullscreen] <C-e> scroll down
 map [fullscreen] <C-y> scroll up
-map [fullscreen] H scroll full-up
-map [fullscreen] L scroll full-down
-map [fullscreen] d toggle_page_mode
-map [fullscreen] = zoom in
-map [fullscreen] - zoom out
-map [fullscreen] K zoom in
-map [fullscreen] J zoom out
-map [fullscreen] R reload
-map [fullscreen] r rotate
-map [fullscreen] i recolor
-
-map [fullscreen] f toggle_fullscreen
 map [fullscreen] F follow
+map [fullscreen] H scroll full-up
+map [fullscreen] J zoom out
+map [fullscreen] K zoom in
+map [fullscreen] L scroll full-down
+map [fullscreen] R reload
+map [fullscreen] d toggle_page_mode
+map [fullscreen] f toggle_fullscreen
+map [fullscreen] g goto top
+map [fullscreen] i recolor
+map [fullscreen] p set page-right-to-left
+map [fullscreen] r rotate

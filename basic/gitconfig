@@ -1,5 +1,0 @@
-[user]
-	email = anon@github.com
-	name = anon
-[credential]
-	helper = cache

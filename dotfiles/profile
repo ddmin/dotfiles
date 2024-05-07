@@ -29,6 +29,7 @@ export VISUAL='nvim'
 export BROWSER='firefox'
 
 # vim man pages
+export MANROFFOPT="-c"
 export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
 # Rust

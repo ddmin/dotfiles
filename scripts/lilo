@@ -1,32 +1,74 @@
 #!/bin/bash
+# lilo: stitch two images side-by-side
 
-# lilo: stitch two images side-by-side and display
+set -e
 
-echo $@
-exit
+RED='\033[1;31m'
+NC='\033[0m'
 
-help() {
-    echo "$(basename $0): provide 2 images to stitch together"
-    echo "Usage: $(basename $0) [RIGHT] [LEFT]"
+usage() {
+    echo
+    echo "Usage: $(basename $0) [OPTIONS] [RIGHT] [LEFT]"
+    echo "Stitch RIGHT and LEFT images, and save as a new image."
+    echo
+    echo "  -h              display this message exit"
+    echo "  -r              reverse order RIGHT and LEFT"
+    echo "  -v              stitch images vertically (default horizontally)"
+    echo "  -o              specify output file"
 }
 
 if [ $# -lt 2 ]; then
-    >&2 echo "ERROR: Please provide two files."
-    echo
-    help
+    >&2 echo -e "${RED}ERROR: Please provide two files.${NC}"
+    usage
     exit 1
 fi
+
+while getopts ":hvro::" o; do
+    case "${o}" in
+        h)
+            usage
+            exit
+            ;;
+        v)
+            vertical=1
+            ;;
+        r)
+            reverse=1
+            ;;
+        o)
+            output=${OPTARG}
+            ;;
+        *)
+            usage
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND-1))
 
 right=$(basename $1)
 left=$(basename $2)
 
-ext="${right##*.}"
+if [ -z $vertical ]; then
+    operation="+append"
+else
+    operation="-append"
+fi
 
-rbase=${right%.$ext}
-lbase=${left%.$ext}
+if [ -z $reverse ]; then
+    temp=$left
+    left=$right
+    right=$temp
+fi
 
+rext="${right##*.}"
+lext="${left##*.}"
+rbase=${right%.$rext}
+lbase=${left%.$lext}
 
-OUTPUT="${rbase}-${lbase}.${ext}"
+if [ -z $output ]; then
+    output="${rbase}-${lbase}.${rext}"
+fi
 
-echo $OUTPUT
-convert $left $right +append $OUTPUT
+convert $left $right $operation $output
+echo $output

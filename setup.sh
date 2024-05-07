@@ -59,9 +59,6 @@ function mobile {
     echo Moving vimrc
         cp "$MOBILE/vimrc" "$DOTDIR/.vimrc"
 
-    echo Moving gitconfig
-        cp "$MOBILE/gitconfig" "$DOTDIR/.gitconfig"
-
     # change shell
     chsh -s zsh
 
@@ -97,6 +94,9 @@ function root {
     echo Moving vimrc
         sudo cp "$BASIC/vimrc" "$ROOTDIR/.vimrc"
 
+    echo Creating undodir
+        mkdir -p "$VIMDIR/undodir"
+
     echo DONE
 }
 
@@ -115,9 +115,6 @@ function setup {
 
     echo Moving inputrc
         cp "$NORMAL/inputrc" "$DOTDIR/.inputrc"
-
-    echo Moving gitconfig
-        cp "$NORMAL/gitconfig" "$DOTDIR/.gitconfig"
 
     echo "============== VIM =============="
     echo Moving vimrc
@@ -148,14 +145,14 @@ function basic {
     echo Moving inputrc
         cp "$BASIC/inputrc" "$DOTDIR/.inputrc"
 
-    echo Moving gitconfig
-        cp "$BASIC/gitconfig" "$DOTDIR/.gitconfig"
-
     echo Moving vimrc
         cp "$BASIC/vimrc" "$DOTDIR/.vimrc"
 
     echo Moving Xresources
         cp "$BASIC/Xresources" "$DOTDIR/.Xresources"
+
+    echo Creating undodir
+        mkdir -p "$VIMDIR/undodir"
 
     echo DONE
 }

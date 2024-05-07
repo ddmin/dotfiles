@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run Manga OCR to read from directory
+# mocr: run manga_ocr to read from OCR_DIR
 
 OCR_DIR=/tmp/ocr
 

@@ -3,12 +3,10 @@
 * Extensions
 ** Security
 - [[https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][uBlock Origin]]
+  - [[https://github.com/gorhill/uBlock/wiki/Dashboard:-Filter-lists][Disable Cookie Notices]]
   - [[https://github.com/gorhill/uBlock/wiki/Blocking-mode:-medium-mode][Enable Medium Mode]]
-- [[https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][Decentraleyes]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/libredirect/][LibRedirect]]
-- [[https://addons.mozilla.org/en-US/firefox/addon/istilldontcareaboutcookies/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][I still don't care about cookies]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][KeePassXC-Browser]]
-- [[https://addons.mozilla.org/en-US/firefox/addon/xbs/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][xBrowserSync]]
 ** Function
 - [[https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/][Video DownloadHelper]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/videospeed/][Video Speed Controller]]

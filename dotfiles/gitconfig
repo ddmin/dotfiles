@@ -1,5 +1,0 @@
-[user]
-	email = ddmin@gmail.com
-	name = ddmin
-[credential]
-    helper = cache --timeout '604800'

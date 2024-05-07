@@ -3,3 +3,6 @@ __pycache__
 config/lazygit/state.yml
 config/mpd/log
 config/ncmpcpp/config.config
+config/doom/snippets/*
+config/doom/custom.el
+config/doom/flycheck_config.el

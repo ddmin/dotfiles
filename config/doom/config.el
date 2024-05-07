@@ -167,12 +167,13 @@
       "o a c"
       (lambda() (interactive)(find-file "~/.local/drive/code/pipeline.org")))
 
-;; open pdfs in zathura
+;; Org: default apps to open files
 ;; https://www.txmao.vip/2024/02/4b0c64e6-d3df-4046-9efc-7412dcde8d9a/
 (after! org
   (add-to-list 'org-file-apps
                '("\\.pdf\\'" . (lambda (file link)
-                                 (call-process "zathura" nil 0 nil "--config-dir" "$HOME/.config/zathura" "--mode" "fullscreen" file)))))
+                                 (call-process "zathura" nil 0 nil "--config-dir" "$HOME/.config/zathura" "--mode" "fullscreen" file)))
+               ))
 
 (setq bibtex-completion-pdf-open-function (lambda (file)
                                             (call-process "zathura" nil 0 nil "--config-dir" "$HOME/.config/zathura" "--mode" "fullscreen" file)))
@@ -200,6 +201,9 @@
        )
       )
 
+;; avy
+(setq avy-all-windows t)
+
 ;; org-mode
 (custom-theme-set-faces!
   'doom-monokai-pro
@@ -213,3 +217,55 @@
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
 
+;; alternate tabs
+(map! :leader
+      (:prefix ("TAB")
+       :desc "Switch to last activated workspace." "TAB" #'+workspace/other)
+      )
+
+;; evaluation
+(map! :leader
+      (:prefix ("e" . "evaluate")
+       :desc "Execute org src block" "e" #'org-babel-execute-src-block)
+      )
+
+;; fzf using fd (fdfind on Ubuntu)
+(defun fzf-hidden-with-fd ()
+  "Starts fzf from the user's home directory using fd to include hidden files and exclude certain directories."
+  (interactive)
+  (setenv "FZF_DEFAULT_COMMAND" "fdfind --type f --hidden --follow --exclude .git .")
+  (fzf-directory 'default-directory))
+
+;; fzf
+(map! :leader
+      (:prefix ("f")
+       :desc "fzf directory search" "z" #'fzf-hidden-with-fd)
+      )
+
+;; org-publish
+(setq org-publish-project-alist
+      '(("Personal Site"
+         :base-directory "~/Documents/share/website/org"
+         :base-extension "org"
+         :publishing-directory "~/Documents/share/website"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :auto-preamble t)
+        ("School Notes"
+         :base-directory "~/School"
+         :base-extension "org"
+         :publishing-directory "~/Documents/html"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :auto-preamble t)
+        ("School Assets"
+         :base-directory "~/School"
+         :base-extension "png"
+         :publishing-directory "~/Documents/html"
+         :recursive t
+         :publishing-function org-publish-attachment)
+        ("School" :components("School Notes" "School Assets"))
+        )
+      )

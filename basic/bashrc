@@ -35,7 +35,7 @@ alias egrep='egrep --color=auto'
 # safer defaults
 alias cp='cp -riv'
 alias mv='mv -iv'
-alias rm='rm -vI'
+alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 
 # vi mode

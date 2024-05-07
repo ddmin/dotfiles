@@ -1,8 +1,7 @@
 #!/bin/bash
-
 # undivac: to undo the work of our predecessors
 
-IFS=$'\n'       # make newlines the only separator
+IFS=$'\n' # only separate on newlines
 set -e
 
 input=$1

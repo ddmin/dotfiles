@@ -1,8 +1,10 @@
 # Tabbed
+[tabbed-flexipatch](https://github.com/bakkeby/tabbed-flexipatch)
 
-## Run
+## Run with XEmbed Application
 ```console
 tabbed -c alacritty --embed
+tabbed -c zathura -e
 ```
 
 ## Makefile
@@ -12,7 +14,7 @@ LDFLAGS = -lXrender
 ```
 
 ```console
-# if make file doesn't work
+# make file doesn't work, copy patches manually
 cp patches.def.h patches.h
 ```
 
