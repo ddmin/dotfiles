@@ -76,6 +76,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Japanese Input (SKK)
+;; https://gist.github.com/akirak/e93876855f8b1d295c2cd0ff2370af8d
+(map! :gni "C-SPC" #'skk-mode)
+
 ;; remove highlighting (like :set noh)
 (map! :leader
       :desc "Clear search highlighting"
@@ -96,6 +100,7 @@
   (setq org-todo-keywords               ; This overwrites the default Doom org-todo-keywords
         '((sequence
            "TODO(t)"               ; TODO
+           "FIXME(f)"              ; FIXME
            "WAIT(w)"               ; Waiting
            "EXAM(c)"               ; Test
            "IRL(i)"                ; IRL
@@ -106,6 +111,7 @@
 
 (setq hl-todo-keyword-faces
       '(("TODO"      . "#b4d273")
+        ("FIXME"     . "#cc6666")
         ("WAIT"      . "#e87d3e")
         ("EXAM"      . "#9e86c8")
         ("IRL"      . "#66d9ef")
@@ -244,7 +250,7 @@
 
 ;; org-publish
 (setq org-publish-project-alist
-      '(("Personal Site"
+      '(("Personal Site Notes"
          :base-directory "~/Documents/share/website/org"
          :base-extension "org"
          :publishing-directory "~/Documents/share/website"
@@ -252,6 +258,13 @@
          :publishing-function org-html-publish-to-html
          :headline-levels 4
          :auto-preamble t)
+        ("Personal Site Assets"
+         :base-directory "~/Documents/share/website/org"
+         :base-extension "png"
+         :publishing-directory "~/Documents/share/website"
+         :recursive t
+         :publishing-function org-publish-attachment)
+        ("Personal Site" :components("Personal Site Notes" "Personal Site Assets"))
         ("School Notes"
          :base-directory "~/School"
          :base-extension "org"

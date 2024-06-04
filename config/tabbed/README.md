@@ -26,4 +26,6 @@ sudo make install
 ```
 
 ## Manually Patching
+```console
 patch -p0 < patch.diff
+```

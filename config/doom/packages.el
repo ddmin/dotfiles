@@ -52,4 +52,3 @@
 (package! org-fancy-priorities)
 (package! all-the-icons)
 (package! fzf)
-(package! cdlatex)

@@ -4,13 +4,6 @@
 OCR_DIR=/tmp/ocr
 mkdir -p $OCR_DIR
 
-scrot --select \
-    --ignorekeyboard \
-    --line color=green \
-    $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"` || exit 1
-
-# gnome
-# gnome-screenshot -a -f $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"` || exit 1
-
-# xfce
-# xfce4-screenshooter -r -s $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"` || exit 1
+slop=$(slop -c 0,15,0 -f "%g") || exit 1
+read -r G <<< $slop
+import -window root -crop $G $OCR_DIR/`date +"manga-ocr-%Y-%m-%d_%T.png"`

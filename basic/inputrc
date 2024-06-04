@@ -1,5 +1,21 @@
+$include /etc/inputrc
+
 # ctrl-backspace
 "\C-h": backward-kill-word
 
 # ctrl-delete
 "\e[3;5~": kill-word
+
+set editing-mode vi
+$if mode=vi
+
+set keymap vi-command
+Control-l: clear-screen
+Control-a: beginning-of-line
+
+set keymap vi-insert
+"jk": vi-movement-mode
+Control-l: clear-screen
+Control-a: beginning-of-line
+
+$endif

@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "5/25/2024, 8:10:24 PM",
-	"time": 1716682224372,
+	"@time": "6/25/2024, 3:36:36 PM",
+	"time": 1719344196915,
 	"environment": {
-		"extension": "1.99.997",
+		"extension": "1.99.994",
 		"platform": "linux",
-		"firefox": 126
+		"chromium": 126
 	},
 	"clipSub": "p=^git@([^/:]+):=https://$1/=",
 	"exclusionRules": [
@@ -63,7 +63,7 @@
 		"\" create a bookmark",
 		"\"   firefox: \"Bookmarks Toolbar\"",
 		"\"   chrome:  \"Bookmarks\"",
-		"\tmap <c-b> addBookmark folder=\"Bookmarks\\u0020Toolbar\"",
+		"\tmap <c-b> addBookmark folder=\"Bookmarks\"",
 		"",
 		"\" delete a tab",
 		"\tmap ZZ removeTab",
@@ -86,11 +86,12 @@
 		"\tmap yi LinkHints.activateDownloadImage",
 		"\tmap yI LinkHints.activateCopyImage",
 		"",
-		"\" t: tab bindings",
+		"\" t: tab bindings (and yank alias)",
+		"\tmap gt Vomnibar.activateTabs",
+		"\tmap gT nextTab",
 		"\tmap tt copyCurrentUrl",
 		"\tmap TT copyCurrentTitle",
 		"\tmap tf LinkHints.activateCopyLinkUrl",
-		"\tmap ts Vomnibar.activateTabs",
 		"",
 		"\" D: duplicate",
 		"\tmap DD duplicateTab",
@@ -108,9 +109,11 @@
 	"scrollStepSize": 120,
 	"searchEngines": [
 		"brave|Brave|b|br|: https://search.brave.com/search?q=$s Brave",
-		"ddg|d:https://duckduckgo.com/?q=%s DuckDuckGo",
-		"youtube|y|yt: https://www.youtube.com/results?search_query=%s \\",
+		"ddg|d:https://duckduckgo.com/?q=$s DuckDuckGo",
+		"youtube|y|yt: https://www.youtube.com/results?search_query=$s \\",
 		"  blank=https://www.youtube.com/ YouTube",
+		"jisho|:https://jisho.org/search/$S \\",
+		"  blank=https://jisho.org/search Jisho",
 		"searx|s|sx|Searx|SearX: https://search.inetol.net/search?q=$s SearX",
 		"js\\:|Js: javascript:\\ $S; JavaScript",
 		"\\:: vimium://run/$S Vimium-C",

@@ -19,7 +19,7 @@
 
     set number
     set relativenumber
-    set ignorecase
+    set ignorecase infercase
     set smartcase
 
     set nocompatible
@@ -49,10 +49,6 @@
 " Splits
     nnoremap <leader>w <C-w>
 
-" Enable word movement between separators
-    set iskeyword-=-
-    set iskeyword-=_
-
 " Undo Directory
     set hidden
     set noswapfile
@@ -73,7 +69,7 @@
 " Highlight searches and <Leader><Leader> to unhighlight
     set incsearch
     set hlsearch
-    nnoremap <silent> <leader><leader> :nohl<CR><C-l>
+    nnoremap <silent> <leader><leader> :<C-u>nohl<CR><C-l>
 
 "Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=o
@@ -106,24 +102,21 @@
     inoremap ? ?<C-g>u
 
 " Moving text
-    nnoremap <M-j> :m .+1<CR>==
-    nnoremap <M-k> :m .-2<CR>==
-    inoremap <M-j> <ESC>:m .+1<CR>==gi
-    inoremap <M-k> <ESC>:m .-2<CR>==gi
-    vnoremap <M-j> :m '>+1<CR>gv=gv
-    vnoremap <M-k> :m '<-2<CR>gv=gv
+    nnoremap <M-j> :<C-u>m .+1<CR>==
+    nnoremap <M-k> :<C-u>m .-2<CR>==
+    inoremap <M-j> <ESC>:<C-u>m .+1<CR>==gi
+    inoremap <M-k> <ESC>:<C-u>m .-2<CR>==gi
+    vnoremap <M-j> :<C-u>m '>+1<CR>gv=gv
+    vnoremap <M-k> :<C-u>m '<-2<CR>gv=gv
 
 " Toggle line numbers
-    nmap <silent> <leader>tl :set invnumber<CR>:set invrelativenumber<CR>
+    nmap <silent> <leader>tl :<C-u>set invnumber<CR>:<C-u>set invrelativenumber<CR>
 
-" Toggle spell
-    nnoremap <silent> <leader>ts :set invspell spelllang=en_us<CR>
-
-" Terminal
-    map <silent> <leader>ot :terminal<CR>
+" Toggle spell checking
+    nnoremap <silent> <leader>ts :<C-u>set invspell spelllang=en_us<CR>
 
 " Netrw
-    map <silent> <leader>dd :Explore<CR>
+    map <silent> <leader>dd :<C-u>Explore<CR>
 
 " Ctrl + Backspace to Delete Word
     imap <C-H> <C-W>

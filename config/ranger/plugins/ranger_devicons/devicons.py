@@ -3,21 +3,26 @@
 # These glyphs, and the mapping of file extensions to glyphs
 # has been copied from the vimscript code that is present in
 # https://github.com/ryanoasis/vim-devicons
-import re;
-import os;
 
-# Get the XDG_USER_DIRS directory names from enviromental variables
+import re
+import os
 
-xdgs_dirs = {path.split('/')[-2]: icon for key, icon in [
-    ('XDG_DOCUMENTS_DIR'  , ''),
-    ('XDG_DOWNLOAD_DIR'   , ''),
-    ('XDG_CONFIG_DIR'     , ''),
-    ('XDG_MUSIC_DIR'      , ''),
-    ('XDG_PICTURES_DIR'   , ''),
-    ('XDG_PUBLICSHARE_DIR', ''),
-    ('XDG_TEMPLATES_DIR'  , ''),
-    ('XDG_VIDEOS_DIR'     , ''),
-] if (path := os.getenv(key))}
+
+# Get the XDG_USER_DIRS directory names from environment variables
+xdgs_dirs = {
+    os.path.basename(os.getenv(key).rstrip('/')): icon
+    for key, icon in (
+        ('XDG_DOCUMENTS_DIR', ''),
+        ('XDG_DOWNLOAD_DIR', ''),
+        ('XDG_CONFIG_DIR', ''),
+        ('XDG_MUSIC_DIR', ''),
+        ('XDG_PICTURES_DIR', ''),
+        ('XDG_PUBLICSHARE_DIR', ''),
+        ('XDG_TEMPLATES_DIR', ''),
+        ('XDG_VIDEOS_DIR', ''),
+    )
+    if os.getenv(key)
+}
 
 
 # all those glyphs will show as weird squares if you don't have the correct patched font
@@ -53,7 +58,7 @@ file_node_extensions = {
     'cp'       : '',
     'cpio'     : '',
     'cpp'      : '',
-    'cs'       : '',
+    'cs'       : '󰌛',
     'csh'      : '',
     'css'      : '',
     'cue'      : '',
@@ -65,8 +70,13 @@ file_node_extensions = {
     'deb'      : '',
     'diff'     : '',
     'dll'      : '',
+    'wps'      : '',
+    'wpt'      : '',
     'doc'      : '',
     'docx'     : '',
+    'docm'     : '',
+    'dotx'     : '',
+    'dotm'     : '',
     'dump'     : '',
     'edn'      : '',
     'eex'      : '',
@@ -80,7 +90,7 @@ file_node_extensions = {
     'exe'      : '',
     'exs'      : '',
     'f#'       : '',
-    'fifo'     : 'ﳣ',
+    'fifo'     : '󰟥',
     'fish'     : '',
     'flac'     : '',
     'flv'      : '',
@@ -109,6 +119,7 @@ file_node_extensions = {
     'ico'      : '',
     'img'      : '',
     'ini'      : '',
+    'ipynb'    : '',
     'iso'      : '',
     'jar'      : '',
     'java'     : '',
@@ -117,6 +128,7 @@ file_node_extensions = {
     'jpg'      : '',
     'js'       : '',
     'json'     : '',
+    'jsonc'    : '',
     'jsx'      : '',
     'key'      : '',
     'ksh'      : '',
@@ -126,6 +138,7 @@ file_node_extensions = {
     'lhs'      : '',
     'log'      : '',
     'lua'      : '',
+    'lz'       : '',
     'lzh'      : '',
     'lzma'     : '',
     'm4a'      : '',
@@ -134,6 +147,7 @@ file_node_extensions = {
     'md'       : '',
     'mdx'      : '',
     'mjs'      : '',
+    'mka'      : '',
     'mkv'      : '',
     'ml'       : 'λ',
     'mli'      : 'λ',
@@ -144,18 +158,28 @@ file_node_extensions = {
     'mpg'      : '',
     'msi'      : '',
     'mustache' : '',
-    'note'     : '',
     'nix'      : '',
     'o'        : '',
     'ogg'      : '',
-    'pdf'      : '',
+    'opus'     : '',
+    'part'     : '',
+    'pdf'      : '',
     'php'      : '',
     'pl'       : '',
     'pm'       : '',
     'png'      : '',
     'pp'       : '',
-    'ppt'      : '',
-    'pptx'     : '',
+    'dps'      : '',
+    'dpt'      : '',
+    'ppt'      : '',
+    'pptx'     : '',
+    'pptm'     : '',
+    'pot'      : '',
+    'potx'     : '',
+    'potm'     : '',
+    'pps'      : '',
+    'ppsx'     : '',
+    'ppsm'     : '',
     'ps1'      : '',
     'psb'      : '',
     'psd'      : '',
@@ -164,7 +188,7 @@ file_node_extensions = {
     'pyc'      : '',
     'pyd'      : '',
     'pyo'      : '',
-    'r'        : 'ﳒ',
+    'r'        : '󰟔',
     'rake'     : '',
     'rar'      : '',
     'rb'       : '',
@@ -173,7 +197,7 @@ file_node_extensions = {
     'rmd'      : '',
     'rom'      : '',
     'rpm'      : '',
-    'rproj'    : '鉶',
+    'rproj'    : '󰗆',
     'rs'       : '',
     'rss'      : '',
     'rtf'      : '',
@@ -188,18 +212,20 @@ file_node_extensions = {
     'sql'      : '',
     'styl'     : '',
     'suo'      : '',
+    'svelte'   : '',
     'swift'    : '',
     't'        : '',
     'tar'      : '',
-    'tex'      : 'ﭨ',
+    'tex'      : '󰙩',
     'tgz'      : '',
     'toml'     : '',
+    'torrent'  : '',
     'ts'       : '',
     'tsx'      : '',
     'twig'     : '',
     'vim'      : '',
     'vimrc'    : '',
-    'vue'      : '﵂',
+    'vue'      : '󰡄',
     'wav'      : '',
     'webm'     : '',
     'webmanifest' : '',
@@ -207,8 +233,17 @@ file_node_extensions = {
     'xbps'     : '',
     'xcplayground' : '',
     'xhtml'    : '',
-    'xls'      : '',
-    'xlsx'     : '',
+    'et'       : '󰈛',
+    'ett'      : '󰈛',
+    'xls'      : '󰈛',
+    'xlt'      : '󰈛',
+    'xlsx'     : '󰈛',
+    'xlsm'     : '󰈛',
+    'xlsb'     : '󰈛',
+    'xltx'     : '󰈛',
+    'xltm'     : '󰈛',
+    'xla'      : '󰈛',
+    'xlam'     : '󰈛',
     'xml'      : '',
     'xul'      : '',
     'xz'       : '',
@@ -218,10 +253,10 @@ file_node_extensions = {
     'zsh'      : '',
 }
 
+
 dir_node_exact_matches = {
 # English
     '.git'                             : '',
-    'Code'                             : '',
     'Desktop'                          : '',
     'Documents'                        : '',
     'Downloads'                        : '',
@@ -232,7 +267,10 @@ dir_node_exact_matches = {
     'Public'                           : '',
     'Templates'                        : '',
     'Videos'                           : '',
-    'VirtualBox'                       : '',
+    'anaconda3'                        : '',
+    'go'                               : '',
+    'workspace'                        : '',
+    'OneDrive'                         : '',
 # Spanish
     'Escritorio'                       : '',
     'Documentos'                       : '',
@@ -282,9 +320,32 @@ dir_node_exact_matches = {
     'Letöltések'                       : '',
     'Számítógép'                       : '',
     'Videók'                           : '',
-# XDG_USER_DIRS
-    **xdgs_dirs
+# Chinese(Simple)
+    '桌面'                             : '',
+    '文档'                             : '',
+    '下载'                             : '',
+    '音乐'                             : '',
+    '图片'                             : '',
+    '公共的'                           : '',
+    '公共'                           : '',
+    '模板'                             : '',
+    '视频'                             : '',
+# Chinese(Traditional)
+    '桌面'                             : '',
+    '文檔'                             : '',
+    '下載'                             : '',
+    '音樂'                             : '',
+    '圖片'                             : '',
+    '公共的'                           : '',
+    '公共'                           : '',
+    '模板'                             : '',
+    '視頻'                             : '',
 }
+
+# Python 2.x-3.4 don't support unpacking syntex `{**dict}`
+# XDG_USER_DIRS
+dir_node_exact_matches.update(xdgs_dirs)
+
 
 file_node_exact_matches = {
     '.bash_aliases'                    : '',
@@ -312,7 +373,6 @@ file_node_exact_matches = {
     '.recently-used'                   : '',
     '.selected_editor'                 : '',
     '.vim'                             : '',
-    '.vimrc'                           : '',
     '.viminfo'                         : '',
     '.vimrc'                           : '',
     '.Xauthority'                      : '',
@@ -378,6 +438,9 @@ file_node_exact_matches = {
     'webpack.config.js'                : '',
 }
 
+
 def devicon(file):
-  if file.is_directory: return dir_node_exact_matches.get(file.relative_path, '')
-  return file_node_exact_matches.get(os.path.basename(file.relative_path), file_node_extensions.get(file.extension, ''))
+    if file.is_directory:
+        return dir_node_exact_matches.get(file.relative_path, '')
+    return file_node_exact_matches.get(os.path.basename(file.relative_path),
+                                       file_node_extensions.get(file.extension, ''))

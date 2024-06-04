@@ -13,12 +13,10 @@ case $- in
       *) return;;
 esac
 
-# profile
 if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
-# history
 HISTSIZE=1000
 HISTFILESIZE=2000
 
@@ -37,9 +35,3 @@ alias cp='cp -riv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
-
-# vi mode
-set -o vi
-bind '"jk":vi-movement-mode'
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
