@@ -266,17 +266,17 @@
          :publishing-function org-publish-attachment)
         ("Personal Site" :components("Personal Site Notes" "Personal Site Assets"))
         ("School Notes"
-         :base-directory "~/School"
+         :base-directory "~/Documents/share/sync/Summer-2024"
          :base-extension "org"
-         :publishing-directory "~/Documents/html"
+         :publishing-directory  "~/Documents/share/sync/html"
          :recursive t
          :publishing-function org-html-publish-to-html
          :headline-levels 4
          :auto-preamble t)
         ("School Assets"
-         :base-directory "~/School"
+         :base-directory  "~/Documents/share/sync/Summer-2024"
          :base-extension "png"
-         :publishing-directory "~/Documents/html"
+         :publishing-directory "~/Documents/share/sync/html"
          :recursive t
          :publishing-function org-publish-attachment)
         ("School" :components("School Notes" "School Assets"))

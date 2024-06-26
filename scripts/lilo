@@ -3,9 +3,6 @@
 
 set -e
 
-RED='\033[1;31m'
-NC='\033[0m'
-
 usage() {
     echo
     echo "Usage: $(basename $0) [OPTIONS] [RIGHT] [LEFT]"
@@ -18,8 +15,8 @@ usage() {
 }
 
 if [ $# -lt 2 ]; then
-    >&2 echo -e "${RED}ERROR: Please provide two files.${NC}"
-    usage
+    >&2 echo -e "ERROR: Please provide two files."
+    >&2 usage
     exit 1
 fi
 
@@ -39,7 +36,7 @@ while getopts ":hvro::" o; do
             output=${OPTARG}
             ;;
         *)
-            usage
+            >&2 usage
             exit 1
             ;;
     esac
