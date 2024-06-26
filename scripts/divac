@@ -5,9 +5,9 @@ IFS=$'\n' # only separate on newlines
 set -e
 
 if [ $# -lt 1 ]; then
-    echo "Please provide number of folders."
-    echo "USAGE: $(basename $0) [FOLDER-COUNT] [INPUT-DIRECTORY]"
-    exit
+    >&2 echo "Please provide number of folders."
+    >&2 echo "USAGE: $(basename $0) [FOLDER-COUNT] [INPUT-DIRECTORY]"
+    exit 1
 fi
 
 dir=$2
@@ -18,6 +18,12 @@ fi
 amt=$(find ${dir} -maxdepth 1 -type f | wc -l)
 fpf=$(($amt / $1))
 mod=$(($amt % $1))
+
+# exit if no files
+if [ $amt -eq 0 ]; then
+    echo "No files to move."
+    exit
+fi
 
 # Create Directories
 for i in $(seq -f "%02g" 1 $1)
