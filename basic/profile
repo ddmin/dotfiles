@@ -23,4 +23,7 @@ export VISUAL='vim'
 export MANROFFOPT="-c"
 export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma nonumber norelativenumber' -\""
 
+# remap capslock
+setxkbmap -option caps:escape_shifted_capslock
+
 export PATH
