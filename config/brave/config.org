@@ -1,0 +1,40 @@
+#+title: Brave Configuration
+
+* Appearance
+** ❎ Brave News Button
+** ❎ Brave Rewards Button
+** ❎ Brave Wallet Button
+** Brave Autocomplete Suggestions
+*** ❌ Top Sites
+*** ❌ Quick Commands
+*** ❌ Leo AI Assistant
+** ✅ Wide Address Bar
+** ✅ Always Show Full URLS
+* Shields
+** Trackers & Ads Blocking
+*** Aggressive
+** Upgrade Connections to HTTPS
+*** Strict
+** Content Filtering
+*** [[https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt][Actually Legitimate URL Shortener Tool]]
+** Social Media Blocking
+*** ❎ Allow Facebook
+*** ❎ Allow Twitter
+*** ❎ Allow LinkedIn
+* Privacy and Security
+** WebRTC IP Handling
+*** Disable non-proxied UDP
+** ❎ Automatically send daily usage ping to Brave
+** Site and Shields Settings
+*** On-Device Site Data
+**** ✅ Delete Data Sites When Close All Windows
++ Allow to save data on your device
+* Autofill and Passwords
+** ❎ Save Payments
+** ❎ Save Addresses
+* Languages
+** ❎ Use Brave Translate
+* System
+** ❎ Continue Running Background Apps
+** ✅ Memory Saver
+* Reset Settings
